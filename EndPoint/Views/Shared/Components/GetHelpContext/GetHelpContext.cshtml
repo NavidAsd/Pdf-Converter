@@ -1,0 +1,48 @@
+﻿@model Common.ResultMessage<Domain.Entities.OtherContext.AdditionalHelp>;
+@{
+    Layout = null;
+}
+<div class="section main-services-info-box">
+    <div class="row justify-content-center">
+        @if (!string.IsNullOrWhiteSpace(ViewBag.FetureDetails.Enything.HelpContext))
+        {
+
+                    <div class="col-12 text-center mt-5">
+
+                        <h2>@Model.Enything.HelpContext</h2>
+                        <p>@Html.Raw(ViewBag.FetureDetails.Enything.HelpContext)</p>
+                    </div>
+        }
+        @if (!string.IsNullOrWhiteSpace(ViewBag.FetureDetails.Enything.Description))
+        {
+                    <div class="section main-services-info-box m-4">
+                        <br />
+                        <br />
+                        <br />
+                        <br />
+                        <br />
+                        <div class="row text-left" style="direction: rtl;">
+                            <div class="col-md-8 col-12 text-center" style="">
+                        @if (ViewBag.images.Success)
+                        {
+                            @if (ViewBag.Images.Enything.ImageAlt != null)
+                            {
+                                <img src="@Common.GetPath.GetServiceImages().Replace("wwwroot","")/@ViewBag.Images.Enything.Image"title="@ViewBag.Images.Enything.ImageTitle"  alt="@ViewBag.Images.Enything.ImageAlt" width="auto" height="auto">
+                            }
+                            else
+                            {
+                                 <img src="@Common.GetPath.GetServiceImages().Replace("wwwroot","")/@ViewBag.Images.Enything.Image"  alt="pdfconverter-main-services-img" width="auto" height="auto">
+                            }
+                        }
+                            </div><div class="col-md-4 col-12 text-center">
+                                <h2 class="mb-4 mt-5">@Model.Enything.ServiceDescription</h2>
+                                <p>@Html.Raw(ViewBag.FetureDetails.Enything.Description)</p>
+                            </div>
+                        </div>
+                        <br />
+                        <br />
+                        <br />
+                    </div>
+        }
+    </div>
+</div>

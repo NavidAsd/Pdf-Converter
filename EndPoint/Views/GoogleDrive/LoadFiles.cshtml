@@ -1,0 +1,76 @@
+@model IEnumerable<EndPoint.Models.GoogleDriveFiles>
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<head>
+    <title> PdfConverter | YourFiles </title>
+</head>
+
+
+<!-- start main -->
+<main>
+    <div class="content-wrapper">
+        <div class="container-fluid">
+            <!-- Zero configuration table -->
+            <section id="configuration">
+
+                <div class="row">
+                    <div class="col-12">
+                        <div class="card">
+                            <table class="table table-striped">
+                                <thead>
+                                    <tr>
+                                        <th>
+                                            FileName
+                                        </th>
+                                        <th>
+                                            Version
+                                        </th>
+                                        <th>
+                                            Size
+                                        </th>
+                                        <th>
+                                            CreatedTime
+                                        </th>
+
+                                        <th></th>
+                                    </tr>
+                                </thead>
+
+                                <tbody>
+                                    @foreach (var item in Model)
+                                    {
+                                        <tr>
+                                            @if (System.IO.Path.GetExtension(item.Name).ToLower().Equals(ViewBag.Type))
+                                            {
+                                                <td>
+                                                    @item.Name
+                                                </td>
+                                                <td>
+                                                    @item.Version
+                                                </td>
+                                                <td>
+                                                    @item.Size
+                                                </td>
+                                                <td>
+                                                    @item.CreatedTime
+                                                </td>
+
+                                                <td>
+                                                    <a href="/GoogleDrive/SelectFile?Id=@item.Id">Choose</a>
+                                                </td>
+                                            }
+                                        </tr>
+                                    }
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </div>
+</main>
+<!-- end main -->
+<!-- script -->

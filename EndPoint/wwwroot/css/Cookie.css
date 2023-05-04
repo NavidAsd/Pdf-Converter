@@ -1,0 +1,131 @@
+﻿body {
+    margin: 0;
+}
+
+.section-cookie {
+    position: fixed;
+    z-index: 85;
+    width: 100%;
+    height: 90px;
+    bottom: 0;
+    background: #1D2A35;
+    padding: 10px;
+    padding-left: 50px;
+    padding-right: 15px;
+    color: #fff;
+    border-top-right-radius: 10px;
+    display: flex;
+}
+
+    .section-cookie p {
+        width: 60%;
+    }
+
+.btn-accept-coo {
+    float: right;
+    width: 180px;
+    height: 40px;
+    background: rgb(82, 82, 241);
+    border-radius: 4px;
+    border: none;
+    color: #fff;
+}
+
+.btn-dismis-coo {
+    float: right;
+    width: 120px;
+    height: 40px;
+    background: rgb(131, 131, 131);
+    border-radius: 4px;
+    border: none;
+    margin-right: 20px;
+    color: #fff;
+}
+
+.img-cookie {
+    width: 50px;
+    height: 50px;
+    float: left;
+    margin-right: 50px;
+    margin-top: 5px;
+    animation: example 5s linear 2s infinite alternate;
+}
+
+@keyframes example {
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+.div-cookie {
+    padding: 12px;
+    padding-left: 70px;
+}
+
+@media only screen and (max-width: 1283px) {
+    .section-cookie {
+        height: 110px;
+        padding-left: 0px;
+        padding-right: 0px;
+    }
+
+    .div-cookie {
+        padding: 12px;
+        padding-left: 0px;
+        width: 35%;
+    }
+
+    .section-cookie p {
+        font-size: 14px;
+        padding: 12px;
+    }
+
+    .img-cookie {
+        display: none;
+    }
+
+    .btn-accept-coo {
+        width: 100px;
+    }
+
+    .btn-dismis-coo {
+        width: 100px;
+        margin-right: 0;
+    }
+}
+
+@media only screen and (max-width: 380px) {
+    .section-cookie {
+        height: 160px;
+        padding-left: 0px;
+        padding-right: 0px;
+    }
+
+    .div-cookie {
+        padding: 12px;
+        padding-left: 0px;
+        width: 35%;
+    }
+
+    .section-cookie p {
+        font-size: 14px;
+        padding: 12px;
+    }
+
+    .img-cookie {
+        display: none;
+    }
+
+    .btn-accept-coo {
+        width: 100px;
+    }
+
+    .btn-dismis-coo {
+        width: 100px;
+        margin-right: 0;
+    }
+}

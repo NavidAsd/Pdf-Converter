@@ -1,0 +1,160 @@
+﻿@model ResultMessage<ResultReturnFeatureDetailsDto>
+@using Common;
+@using Application.Services.Query.ReturnFeatureDetails
+@{
+    ViewData["Title"] = "Edit Service";
+    Layout = "~/Areas/PdfManagerArea/Views/Shared/_Adminlayout.cshtml";
+}
+
+
+<head>
+    <link rel="shortcut icon" type="image/png" href="~/images/logo/66-modified.png">
+    <title>PdfConverter | Admin-Edit Service</title>
+</head>
+
+
+<style>
+    body {
+        align-items: center;
+        background-color: var(--blue);
+        background: url("/Areas/Admin/images/New_A.jpg");
+        background-attachment: fixed;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        display: grid;
+        height: 100vh;
+        place-items: center;
+    }
+    .ck-editor__editable {
+        min-height: 300px;
+        min-width: 850px;
+    }
+
+</style>
+
+<section class="basic-elements">
+    <div class="row">
+    </div>
+    <div class="row">
+        <div class="col-md-12">
+            <div class="card">
+                <div class="card-header">
+                    <div class="card-title-wrap bar-success">
+                        <h4 class="card-title mb-0">Basic Info</h4>
+                    </div>
+                </div>
+                <div class="card-body">
+                    <div class="px-3">
+                        <div class="form">
+                            <div class="form-body">
+                                <div class="row">
+                                    <div class="col-xl-4 col-lg-6 col-md-12 mb-1">
+                                        <fieldset class="form-group">
+                                            <label for="basicInput">Name </label>
+                                            <input type="text" class="form-control" id="Name" value="@Model.Enything.Name" readonly>
+                                            <input type="text" class="form-control" id="Service" style="visibility:hidden" value="@Model.Enything.Service" readonly>
+                                        </fieldset>
+                                    </div>
+
+                                    <div class="col-xl-12 col-lg-12 col-md-12 mb-1">
+                                        <fieldset class="form-group">
+                                            <label for="basicInput"> Help Context</label>
+                                                 <textarea name="editor" id="_HelpContext" rows="4" cols="40">
+                                                @Html.Raw(Model.Enything.HelpContext)
+            </textarea>
+
+                                        </fieldset>
+                                    </div>
+
+                                    <div class="col-xl-12 col-lg-12 col-md-12 mb-1">
+                                        <fieldset class="form-group">
+                                            <label for="basicInput"> Description</label>
+                                                <textarea name="editor2" id="_Description" rows="4" cols="40">
+                                                @Html.Raw(Model.Enything.Description)
+            </textarea>
+
+
+                                        </fieldset>
+                                    </div>
+                                    <div class="col-xl-12 col-lg-12 col-md-12 mb-1">
+                                        <fieldset class="form-group">
+                                            <label for="basicInput"> First Paragraph</label>
+                                            <textarea id="_firstParagraph" class="form-control " rows="3" required>@Model.Enything.FirstParagraph</textarea>
+                                        </fieldset>
+                                    </div>
+                                    <div class="col-xl-12 col-lg-12 col-md-12 mb-1">
+                                        <fieldset class="form-group">
+                                            <label for="basicInput"> Secend Paragraph</label>
+                                            <textarea id="_secendParagraph" class="form-control " rows="3" required>@Model.Enything.SecendParagraph</textarea>
+                                        </fieldset>
+                                    </div>
+
+                                    <hr />
+
+                                    <a class="btn btn-success col-md-12" onclick="EditBasicInfo()"> Save Change </a>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<script src="https://cdn.ckeditor.com/4.19.1/standard/ckeditor.js"></script>
+<link href="~/Sweetalert2/sweetalert2.min.css" rel="stylesheet" />
+<script src="~/Sweetalert2/sweetalert2.min.js"></script>
+
+<script>
+var Editor = CKEDITOR.replace('editor');
+var Editor2 = CKEDITOR.replace('editor2');
+</script>
+
+
+<script>
+
+    function EditBasicInfo() {
+        var Data = {
+        'Service':document.getElementById("Service").value,
+        'HelpContext':Editor.getData(),
+        'Description':Editor2.getData(),
+        'FirstParagraph':document.getElementById("_firstParagraph").value,
+        'SecendParagraph':document.getElementById("_secendParagraph").value,
+        };
+
+        $.ajax({
+            contentType: 'application/x-www-form-urlencoded',
+            dataType: 'json',
+            type: "POST",
+            url: "/PdfManagerArea/Services/EditDetails",
+            data: Data,
+            success: function (data) {
+                if (data.success) {
+                    swal.fire(
+                        'success',
+                        data.message,
+                        'success'
+                    ).then(function (isConfirm) {
+                        location.reload();
+                    });
+                }
+                else {
+                    swal.fire(
+                        'warning',
+                        data.message,
+                        'warning'
+                    );
+                }
+            },
+            error: function (xhr, ajaxOptions, thrownError) {
+                alert(xhr.status);
+                alert(thrownError);
+            }
+        });
+    }
+
+</script>

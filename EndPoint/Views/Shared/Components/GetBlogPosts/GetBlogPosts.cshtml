@@ -1,0 +1,116 @@
+﻿@model Common.ResultMessage<Application.Services.Blog.ReturnBlogPostsData.ResultReturnBlogPostsDto>
+@{
+    Layout = null;
+}
+<head>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css"
+          integrity="sha512-tS3S5qG0BlhnQROyJXvNjeEM4UpMXHrQfTGmbQ1gKmelCxlSEBUaxhRBj/EFTzpbP4RVSrpEikbmdJobCvhE3g=="
+          crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css"
+          integrity="sha512-sMXtMNL1zRzolHYKEujM2AqCLUR9F2C4/05cdbxjjLSRvMQIciEPCQZo++nk7go3BtSuK9kfa/s+a4f4i5pLkw=="
+          crossorigin="anonymous" />
+    <link href="~/css/blog.css" rel="stylesheet" />
+
+    <style>
+        .post-body .card-footer {
+            border-top: none !important;
+        }
+    </style>
+</head>
+
+@if (Model.Success)
+{
+    if (ViewBag.Category == Domain.Entities.Features.Security.ProtectPdf || ViewBag.Category == Domain.Entities.Features.Security.RemvePdfProtection || ViewBag.Category == Domain.Entities.Features.Security.UnlockPdf)
+    {
+                       <h3 class="text-center">Learn more about Protect or Unlock PDF</h3>
+    }
+    else if (ViewBag.Category == Domain.Entities.Features.ConverterToPdf.DocToPdf || ViewBag.Category == Domain.Entities.Features.ConvertFromPdf.PdfToDoc)
+    {
+                        <h3 class="text-center">Learn more about converting Word To PDF and PDF to Word</h3>
+    }
+    else if (ViewBag.Category == Domain.Entities.Features.Organizers.RotatePdf || ViewBag.Category == Domain.Entities.Features.Organizers.MergePdf || ViewBag.Category == Domain.Entities.Features.Organizers.DeletePdfPages)
+    {
+                <h3 class="text-center">Learn more about @ViewBag.ServiceName</h3>
+    }
+    else if (ViewBag.Category == Domain.Entities.Features.Optimizers.CompressPdf || ViewBag.Category == Domain.Entities.Features.OtherFeatures.PdfReader || ViewBag.Category == Domain.Entities.Features.OtherFeatures.ExtractImagesFromPdf)
+    {
+                        <h3 class="text-center">Learn more about @ViewBag.ServiceName</h3>
+    }
+    else
+    {
+                        <h3 class="text-center">Learn more about converting @ViewBag.ServiceName</h3>
+    }
+                <hr />
+                    <div class="owl-carousel owl-theme" style="height:100%;">
+        @foreach (var item in Model.Enything.Posts)
+        {
+                                            <div class="item text-center">
+                                                <div class="text-center" style="width: 26rem;display:unset">
+                                                    <span onclick="window.open('@item.Link', '_blank').focus();" title="Open Post" style="cursor:pointer; background: url('@item.TitleImage') no-repeat;
+            width:100%;
+            height:200px;
+            display:block;
+            background-size: 100% 100%;
+        "></span>
+                                                    <div class="card-body" style="height:240px; overflow:hidden;">
+                                                        <h4 class="card-title">@item.Title</h4>
+
+                                                        <p class="card-text">
+                            @if (!string.IsNullOrWhiteSpace(item.Content))
+                            {
+                                @if (item.Content.Length > 140)
+                                {
+                                    @Html.Raw(Common.Formating.FixBlogPostTags(item.Content).Substring(0, 140).ToString() + "...")
+                                    ;
+                                }
+                                else
+                                {
+                                    @Html.Raw(Common.Formating.FixBlogPostTags(item.Content))
+                                    ;
+                                }
+                            }
+                                                        </p>
+                                                                    
+                                                    </div>
+                                                    <div class="card-footer" style="border-top: none !important;">
+                                                        <a target="_blank" href="@item.Link" class="btn btn-outline-primary mt-4" id="more">More</a>
+                                                    </div>
+                                                </div>
+                                                <div class="card text-center"></div>
+                                            </div>
+        }
+                    </div>
+                    <a target="_blank" href="https://blog.pdftoconverter.com" class="btn btn-primary">Let's learn more about PDF converting</a>
+                    <br />
+                    <br />
+                    <br />
+
+}
+<!-- Owl Carousel -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
+<!-- custom JS code after importing jquery and owl -->
+<script type="text/javascript">
+    $(document).ready(function() {
+        $(".owl-carousel").owlCarousel();
+    });
+
+    $('.owl-carousel').owlCarousel({
+        loop: false,
+        margin: 10,
+        nav: true,
+        responsive: {
+            0: {
+                items: 1
+            },
+            600: {
+                items: 3
+            },
+            1000: {
+                items: 3
+            }
+        }
+    })
+</script>
+
+

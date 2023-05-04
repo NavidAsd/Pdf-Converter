@@ -1,0 +1,59 @@
+﻿@inject Microsoft.Extensions.Options.IOptions<EndPoint.Models.GoogleCaptchaConfigModel> GoogleCaptchaConfig
+@{
+    Layout = null;
+}
+
+<footer>
+    <div class="section main-rate-page-box">
+        <div class="main-rate-page-content">
+            <div class="container">
+                <div class="row justify-content-center text-center">
+                    <div class="col-12">
+                        <div class="rating" onclick="CreateNew()">
+                            <span><strong class="me-3">Rate this tool</strong></span>
+                            <i class="rating__star bi bi-star" data-bs-toggle="tooltip" data-bs-placement="top" title="Awful" data-bs-original-title="Awful" aria-label="Awful"></i>
+                            <i class="rating__star bi bi-star" data-bs-toggle="tooltip" data-bs-placement="top" title="Poor" data-bs-original-title="Poor" aria-label="Poor"></i>
+                            <i class="rating__star bi bi-star" data-bs-toggle="tooltip" data-bs-placement="top" title="Average" data-bs-original-title="Average" aria-label="Average"></i>
+                            <i class="rating__star bi bi-star" data-bs-toggle="tooltip" data-bs-placement="top" title="Good" data-bs-original-title="Good" aria-label="Good"></i>
+                            <i class="rating__star bi bi-star" data-bs-toggle="tooltip" data-bs-placement="top" title="Excellent" data-bs-original-title="Excellent" aria-label="Excellent"></i>
+                            <span><strong class="ms-3">@Model.Enything.Rate</strong> / 5  -  @Model.Enything.CountUse Total Convert</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="row justify-content-center text-start">
+                    <div class="col-12 col-lg-6">
+                        <form id="msgform" action="javascript:void(0);">
+                            <div class="mb-3 mt-3">
+                                <input type="text" class="form-control" id="FullName" placeholder=" Full Name">
+                            </div>
+                            <div class="mb-3 mt-3">
+                                <input type="email" class="form-control" id="Emailaddress" placeholder=" Email Address">
+                            </div>
+                            <div class="mb-3 mt-3">
+                                <textarea class="form-control" id="Message" rows="3" placeholder=" Your Message"></textarea>
+                            </div>
+                            <input type="hidden" id="cpth" style="display:none" />
+                            <div class="mb-3 mt-3">
+                                <div class="form-group">
+                                    <div class="col-md-10">
+                                    </div>
+                                </div>
+                            </div>
+                            <button class="btn btn-outline-primary w-100" onclick="SendMessage()">Send</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>
+
+
+<script>
+    function CreateNew() {
+        grecaptcha.execute('@GoogleCaptchaConfig.Value.Google_SiteKey', { action: 'submit' }).then(function(token) {
+            document.getElementById("cpth").value = token;
+        });
+
+    }
+</script>

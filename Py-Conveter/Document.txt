@@ -1,0 +1,14 @@
+ppttopdf:
+https://stackoverflow.com/questions/31487478/how-to-convert-a-pptx-to-pdf-using-python
+
+xlsxtopdf:
+https://stackoverflow.com/questions/52326782/python-converting-xlsx-to-pdf
+
+PdfToPpt:
+https://github.com/TomAnthony/pdf-to-powerpoint/blob/master/convert.py
+
+DocToPdf:
+https://stackoverflow.com/questions/6011115/doc-to-pdf-using-python
+
+Extract Images:
+https://stackoverflow.com/questions/2693820/extract-images-from-pdf-without-resampling-in-python

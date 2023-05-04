@@ -1,0 +1,131 @@
+﻿@model EndPoint.Models.GetViewContextViewModel
+@{
+    Layout = null;
+}
+
+<footer id="footer">
+    <!-- start top footer -->
+    <div class="container">
+        <div class="top-footer">
+
+            <!-- footer social media -->
+            <div class="row">
+                <div class="col">
+                    <div class="footer-social-media">
+                        @if (Model.Context.SocialNetworkAccounts.Success == true)
+                        {
+                                <br />
+                            @if (Model.Context.SocialNetworkAccounts.Enything.Pinterest != null)
+                            {
+                                                                                        <a href="@Model.Context.SocialNetworkAccounts.Enything.Pinterest" target="_blank" class="fab fa-reddit-alien" data-bs-toggle="tooltip" data-bs-placement="top" title="Pinterest"><img src="/images/SnAccount/pinterest-modified.png" alt="PDF Converter SocialNetwork-Pinterest" title="Pinterest" style="width:32px" /></a>
+                            }
+                            @if (Model.Context.SocialNetworkAccounts.Enything.Reddit != null)
+                            {
+                                                                                                <a href="@Model.Context.SocialNetworkAccounts.Enything.Reddit" target="_blank" class="fab fa-reddit-alien" data-bs-toggle="tooltip" data-bs-placement="top" title="Reddit"><img src="/images/SnAccount/reddit-modified.png" alt="PDF Converter SocialNetwork-Reddit" title="Reddit" style="width:32px" /></a>
+                            }
+                            @if (Model.Context.SocialNetworkAccounts.Enything.Medium != null)
+                            {
+                                                                                                <a href="@Model.Context.SocialNetworkAccounts.Enything.Medium" target="_blank" class="fab fa-vk" data-bs-toggle="tooltip" data-bs-placement="top" title="Medium"><img src="/images/SnAccount/medium-modified.png" alt="PDF Converter SocialNetwork-Medium" title="Medium" style="width:32px" /></a>
+                            }
+                            @if (Model.Context.SocialNetworkAccounts.Enything.VK != null)
+                            {
+                                                                                                        <a href="@Model.Context.SocialNetworkAccounts.Enything.VK" target="_blank" class="fab fa-vk" data-bs-toggle="tooltip" data-bs-placement="top" title="Vkontakte"><img src="/images/SnAccount/vk-modified.png" alt="PDF Converter SocialNetwork-Vk" title="Vk" style="width:32px" /></a>
+                            }                        
+                            @if (Model.Context.SocialNetworkAccounts.Enything.Okru != null)
+                            {
+                                                                                                    <a href="@Model.Context.SocialNetworkAccounts.Enything.Okru" target="_blank" class="fab fa-vk" data-bs-toggle="tooltip" data-bs-placement="top" title="Okru"><img src="/images/SnAccount/okru-modified.png" alt="PDF Converter SocialNetwork-Okru" title="Okru" style="width:32px" /></a>
+                            }                        
+                            @if (Model.Context.SocialNetworkAccounts.Enything.Facebook != null)
+                            {
+                                                                                                        <a href="@Model.Context.SocialNetworkAccounts.Enything.Facebook" target="_blank" class="fab fa-vk" data-bs-toggle="tooltip" data-bs-placement="top" title="Facebook"><img src="/images/SnAccount/facebook-modified.png" alt="PDF Converter SocialNetwork-Facebook" title="Facebook" style="width:32px" /></a>
+                            }                        
+                            @if (Model.Context.SocialNetworkAccounts.Enything.Twitter != null)
+                            {
+                                                                                                    <a href="@Model.Context.SocialNetworkAccounts.Enything.Twitter" target="_blank" class="fab fa-vk" data-bs-toggle="tooltip" data-bs-placement="top" title="Twitter"><img src="/images/SnAccount/twitter-modified.png" alt="PDF Converter SocialNetwork-Twitter" title="Twitter" style="width:32px" /></a>
+                            }                        
+                        }                        
+                    </div>
+                </div>
+            </div>
+
+            <hr>
+            @if (Model.TotalConvert.Success)
+            {
+
+                        <span class="fsm-link d-none d-md-block" style="float: right;padding: 7px;">Total Convert: @Model.TotalConvert.Enything.Total</span>
+            }
+            else
+            {
+                        <span class="fsm-link d-none d-md-block" style="float: s;padding: 7px;">---</span>
+
+            }
+            <!-- footer info and links -->
+            <div class="row">
+                <div class="col-12 col-md-3 mb-4 mb-lg-0">
+                    <h2 class="logo">Pdf Converter</h2>
+                    <p class="text-muted">We're glad you chose us</p>
+                </div>
+
+
+                 <div class="col-12 col-md-3 mb-4 mb-lg-0 d-block d-md-none">
+                    
+                    
+                    @if (Model.TotalConvert.Success)
+                    {
+                                <span class="footer-title mb-3">Total Convert: @Model.TotalConvert.Enything.Total</span>
+                    }
+                    else
+                    {
+                                 <span class="footer-title mb-3">---</span>
+                    }
+                </div>
+
+
+                <div class="col-12 col-md-3 mb-4 mb-lg-0">
+                    <span class="footer-title mb-3">Company</span>
+                    <ul>
+                        <li><a href="/about-us/">About Us</a></li>
+                        <li><a href="/report-bug/">Report Bug</a></li>
+                        <li><a href="https://blog.pdftoconverter.com/">Blog</a></li>
+                    </ul>
+                </div>
+                <div class="col-12 col-md-3 mb-4 mb-lg-0">
+                    <span class="footer-title mb-3">Apps</span>
+                    <ul>
+                        <li><a href="#">Android </a></li>
+                        <li><a href="#">iOS </a></li>
+                        <li><a href="#">Windows </a></li>
+                    </ul>
+                </div>
+                <div class="col-12 col-md-3 mb-4 mb-lg-0">
+                    <span class="footer-title mb-3">Pdf Converter</span>
+                    <ul>
+                        <li><a href="/privacy/">Privacy</a></li>
+                        <li><a href="/dmca/">DMCA</a></li>
+                        <li><a href="/terms-of-use/">Terms Of Use</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- end top footer -->
+    <!-- start bottom footer -->
+    <div class="bottom-footer bg-light mt-3">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-12 col-md-6 mb-4 mb-lg-0 text-muted">
+                    © @System.DateTime.Now.Year PdfToConvertor <img width="30" src="~/images/logo/PDFtoConverter.png" title="PDF Converter - quickly, online, free" alt="pdftoconverter.com"/> Free forever
+                </div>
+                <div class="col-12 col-md-6">
+                    <ul>
+                        <li><a href="/questions/">FAQ</a></li>
+                        <li><a href="/privacy/">Privacy&Policy</a></li>
+                        <li><a href="/dmca/">Dmca</a></li>
+                        <li><a href="/contact-us/">Contact Us</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- end bottom footer -->
+</footer>

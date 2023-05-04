@@ -1,0 +1,86 @@
+﻿@model Common.ResultMessage<List<Application.Services.Query.ViewContext.ReturnFrequentlyQuestion.FrequentlyQuestions>>
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@section Header{
+    <link rel="canonical" href="@Common.GetPath.GetDomainHttps()/questions/" />
+    @await Component.InvokeAsync("GetMetaTags", "Questions")
+    <link href="~/css/questions.css" rel="stylesheet" />
+}
+<br />
+<br />
+<br />
+<br />
+
+<!-- start main -->
+<main>
+    @if (Model.Success)
+    {
+                byte cv = 1;
+                <!-- start FAQ -->
+                <div class="text-center">
+                    <h1>Frequently Asked Questions</h1>
+                </div>
+                <div class="accordion">
+
+                    @foreach (var item in Model.Enything)
+                    {
+                        <div class="accordion-item">
+
+                            <button id="accordion-button-@cv" aria-expanded="false"><h5 class="accordion-title">@Html.Raw(item.Question)</h5><span class="icon" aria-hidden="true"></span></button>
+
+                            <div class="accordion-content" style="text-align:left">
+                                <p style="color:black">@Html.Raw(item.Answer)</p>
+                            </div>
+                        </div>
+                        cv += 1;
+                    }
+                </div>
+                <br />
+                <br />
+
+                <!-- end FAQ -->
+    }
+</main>
+
+
+
+<br />
+<br />
+<br />
+<br />
+<br />
+@section Scripts{
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+<script src="~/js/bootstrap.bundle.min.js"></script>
+
+<script>
+    const items = document.querySelectorAll(".accordion button");
+
+    function toggleAccordion() {
+        const itemToggle = this.getAttribute('aria-expanded');
+
+        for (i = 0; i < items.length; i++) {
+            items[i].setAttribute('aria-expanded', 'false');
+        }
+
+        if (itemToggle == 'false') {
+            this.setAttribute('aria-expanded', 'true');
+        }
+    }
+
+    items.forEach(item => item.addEventListener('click', toggleAccordion));
+</script>
+}
+@{
+    string SchemaFile = Common.Formating.StandardFaqSchemaFileName + 0 + ".json";
+    string SchemaHowToFile = Common.Formating.StandardHowToSchemaFileName + 0 + ".json";
+}
+@section Schemas{
+                    <script type="application/ld+json">
+        @Html.Raw(Common.Schema.SchemaReader.ReadToEnd(SchemaFile,true,Common.Schema.SchemaType.Faq))
+        @Html.Raw(Common.Schema.SchemaReader.ReadToEnd(SchemaHowToFile,true,Common.Schema.SchemaType.HowTo))
+                    </script>
+}

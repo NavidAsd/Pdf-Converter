@@ -1,0 +1,118 @@
+﻿@inject Microsoft.Extensions.Options.IOptions<EndPoint.Models.GoogleCaptchaConfigModel> GoogleCaptchaConfig
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@section Header{
+        <link rel="canonical" href="@Common.GetPath.GetDomainHttps()/contact-us/" />
+        <link href="~/Sweetalert2/sweetalert2.min.css" rel="stylesheet" />
+    @await Component.InvokeAsync("GetMetaTags", "ContactUs")
+}
+
+
+    <div class="section main-rate-page-box">
+        <div class="main-rate-page-content">
+            <div class="container">
+                <div class="row justify-content-center text-start">
+                    <div class="col-12 col-lg-6">
+                        <br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+    
+                        <form id="msgform" action="javascript:void(0);">
+                                <h1 class="text-center">Contact Us</h1>
+                                <p class="text-center">This is a non-commercial website.
+All services provided are completely free and without obligation.
+There is no local version of the converter available. Only this service is offered online.
+</p>
+                            <div class="mb-3 mt-3">
+                                <input type="email" class="form-control" id="Emailaddress" placeholder=" Email Address">
+                            </div>
+                            <div class="mb-3 mt-3">
+                                <textarea class="form-control" id="Message" rows="5" placeholder=" Your Message"></textarea>
+                            </div>
+                            <input type="hidden" id="cpth" style="display:none" />
+                            <div class="mb-3 mt-3">
+                                <div class="form-group">
+                                    <div class="col-md-10">
+                                    </div>
+                                </div>
+                            </div>
+                                                            <label class="p-checkbox--inline">
+                                    <input style="cursor:pointer" type="checkbox" class="p-checkbox__input" aria-labelledby="inlineCheckbox3label" id="chbox">
+                                    <span class="p-checkbox__label" id="inlineCheckbox3label">I’ve read and accepted the <a href="/terms-of-use">Terms & Conditions</a> and <a href="/privacy">Privacy Policy</a>.</span>
+                                </label>                                
+                            <button class="btn btn-outline-primary w-100" onclick="SendMessage()">Send</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+@section Scripts{
+
+            <script src="https://www.google.com/recaptcha/api.js?render=@GoogleCaptchaConfig.Value.Google_SiteKey"></script>
+        <script src="~/js/jquery.min.js"></script>
+        <script src="~/js/bootstrap.bundle.min.js"></script>
+            <script src="~/Sweetalert2/sweetalert2.min.js"></script>
+
+
+
+                    <script>
+                        grecaptcha.ready(function() {
+                            grecaptcha.execute('@GoogleCaptchaConfig.Value.Google_SiteKey', { action: 'submit' }).then(function(token) {
+                                document.getElementById("cpth").value = token;
+                            });
+                        });
+                    </script>
+    <script>
+    function CreateNew() {
+        grecaptcha.execute('@GoogleCaptchaConfig.Value.Google_SiteKey', { action: 'submit' }).then(function(token) {
+            document.getElementById("cpth").value = token;
+        });
+    }
+
+        async function SendMessage() {
+                        if (document.getElementById("chbox").checked == false) {
+                swal.fire(
+                    'warning',
+                    'Please read and accept the Terms and Conditions and Privacy Policy',
+                    'warning'
+                );
+                return;
+            }
+
+        var Data = new FormData();
+            Data.append("Email", document.getElementById("Emailaddress").value);
+        Data.append("Message", document.getElementById("Message").value);
+        Data.append("Recaptcha", document.getElementById("cpth").value);
+
+            await fetch('/Home/SaveUserMessage/', {
+            method: "POST",
+            body: Data
+        })
+            .then(response => response.json())
+            .then((data) => {
+                if (data.success) {
+                    document.getElementById("Emailaddress").value = "";
+                    swal.fire(
+                        "success",
+                        data.message,
+                        "success"
+                    );
+                }
+                else {
+                    swal.fire(
+                        "warning",
+                        data.message,
+                        "warning"
+                    );
+                }
+            })
+    }
+
+</script>
+}

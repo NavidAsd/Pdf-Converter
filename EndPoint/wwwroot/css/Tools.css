@@ -1,0 +1,70 @@
+.dark-mode .card-item-service {
+    background: #191919;
+    color: #fff;
+}
+
+.card-item-service {
+    height: 130px;
+    margin-right: 20px;
+    margin-left: 20px;
+    border: 1px solid #e8e8e8;
+    border-radius: 5px;
+    margin-bottom: 30px;
+    background: rgba(0, 0, 0, 0.01);
+    transition: all 0.3s;
+}
+
+    .card-item-service > a {
+        text-decoration: none;
+        color: unset;
+    }
+
+    .card-item-service:hover {
+        transition: all 0.3s;
+        background: rgba(0, 0, 0, 0.1);
+    }
+
+.card-item-service-icon > svg {
+    width: 40px;
+    height: 40px;
+}
+
+.card-item-service-title {
+    font-weight: 700;
+    font-size: 16.5px;
+}
+
+.card-item-service-description {
+    word-wrap: break-word;
+    width: 100%;
+    text-align: justify;
+    height: 20px;
+    font-size: 15px;
+}
+
+@media (max-width: 1000px) {
+    .card-item-service-title {
+        font-size: 14px;
+    }
+
+    .card-item-service-description {
+        font-size: 12px;
+    }
+
+    .card-item-service {
+        margin-left: 0;
+        margin-right: 0;
+    }
+
+    .card-item-service-icon > svg {
+        width: 30px;
+        height: 30px
+    }
+}
+
+@media (max-width: 768px) {
+    .card-item-service {
+        margin-left: 0;
+        margin-right: 0;
+    }
+}

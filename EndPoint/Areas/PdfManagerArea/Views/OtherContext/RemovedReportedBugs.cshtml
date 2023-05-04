@@ -1,0 +1,180 @@
+﻿@model Common.ResultMessage<Application.Services.Query.ViewContext.ReturnReportBugs.ResultReturnReportBugsDto>
+@{
+    ViewData["Title"] = "Services";
+    Layout = "~/Areas/PdfManagerArea/Views/Shared/_Adminlayout.cshtml";
+}
+
+
+<head>
+    <link href="~/Areas/Admin/css/NoResult.css" rel="stylesheet" />
+    <link rel="shortcut icon" type="image/png" href="~/images/logo/66-modified.png">
+    <title>PdfConverter | Admin-RemovedReportedBugs</title>
+</head>
+
+
+<style>
+    body {
+        align-items: center;
+        background-color: var(--blue);
+        background: url("/Areas/Admin/images/New_A.jpg");
+        background-attachment: fixed;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        display: grid;
+        height: 100vh;
+        place-items: center;
+    }
+</style>
+
+<form method="get" class="form-inline">
+    <input name="filter" class="form-control" placeholder="filter"
+           value="@Model.Enything.Filter" />
+    <button type="submit" class="btn btn-info">
+        <span class="glyphicon glyphicon-search" aria-hidden="true"></span> Search
+    </button>
+</form>
+
+
+<div class="content-wrapper">
+    <div class="container-fluid">
+        <!-- Zero configuration table -->
+        <section id="configuration">
+
+            <div class="row">
+                <div class="col-12">
+                    <div class="card">
+                        <p>
+                            <br />
+                            <br />
+                        </p>
+                        <table class="table table-striped">
+                            <thead>
+                                <tr>
+                                    <th></th>
+
+                                    <th>
+                                        Email
+                                    </th>
+                                    <th>
+                                        Url
+                                    </th>
+                                    <th>
+                                        Problem statement
+                                    </th>
+                                    <th></th>
+                                </tr>
+                            </thead>
+
+                            <tbody>
+                                @foreach (var item in Model.Enything.Reported)
+                                {
+                                    <tr>
+                                        <td></td>
+                                        <td>
+                                            @item.Email
+                                        </td>
+                                        <td>
+                                            @item.Url
+                                        </td>
+                                        <td>
+                                            @if (item.Description != null)
+                                            {
+                                                @if (item.Description.Length > 14)
+                                                {
+                                                    @(item.Description.Substring(0, item.Description.Length / 2).ToString() + "...");
+                                                }
+                                                else
+                                                {
+                                                    @item.Description
+                                                }
+                                            }
+                                        </td>
+                                        <td>
+                                            <a style="cursor:pointer; color:blue" title="More" onclick="ShowModal('@item.Description')"> More</a> |
+                                            <a style="cursor:pointer; color:blue" title="Move to the list of reviewed items" onclick="CheckedItem('@item.Id', false)">Checked</a>
+                                        </td>
+                                    </tr>
+                                }
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+</div>
+
+<script src="https://code.jquery.com/jquery-1.12.3.min.js"></script>
+
+<link href="~/Sweetalert2/sweetalert2.min.css" rel="stylesheet" />
+<script src="~/Sweetalert2/sweetalert2.min.js"></script>
+
+
+<script>
+
+    function CheckedItem(Id, State) {
+        var Data = new FormData();
+        Data.append("Id", Id);
+        Data.append("State", State);
+
+        $.ajax({
+            type: "POST",
+            url: "/PdfManagerArea/OtherContext/ChangeItemState/",
+            contentType: false,
+            processData: false,
+            data: Data,
+            success: function (data) {
+                if (data.success == true) {
+                    location.reload();
+                }
+                else {
+
+                    swal.fire(
+                        'Warning',
+                        data.message,
+                        'warning'
+                    );
+                }
+
+            },
+            error: function (xhr, ajaxOptions, thrownError) {
+                alert(xhr.status);
+                alert(thrownError);
+            }
+
+        });
+    }
+    function ShowModal(Message) {
+        document.getElementById("areaContext").value = Message;
+        $("#mdlContext").modal('show');
+    }
+
+</script>
+
+
+@section Modals
+{
+    <!-- Modal Context -->
+    <div class="modal fade" id="mdlContext" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLongTitle">Context</h5>
+                </div>
+
+                <div class="modal-body">
+                    <div class="col-xl-12 col-lg-12 col-md-12 mb-1">
+                        <form>
+                            <fieldset class="form-group">
+                                <textarea id="areaContext" class="form-control " rows="5" readonly> None </textarea>
+                            </fieldset>
+                        </form>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                </div>
+            </div>
+        </div>
+    </div>
+}

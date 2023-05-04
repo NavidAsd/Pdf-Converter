@@ -1,0 +1,109 @@
+Cryptography.cs Address: https://github.com/nagilum/cryptocsharp/blob/master/Cryptography.cs
+
+Quartz 
+Tasks: 
+DataBaseBackup Every month on the 15th, at 4am
+RemoveInputFiles Every even hour
+RemoveLogs Every 2 days at 2am
+Send Files To Email Every 3 minutes
+Remove EmailSenderLogs 2 days at 2am
+Remove OutFiles 2 days at 2am
+
+data validation with FluentValidation
+
+https://icons.getbootstrap.com
+
+https://www.freepik.com/
+
+
+Admin Panel Paggination with: LazZiya.TagHelpers ver 6.0.1
+
+
+add service to db 
+
+            for (int i = 1; i <= 23; i++)
+            {
+                var a = returnservicename(i);
+                if (returnservicename(i) != null)
+                {
+                    Domain.Entities.Details.FeaturesDetails features = new Domain.Entities.Details.FeaturesDetails
+                    {
+                        Name = returnservicename(i),
+                        Service = i,
+                        IsRemoved = false,
+                        InsertTime = System.DateTime.Now,
+                        CountUse = 1
+                    };
+                    _Context.FeaturesDetails.Add(features);
+                }
+            }
+            _Context.SaveChanges();
+
+
+        public string returnservicename(int service)
+        {
+            switch (service)
+            {
+                case ConvertFromPdf.PdfToTiff:
+                    return nameof(ConvertFromPdf.PdfToTiff);
+                case ConvertFromPdf.PdfToPpt:
+                    return nameof(ConvertFromPdf.PdfToPpt);
+                case ConvertFromPdf.PdfToPng:
+                    return nameof(ConvertFromPdf.PdfToPng);
+                case ConvertFromPdf.PdfToPdfA:
+                    return nameof(ConvertFromPdf.PdfToPdfA);
+                case ConvertFromPdf.PdfToDoc:
+                    return nameof(ConvertFromPdf.PdfToDoc);
+                case ConvertFromPdf.PdfToExcel:
+                    return nameof(ConvertFromPdf.PdfToExcel);
+                case ConvertFromPdf.PdfToGif:
+                    return nameof(ConvertFromPdf.PdfToGif);
+                case ConvertFromPdf.PdfToJpg:
+                    return nameof(ConvertFromPdf.PdfToJpg);
+                case ConvertFromPdf.PdfToBmp:
+                    return nameof(ConvertFromPdf.PdfToBmp);
+
+                case ConverterToPdf.ImagesToPdf:
+                    return nameof(ConverterToPdf.ImagesToPdf);
+                case ConverterToPdf.HtmlToPdf:
+                    return nameof(ConverterToPdf.HtmlToPdf);
+                case ConverterToPdf.DocToPdf:
+                    return nameof(ConverterToPdf.DocToPdf);
+                case ConverterToPdf.ExcelToPdf:
+                    return nameof(ConverterToPdf.ExcelToPdf);
+                case ConverterToPdf.PptToPdf:
+                    return nameof(ConverterToPdf.PptToPdf);
+
+                case OtherFeatures.ExtractImagesFromPdf:
+                    return nameof(OtherFeatures.ExtractImagesFromPdf);
+                case OtherFeatures.PdfReader:
+                    return nameof(OtherFeatures.PdfReader);
+
+                case Domain.Entities.Features.Organizers.DeletePdfPages:
+                    return nameof(Domain.Entities.Features.Organizers.DeletePdfPages);
+                case Domain.Entities.Features.Organizers.RotatePdf:
+                    return nameof(Domain.Entities.Features.Organizers.RotatePdf);
+                case Domain.Entities.Features.Organizers.MergePdf:
+                    return nameof(Domain.Entities.Features.Organizers.MergePdf);
+
+                case Domain.Entities.Features.Security.ProtectPdf:
+                    return nameof(Domain.Entities.Features.Security.ProtectPdf);
+                case Domain.Entities.Features.Security.UnlockPdf:
+                    return nameof(Domain.Entities.Features.Security.UnlockPdf);
+                case Domain.Entities.Features.Security.RemvePdfProtection:
+                    return nameof(Domain.Entities.Features.Security.RemvePdfProtection);
+
+                case Domain.Entities.Features.Optimizers.CompressPdf:
+                    return nameof(Domain.Entities.Features.Optimizers.CompressPdf);
+
+                default: return null;
+
+            }
+        }
+
+
+
+26 may 2022 fixed download file problem error:"Access To The Path Is Denied." solution: given permision to iis for access the output path in the windows server.
+
+    <meta name="google-signin-client_id" content="942725702587-a7qjeq8jo66fvhmlh4aa2u8s49o50bn0.apps.googleusercontent.com">
+    <script src="https://apis.google.com/js/platform.js" ></script> // for google authentication

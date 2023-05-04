@@ -1,0 +1,629 @@
+﻿@model Common.ResultMessage<Application.Services.Query.ReturnFeatureDetails.ResultReturnFeatureDetailsDto>;
+@inject Microsoft.Extensions.Options.IOptions<EndPoint.Models.GoogleCaptchaConfigModel> GoogleCaptchaConfig
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@section Header{
+    <link rel="canonical" href="@Common.GetPath.GetDomainHttps()/html-to-pdf/" />
+    @await Component.InvokeAsync("GetMetaTags", "HtmlToPdf")
+    <link href="~/css/loading.css" rel="stylesheet" />
+    <link href="~/css/Content.css" rel="stylesheet" />
+    <link href="~/Sweetalert2/sweetalert2.min.css" rel="stylesheet" />
+        <style>
+        .upload .upload-files .body p b,
+        .upload .upload-files .body p a {
+            color: #FFCA28 !important;
+        }
+
+        .upload .upload-files footer .importar,
+        .upload .upload-files footer .upload-btn {
+            color: #fff !important;
+            background-color: #FFCA28 !important;
+        }
+
+        .upload .upload-files footer .divider {
+            border-top: solid 4px #d8aa20;
+        }
+
+        .upload .upload-files header {
+            background: #FFCA28 !important;
+        }
+
+        .upload .upload-files footer .list-files .file .progress {
+            background: linear-gradient(to left, #ffc92860, #FFCA28) no-repeat;
+        }
+
+        .upload .upload-files footer .list-files .file .done {
+            background: #FFCA28
+        }
+    </style>
+
+    <script src="https://www.google.com/recaptcha/api.js?hl=en"></script>
+}
+<br />
+<br />
+
+<!-- start main -->
+<main>
+    <div class="container">
+        <!-- start home main -->
+        <div class="home-main text-center">
+
+            <!-- start file upload box -->
+            <div class="section main-file-upload-box">
+                <div class="row align-items-center text-center">
+                    <div class="col-12">
+                        <div class="file-upload-box-header d-flex text-center align-items-center justify-content-center w-100 mt-5">
+                            <svg style="width:34px;height:34px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M0 4C0 1.79086 1.79086 0 4 0H20C22.2091 0 24 1.79086 24 4V20C24 22.2091 22.2091 24 20 24H4C1.79086 24 0 22.2091 0 20V4Z" fill="#FFCA28"></path><rect x="5.5" y="5.5" width="4" height="6" stroke="white"></rect><rect x="14.5" y="12.5" width="4" height="6" stroke="white"></rect><path d="M12 7.00014L11.6464 6.64658L11.2929 7.00014L11.6464 7.35369L12 7.00014ZM17 7H17.5V6.49999L17 6.5L17 7ZM13.9091 5.79813L14.2627 5.44458L13.5556 4.73747L13.202 5.09103L13.9091 5.79813ZM13.202 8.90924L13.5556 9.2628L14.2627 8.55569L13.9091 8.20214L13.202 8.90924ZM12 7.50014L17 7.5L17 6.5L12 6.50014L12 7.50014ZM16.5 7V11H17.5V7H16.5ZM12.3536 7.35369L13.9091 5.79813L13.202 5.09103L11.6464 6.64658L12.3536 7.35369ZM11.6464 7.35369L13.202 8.90924L13.9091 8.20214L12.3536 6.64658L11.6464 7.35369Z" fill="white"></path><path d="M12 17L12.3536 17.3536L12.7071 17L12.3536 16.6464L12 17ZM7 17L6.5 17L6.49999 17.5H7V17ZM10.0909 18.202L9.73734 18.5556L10.4444 19.2627L10.798 18.9091L10.0909 18.202ZM10.798 15.0909L10.4444 14.7373L9.73734 15.4444L10.0909 15.798L10.798 15.0909ZM12 16.5H7V17.5H12V16.5ZM7.5 17L7.50007 13L6.50007 13L6.5 17L7.5 17ZM11.6464 16.6464L10.0909 18.202L10.798 18.9091L12.3536 17.3536L11.6464 16.6464ZM12.3536 16.6464L10.798 15.0909L10.0909 15.798L11.6464 17.3536L12.3536 16.6464Z" fill="white"></path></svg>
+                            <h1 class="h3 ms-3">Convert Html To PDF online & free</h1>
+                        </div>
+                         <p>@Model.Enything.FirstParagraph</p>
+                         <p>@Model.Enything.SecendParagraph</p>
+                    </div>
+
+                    <!-- upload file box -->
+                    <div class="col-12">
+                        <div class="upload">
+                            <div class="upload-files">
+                                <a onclick="select()" id="triggerFile">
+                                    <header style="cursor:pointer" id="headertriggerFile">
+                                        <p>
+                                            <i class="fa fa-cloud-upload" aria-hidden="true"></i>
+                                            <span class="up bi bi-link-45deg">Enter Url</span>
+                                        </p>
+                                    </header>
+                                </a>
+                                <i id="_Service" style="display:none">@Domain.Entities.Features.ConverterToPdf.HtmlToPdf</i>
+                                <i id="_BaseService" style="display:none">@Domain.Entities.Logs.AllServicesLog.ConverterLog</i>
+                                <br />
+
+                                <!--Loading part-->
+                                <div id="_Loading" style="display:none">
+                                    <svg class="w-0">
+                                        <defs>
+                                            <filter id="w-0">
+                                                <feGaussianBlur in="SourceGraphic" stdDeviation="7" result="blur" />
+                                                <feColorMatrix in="blur"
+                                                               mode="matrix"
+                                                               values="1 0 0 0 0 0 1 0 0 0 0 0 1 0 0 0 0 0 20 -10"
+                                                               result="res" />
+                                                <feComposite in="SourceGraphic" in2="res" operator="atop" />
+                                            </filter>
+                                        </defs>
+                                    </svg>
+
+                                    <svg class="f-w-0" width="200" height="200" viewBox="0 0 200 200">
+                                        <defs>
+                                            <linearGradient id="linear-gradient">
+                                                <stop class="stop1" offset="0" />
+                                                <stop class="stop2" offset="1" />
+                                            </linearGradient>
+                                            <linearGradient y2="160"
+                                                            x2="160"
+                                                            y1="40"
+                                                            x1="40"
+                                                            gradientUnits="userSpaceOnUse"
+                                                            id="gradient"
+                                                            xlink:href="#linear-gradient" />
+                                        </defs>
+
+                                        <path class="path-class"
+                                              d="m 164,100 c 0,-35.346224 -28.65378,-64 -64,-64 -35.346224,0 -64,28.653776
+           -64,64 0,35.34622 28.653776,64 64,64 35.34622,0 64,-26.21502 64,-64
+           0,-37.784981 -26.92058,-64 -64,-64 -37.079421,0 -65.267479,26.922736
+           -64,64 1.267479,37.07726 26.703171,65.05317 64,64 37.29683,-1.05317
+           64,-64 64,-64" />
+                                        <circle class="cricle-class" cx="100" cy="100" r="64" />
+
+                                    </svg>
+                                    <p>Processing...</p>
+                                    <p>It may take a few seconds</p>
+                                    <a onclick="CancelProcess()" class="btn btn-outline-primary mt-4">Cancel</a>
+
+                                </div>
+
+                                <!-- download part -->
+                                <div class="dropdown" id="_Download" style="display:none">
+                                    <p>File SuccessFully Converted</p>
+                                    <button style="" class="btn btn-primary btn-lg dropdown-toggle px-5" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+                                        Download
+                                    </button>
+                                    <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+                                        <li><a class="dropdown-item" href="#" id="btnDownload"> <i class="bi bi-hdd-fill" style="font-size: 1rem; color: crimson;"></i> Download</a></li>
+                                        <li><hr class="dropdown-divider"></li>
+                                        <li><a class="dropdown-item" href="#"> <i class="bi bi-google" style="font-size: 1rem; color: cornflowerblue;"></i> Send To GoogleDrive</a></li>
+                                        <li><hr class="dropdown-divider"></li>
+                                        <li><a class="dropdown-item" href="#"> <i class="bi bi-box2-heart-fill" style="font-size: 1rem; color: cornflowerblue;"></i> Send To DropBox</a></li><!-- or this bi bi-archive-fill -->
+                                        <li><hr class="dropdown-divider"></li>
+                                        <li><a class="dropdown-item" data-bs-toggle="modal" href="#AddEmail"> <i class="bi bi-envelope-paper-heart-fill" style="font-size: 1rem; color: crimson;"></i> Send To Your Email</a></li>
+                                        <li><hr class="dropdown-divider"></li>
+                                        <li><a class="dropdown-item" target="_blank" href="#" id="btnDownloadLink"> <i class="bi bi-envelope-paper-heart-fill" style="font-size: 1rem; color: crimson;"></i> Download Link</a></li>
+                                    </ul>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- end file upload box -->
+            <!-- start how work tools -->
+            <div class="section main-how-work-tools-box">
+                <div class="row justify-content-center text-center">
+
+
+                    <div class="col-12 mb-5">
+
+                        <h2>How To Convert Html To Pdf Online for Free</h2>
+                        <p>You are only 3 steps away from converting the file html to pdf</p>
+                    </div>
+
+                    <div class="main-how-work-tools-content">
+                        <div class="row align-items-center text-center">
+
+                            <!-- how work tools step 1 -->
+                            <div class="col-12 col-lg-4">
+                                <div class="work-tools-step-card">
+                                    <div class="step-card-counter">
+                                        <div class="counter rounded-circle">1</div>
+                                    </div>
+
+                                    @if (ViewBag.ThreeStepHelp.Success)
+                                    {
+                                        <div class="step-card-body">
+                                            @ViewBag.ThreeStepHelp.Enything.Step1
+                                        </div>
+                                    }
+                                    else
+                                    {
+                                        <div class="step-card-body">
+                                            By clicking on the large box above, you can select the desired file from the files in your system, and it is acceptable if the file has the correct format
+                                        </div>
+                                    }
+                                </div>
+                            </div>
+
+                            <!-- how work tools step 2 -->
+                            <div class="col-12 col-lg-4">
+                                <div class="work-tools-step-card">
+                                    <div class="step-card-counter">
+                                        <div class="counter rounded-circle">2</div>
+                                    </div>
+                                    <div class="step-card-body">
+                                        @if (ViewBag.ThreeStepHelp.Success)
+                                        {
+                                            <div class="step-card-body">
+                                                @ViewBag.ThreeStepHelp.Enything.Step2
+                                            </div>
+                                        }
+                                        else
+                                        {
+                                            <div class="step-card-body">
+                                                Using the buttons below the large box, you can upload the file to start the process or go back to the previous step to change the file
+                                            </div>
+                                        }
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- how work tools step 3 -->
+                            <div class="col-12 col-lg-4">
+                                <div class="work-tools-step-card">
+                                    <div class="step-card-counter">
+                                        <div class="counter rounded-circle">3</div>
+                                    </div>
+                                    <div class="step-card-body">
+
+                                        @if (ViewBag.ThreeStepHelp.Success)
+                                        {
+                                            <div class="step-card-body">
+                                                @ViewBag.ThreeStepHelp.Enything.Step3
+                                            </div>
+                                        }
+                                        else
+                                        {
+                                            <div class="step-card-body">
+                                                Processing does not take much time. After a few minutes, you can download the output file in 4 ways
+                                            </div>
+                                        }
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                    @if (ViewBag.ThreeStepHelp.Enything.VideoName != null)
+                    {
+                        <h3>Video tutorial on how to convert Html to PDF</h3>
+                        <p>In this video, you will learn how to convert a Html file to PDF in a few minutes</p>
+                        string posterName = "How-to-Convert-Html-files-to-Pdf-without-losing-formatting.jpg";
+                                    <video poster="@Common.GetPath.GetHelpVideoPath().Replace("wwwroot", "")/poster/@posterName" alt="Help Video" title="Video tutorial on working with tools" style="width: @Common.GetPath.GetVideoSize(); max-height: @Common.GetPath.GetVideoSize(); position:center; background-color: #000;" controls>
+                            @foreach (var item in Common.Formating.VideosFormat)
+                            {
+                                <source src="@Common.GetPath.GetHelpVideoPath().Replace("wwwroot", "")/@ViewBag.ThreeStepHelp.Enything.VideoName" type="video/@item">
+                            }
+                            Your browser does not support the video display
+                        </video>
+                    }
+                </div>
+            </div>
+            <!-- end how work tools -->
+            <!-- start other content -->
+            @await Component.InvokeAsync("GetAdditionalHelp",Domain.Entities.Features.ConverterToPdf.HtmlToPdf)
+            <!-- end other content -->
+
+            <!-- start section main services info box -->
+            @await Component.InvokeAsync("GetHelpContext",Model)
+            <!-- end section main services info box -->
+
+            <!--start blog posts slides-->
+            @await Component.InvokeAsync("GetBlogPosts", @Domain.Entities.Features.ConverterToPdf.HtmlToPdf)
+            <!--end blog posts slides-->
+            <!-- end section main services info box -->
+            @await Component.InvokeAsync("GetTools")
+            @await Component.InvokeAsync("GetFAQ",ViewBag.FAQ)
+            <!-- start sectin main people say about us -->
+
+            <div class="section main-people-say-about-us">
+                <div class="row justify-content-center text-center">
+                    <div class="col-7">
+                        <h3>The Best Online Html to PDF Converter</h3>
+                        <h4>Some User Comments</h4>
+                    </div>
+
+                    <div class="main-people-saying-content">
+                        <div class="row justify-content-center text-center">
+                            <div class="col-7">
+                                <div id="carouselExampleIndicators" class="carousel carousel-dark slide" data-bs-ride="carousel">
+                                    <div class="carousel-indicators">
+                                        @if (ViewBag.Comments.Success)
+                                        {
+                                            int cvv = 0;
+                                            @for (int i = 1; i <= ViewBag.Comments.Enything.Count; i++)
+                                            {
+
+                                                if (cvv == 0)
+                                                {
+                                                    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="@cvv" class="active" aria-current="true" aria-label="Slide @i"></button>
+                                                }
+                                                else
+                                                {
+                                                    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="@cvv" aria-label="Slide @i"></button>
+                                                }
+                                                cvv += 1;
+                                            }
+                                        }
+                                    </div>
+
+                                    <div class="carousel-inner">
+                                        @if (ViewBag.Comments.Success)
+                                        {
+                                            int cv = 1;
+                                            string classname = "";
+                                            @foreach (var item in ViewBag.Comments.Enything)
+                                            {
+                                                classname = cv == 1 ? "carousel-item active" : "carousel-item";
+                                                <div class="@classname">
+                                                    @{ cv = 0;}
+                                                    <div class="people-saying-card">
+                                                        <h5 class="person-fullname">@item.UserName</h5>
+                                                        <div class="person-rate">
+                                                            @for (int i = 1; i <= 5; i++)
+                                                            {
+                                                                @if (item.Rate + 1 > i)
+                                                                {
+                                                                    <i class="bi bi-star-fill" data-rating="@i"></i>
+                                                                }
+                                                                else
+                                                                {
+                                                                    <i class="bi bi-star" data-rating="@i"></i>
+                                                                }
+                                                            }
+                                                        </div>
+                                                        <p>@item.Message</p>
+                                                    </div>
+                                                </div>
+                                            }
+                                        }
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- end sectin main people say about us -->
+        </div>
+        <!-- end home main -->
+    </div>
+</main>
+<!-- end main -->
+<!-- start rate this page -->
+@await Component.InvokeAsync("GetRatingPart")
+<!-- end rate this page -->
+@section Scripts{
+<!-- script -->
+<script src="~/js/jquery.min.js"></script>
+<script src="~/js/bootstrap.bundle.min.js"></script>
+<script src="~/Sweetalert2/sweetalert2.min.js"></script>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+<script src="https://www.google.com/recaptcha/api.js?render=@GoogleCaptchaConfig.Value.Google_SiteKey"></script>
+
+<script>
+                grecaptcha.ready(function () {
+                    grecaptcha.execute('@GoogleCaptchaConfig.Value.Google_SiteKey', { action: 'submit' }).then(function (token) {
+                        document.getElementById("cpth").value = token;
+                    });
+                });
+</script>
+
+
+<script>
+    // rating page
+    const ratingStars = [...document.getElementsByClassName("rating__star")];
+
+    function executeRating(stars) {
+        const starClassActive = "rating__star bi bi-star-fill";
+        const starClassInactive = "rating__star bi bi-star";
+        const starsLength = stars.length;
+        let i;
+        stars.map((star) => {
+            star.onclick = () => {
+                i = stars.indexOf(star);
+
+                if (star.className === starClassInactive) {
+                    for (i; i >= 0; --i) stars[i].className = starClassActive;
+                } else {
+                    for (i; i < starsLength; ++i) stars[i].className = starClassInactive;
+                }
+            };
+        });
+    }
+    executeRating(ratingStars);
+
+</script>
+
+<script>
+                var FileName = "";
+                var Id = "";
+
+                function Loading(State) {
+                    try {
+                        if (State == true) {
+                            document.getElementById("_Loading").style.display = "unset";
+                            document.getElementById("Urlerror").style.display = "none";
+                            $("#AddUrl").modal('hide');
+                        }
+                        else {
+                            document.getElementById("_Loading").style.display = "none";
+                        }
+                    }
+                    catch { }
+                }
+
+                function SelectFile(State) {
+                    if (State == true) {
+                        document.getElementById("triggerFile").setAttribute('onclick', 'select()');
+                        document.getElementById("headertriggerFile").style.cursor = "pointer";
+                    }
+                    else {
+                        document.getElementById("triggerFile").setAttribute('onclick', '');
+                        document.getElementById("headertriggerFile").style.cursor = "wait";
+                        var old_element = document.getElementById("triggerFile");
+                        var new_element = old_element.cloneNode(true);
+                        old_element.parentNode.replaceChild(new_element, old_element);
+
+                    }
+                }
+
+                function Download(State, OutFile, Id) {
+                    if (State == true) {
+                        document.getElementById("_Download").style.display = "inherit";
+                        document.getElementById("btnDownload").href = "/Downloader/DownloadFile?OutFileName=" + OutFile + "&Id=" + Id + "&LogService=" + document.getElementById("_BaseService").textContent + "";
+                        document.getElementById("btnDownloadLink").href = "/download-link?OutFileName=" + OutFile + "&Id=" + Id + "&LogService=" + document.getElementById("_BaseService").textContent + "";
+                    }
+                    else {
+                        document.getElementById("_Download").style.display = "none";
+                        document.getElementById("btnDownload").href = "#";
+                        document.getElementById("btnDownloadLink").href = "#";
+                    }
+                }
+
+    function basicValidation(value)
+    {
+        if (value.includes("http") == false || value.includes("https") == false || value.includes(":") == false || value.includes(".") == false || value.includes("/") == false) {
+            return false;
+        }
+        else { return true;}
+    }
+    async function SendData() {
+        var url = document.getElementById("newurl").value;
+        if (basicValidation(url) == false) {
+            document.getElementById("Urlerror").style.display = "inherit";
+                        return;
+        }
+
+                    var formData = new FormData();
+                    formData.append("Url", url);
+        formData.append("Recaptcha", document.getElementById("cpth").value);
+
+                    Loading(true);
+                    SelectFile(false);
+                    Download(false);
+                    await fetch('/ConvertToPdf/HtmlToPdfUpload/', {
+                        method: "POST",
+                        body: formData
+                    })
+                        .then(response => response.json())
+                        .then((data) => {
+                            Loading(false);
+                            SelectFile(true);
+                            if (data.success) {
+                                Download(true, data.enything.outFileName, data.enything.id);
+                                FileName = data.enything.outFileName;
+                                Id = data.enything.id;
+                            }
+                            else {
+                                swal.fire(
+                                    "warning",
+                                    data.message,
+                                    "warning"
+                                );
+                            }
+                        })
+                }
+
+                async function SubmitEmail() {
+                    var Data = new FormData();
+                    Data.append("FId", Id);
+                    Data.append("OutFileName", FileName);
+                    Data.append("UserEmail", document.getElementById('UserEmail').value);
+
+                    await fetch('/ConvertToPdf/SendFileToEmail/', {
+                        method: "POST",
+                        body: Data
+                    })
+                        .then(response => response.json())
+                        .then((data) => {
+                            if (data.success) {
+                                swal.fire(
+                                    "success",
+                                    data.message,
+                                    "success"
+                                );
+                            }
+                            else {
+                                swal.fire(
+                                    "warning",
+                                    data.message,
+                                    "warning"
+                                );
+                            }
+                        })
+                }
+
+                async function SendMessage() {
+                    var Data = new FormData();
+                    Data.append("UserEmail", document.getElementById("Emailaddress").value);
+                    Data.append("UserName", document.getElementById("FullName").value);
+                    Data.append("Message", document.getElementById("Message").value);
+                    Data.append("Recaptcha", document.getElementById("cpth").value);
+                    Data.append("Service", document.getElementById("_Service").textContent);
+
+                    var rate = document.getElementsByClassName("rating__star bi bi-star-fill").length;
+                    if (rate == 0) { rate = null; }
+                    Data.append("Rate", rate);
+
+                    await fetch('/ConvertToPdf/UserMessage/', {
+                        method: "POST",
+                        body: Data
+                    })
+                        .then(response => response.json())
+                        .then((data) => {
+                            if (data.success) {
+                                document.getElementById("Emailaddress").value = "";
+                                document.getElementById("FullName").value = "";
+                                swal.fire(
+                                    "success",
+                                    data.message,
+                                    "success"
+                                );
+                            }
+                            else {
+                                swal.fire(
+                                    "warning",
+                                    data.message,
+                                    "warning"
+                                );
+                            }
+                        })
+                }
+
+
+                function select() {
+                    grecaptcha.execute('@GoogleCaptchaConfig.Value.Google_SiteKey', { action: 'submit' }).then(function (token) {
+                        document.getElementById("cpth").value = token;
+                    });
+
+                    Download(false);
+                    Loading(false);
+                    $("#AddUrl").modal('show');
+                }
+
+                function CancelProcess() {
+                    location.reload();
+                }
+</script>
+}
+@{
+    string basic = Domain.Entities.Features.ConverterToPdf.HtmlToPdf + ".json";
+    string SchemaFile = Common.Formating.StandardFaqSchemaFileName + basic;
+    string SchemaHowToFile = Common.Formating.StandardHowToSchemaFileName + basic;
+    string SchemaVideoFile = Common.Formating.StandardVideoSchemaFileName + basic;
+}
+@section Schemas{
+                        <script type="application/ld+json">
+        @Html.Raw(Common.Schema.SchemaReader.ReadToEnd(SchemaFile,true,Common.Schema.SchemaType.Faq))
+        @Html.Raw(Common.Schema.SchemaReader.ReadToEnd(SchemaHowToFile,true,Common.Schema.SchemaType.HowTo))
+        @Html.Raw(Common.Schema.SchemaReader.ReadToEnd(SchemaVideoFile,true,Common.Schema.SchemaType.Video))
+                            </script>
+}
+
+@section Modals{
+    <!-- Modal Add Email -->
+    <div class="modal fade" id="AddUrl" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLongTitle">Write the website URL</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="col-xl-12 col-lg-12 col-md-12 mb-1">
+                        <form id="Details" action="javascript:void(0);">
+                            <fieldset class="form-group">
+                                <input type="url" id="newurl" class="form-control mb-3" placeholder="Url">
+                                <p style="color:crimson;display:none" id="Urlerror">The given URL is invalid. Please check to see if it is written correctly</p>
+                            </fieldset>
+                        </form>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button onclick="SendData()" class="btn btn-outline-primary w-100">Convert</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+<!-- Modal Add Email -->
+<div class="modal fade" id="AddEmail" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <p class="modal-title" id="exampleModalLongTitle">Send To Email</p>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <div class="col-xl-12 col-lg-12 col-md-12 mb-1">
+                    <form id="Details">
+                        <fieldset class="form-group">
+
+                            <input type="text" class="form-control" id="OutName" style="visibility:hidden">
+                            <label for="basicInput">YourEmail</label>
+                            <input type="email" class="form-control" id="UserEmail" placeholder="PdfConverter@example.com" required>
+                            <input type="text" class="form-control" id="FId" style="visibility:hidden">
+                        </fieldset>
+                    </form>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <a class="btn btn-secondary" data-bs-dismiss="modal">Cancel</a>
+                <a class="btn btn-primary" data-bs-dismiss="modal" onclick="SubmitEmail()">Submit</a>
+            </div>
+        </div>
+    </div>
+</div>
+}

@@ -1,0 +1,113 @@
+﻿@model Common.ResultMessage<Application.Services.Query.Seo.ReturnMetatags.Metatags>
+@{
+    Layout = "~/Areas/PdfManagerArea/Views/Shared/_Adminlayout.cshtml";
+}
+
+<head>
+    <link rel="shortcut icon" type="image/png" href="~/images/logo/66-modified.png">
+    <title>PdfConverter | Admin-Add MetaTag For All</title>
+</head>
+
+<style>
+    .ck-editor__editable {
+        min-height: 300px;
+        min-width: 850px;
+    }
+</style>
+
+<section class="basic-elements">
+    <div class="row">
+    </div>
+    <div class="row">
+        <div class="col-md-12">
+            <div class="card">
+                <div class="card-header">
+                    <div class="card-title-wrap bar-success">
+                    </div>
+                </div>
+                <div class="card-body">
+                    <div class="px-3">
+                        <div class="form">
+                            <div class="form-body">
+                                <div class="row">
+
+                                                    <div class="col-xl-12 col-lg-12 col-md-12 mb-1">
+                    <fieldset class="form-group">
+                        <label>Add MetaTag For All</label>
+                        <p>The tags of this section are displayed on all the pages in the site map</p>
+                        <p>Please only edit the meta tag from the [Source] button
+Otherwise, the content will be displayed on the page for the user</p>
+                                            @if (Model.Success)
+                                            {
+                                                <textarea name="An_editor" id="An_editor" rows="10" cols="80">
+                                                    @Model.Enything.Other              
+                                                </textarea>
+                                            }
+                                            else
+                                            {
+                                                    <textarea name="An_editor" id="An_editor" rows="10" cols="80">
+                                                    </textarea>
+                                            }
+                    </fieldset>
+                </div>
+
+                                    <hr />
+                                    <a class="btn btn-success col-md-12" onclick="EditBasicInfo()"> Save Changes </a>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<script src="https://code.jquery.com/jquery-1.12.3.min.js"></script>
+<script src="https://cdn.ckeditor.com/4.19.1/standard/ckeditor.js"></script>
+
+<link href="~/Sweetalert2/sweetalert2.min.css" rel="stylesheet" />
+<script src="~/Sweetalert2/sweetalert2.min.js"></script>
+
+<script>
+    CKEDITOR.config.allowedContent = true
+    CKEDITOR.config.format_tags = 'p;h1;h2;pre';
+var Editor = CKEDITOR.replace('An_editor');
+</script>
+
+<script>
+    function EditBasicInfo() {
+        var Data = new FormData();
+        Data.append("Tags", Editor.getData());
+        $.ajax({
+            type: "POST",
+            url: "/PdfManagerArea/Seo/AddTagsForAll/",
+            contentType: false,
+            processData: false,
+            data: Data,
+            success: function (data) {
+                if (data.success == true) {
+                    swal.fire(
+                        'success',
+                        data.message,
+                        'success'
+                    ).then(function (isConfirm) {
+                        location.reload();
+                    });
+                }
+                else {
+                    swal.fire(
+                        'Warning',
+                        data.message,
+                        'warning'
+                    );
+                }
+            },
+            error: function (xhr, ajaxOptions, thrownError) {
+                alert(xhr.status);
+                alert(thrownError);
+            }
+        });
+    }
+</script>

@@ -1,0 +1,273 @@
+﻿@model Common.ResultMessage<Application.Services.Query.Admin.ReturnAdminDetails.ResultReturnAllAdminDetailsDto>
+@addTagHelper *, LazZiya.TagHelpers
+@{
+    Layout = "~/Areas/PdfManagerArea/Views/Shared/_Adminlayout.cshtml";
+}
+
+
+<head>
+    <link rel="shortcut icon" type="image/png" href="~/images/logo/66-modified.png">
+    <title>PdfConverter | Admin-HomeContext</title>
+</head>
+
+<style>
+    body {
+        align-items: center;
+        background-color: var(--blue);
+        background: url("/Areas/Admin/images/New_A.jpg");
+        background-attachment: fixed;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        display: grid;
+        height: 100vh;
+        place-items: center;
+    }
+</style>
+
+<form method="get" class="form-inline">
+    <input name="filter" class="form-control" placeholder="filter"
+           value="@Model.Enything.Filter" />
+    <button type="submit" class="btn btn-info">
+        <span class="glyphicon glyphicon-search" aria-hidden="true"></span> Search
+    </button>
+</form>
+
+
+
+<div class="  text-center">
+    <paging total-records="@Model.Enything.TotalRow"
+            page-no="@Model.Enything.PageIndex"
+            page-size="@Model.Enything.Pagesize"
+            show-prev-next="true"
+            show-total-pages="false"
+            show-total-records="false"
+            show-page-size-nav="false"
+            show-first-numbered-page="true"
+            show-last-numbered-page="true"
+            query-string-key-page-no="PageIndex"
+            query-string-key-page-size="Size"
+            query-string-value="@@(Request.QueryString.Value)"
+            gap-size="2">
+    </paging>
+
+</div>
+
+<div class="content-wrapper">
+    <div class="container-fluid">
+        <!-- Zero configuration table -->
+        <section id="configuration">
+            <div class="row">
+                <div class="col-12">
+                    <div class="card">
+                        <p>
+                            <br />
+                            <br />
+                            Removed List
+                        </p>
+                        <table class="table table-striped">
+                            <thead>
+                                <tr>
+                                    <th></th>
+                                    <th>
+                                        FullName
+                                    </th>
+                                    <th>
+                                        Email
+                                    </th>
+                                    <th>
+                                        AddAdmin
+                                    </th>
+                                    <th>
+                                        RemoveAdmin
+                                    </th>
+
+                                    <th></th>
+                                </tr>
+                            </thead>
+
+                            <tbody>
+
+                                @foreach (var item in Model.Enything.Details)
+                                {
+                                    <tr>
+                                        <td><img width="40" alt="avatar" src="~/@Common.GetPath.GetAdminImagePath()/@item.Id/@item.AccountImage"/></td>
+                                        <td>@item.FullName</td>
+                                        <td>@item.Email</td>
+                                        @if (item.AddAdmin == true)
+                                        {
+                                            <td>
+                                                <img src="~/Areas/Admin/images/microsoft_todo_2019_240px.png" width="40" style="cursor:pointer" title="Click to Disable Permition" onclick="ChangeAddPermiton('@item.Id',false)" />
+                                            </td>
+                                        }
+                                        else
+                                        {
+                                            <td>
+                                                <img src="~/Areas/Admin/images/delete_240px.png" width="40" style="cursor:pointer" title="Click to Enable Permition" onclick="ChangeAddPermiton('@item.Id',true)" />
+                                            </td>
+                                        }
+                                        @if (item.RemoveAdmin == true)
+                                        {
+                                            <td>
+                                                <img src="~/Areas/Admin/images/microsoft_todo_2019_240px.png" width="40" style="cursor:pointer" title="Click to Disable Permition" onclick="ChangeRemovePermiton('@item.Id',false)" />
+                                            </td>
+                                        }
+                                        else
+                                        {
+                                            <td>
+                                                <img src="~/Areas/Admin/images/delete_240px.png" width="40" style="cursor:pointer" title="Click to Enable Permition" onclick="ChangeRemovePermiton('@item.Id',true)" />
+                                            </td>
+                                        }
+
+                                        <td><a class="btn btn-danger" title="Click To Remove Admin" onclick="Remove('@item.Id')"> Remove </a></td>
+                                    </tr>
+                                }
+
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+</div>
+
+<div class="  text-center">
+    <paging total-records="@Model.Enything.TotalRow"
+            page-no="@Model.Enything.PageIndex"
+            page-size="@Model.Enything.Pagesize"
+            show-prev-next="true"
+            show-total-pages="false"
+            show-total-records="false"
+            show-page-size-nav="false"
+            show-first-numbered-page="true"
+            show-last-numbered-page="true"
+            query-string-key-page-no="PageIndex"
+            query-string-key-page-size="Size"
+            query-string-value="@@(Request.QueryString.Value)"
+            gap-size="2">
+    </paging>
+
+</div>
+
+
+<script src="https://code.jquery.com/jquery-1.12.3.min.js"></script>
+<link href="~/Sweetalert2/sweetalert2.min.css" rel="stylesheet" />
+<script src="~/Sweetalert2/sweetalert2.min.js"></script>
+
+
+<script>
+
+    function ChangeAddPermiton(Id,State) {
+        var Data = new FormData();
+        Data.append("Id", Id);
+        Data.append("State", State);
+
+        $.ajax({
+            type: "POST",
+            url: "/PdfManagerArea/Admin/UpdateAddPermition/",
+            contentType: false,
+            processData: false,
+            data: Data,
+            success: function (data) {
+                if (data.success == true) {
+
+                    swal.fire(
+                        'Success',
+                        data.message,
+                        'success'
+                    ).then(function (isConfirm) {
+                        location.reload();
+                    });
+                }
+                else {
+                    swal.fire(
+                        'Warning',
+                        data.message,
+                        'warning'
+                    );
+                }
+            },
+            error: function (xhr, ajaxOptions, thrownError) {
+                alert(xhr.status);
+                alert(thrownError);
+            }
+
+        });
+    }
+
+    function ChangeRemovePermiton(Id,State) {
+        var Data = new FormData();
+        Data.append("Id", Id);
+        Data.append("State", State);
+
+        $.ajax({
+            type: "POST",
+            url: "/PdfManagerArea/Admin/UpdateRemovePermition/",
+            contentType: false,
+            processData: false,
+            data: Data,
+            success: function (data) {
+                if (data.success == true) {
+
+                    swal.fire(
+                        'Success',
+                        data.message,
+                        'success'
+                    ).then(function (isConfirm) {
+                        location.reload();
+                    });
+                }
+                else {
+                    swal.fire(
+                        'Warning',
+                        data.message,
+                        'warning'
+                    );
+                }
+            },
+            error: function (xhr, ajaxOptions, thrownError) {
+                alert(xhr.status);
+                alert(thrownError);
+            }
+
+        });
+    }
+
+    function Remove(Id) {
+        var Data = new FormData();
+        Data.append("Id", Id);
+
+        $.ajax({
+            type: "POST",
+            url: "/PdfManagerArea/Admin/RemoveAdmin/",
+            contentType: false,
+            processData: false,
+            data: Data,
+            success: function (data) {
+                if (data.success == true) {
+
+                    swal.fire(
+                        'Success',
+                        data.message,
+                        'success'
+                    ).then(function (isConfirm) {
+                        location.reload();
+                    });
+                }
+                else {
+                    swal.fire(
+                        'Warning',
+                        data.message,
+                        'warning'
+                    );
+                }
+            },
+            error: function (xhr, ajaxOptions, thrownError) {
+                alert(xhr.status);
+                alert(thrownError);
+            }
+
+        });
+    }
+</script>

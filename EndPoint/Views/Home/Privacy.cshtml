@@ -1,0 +1,41 @@
+﻿@model Common.ResultMessage<Application.Services.Query.ViewContext.ReturnPrivacyPolicy.ResultReturnPrivacyPolicyDto>
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@section Header{
+    <link rel="canonical" href="@Common.GetPath.GetDomainHttps()/privacy/" />
+    @await Component.InvokeAsync("GetMetaTags", "Privacy")
+}
+<br />
+<br />
+<br />
+
+<!-- start main -->
+<main>
+    <div class="container">
+        <!-- start home main -->
+        <div class="home-main">
+            <!-- start page content-box -->
+            <div class="section main-content-box">
+                <div class="main-content-body">
+                    <div class="row justify-content-center">
+                        <div class="col-12 col-lg-6">
+
+                         @Html.Raw(@Model.Enything.Text)
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</main>
+<br />
+<br />
+<br />
+
+@section Scripts{
+<script src="~/js/jquery.min.js"></script>
+<script src="~/js/bootstrap.bundle.min.js"></script>
+}

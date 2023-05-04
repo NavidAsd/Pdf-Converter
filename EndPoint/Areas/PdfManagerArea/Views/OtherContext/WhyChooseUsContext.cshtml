@@ -1,0 +1,173 @@
+﻿@model Common.ResultMessage<Application.Services.Query.ViewContext.ReturnWhyChooseUs.ResultReturnWhyChooseUsDto>
+@{
+    Layout = "~/Areas/PdfManagerArea/Views/Shared/_Adminlayout.cshtml";
+}
+
+
+<head>
+    <link rel="shortcut icon" type="image/png" href="~/images/logo/66-modified.png">
+    <title>PdfConverter | Admin-WhyChooseUs</title>
+</head>
+
+
+
+
+<style>
+    body {
+        align-items: center;
+        background-color: var(--blue);
+        background: url("/Areas/Admin/images/New_A.jpg");
+        background-attachment: fixed;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        display: grid;
+        height: 100vh;
+        place-items: center;
+    }
+</style>
+
+
+<section class="basic-elements">
+    <div class="row">
+    </div>
+    <div class="row">
+        <div class="col-md-12">
+            <div class="card">
+                <div class="card-header">
+                    <div class="card-title-wrap bar-success">
+                        <h4 class="card-title mb-0">Edit Why Choose Us Context</h4>
+                    </div>
+                </div>
+                <div class="card-body">
+                    <div class="px-3">
+                        <div class="form">
+                            <div class="form-body">
+                                <div class="row">
+
+                                    <p id="_Id" style="display:none">@Model.Enything.Id</p>
+                                    <p id="_Type" style="display:none">@ViewBag.Type</p>
+
+                                    @if (ViewBag.Type == 1)
+                                    {
+
+                                        <div class="col-xl-12 col-lg-12 col-md-12 mb-1">
+                                            <fieldset class="form-group">
+                                                <label for="basicInput"> Privacy Part</label>
+                                                <input type="text" class="form-control " id="Title" placeholder="Title" value="@Model.Enything.Title1" />
+                                                <br />
+                                                <div id="Text">@Html.Raw(Model.Enything.Text1)</div>
+                                            </fieldset>
+                                            <hr />
+                                            <a href="/PdfManagerArea/OtherContext/WhyChooseUsContext?Type=2">Edit Tools Part</a>
+                                            <br />
+                                            <a href="/PdfManagerArea/OtherContext/WhyChooseUsContext?Type=3">Edit Easy to Use Part</a>
+
+                                        </div>
+                                    }
+                                    else if (ViewBag.Type == 2)
+                                    {
+                                        <div class="col-xl-12 col-lg-12 col-md-12 mb-1">
+                                            <fieldset class="form-group">
+                                                <label for="basicInput"> Tools Part</label>
+                                                <input type="text" class="form-control " id="Title" placeholder="Title" value="@Model.Enything.Title2" />
+                                                <br />
+                                                <div id="Text">@Html.Raw(Model.Enything.Text2)</div>
+                                            </fieldset>
+                                            <hr />
+                                            <a href="/PdfManagerArea/OtherContext/WhyChooseUsContext?Type=1">Edit Privacy Part</a>
+                                            <br />
+                                            <a href="/PdfManagerArea/OtherContext/WhyChooseUsContext?Type=3">Edit Easy to Use Part</a>
+
+                                        </div>
+                                    }
+                                    else
+                                    {
+                                        <div class="col-xl-12 col-lg-12 col-md-12 mb-1">
+                                            <fieldset class="form-group">
+                                                <label for="basicInput"> Easy to Use Part</label>
+                                                <input type="text" class="form-control " id="Title" placeholder="Title" value="@Model.Enything.Title3" />
+                                                <br />
+                                                <div id="Text">@Html.Raw(Model.Enything.Text3)</div>
+                                                <textarea name="Text" id="Text" rows="10" cols="80">
+                @Html.Raw(Model.Enything.Text3)
+            </textarea>
+                                            </fieldset>
+
+                                            <hr />
+                                            <a href="/PdfManagerArea/OtherContext/WhyChooseUsContext?Type=1">Edit Privacy Part</a>
+                                            <br />
+                                            <a href="/PdfManagerArea/OtherContext/WhyChooseUsContext?Type=2">Edit Tools Part</a>
+                                        </div>
+                                    }
+                                    <hr />
+
+                                    <a class="btn btn-success col-md-12" onclick="SendData()"> Save Changes </a>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+
+<script src="https://code.jquery.com/jquery-1.12.3.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src="https://cdn.ckeditor.com/4.19.1/standard/ckeditor.js"></script>
+
+
+<link href="~/Sweetalert2/sweetalert2.min.css" rel="stylesheet" />
+<script src="~/Sweetalert2/sweetalert2.min.js"></script>
+
+
+<script>
+   var Editor = CKEDITOR.replace('Text');
+</script>
+
+<script>
+    function SendData() {
+        var Data = new FormData();
+        Data.append("Id", document.getElementById("_Id").textContent);
+        Data.append("Type", document.getElementById("_Type").textContent);
+        Data.append("Title", document.getElementById("Title").value);
+        Data.append("Text", Editor.getData());
+
+
+        $.ajax({
+            type: "POST",
+            url: "/PdfManagerArea/OtherContext/UpdateWhyChooseUsContext/",
+            contentType: false,
+            processData: false,
+            data: Data,
+            success: function (data) {
+                if (data.success == true) {
+                    swal.fire(
+                        'Success',
+                        data.message,
+                        'success'
+                    ).then(function (isConfirm) {
+                        location.reload();
+                    });
+                }
+                else {
+                    swal.fire(
+                        'Warning',
+                        data.message,
+                        'warning'
+                    );
+                }
+            },
+            error: function (xhr, ajaxOptions, thrownError) {
+                alert(xhr.status);
+                alert(thrownError);
+            }
+        });
+    }
+
+</script>
+

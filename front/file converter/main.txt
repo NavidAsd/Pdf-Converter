@@ -1,0 +1,28 @@
+    <style>
+        .upload .upload-files .body p b,
+        .upload .upload-files .body p a {
+            color: #c72c2c !important;
+        }
+
+        .upload .upload-files footer .importar,
+        .upload .upload-files footer .upload-btn {
+            color: #fff !important;
+            background-color: #c72c2c !important;
+        }
+
+        .upload .upload-files footer .divider {
+            border-top: solid 4px #c72c2c;
+        }
+
+        .upload .upload-files header {
+            background: #c72c2c !important;
+        }
+
+        .upload .upload-files footer .list-files .file .progress {
+            background: linear-gradient(to left, #ffc92860, #c72c2c) no-repeat;
+        }
+
+        .upload .upload-files footer .list-files .file .done {
+            background: #c72c2c
+        }
+    </style>

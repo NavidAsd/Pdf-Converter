@@ -1,0 +1,42 @@
+[
+  {
+    "outputFileName": "#\\Web\\Core\\PdfConverter\\EndPoint\\wwwroot\\css\\responsive.min.css",
+    "inputFiles": [
+      "#\\Web\\Core\\PdfConverter\\EndPoint\\wwwroot\\css\\responsive.css"
+    ]
+  },
+  {
+    "outputFileName": "#\\Web\\Core\\PdfConverter\\EndPoint\\wwwroot\\css\\Cookie.min.css",
+    "inputFiles": [
+      "#\\Web\\Core\\PdfConverter\\EndPoint\\wwwroot\\css\\Cookie.css"
+    ]
+  },
+  {
+    "outputFileName": "#\\Web\\Core\\PdfConverter\\EndPoint\\wwwroot\\css\\bundle.css",
+    "inputFiles": [
+      "#\\Web\\Core\\PdfConverter\\EndPoint\\wwwroot\\css\\NotFound.css",
+      "#\\Web\\Core\\PdfConverter\\EndPoint\\wwwroot\\css\\PageNotFound.css",
+      "#\\Web\\Core\\PdfConverter\\EndPoint\\wwwroot\\css\\questions.css",
+      "#\\Web\\Core\\PdfConverter\\EndPoint\\wwwroot\\css\\responsive.css",
+      "#\\Web\\Core\\PdfConverter\\EndPoint\\wwwroot\\css\\style.css"
+    ]
+  },
+  {
+    "outputFileName": "#\\Web\\Core\\PdfConverter\\EndPoint\\wwwroot\\css\\questions.min.css",
+    "inputFiles": [
+      "#\\Web\\Core\\PdfConverter\\EndPoint\\wwwroot\\css\\questions.css"
+    ]
+  },
+  {
+    "outputFileName": "#\\Web\\Core\\PdfConverter\\EndPoint\\wwwroot\\js\\cookie.min.js",
+    "inputFiles": [
+      "#\\Web\\Core\\PdfConverter\\EndPoint\\wwwroot\\js\\cookie.js"
+    ]
+  },
+  {
+    "outputFileName": "#\\Web\\Core\\PdfConverter\\EndPoint\\wwwroot\\css\\style.min.css",
+    "inputFiles": [
+      "#\\Web\\Core\\PdfConverter\\EndPoint\\wwwroot\\css\\style.css"
+    ]
+  }
+]

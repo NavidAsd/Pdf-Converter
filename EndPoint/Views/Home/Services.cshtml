@@ -1,0 +1,12 @@
+﻿@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@section Header{
+    <link rel="canonical" href="@Common.GetPath.GetDomainHttps()/services/" />
+    @await Component.InvokeAsync("GetMetaTags", "Services")
+}
+<br />
+<br />
+<br />
+<br />
+@await Component.InvokeAsync("GetAllTools")

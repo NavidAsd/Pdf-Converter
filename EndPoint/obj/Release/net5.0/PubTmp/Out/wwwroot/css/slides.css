@@ -1,0 +1,56 @@
+@media (max-width: 768px) {
+    .carousel-item > div {
+
+        height: 100%;
+
+    }
+
+        .carousel-item > div > img {
+            width: 100%;
+            height: 100%
+        }
+
+    #carouselExampleFade {
+        margin-top: 0px;
+        margin-bottom: -30px
+    }
+
+    .accordion-item {
+        padding: 10px
+    }
+}
+
+@media (max-width: 468px) {
+    .carousel-item > div {
+
+        height: 100%;
+
+    }
+
+    #carouselExampleFade {
+        margin-top: 10px;
+
+        
+
+    }
+}
+
+@media (max-width: 358px) {
+    .carousel-item > div {
+
+        height: 100%;
+
+    }
+
+    #carouselExampleFade {
+        margin-top: 10px;
+
+        
+    }
+}
+h2#ali-choosetext{
+    font-weight: 900;
+    font-size:3.5rem;
+    letter-spacing:2px;
+
+}

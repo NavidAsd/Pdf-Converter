@@ -1,0 +1,59 @@
+﻿@model Common.ResultMessage<List<Application.Services.Query.ViewContext.ReturnFrequentlyQuestion.FrequentlyQuestions>>
+@{
+    Layout = null;
+}
+
+        <link href="~/css/questions.css" rel="stylesheet" />
+
+
+@if (Model.Enything != null)
+{
+    byte cv = 1;
+    <!-- start FAQ -->
+    <div class="text-center">
+        <h4>Frequently Asked Questions</h4>
+    </div>
+    <div class="accordion">
+
+        @foreach (var item in Model.Enything)
+        {
+            //if (cv <= Common.GetPath.GetFAQCount())
+            
+                <div class="accordion-item">
+
+                                    <button id="accordion-button-@cv" aria-expanded="false" style="display: flex;"><h5 class="accordion-title" style="width: 80%;">@item.Question</h5><span class="icon" aria-hidden="true"></span></button>
+
+                <div class="accordion-content" style="text-align:left;">
+                    <p style="margin-left: 10px;">@Html.Raw(item.Answer)</p>
+                </div>
+                </div>
+           
+            //cv += 1;
+        }
+    </div>
+    <br />
+    <br />
+    <br />
+    <br />
+    <!-- end FAQ -->
+}
+
+
+
+<script>
+    const items = document.querySelectorAll(".accordion button");
+
+    function toggleAccordion() {
+        const itemToggle = this.getAttribute('aria-expanded');
+
+        for (i = 0; i < items.length; i++) {
+            items[i].setAttribute('aria-expanded', 'false');
+        }
+
+        if (itemToggle == 'false') {
+            this.setAttribute('aria-expanded', 'true');
+        }
+    }
+
+    items.forEach(item => item.addEventListener('click', toggleAccordion));
+</script>

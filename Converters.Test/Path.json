@@ -1,0 +1,52 @@
+[
+  {
+    "InputPath": "E:/C/Input",
+    "OutputPath": "E:/C/Output",
+    "BlinkWinPath": "E:/C/lib",
+    "ServiceImages": "wwwroot/images/Services",
+    "HomeImages": "wwwroot/images/Services/Home",
+    "QrImagesPath": "wwwroot/images/QRCode",
+    "ReadPdfPath": "wwwroot/ReadPdf",
+    "HelpVideoPath": "wwwroot/Videos",
+    "AdminImage": "Areas\\Admin\\images\\Avatar",
+    "DefaultAdminImage": "Areas\\Admin\\images\\Avatar\\Default",
+    "ContentImatge1": "/images/Services/Home/Responsive PDF converter.webp",
+    "ContentImatge2": "/images/Services/Home/Secure PDF converter.webp",
+    "ContentImatge3": "/images/Services/Home/User frindly PDF converter.webp",
+    "ContentImatge4": "/images/Services/Home/pdfconverter-right-img.webp",
+    "ContentImatge5": "/images/Services/Home/pdfconverter-left-img.webp",
+    "SlidePic1": "/images/Services/Home/Slide/pdftoconverter1.webp",
+    "SlidePic2": "/images/Services/Home/Slide/pdftoconverter2.webp",
+    "SlidePic3": "/images/Services/Home/Slide/pdftoconverter3.webp",
+    "DefaultAdminImageName": "index.png",
+    "ConverterApi": "http://127.0.0.1:8080",
+    "CompanyEmail": "pdftoconverter.com@gmail.com",
+    "CmEmailPass": "pgzigezfjpariekp",
+    "FullBackupPath": "E:/C/DB-Backup/Full",
+    "FaLang": "c=fa|uic=fa",
+    "EnLang": "c=en|uic=en",
+    "AdobeClientId": "c9f8da38e15b494083f6d085b184404a",
+    "BlogUrl": "https://blog.pdftoconverter.com/wp-json/wp/v2/posts",
+    "Domain": "pdftoconverter.com",
+    "DomainHttps": "https://localhost:44304",
+    "ValidSchemaCreator": "https://schema.org",
+    "MaxCode": 999998,
+    "MinCode": 111110,
+    "CommentCount": 6,
+    "FAQCount": 6,
+    "BlogPostCount": 9,
+    "BlogPostCountHome": 200,
+    "DeletLogsDay": 1,
+    "VideoSize": "80%",
+    "CookieKey": "PdfConverterCookies"
+
+    //drop box access token :
+    //sl.BGykoLyF-eEryZi7qmOiYbK_A4cbVutBWZcR22vNZTzIKTjtgx3nRzNtcVDRmNpI_wjch3YCLUoxk0whZjTdwDxBYuxgflwPgUMmy68aa4bMSci4a9mxRBdnW9V9gHlGnFH9uow
+    //dropbox  app key:
+    //o0z09nr9qullk3r
+    //app secret: 
+    //g4xwytu53wx59pu 	
+  }
+]
+
+//https://www.dropbox.com/chooser?origin=https%3A%2F%2Fwww.dropbox.com&app_key=dropbox&link_type=direct&trigger=button&multiselect=false&extensions=images&folderselect=false&iframe=false&version=2

@@ -1,0 +1,40 @@
+﻿@model Common.ResultMessage<Domain.Entities.OtherContext.AdditionalHelp>;
+@{
+    Layout = null;
+}
+
+<div class="section">
+
+    <h3>@Model.Enything.Title</h3>
+    <div class="row learn-list flex-md-nowrap">
+        <div class="learn-list-item col-md-4 col-sm-12 text-center m-2">
+            <img src="@Common.GetPath.GetContentImatge1()" title="Best PDF Converter: Convert PDF Files Instantly Online" alt="Convert PDF Files Online for Free"><br><br>
+            <h4>@Model.Enything.BlockTitleleft</h4>
+            <div style="text-align:center; word-wrap: break-word;">
+            <p>
+                @Html.Raw(Model.Enything.Textleft)
+                </p>
+                </div>
+        </div>
+        <div class="learn-list-item col-md-4 col-sm-12 text-center m-2">
+            <img src="@Common.GetPath.GetContentImatge2()" title="pdf to word converter free no sign up" alt="Convert PDF files online for free with this easy to use converter. No registration or installation needed - just upload and convert!"><br><br>
+            <h4>@Model.Enything.BlockTitlecenter</h4>
+            <div style="text-align:center; word-wrap: break-word;">
+            <p>
+                @Html.Raw(Model.Enything.Textcenter)
+                </p>
+                </div>
+        </div>
+        <div class="learn-list-item col-md-4 col-sm-12 text-center m-2">
+            <img src="@Common.GetPath.GetContentImatge3()" title="PDF Converter - quickly, online, free" alt="This free online converter allows converting various file formats (doc, docx, xls, ppt, jpg, png…) to PDF right in your browser."><br><br>
+            <h4>@Model.Enything.BlockTitleright</h4>
+            <div style="text-align:center; word-wrap: break-word;">
+                <p>
+                @Html.Raw(Model.Enything.Textright)
+                </p>
+                </div>
+        </div>
+    </div>
+</div>
+
+

@@ -1,0 +1,131 @@
+﻿@model Common.ResultMessage<Application.Services.Query.Seo.ReturnMetatags.Metatags>
+@{
+    Layout = "~/Areas/PdfManagerArea/Views/Shared/_Adminlayout.cshtml";
+}
+
+<head>
+    <link rel="shortcut icon" type="image/png" href="~/images/logo/66-modified.png">
+    <title>PdfConverter | Admin-Edit Metatag</title>
+</head>
+
+<style>
+    .ck-editor__editable {
+        min-height: 300px;
+        min-width: 850px;
+    }
+</style>
+
+<section class="basic-elements">
+    <div class="row">
+    </div>
+    <div class="row">
+        <div class="col-md-12">
+            <div class="card">
+                <div class="card-header">
+                    <div class="card-title-wrap bar-success">
+                        <h4 class="card-title mb-0">Page: @Model.Enything.PageName</h4>
+                        <p class="card-title mb-0">LastUpdate: @Model.Enything.LastUpdate</p>
+                    </div>
+                </div>
+                <p id="_Id" style="display:none">@Model.Enything.Id</p>
+                <div class="card-body">
+                    <div class="px-3">
+                        <div class="form">
+                            <div class="form-body">
+                                <div class="row">
+                                    <div class="col-xl-4 col-lg-6 col-md-12 mb-1">
+                                        <fieldset class="form-group">
+                                            <label for="basicInput">Title </label>
+                                            <input type="text" class="form-control" id="title" value="@Model.Enything.Title" required>
+                                        </fieldset>
+                                    </div>
+                                    <div class="col-xl-4 col-lg-6 col-md-12 mb-1">
+                                        <fieldset class="form-group">
+                                            <label for="basicInput">Author </label>
+                                            <input type="text" class="form-control" id="author" value="@Model.Enything.Author" required>
+                                        </fieldset>
+                                    </div>
+
+                                    <div class="col-xl-12 col-lg-12 col-md-12 mb-1">
+                                        <fieldset class="form-group">
+                                            <label for="basicInput"> Description</label>
+                                            <textarea id="description" class="form-control " rows="3" required>@Model.Enything.Description</textarea>
+                                        </fieldset>
+                                    </div>
+                                                    <div class="col-xl-12 col-lg-12 col-md-12 mb-1">
+                    <fieldset class="form-group">
+                        <label>Other Tags</label>
+                        <p>Please only edit the meta tag from the [Source] button
+Otherwise, the content will be displayed on the page for the user</p>
+            <textarea name="An_editor" id="An_editor" rows="10" cols="80">
+                                                @Html.Raw(Model.Enything.Other)
+            </textarea>
+                    </fieldset>
+                </div>
+
+
+                                    <hr />
+                                    <a href="/PdfManagerArea/Seo/CreateKeyword?MetaId=@Model.Enything.Id">Keywords</a>
+                                    <a class="btn btn-success col-md-12" onclick="EditBasicInfo()"> Save Changes </a>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<script src="https://code.jquery.com/jquery-1.12.3.min.js"></script>
+<script src="https://cdn.ckeditor.com/4.19.1/standard/ckeditor.js"></script>
+
+<link href="~/Sweetalert2/sweetalert2.min.css" rel="stylesheet" />
+<script src="~/Sweetalert2/sweetalert2.min.js"></script>
+
+<script>
+    CKEDITOR.config.allowedContent = true
+    CKEDITOR.config.format_tags = 'p;h1;h2;pre';
+var Editor = CKEDITOR.replace('An_editor');
+</script>
+
+<script>
+    function EditBasicInfo() {
+        var Data = new FormData();
+        Data.append("Id", document.getElementById("_Id").textContent);
+        Data.append("Title", document.getElementById("title").value);
+        Data.append("Author", document.getElementById("author").value);
+        Data.append("Other", Editor.getData());
+        Data.append("Description", document.getElementById("description").value);
+        $.ajax({
+            type: "POST",
+            url: "/PdfManagerArea/Seo/EditMetatagData/",
+            contentType: false,
+            processData: false,
+            data: Data,
+            success: function (data) {
+                if (data.success == true) {
+                    swal.fire(
+                        'success',
+                        data.message,
+                        'success'
+                    ).then(function (isConfirm) {
+                        location.reload();
+                    });
+                }
+                else {
+                    swal.fire(
+                        'Warning',
+                        data.message,
+                        'warning'
+                    );
+                }
+            },
+            error: function (xhr, ajaxOptions, thrownError) {
+                alert(xhr.status);
+                alert(thrownError);
+            }
+        });
+    }
+</script>

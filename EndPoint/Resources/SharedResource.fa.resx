@@ -1,0 +1,409 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="About" xml:space="preserve">
+    <value>درباره</value>
+  </data>
+  <data name="About Us" xml:space="preserve">
+    <value>درباره ما</value>
+  </data>
+  <data name="All PDF Tools" xml:space="preserve">
+    <value>PDF تمام ابزار های</value>
+  </data>
+  <data name="All the tools you need" xml:space="preserve">
+    <value>تمام ابزارهایی که نیاز دارید</value>
+  </data>
+  <data name="All you need is a click" xml:space="preserve">
+    <value>تنها چیزی که نیاز دارید یک کلیک است</value>
+  </data>
+  <data name="Android App" xml:space="preserve">
+    <value>نسخه اندروید</value>
+  </data>
+  <data name="Apps" xml:space="preserve">
+    <value>برنامه ها</value>
+  </data>
+  <data name="By clicking on the large box above, you can select the desired file from the files in your system, and it is acceptable if the file has the correct format" xml:space="preserve">
+    <value>با کلیک بر روی کادر بزرگ بالا می توانید فایل مورد نظر را از بین فایل های موجود در سیستم خود انتخاب کنید و در صورت داشتن فرمت صحیح فایل قابل قبول است</value>
+  </data>
+  <data name="Choose" xml:space="preserve">
+    <value>انتخاب</value>
+  </data>
+  <data name="Company" xml:space="preserve">
+    <value>مجموعه</value>
+  </data>
+  <data name="Contact" xml:space="preserve">
+    <value>ارتباط</value>
+  </data>
+  <data name="Contact Us" xml:space="preserve">
+    <value>ارتباط با ما</value>
+  </data>
+  <data name="Convert" xml:space="preserve">
+    <value>تبدیل</value>
+  </data>
+  <data name="Delete Link" xml:space="preserve">
+    <value>حذف لینک</value>
+  </data>
+  <data name="Developers" xml:space="preserve">
+    <value>توسعه دهنده</value>
+  </data>
+  <data name="Download" xml:space="preserve">
+    <value>دانلود</value>
+  </data>
+  <data name="Downloads" xml:space="preserve">
+    <value>دانلودها</value>
+  </data>
+  <data name="Easy to use" xml:space="preserve">
+    <value>راحتی در استفاده</value>
+  </data>
+  <data name="Email Address" xml:space="preserve">
+    <value>ادرس ایمیل</value>
+  </data>
+  <data name="EMAIL-ADDRESS" xml:space="preserve">
+    <value>ایمیل</value>
+  </data>
+  <data name="English" xml:space="preserve">
+    <value>انگلیسی</value>
+  </data>
+  <data name="Enter Url" xml:space="preserve">
+    <value>ادرس را وارد کنید</value>
+  </data>
+  <data name="Enter your Email address" xml:space="preserve">
+    <value>ایمیل خود را وارد کنید</value>
+  </data>
+  <data name="Explore All PDF Tools" xml:space="preserve">
+    <value>همه ابزار های PDF</value>
+  </data>
+  <data name="File" xml:space="preserve">
+    <value>فایل</value>
+  </data>
+  <data name="File Password" xml:space="preserve">
+    <value>گذرواژه فایل</value>
+  </data>
+  <data name="FILES" xml:space="preserve">
+    <value>فایل ها</value>
+  </data>
+  <data name="Full Name" xml:space="preserve">
+    <value>نام شما</value>
+  </data>
+  <data name="Get Started" xml:space="preserve">
+    <value>شروع کنید</value>
+  </data>
+  <data name="Go Back" xml:space="preserve">
+    <value>بازگشت</value>
+  </data>
+  <data name="Go to Home Page" xml:space="preserve">
+    <value>صفحه اصلی</value>
+  </data>
+  <data name="Help for you" xml:space="preserve">
+    <value>کمکی برای شما</value>
+  </data>
+  <data name="Home" xml:space="preserve">
+    <value>خانه</value>
+  </data>
+  <data name="If you encounter any problems in the program process, thank you for reporting to us to improve performance." xml:space="preserve">
+    <value>اگر در روند برنامه با مشکلی مواجه شدید، از اینکه برای بهبود عملکرد به ما گزارش دادید سپاسگزاریم</value>
+  </data>
+  <data name="Instagram" xml:space="preserve">
+    <value>اینستاگرام</value>
+  </data>
+  <data name="iOS App" xml:space="preserve">
+    <value>نسخه ای او اس</value>
+  </data>
+  <data name="It may take a few seconds" xml:space="preserve">
+    <value>ممکن است چند ثاینه زمان ببرد</value>
+  </data>
+  <data name="Just provide us with the desired file and get different outputs with just one click" xml:space="preserve">
+    <value>کافیست فایل مورد نظر را در اختیار ما قرار دهید و تنها با یک کلیک خروجی های مختلف دریافت کنید</value>
+  </data>
+  <data name="Language" xml:space="preserve">
+    <value>زبان</value>
+  </data>
+  <data name="More" xml:space="preserve">
+    <value>بیشتر</value>
+  </data>
+  <data name="Most Popular PDF Tools" xml:space="preserve">
+    <value>ابزاری های پرطرفدار PDF</value>
+  </data>
+  <data name="Or Upload From" xml:space="preserve">
+    <value>همچنین اپلود از</value>
+  </data>
+  <data name="Page not found" xml:space="preserve">
+    <value>صفحه مورد نظر یافت نشد</value>
+  </data>
+  <data name="pdf converter does not collect any data from you and does not send and store your files except in the place you choose. We respect the terms and rights of users." xml:space="preserve">
+    <value>مبدل pdf هیچ داده ای را از شما جمع آوری نمی کند و فایل های شما را جز در مکانی که انتخاب می کنید ارسال و ذخیره نمی کند. ما به شرایط و حقوق کاربران احترام می گذاریم.</value>
+  </data>
+  <data name="Persian" xml:space="preserve">
+    <value>پارسی</value>
+  </data>
+  <data name="Privacy" xml:space="preserve">
+    <value>حریم خصوصی</value>
+  </data>
+  <data name="Privacy policy" xml:space="preserve">
+    <value>شرایط خریم خصوصی</value>
+  </data>
+  <data name="Privacy&amp;Policy" xml:space="preserve">
+    <value>حریم خصوصی &amp; امنیت</value>
+  </data>
+  <data name="Problem statement" xml:space="preserve">
+    <value>شرح مشکل</value>
+  </data>
+  <data name="Processing does not take much time. After a few minutes, you can download the output file in 4 ways" xml:space="preserve">
+    <value>فرایند پردازش تایم زیادی از شما نمیگیرد بعد از گذشت چند دقیقه میتوانید فایل خروجی را به 4 روش دریافت کنید</value>
+  </data>
+  <data name="Processing..." xml:space="preserve">
+    <value>...درحال پردازش</value>
+  </data>
+  <data name="Rate this tool" xml:space="preserve">
+    <value>به این ابزار امتیاز دهید</value>
+  </data>
+  <data name="Repeat Password" xml:space="preserve">
+    <value>تکرار گذرواژه</value>
+  </data>
+  <data name="Report Bog" xml:space="preserve">
+    <value>گزارش مشکل</value>
+  </data>
+  <data name="Report Bug" xml:space="preserve">
+    <value>گزارش مشکلی</value>
+  </data>
+  <data name="Rotate" xml:space="preserve">
+    <value>چرخش</value>
+  </data>
+  <data name="See All PDF Tools" xml:space="preserve">
+    <value>دیدن تمام ابزاری های PDF</value>
+  </data>
+  <data name="Select the amount of rotation" xml:space="preserve">
+    <value>مقدار چرخش را انتخاب کنید</value>
+  </data>
+  <data name="Send" xml:space="preserve">
+    <value>ارسال</value>
+  </data>
+  <data name="Send Message" xml:space="preserve">
+    <value>ارسال پیام</value>
+  </data>
+  <data name="Send To" xml:space="preserve">
+    <value>ارسال به</value>
+  </data>
+  <data name="Send To Your Email" xml:space="preserve">
+    <value>ارسال به ایمیل شما</value>
+  </data>
+  <data name="Service Description" xml:space="preserve">
+    <value>توضیحات سرویس</value>
+  </data>
+  <data name="Services" xml:space="preserve">
+    <value>سرویس ها</value>
+  </data>
+  <data name="Some Comments" xml:space="preserve">
+    <value>برخی نظرات</value>
+  </data>
+  <data name="Some User Comments" xml:space="preserve">
+    <value>برخی نظرات کاربران</value>
+  </data>
+  <data name="Start Converting" xml:space="preserve">
+    <value>تبدیل را شروع کنید</value>
+  </data>
+  <data name="Terms Of Use" xml:space="preserve">
+    <value>شرایط استفاده</value>
+  </data>
+  <data name="Test a tool" xml:space="preserve">
+    <value>یک ابزار را تست کنید</value>
+  </data>
+  <data name="The address of the page where you found the problem" xml:space="preserve">
+    <value>آدرس صفحه ای که در آن مشکل پیدا کردید</value>
+  </data>
+  <data name="The given URL is invalid. Please check to see if it is written correctly" xml:space="preserve">
+    <value>ادرس داده شده نامعتبر است. لطفا بررسی کنید که درست نوشته شده باشد</value>
+  </data>
+  <data name="This link is active for up to 48 hours from the time of activation" xml:space="preserve">
+    <value>این لینک از زمان فعال سازی تا 48 ساعت فعال است</value>
+  </data>
+  <data name="Total Convert" xml:space="preserve">
+    <value>تعداد تبدیل ها</value>
+  </data>
+  <data name="Try Again" xml:space="preserve">
+    <value>تلاش دوباره</value>
+  </data>
+  <data name="Twitter" xml:space="preserve">
+    <value>توییتر</value>
+  </data>
+  <data name="UPDATE FILE" xml:space="preserve">
+    <value>تغییر فایل</value>
+  </data>
+  <data name="Upload and Compress" xml:space="preserve">
+    <value>اپلود و فشرده سازی</value>
+  </data>
+  <data name="Upload and Convert" xml:space="preserve">
+    <value>اپلود و تبدیل</value>
+  </data>
+  <data name="Upload and Decrypt" xml:space="preserve">
+    <value>اپلود و رمزگشایی</value>
+  </data>
+  <data name="Upload and Encrypt" xml:space="preserve">
+    <value>اپلود و رمزگذاری</value>
+  </data>
+  <data name="Upload and Extract" xml:space="preserve">
+    <value>اپلود و استخراج</value>
+  </data>
+  <data name="Upload and Merg" xml:space="preserve">
+    <value>اپلود و ادغام</value>
+  </data>
+  <data name="Upload and RemoveProtection" xml:space="preserve">
+    <value>اپلود و حذف گذرواژه</value>
+  </data>
+  <data name="Url" xml:space="preserve">
+    <value>ادرس</value>
+  </data>
+  <data name="Using the buttons below the large box, you can upload the file to start the process or go back to the previous step to change the file" xml:space="preserve">
+    <value>با استفاده از دکمه های موجود در زیر باکس بزرگ می توانید فایل را اپلود کرده تا پروسس اغاز شود و یا برای تغییر فایل به مرحله قبل بازگردید</value>
+  </data>
+  <data name="We have tried to implement most of the tools you need to work with pdf mode" xml:space="preserve">
+    <value>ما سعی کردیم بیشتر ابزارهایی که برای کار با pdf مود نیاز شماست را پیاده سازی کنیم</value>
+  </data>
+  <data name="We offer services that you can easily work with pdf for free Try the tools right now" xml:space="preserve">
+    <value>ما خدماتی را ارائه می دهیم که به راحتی می توانید بصورت رایگان با pdf کار کنید
+همین الان ابزار هارو امتحان کن</value>
+  </data>
+  <data name="We're glad you chose us" xml:space="preserve">
+    <value>خوشحالیم که مارو انتخاب کردید</value>
+  </data>
+  <data name="What do you think about us?" xml:space="preserve">
+    <value>نظر شما درباره ما چیست؟</value>
+  </data>
+  <data name="Why choose Us" xml:space="preserve">
+    <value>چرا باید مارو انتخاب کنید</value>
+  </data>
+  <data name="Windosw App" xml:space="preserve">
+    <value>نسخه دسکتاپ</value>
+  </data>
+  <data name="Write the website URL" xml:space="preserve">
+    <value>آدرس وب سایت را وارد کنید</value>
+  </data>
+  <data name="You are only 3 steps away from converting the file" xml:space="preserve">
+    <value>فقط 3 مرحله تا تبدیل فایل فاصله دارید</value>
+  </data>
+  <data name="You can use the header menu to view the rest of the tools" xml:space="preserve">
+    <value>برای مشاهده بقیه ابزارها می توانید از منوی هدر استفاده کنید</value>
+  </data>
+  <data name="Your Email" xml:space="preserve">
+    <value>ایمیل شما</value>
+  </data>
+  <data name="Your Message" xml:space="preserve">
+    <value>پیام شما</value>
+  </data>
+</root>

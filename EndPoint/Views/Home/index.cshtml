@@ -1,0 +1,496 @@
+@model Common.ResultMessage<List<Application.Services.Query.ReturnUsersCommnets.UserComment>>
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@section Header{
+        <link rel="canonical" href="@Common.GetPath.GetDomainHttps()/" />
+    @await Component.InvokeAsync("GetMetaTags", "Index")
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css"
+          integrity="sha512-tS3S5qG0BlhnQROyJXvNjeEM4UpMXHrQfTGmbQ1gKmelCxlSEBUaxhRBj/EFTzpbP4RVSrpEikbmdJobCvhE3g=="
+          crossorigin="anonymous" />
+            <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css"
+          integrity="sha512-sMXtMNL1zRzolHYKEujM2AqCLUR9F2C4/05cdbxjjLSRvMQIciEPCQZo++nk7go3BtSuK9kfa/s+a4f4i5pLkw=="
+          crossorigin="anonymous" />
+        <link href="~/css/blog.css" rel="stylesheet" />
+        <link href="~/css/questions.css" rel="stylesheet" />
+        <link href="~/css/slides.css" rel="stylesheet" />
+
+        <link href="~/css/responsive.css" rel="stylesheet" />
+
+        <style>
+            .blog-list-item {
+                height: fit-content;
+                z-index: 12;
+            }
+
+
+
+
+                 .card .card-header > h3 {
+
+                    font-size: 18px;
+                    color: rgb(100, 100, 100);
+                    word-wrap: break-word;
+                }
+
+
+                .card .card-body > img {
+
+                    width: 93%;
+                    height: 225px;
+                }
+
+                .blog-list-item > p {
+                    font-size: 14px;
+                    padding-right: 50px;
+                    padding-left: 50px;
+                    height: 40%;
+                    color: rgb(100, 100, 100);
+                }
+
+
+                .post-body .card-footer {
+                    border-top: none !important;
+                }
+
+
+        </style>
+}
+<!-- start main -->
+<main>
+    <div class="container">
+        <!-- start home main -->
+        <div class="home-main text-center">
+            <br />
+            <br />
+            <br />
+            <br />
+
+            <div class="carousel slide" id="carouselExampleFade" data-ride="carousel">
+
+                <div class="carousel-inner home-page-carousel" role="listbox">
+                    <div class="carousel-item active">
+                        <div class="home-page-carousel-item d-flex align-items-center justify-content-center">
+                            <img src="@Common.GetPath.GetSlidePic1()" alt="pdfconverter-main-slide-1" title="@Common.GetPath.GetSlidePic1().Replace(".png","").Split("/").Last()" style="max-width: 100%;height:auto" class="d-none d-md-block">
+
+                            <img src="@Common.GetPath.GetSlidePic1()" alt="pdfconverter-main-slide-1" title="@Common.GetPath.GetSlidePic1().Replace(".png","").Split("/").Last()" class="second-img d-sm-block d-md-none">
+                        </div>
+                    </div>
+                    <div class="carousel-item">
+                        <div class="home-page-carousel-item d-flex align-items-center justify-content-center">
+                            <img src="@Common.GetPath.GetSlidePic2()" alt="pdfconverter-main-slide-2" title="@Common.GetPath.GetSlidePic2().Replace(".png","").Split("/").Last()"style="max-width: 100%;height:auto" class="d-none d-md-block">
+
+                            <img src="@Common.GetPath.GetSlidePic1()" alt="pdfconverter-main-slide-1" title="@Common.GetPath.GetSlidePic1().Replace(".png","").Split("/").Last()" class="second-img d-sm-block d-md-none">
+                        </div>
+                    </div>
+                    <div class="carousel-item">
+                        <div class="home-page-carousel-item d-flex align-items-center justify-content-center">
+                            <img src="@Common.GetPath.GetSlidePic3()" alt="pdfconverter-main-slide-3" title="@Common.GetPath.GetSlidePic3().Replace(".png","").Split("/").Last()"style="max-width: 100%;height:auto" class="d-none d-md-block">
+
+                            <img src="@Common.GetPath.GetSlidePic1()" alt="pdfconverter-main-slide-1" title="@Common.GetPath.GetSlidePic1().Replace(".png","").Split("/").Last()" class="second-img d-sm-block d-md-none">
+
+                        </div>
+                    </div>
+                </div>
+                <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleFade" data-bs-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Previous</span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleFade" data-bs-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Next</span>
+                </button>
+            </div>
+            <br />
+            <br />
+                        <!-- start why choose us -->
+            <div class="section main-choose-us-box">
+                <div class="main-choose-us-content">
+                    <div class="row justify-content-center text-center">
+
+                        <div class="col-12 mb-5">
+                            <h2 id="ali-choosetext">Why choose Us</h2>
+
+                        </div>
+                    </div>
+                    <div class="row justify-content-center text-center">
+                        <div class="col-12 col-md-4">
+                            <div class="choose-us-card">
+                                <i class="bi bi-shield-check"></i>
+                                <h5>@ViewBag.WhyChooseUsContext.Enything.Title1</h5>
+                                <p>
+                                    @Html.Raw(ViewBag.WhyChooseUsContext.Enything.Text1)
+                                </p>
+                            </div>
+                        </div>
+                        <div class="col-12 col-md-4">
+                            <div class="choose-us-card">
+                                <i class="bi bi-tools"></i>
+                                <h5>@ViewBag.WhyChooseUsContext.Enything.Title2</h5>
+                                <p>
+                                    @Html.Raw(ViewBag.WhyChooseUsContext.Enything.Text2)
+                                </p>
+                            </div>
+                        </div>
+                        <div class="col-12 col-md-4">
+                            <div class="choose-us-card">
+                                <i class="bi bi-emoji-smile"></i>
+                                <h5>@ViewBag.WhyChooseUsContext.Enything.Title3</h5>
+                                <p>
+                                    @Html.Raw(ViewBag.WhyChooseUsContext.Enything.Text3)
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- end why choose us -->
+            @await Component.InvokeAsync("GetTools")
+            <!-- start section main services info box -->
+
+            <br />
+            <br />
+
+            <div class="section main-services-info-box m-4">
+                <div class="row text-left" style="direction: rtl;">
+
+
+                    <div class="col-md-8 col-12 text-center" style="">
+                        @if (ViewBag.Images.Enything.TopImage != null)
+                        {
+                                            <img src="@Common.GetPath.GetHomeImages().Replace("wwwroot","")/@ViewBag.Images.Enything.TopImage" alt="The Best PDF Converter: Convert PDF Files Online for Free" title="pdfconverter-down-img.webp" width="auto" height="auto">
+                        }
+                    </div><div class="col-md-4 col-12 text-center">
+                        <h2 class="mb-4 mt-5">@ViewBag.HomeContext.Enything.MainServicesH2Text</h2>
+                        <p>@ViewBag.HomeContext.Enything.MainServicesPText</p>
+                    </div>
+                    <div class="row justify-content-center" style="direction: ltr;">
+
+                        <div class="col-md-8 col-12">
+                            <div class="">
+                                @if (ViewBag.Images.Enything.DownImage != null)
+                                {
+
+                                            <img src="@Common.GetPath.GetHomeImages().Replace("wwwroot","")/@ViewBag.Images.Enything.DownImage" alt="pdfconverter-main-services-img" title="Convert to PDF � Free Online PDF Converter" width="auto" height="auto">
+
+                                }
+                            </div>
+                        </div><div class="col-md-4 col-12">
+                            <h1 class="mb-4 mt-5">@ViewBag.HomeContext.Enything.ServicesInfoH1Text</h1>
+                            <p>@ViewBag.HomeContext.Enything.ServicesInfoPText</p>
+                        </div>
+                    </div>
+                    <div class="col-md-8 col-12 text-center" style="">
+                        @if (ViewBag.Images.Enything.TopImage != null)
+                        {
+                                    <img src="@Common.GetPath.GetContentImatge4()" alt="pdfconverter-main-right-img" title="Convert PDF Files Online for Free | PDFtoConverter" width="auto" height="auto">
+                        }
+                    </div><div class="col-md-4 col-12 text-center">
+                        <h2 class="mb-4 mt-5">Convert Your PDF Online</h2>
+                        <p>From image to PDF is just as easy & fast as converting your PowerPoint presentation to PDF. Of course you can turn other documents into PDF files as well. For example you can convert a file from Word to PDF</p>
+                    </div>
+                    <div class="row justify-content-center" style="direction: ltr;">
+                        <div class="col-md-8 col-12">
+                            <div class="">
+                                @if (ViewBag.Images.Enything.DownImage != null)
+                                {
+                                            <img src="@Common.GetPath.GetContentImatge5()" alt="pdfconverter-main-left-img" title="Convert To PDF - Convert Your Files To PDF Online" width="auto" height="auto">
+                                }
+                            </div>
+                        </div><div class="col-md-4 col-12">
+                            <h2 class="mb-4 mt-5">Edit Your PDF Online</h2>
+                            <p>Editing PDF documents is a simple problem you need a simply solution for. pdftoconverter allows you to edit your PDFs fast & easily. Rotate a page or merge PDFs into one. Split PDF files and reduce file size and aspect ratio of PDFs easily. Of course you can also protect a PDF with our free service.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <br />
+            <!-- end section main services info box -->
+            @if (ViewBag.BlogPosts.Success)
+            {
+                    <!--start new blog posts -->
+                    <div class="container">
+                        <div class="row blog-list">
+                        @foreach (var gg in ViewBag.BlogPosts.Enything.Posts)
+                        {
+
+
+                                    <div class=" col-md-4 col-sm-12 col-12 text-center mb-5">
+
+                                    <!-- Start New: Use Bootstrap Card -->
+
+                                    <div class="card h-100">
+                                        
+                                        <div class="card-body">
+                                            <img onclick="window.open('@gg.Link', '_blank').focus();" style="cursor:pointer" alt="pdf to word converter free no sign up" title="Open Post" src="@gg.TitleImage">
+                                        </div>
+
+                                        <div class="card-header">
+                                            <h3 onclick="window.open('@gg.Link', '_blank').focus();" title="Open Post" style="cursor:pointer">@gg.Title</h3>
+                                        </div>
+                                        
+                                    </div>
+
+                                    <!-- End New: Use Bootstrap Card -->
+
+
+                                            <!-- <h3 onclick="window.open('@gg.Link', '_blank').focus();" title="Open Post" style="cursor:pointer">@gg.Title</h3>
+                                                <img onclick="window.open('@gg.Link', '_blank').focus();" style="cursor:pointer" alt="pdf to word converter free no sign up" title="Open Post" src="@gg.TitleImage"> -->
+
+
+
+
+                                      <!---  <p>
+                                    @if (!string.IsNullOrWhiteSpace(gg.Content))
+                                    {
+                                        @if (gg.Content.Length > 140)
+                                        {
+                                            //@Html.Raw((Common.Formating.FixBlogPostTagsShortTime(gg.Content).Substring(0, 130).ToString() + "..."));
+                                        }
+                                        else
+                                        {
+                                           // @Html.Raw(Common.Formating.FixBlogPostTagsShortTime(gg.Content));
+                                        }
+                                    }
+                                        </p>-->
+                                    </div>
+                        }
+                        </div>
+                    </div>
+                    <!-- end new blog posts -->
+            }
+            <br />
+            <br />
+
+
+            <!--start blog posts slides-->
+            @if (ViewBag.BlogPostsSlide.Success)
+            {
+                        <h3 class="text-center">Learn more about working with PDF documents</h3>
+                    <hr />
+                    <div class="owl-carousel owl-theme" style="height:100%;">
+                    @foreach (var item in ViewBag.BlogPostsSlide.Enything.Posts)
+                    {
+
+
+                                <div class="item text-center post-body">
+
+                                    <div class="text-center" style="width: 26rem;display:unset">
+                                        <span onclick="window.open('@item.Link', '_blank').focus();" title="Open Post" style="cursor:pointer; background: url('@item.TitleImage') no-repeat;
+                    width:100%;
+                    height:200px;
+                    display:block;
+                    background-size: 100% 100%;
+                "></span>
+                                        <div class="card-body" style="height:240px;">
+                                            <h4 class="card-title">@item.Title</h4>
+                                            <p class="card-text">
+                                        @if (!string.IsNullOrWhiteSpace(item.Content))
+                                        {
+                                            @if (item.Content.Length > 140)
+                                            {
+                                                @Html.Raw((Common.Formating.FixBlogPostTags(item.Content).Substring(0, 130).ToString() + "..."))
+                                                ;
+                                            }
+                                            else
+                                            {
+                                                @Html.Raw(Common.Formating.FixBlogPostTags(item.Content))
+                                                ;
+                                            }
+                                        }
+                                            </p>
+
+                                            
+                                        </div>
+                                        <div class="card-footer">
+
+                                            <a target="_blank" href="@item.Link" class="btn btn-outline-primary mt-4" id="more">More</a>
+                                        </div>
+                                    </div>
+                                    <div class="card text-center"></div>
+                                </div>
+                    }
+                    </div>
+                    <a target="_blank" href="https://blog.pdftoconverter.com" class="btn btn-primary">Let's learn more about PDF converting</a>
+                    <br />
+                    <br />
+                    <br />
+            }
+
+            <!--end blog posts slides-->
+            @if (ViewBag.FAQ.Enything != null)
+            {
+                byte cv = 1;
+                    <!-- start FAQ -->
+                    <div class="text-center">
+                        <h2>Frequently Asked Questions</h2>
+                    </div>
+                    <div class="accordion">
+
+                    @foreach (var item in ViewBag.FAQ.Enything)
+                    {
+                        if (cv <= Common.GetPath.GetFAQCount())
+                        {
+                            <div class="accordion-item">
+
+                                <button id="accordion-button-@cv" aria-expanded="false"><h5 class="accordion-title">@item.Question</h5><span class="icon" aria-hidden="true"></span></button>
+
+                                <div class="accordion-content" style="text-align:left">
+                                    <p style="color:black">@Html.Raw(item.Answer)</p>
+                                </div>
+                            </div>
+                        }
+                        else
+                        {
+                            break;
+                        }
+                        cv += 1;
+                    }
+                    </div>
+                    <br />
+                    <br />
+
+                    <!-- end FAQ -->
+            }
+
+            <!-- start sectin main people say about us -->
+            <div class="section main-people-say-about-us">
+                <div class="row justify-content-center text-center">
+
+                    <div class="col-12">
+
+                        <h2>Some User Comments</h2>
+                    </div>
+
+                    <div class="main-people-saying-content">
+                        <div class="row justify-content-center text-center">
+                            <div class="col-7">
+                                <div id="carouselExampleIndicators" class="carousel carousel-dark slide" data-bs-ride="carousel">
+                                    <div class="carousel-indicators">
+                                        @if (Model.Success)
+                                        {
+                                            int cvv = 0;
+                                            @for (int i = 1; i <= Model.Enything.Count; i++)
+                                            {
+
+                                                if (cvv == 0)
+                                                {
+                                                                <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="@cvv" class="active" aria-current="true" aria-label="Slide @i"></button>
+                                                }
+                                                else
+                                                {
+                                                                <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="@cvv" aria-label="Slide @i"></button>
+                                                }
+                                                cvv += 1;
+                                            }
+                                        }
+                                    </div>
+
+                                    <div class="carousel-inner">
+                                        @if (Model.Success)
+                                        {
+                                            int cv = 1;
+                                            string classname = "";
+                                            @foreach (var item in Model.Enything)
+                                            {
+                                                classname = cv == 1 ? "carousel-item active" : "carousel-item";
+                                                        <div class="@classname">
+                                                    @{
+                                                        cv = 0;
+                                                    }
+                                                            <div class="people-saying-card">
+                                                                <h5 class="person-fullname">@item.UserName</h5>
+                                                                <div class="person-rate">
+                                                            @for (int i = 1; i <= 5; i++)
+                                                            {
+                                                                @if (item.Rate >= i)
+                                                                {
+                                                                                    <i class="bi bi-star-fill" data-rating="@i"></i>
+                                                                }
+                                                                else
+                                                                {
+                                                                                    <i class="bi bi-star" data-rating="@i"></i>
+                                                                }
+                                                            }
+                                                                </div>
+                                                                <p>@item.Message</p>
+                                                            </div>
+                                                        </div>
+                                            }
+                                        }
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-12">
+                        <a href="/contact-us/" class="btn btn-outline-primary mt-5">What do you think about us?</a>
+                    </div>
+                </div>
+            </div>
+            <!-- end sectin main people say about us -->
+
+        </div>
+        <!-- end home main -->
+    </div>
+</main>
+<!-- end main -->
+@section Scripts{
+    <!-- script -->
+    <script src="~/js/bootstrap.bundle.min.js"></script>
+    <!-- Owl Carousel -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
+    <!-- custom JS code after importing jquery and owl -->
+    <script type="text/javascript">
+        $(document).ready(function() {
+            $(".owl-carousel").owlCarousel();
+        });
+
+        $('.owl-carousel').owlCarousel({
+            loop: false,
+            margin: 10,
+            nav: true,
+            responsive: {
+                0: {
+                    items: 1
+                },
+                600: {
+                    items: 3
+                },
+                1000: {
+                    items: 3
+                }
+            }
+        })
+
+        const items = document.querySelectorAll(".accordion button");
+
+        function toggleAccordion() {
+            const itemToggle = this.getAttribute('aria-expanded');
+
+            for (i = 0; i < items.length; i++) {
+                items[i].setAttribute('aria-expanded', 'false');
+            }
+
+            if (itemToggle == 'false') {
+                this.setAttribute('aria-expanded', 'true');
+            }
+        }
+
+        items.forEach(item => item.addEventListener('click', toggleAccordion));
+    </script>
+}
+@{
+    string basic = ".json";
+    string SchemaFile = Common.Formating.StandardFaqSchemaFileName + basic;
+    string SchemaHowToFile = Common.Formating.StandardHowToSchemaFileName + basic;
+}
+@section Schemas{
+<script type="application/ld+json">
+        @Html.Raw(Common.Schema.SchemaReader.ReadToEnd(SchemaFile,true,Common.Schema.SchemaType.Faq))
+        @Html.Raw(Common.Schema.SchemaReader.ReadToEnd(SchemaHowToFile,true,Common.Schema.SchemaType.HowTo))
+</script>
+}

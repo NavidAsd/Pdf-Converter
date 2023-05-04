@@ -1,0 +1,86 @@
+E:\C#\Web\Core\PdfConverter\Persistance\bin\Debug\net5.0\Persistance.deps.json
+E:\C#\Web\Core\PdfConverter\Persistance\bin\Debug\net5.0\Persistance.dll
+E:\C#\Web\Core\PdfConverter\Persistance\bin\Debug\net5.0\Persistance.pdb
+E:\C#\Web\Core\PdfConverter\Persistance\obj\Debug\net5.0\Persistance.csproj.AssemblyReference.cache
+E:\C#\Web\Core\PdfConverter\Persistance\obj\Debug\net5.0\Persistance.GeneratedMSBuildEditorConfig.editorconfig
+E:\C#\Web\Core\PdfConverter\Persistance\obj\Debug\net5.0\Persistance.AssemblyInfoInputs.cache
+E:\C#\Web\Core\PdfConverter\Persistance\obj\Debug\net5.0\Persistance.AssemblyInfo.cs
+E:\C#\Web\Core\PdfConverter\Persistance\obj\Debug\net5.0\Persistance.csproj.CoreCompileInputs.cache
+E:\C#\Web\Core\PdfConverter\Persistance\obj\Debug\net5.0\Persistance.dll
+E:\C#\Web\Core\PdfConverter\Persistance\obj\Debug\net5.0\ref\Persistance.dll
+E:\C#\Web\Core\PdfConverter\Persistance\obj\Debug\net5.0\Persistance.pdb
+E:\C#\Web\Core\PdfConverter\Persistance\bin\Debug\net5.0\Persistance.runtimeconfig.json
+E:\C#\Web\Core\PdfConverter\Persistance\bin\Debug\net5.0\Persistance.runtimeconfig.dev.json
+E:\C#\Web\Core\PdfConverter\Persistance\obj\Debug\net5.0\Persistance.genruntimeconfig.cache
+E:\C#\Web\Core\PdfConverter\Persistance\bin\Debug\net5.0\Application.dll
+E:\C#\Web\Core\PdfConverter\Persistance\bin\Debug\net5.0\Common.dll
+E:\C#\Web\Core\PdfConverter\Persistance\bin\Debug\net5.0\Domain.dll
+E:\C#\Web\Core\PdfConverter\Persistance\bin\Debug\net5.0\Application.pdb
+E:\C#\Web\Core\PdfConverter\Persistance\bin\Debug\net5.0\Domain.pdb
+E:\C#\Web\Core\PdfConverter\Persistance\bin\Debug\net5.0\Common.pdb
+E:\C#\Web\Core\PdfConverter\Persistance\obj\Debug\net5.0\Persistance.csproj.CopyComplete
+E:\C#\Web\Core\PdfConverter\Persistance\bin\Debug\net5.0\x64\pdfium.dll
+E:\C#\Web\Core\PdfConverter\Persistance\bin\Debug\net5.0\x86\pdfium.dll
+E:\C#\Web\Core\PdfConverter\Persistance\bin\Debug\net5.0\runtimes\win-x64\native\wkhtmltox.dll
+E:\C#\Web\Core\PdfConverter\Persistance\bin\Debug\net5.0\runtimes\win-x86\native\wkhtmltox.dll
+E:\C#\Web\Core\PdfConverter\Persistance\obj\Debug\net5.0\refint\Persistance.dll
+D:\C#\Web\Core\PdfConverter\Persistance\bin\Debug\net5.0\runtimes\win-x64\native\wkhtmltox.dll
+D:\C#\Web\Core\PdfConverter\Persistance\bin\Debug\net5.0\runtimes\win-x86\native\wkhtmltox.dll
+D:\C#\Web\Core\PdfConverter\Persistance\bin\Debug\net5.0\x64\pdfium.dll
+D:\C#\Web\Core\PdfConverter\Persistance\bin\Debug\net5.0\x86\pdfium.dll
+D:\C#\Web\Core\PdfConverter\Persistance\bin\Debug\net5.0\Persistance.deps.json
+D:\C#\Web\Core\PdfConverter\Persistance\bin\Debug\net5.0\Persistance.runtimeconfig.json
+D:\C#\Web\Core\PdfConverter\Persistance\bin\Debug\net5.0\Persistance.runtimeconfig.dev.json
+D:\C#\Web\Core\PdfConverter\Persistance\bin\Debug\net5.0\Persistance.dll
+D:\C#\Web\Core\PdfConverter\Persistance\bin\Debug\net5.0\Persistance.pdb
+D:\C#\Web\Core\PdfConverter\Persistance\bin\Debug\net5.0\Application.dll
+D:\C#\Web\Core\PdfConverter\Persistance\bin\Debug\net5.0\Common.dll
+D:\C#\Web\Core\PdfConverter\Persistance\bin\Debug\net5.0\Domain.dll
+D:\C#\Web\Core\PdfConverter\Persistance\bin\Debug\net5.0\Application.pdb
+D:\C#\Web\Core\PdfConverter\Persistance\bin\Debug\net5.0\Domain.pdb
+D:\C#\Web\Core\PdfConverter\Persistance\bin\Debug\net5.0\Common.pdb
+D:\C#\Web\Core\PdfConverter\Persistance\obj\Debug\net5.0\Persistance.csproj.AssemblyReference.cache
+D:\C#\Web\Core\PdfConverter\Persistance\obj\Debug\net5.0\Persistance.GeneratedMSBuildEditorConfig.editorconfig
+D:\C#\Web\Core\PdfConverter\Persistance\obj\Debug\net5.0\Persistance.AssemblyInfoInputs.cache
+D:\C#\Web\Core\PdfConverter\Persistance\obj\Debug\net5.0\Persistance.AssemblyInfo.cs
+D:\C#\Web\Core\PdfConverter\Persistance\obj\Debug\net5.0\Persistance.csproj.CoreCompileInputs.cache
+D:\C#\Web\Core\PdfConverter\Persistance\obj\Debug\net5.0\Persistance.csproj.CopyComplete
+D:\C#\Web\Core\PdfConverter\Persistance\obj\Debug\net5.0\Persistance.dll
+D:\C#\Web\Core\PdfConverter\Persistance\obj\Debug\net5.0\refint\Persistance.dll
+D:\C#\Web\Core\PdfConverter\Persistance\obj\Debug\net5.0\Persistance.pdb
+D:\C#\Web\Core\PdfConverter\Persistance\obj\Debug\net5.0\Persistance.genruntimeconfig.cache
+D:\C#\Web\Core\PdfConverter\Persistance\obj\Debug\net5.0\ref\Persistance.dll
+E:\PdfConverter\Persistance\obj\Debug\net5.0\Persistance.csproj.AssemblyReference.cache
+E:\PdfConverter\Persistance\obj\Debug\net5.0\Persistance.GeneratedMSBuildEditorConfig.editorconfig
+E:\PdfConverter\Persistance\obj\Debug\net5.0\Persistance.AssemblyInfoInputs.cache
+E:\PdfConverter\Persistance\obj\Debug\net5.0\Persistance.AssemblyInfo.cs
+E:\PdfConverter\Persistance\obj\Debug\net5.0\Persistance.csproj.CoreCompileInputs.cache
+E:\PdfConverter\Persistance\obj\Debug\net5.0\Persistance.dll
+E:\PdfConverter\Persistance\obj\Debug\net5.0\refint\Persistance.dll
+E:\PdfConverter\Persistance\obj\Debug\net5.0\Persistance.pdb
+D:\C#\Web\Core\New folder (2)\PdfConverter\Persistance\bin\Debug\net5.0\runtimes\win-x64\native\wkhtmltox.dll
+D:\C#\Web\Core\New folder (2)\PdfConverter\Persistance\bin\Debug\net5.0\runtimes\win-x86\native\wkhtmltox.dll
+D:\C#\Web\Core\New folder (2)\PdfConverter\Persistance\bin\Debug\net5.0\x64\pdfium.dll
+D:\C#\Web\Core\New folder (2)\PdfConverter\Persistance\bin\Debug\net5.0\x86\pdfium.dll
+D:\C#\Web\Core\New folder (2)\PdfConverter\Persistance\bin\Debug\net5.0\Persistance.deps.json
+D:\C#\Web\Core\New folder (2)\PdfConverter\Persistance\bin\Debug\net5.0\Persistance.runtimeconfig.json
+D:\C#\Web\Core\New folder (2)\PdfConverter\Persistance\bin\Debug\net5.0\Persistance.runtimeconfig.dev.json
+D:\C#\Web\Core\New folder (2)\PdfConverter\Persistance\bin\Debug\net5.0\Persistance.dll
+D:\C#\Web\Core\New folder (2)\PdfConverter\Persistance\bin\Debug\net5.0\Persistance.pdb
+D:\C#\Web\Core\New folder (2)\PdfConverter\Persistance\bin\Debug\net5.0\Application.dll
+D:\C#\Web\Core\New folder (2)\PdfConverter\Persistance\bin\Debug\net5.0\Common.dll
+D:\C#\Web\Core\New folder (2)\PdfConverter\Persistance\bin\Debug\net5.0\Domain.dll
+D:\C#\Web\Core\New folder (2)\PdfConverter\Persistance\bin\Debug\net5.0\Application.pdb
+D:\C#\Web\Core\New folder (2)\PdfConverter\Persistance\bin\Debug\net5.0\Domain.pdb
+D:\C#\Web\Core\New folder (2)\PdfConverter\Persistance\bin\Debug\net5.0\Common.pdb
+D:\C#\Web\Core\New folder (2)\PdfConverter\Persistance\obj\Debug\net5.0\Persistance.csproj.AssemblyReference.cache
+D:\C#\Web\Core\New folder (2)\PdfConverter\Persistance\obj\Debug\net5.0\Persistance.GeneratedMSBuildEditorConfig.editorconfig
+D:\C#\Web\Core\New folder (2)\PdfConverter\Persistance\obj\Debug\net5.0\Persistance.AssemblyInfoInputs.cache
+D:\C#\Web\Core\New folder (2)\PdfConverter\Persistance\obj\Debug\net5.0\Persistance.AssemblyInfo.cs
+D:\C#\Web\Core\New folder (2)\PdfConverter\Persistance\obj\Debug\net5.0\Persistance.csproj.CoreCompileInputs.cache
+D:\C#\Web\Core\New folder (2)\PdfConverter\Persistance\obj\Debug\net5.0\Persistance.csproj.CopyComplete
+D:\C#\Web\Core\New folder (2)\PdfConverter\Persistance\obj\Debug\net5.0\Persistance.dll
+D:\C#\Web\Core\New folder (2)\PdfConverter\Persistance\obj\Debug\net5.0\refint\Persistance.dll
+D:\C#\Web\Core\New folder (2)\PdfConverter\Persistance\obj\Debug\net5.0\Persistance.pdb
+D:\C#\Web\Core\New folder (2)\PdfConverter\Persistance\obj\Debug\net5.0\Persistance.genruntimeconfig.cache
+D:\C#\Web\Core\New folder (2)\PdfConverter\Persistance\obj\Debug\net5.0\ref\Persistance.dll

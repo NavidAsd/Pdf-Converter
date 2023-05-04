@@ -1,0 +1,114 @@
+﻿@model ResultMessage<Application.Services.Query.ViewContext.ReturnTermsOfUse.ResultReturnTermsOfUseDto>
+@using Common;
+@{
+    ViewData["Title"] = "Edit Service";
+    Layout = "~/Areas/PdfManagerArea/Views/Shared/_Adminlayout.cshtml";
+}
+
+
+<head>
+    <link rel="shortcut icon" type="image/png" href="~/images/logo/PDFtoConverterfavicon.png">
+    <title>PdfConverter | Admin-About Us</title>
+</head>
+
+
+<style>
+    .ck-editor__editable {
+        min-height: 300px;
+        min-width: 850px;
+    }
+</style>
+
+
+<section class="basic-elements">
+    <div class="row">
+    </div>
+    <div class="row">
+        <div class="col-md-12">
+            <div class="card">
+                <div class="card-header">
+                    <div class="card-title-wrap bar-success">
+                        <h4 class="card-title mb-0">Edit Frequently Question</h4>
+                        @if (Model.Success == true)
+                        {
+                            <h7 class="card-title mb-0">lastupdate: @Model.Enything.LastUpdate</h7>
+                        }
+                        <p id="_Id" style="display:none">@Model.Enything.Id</p>
+
+                    </div>
+                </div>
+                <hr />
+
+                <div class="col-xl-12 col-lg-12 col-md-12 mb-1">
+                    <fieldset class="form-group">
+                        <label>Write Your Context Here</label>
+
+            <textarea name="editor" id="editor" rows="10" cols="80">
+                @Html.Raw(Model.Enything.Text)
+            </textarea>
+                    </fieldset>
+                </div>
+
+
+            </div>
+            <a class="btn btn-success col-md-12" onclick="SendData()"> Save Changes </a>
+        </div>
+    </div>
+</section>
+
+
+<script src="https://code.jquery.com/jquery-1.12.3.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src="https://cdn.ckeditor.com/4.19.1/standard/ckeditor.js"></script>
+
+
+<link href="~/Sweetalert2/sweetalert2.min.css" rel="stylesheet" />
+<script src="~/Sweetalert2/sweetalert2.min.js"></script>
+
+
+<script>
+var Editor = CKEDITOR.replace('editor');
+</script>
+
+
+<script>
+    function SendData() {
+        var Data = new FormData();
+        Data.append("Id", document.getElementById("_Id").textContent);
+        Data.append("Text", Editor.getData());
+
+        $.ajax({
+            type: "POST",
+            url: "/PdfManagerArea/OtherContext/UpdateAboutUsContext/",
+            contentType: false,
+            processData: false,
+            data: Data,
+            success: function (data) {
+                if (data.success == true) {
+
+                    swal.fire(
+                        'Success',
+                        data.message,
+                        'success'
+                    ).then(function (isConfirm) {
+                        location.reload();
+
+                    });
+                }
+                else {
+                    swal.fire(
+                        'Warning',
+                        data.message,
+                        'warning'
+                    );
+                }
+            },
+            error: function (xhr, ajaxOptions, thrownError) {
+                alert(xhr.status);
+                alert(thrownError);
+            }
+        });
+    }
+
+</script>
+

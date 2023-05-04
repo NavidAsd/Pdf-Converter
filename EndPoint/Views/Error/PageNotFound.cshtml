@@ -1,0 +1,67 @@
+﻿@{ Layout = "~/Views/Shared/_Layout.cshtml";}
+
+<head>
+        <link rel="canonical" href="@Common.GetPath.GetDomainHttps()/page-not-found/" />
+    @await Component.InvokeAsync("GetMetaTags", "PageNotFound")
+    <link href="~/css/PageNotFound.css" rel="stylesheet" />
+</head>
+<main>
+    <div class="container">
+        <!-- start home main -->
+        <div class="home-main">
+            <!-- start file upload box -->
+            <div class="section main-file-upload-box">
+                <div class="row align-items-center text-center">
+                    <br />
+                    <br />
+                    <!-- box -->
+                    <div class="col-12">
+                        <div class="upload">
+                            <div class="upload-files">
+                                <div class="body" id="drop">
+                                    <div class="content">
+
+                                        <div class="center">
+                                            <div class="error">
+                                                <div class="number">4</div>
+                                                <div class="illustration">
+                                                    <div class="circle"></div>
+                                                    <div class="clip">
+                                                        <div class="paper">
+                                                            <div class="face">
+                                                                <div class="eyes">
+                                                                    <div class="eye eye-left"></div>
+                                                                    <div class="eye eye-right"></div>
+                                                                </div>
+                                                                <div class="rosyCheeks rosyCheeks-left"></div>
+                                                                <div class="rosyCheeks rosyCheeks-right"></div>
+                                                                <div class="mouth"></div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="number">4</div>
+                                            </div>
+                                            <h1>Page Not Found</h1>
+                                            <h5>Sorry, we were unable to process your request</h5>
+                                            <p>But we can still help you</p>
+                                            <a onclick="history.back(-1)" class="button" style="cursor:pointer">Go Back</a>
+                                            <br />
+                                            <p>If you think you need help, you can send us a <a href="/report-bug">message</a></p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- end file upload box -->
+            @await Component.InvokeAsync("GetTools")
+        </div>
+    </div>
+</main>
+@section Scripts{
+<script src="~/js/jquery.min.js"></script>
+<script src="~/js/bootstrap.bundle.min.js"></script>
+}

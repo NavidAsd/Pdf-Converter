@@ -1,0 +1,226 @@
+﻿@model Common.ResultMessage<Application.Services.Query.Seo.ReturnMetatagKeywords.ResultReturnMetatagKeywordsDto>
+@addTagHelper *, LazZiya.TagHelpers
+@{
+    Layout = "~/Areas/PdfManagerArea/Views/Shared/_Adminlayout.cshtml";
+}
+
+
+<head>
+    <link href="~/Areas/Admin/css/NoResult.css" rel="stylesheet" />
+    <link rel="shortcut icon" type="image/png" href="~/images/logo/66-modified.png">
+    <title>PdfConverter | Admin-Metatag KeyWords</title>
+</head>
+
+<form method="get" class="form-inline">
+    <input name="filter" class="form-control" placeholder="filter"
+           value="@Model.Enything.Filter" />
+    <button type="submit" class="btn btn-info">
+        <span class="glyphicon glyphicon-search" aria-hidden="true"></span> Search
+    </button>
+</form>
+
+<div class="  text-center">
+    <paging total-records="@Model.Enything.TotalRow"
+            page-no="@Model.Enything.PageIndex"
+            page-size="@Model.Enything.PageSize"
+            show-prev-next="true"
+            show-total-pages="false"
+            show-total-records="false"
+            show-page-size-nav="false"
+            show-first-numbered-page="true"
+            show-last-numbered-page="true"
+            query-string-key-page-no="PageIndex"
+            query-string-key-page-size="Size"
+            query-string-value="@@(Request.QueryString.Value)"
+            gap-size="2">
+    </paging>
+</div>
+
+
+<div class="content-wrapper">
+    <div class="container-fluid">
+        <!-- Zero configuration table -->
+        <section id="configuration">
+            <div class="row">
+                <div class="col-12">
+                    <div class="card">
+                        <a class="btn btn-success col-md-12" href="/PdfManagerArea/Seo/CreateKeyword?MetaId=@ViewBag.MetaId"> Create New </a>
+                        <p>
+                            <br />
+                            <br />
+                        </p>
+                        <table class="table table-striped">
+                            <thead>
+                                <tr>
+                                    <th>
+
+                                    </th>
+                                    <th>
+                                        Key
+                                    </th>
+                                    <th>
+                                        InsertTime
+                                    </th>
+                                    <th>
+                                        LastUpdate
+                                    </th>
+
+                                    <th></th>
+                                </tr>
+                            </thead>
+
+                            <tbody>
+                                @if (Model.Success)
+                                {
+                                    int cv = 1;
+                                    @foreach (var item in Model.Enything.Keywords)
+                                    {
+                                        <tr>
+                                            <td>
+                                                @cv
+                                            </td>
+                                            <td>
+                                                @item.Key
+                                            </td>
+                                            <td>
+                                                @item.InsertTime
+                                            </td>
+                                            <td>
+                                                @item.LastUpdate
+                                            </td>
+                                            <td>
+                                                <a class="btn btn-blue" onclick="OpenModal('@item.Key', '@item.Id')">Edit</a>
+                                                <a class="btn btn-danger" onclick="RemoveKey('@item.Id')">Remove</a>
+                                            </td>
+                                        </tr>
+                                        cv += 1;
+                                    }
+                                }
+
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+</div>
+
+<div class="  text-center">
+    <paging total-records="@Model.Enything.TotalRow"
+            page-no="@Model.Enything.PageIndex"
+            page-size="@Model.Enything.PageSize"
+            show-prev-next="true"
+            show-total-pages="false"
+            show-total-records="false"
+            show-page-size-nav="false"
+            show-first-numbered-page="true"
+            show-last-numbered-page="true"
+            query-string-key-page-no="PageIndex"
+            query-string-key-page-size="Size"
+            query-string-value="@@(Request.QueryString.Value)"
+            gap-size="2">
+    </paging>
+
+</div>
+
+
+
+<script src="https://code.jquery.com/jquery-1.12.3.min.js"></script>
+
+<link href="~/Sweetalert2/sweetalert2.min.css" rel="stylesheet" />
+<script src="~/Sweetalert2/sweetalert2.min.js"></script>
+
+
+<script>
+    function RemoveKey(Id) {
+        var Data = new FormData();
+        Data.append("Id", Id);
+        $.ajax({
+            type: "POST",
+            url: "/PdfManagerArea/Seo/RemoveKeyword/",
+            contentType: false,
+            processData: false,
+            data: Data,
+            success: function (data) {
+                if (data.success == true) {
+                    location.reload();
+                }
+                else {
+                    swal.fire(
+                        'Warning',
+                        data.message,
+                        'warning'
+                    );
+                }
+            },
+            error: function (xhr, ajaxOptions, thrownError) {
+                alert(xhr.status);
+                alert(thrownError);
+            }
+        });
+    }
+
+    function EditKey() {
+        var Data = new FormData();
+        Data.append("Id", document.getElementById("_TId").value);
+        Data.append("keyword", document.getElementById("_text").value);
+        $.ajax({
+            type: "POST",
+            url: "/PdfManagerArea/Seo/UpdateKeyWord/",
+            contentType: false,
+            processData: false,
+            data: Data,
+            success: function (data) {
+                if (data.success == true) {
+                    location.reload();
+                }
+                else {
+                    swal.fire(
+                        'Warning',
+                        data.message,
+                        'warning'
+                    );
+                }
+            },
+            error: function (xhr, ajaxOptions, thrownError) {
+                alert(xhr.status);
+                alert(thrownError);
+            }
+        });
+    }
+
+    function OpenModal(Text, Id) {
+        document.getElementById("_TId").value = Id;
+        document.getElementById("_text").value = Text;
+        $("#mdlEditKey").modal('show');
+    }
+</script>
+
+@section Modals
+{
+    <!-- Modal Edit -->
+    <div class="modal fade" id="mdlEditKey" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLongTitle">KeyWord</h5>
+                </div>
+                <div class="modal-body">
+                    <div class="col-xl-12 col-lg-12 col-md-12 mb-1">
+                        <form>
+                            <fieldset class="form-group">
+                                <input type="text" class="form-control" id="_text"  required>
+                                <input type="text" class="form-control" id="_TId" style="display:none"  readonly>
+                            </fieldset>
+                        </form>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-success" onclick="EditKey()">Save</button>
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+}

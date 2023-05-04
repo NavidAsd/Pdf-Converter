@@ -1,0 +1,1190 @@
+<!doctype html>
+<html lang="fa">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- CSS -->
+    <link href="styles/bootstrap.min.css" rel="stylesheet">
+    <link href="styles/bootstrap-icons.css" rel="stylesheet">
+    <link href="styles/style.css" rel="stylesheet">
+    <link href="styles/responsive.css" rel="stylesheet">
+    <link href="styles/convert.css" rel="stylesheet">
+
+    <style>
+      .upload .upload-files .body p b,
+      .upload .upload-files .body p a {
+        color: #FFCA28 !important;
+      }
+      .upload .upload-files footer .importar,
+      .upload .upload-files footer .upload-btn {
+        color:#fff !important;
+        background-color: #FFCA28 !important;
+      }
+      .upload .upload-files footer .divider {
+        border-top: solid 4px #d8aa20;
+      }
+      .upload .upload-files header {
+        background: #FFCA28 !important;
+      }
+      .upload .upload-files footer .list-files .file .progress {
+        background: linear-gradient(to left, #ffc92860, #FFCA28) no-repeat;
+      }
+      .upload .upload-files footer .list-files .file .done {
+        background:#FFCA28
+      }
+	  
+    </style>
+
+    <title>File converter | Convert page</title>
+  </head>
+  <body>
+
+<style>
+.dropdown {
+  font-family: Arial, sans-serif;
+
+  position: relative;
+  display: inline;
+}
+
+.dropdown-label {
+  background-color: transparent;
+  color: #e63946;
+  border: none;
+  text-decoration: none;
+
+  font-size: 2em;
+  line-height: 1;
+
+  margin: 0;
+  padding-bottom: 0.5rem;
+
+  cursor: pointer;
+
+  -webkit-appearance: none;
+  -moz-appearance: none;
+}
+.dropdown-items {
+  position: absolute;
+
+  opacity: 0;
+  background-color: #fff;
+  box-shadow: 0 0 12px rgba(0, 0, 0, 0.3);
+  border-radius: 0.5rem;
+
+  width: 200px;
+
+  margin-top: 0.5rem;
+
+  transform: scale(0);
+  transform-origin: top left;
+  transition: all 0.2s ease-in-out;
+
+  overflow: hidden;
+}
+.dropdown-item {
+  text-decoration: none;
+  color: #000;
+
+  display: block;
+
+  font-size: 0.8em;
+  text-align: left;
+
+  padding: 0.7rem;
+
+  transition: background-color 0.2s ease-in-out;
+}
+.dropdown:focus-within .dropdown-items,
+.dropdown:hover .dropdown-items {
+  opacity: 1;
+  transform: scale(1);
+}
+.dropdown-label:focus-visible {
+  text-decoration: underline;
+}
+.dropdown-label:focus-visible,
+.dropdown-item:focus-visible {
+  outline: none;
+}
+.dropdown-item:hover {
+  background-color: #f1faee;
+}
+.dropdown-item:focus-visible {
+  background-color: #f1faee;
+}
+
+</style>
+
+
+<!-- start header -->
+<header>
+  <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <div class="container">
+
+      <!-- Logo -->
+      <a class="navbar-brand " href="#"><h5>Logo</h5></a>
+      
+
+      
+              
+      
+
+      <!-- start copmuter and tablet navbar -->
+      <div class="collapse navbar-collapse">
+
+        <!-- start navbar list -->
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="#">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Link</a>
+          </li>
+          <!-- mega menu li -->
+          <li class="nav-item dropdown has-megamenu">
+            <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown">Mega menu</a>
+            <div class="dropdown-menu megamenu" role="menu">
+              <div class="container">
+                <div class="row">
+                  <div class="col-3">
+                    <span class="mega-menu-title">
+                      Convert & Compress
+                    </span>
+                    <ul class="mega-menu-list">
+                      <li><a href="#" class="nav-link">
+                          <svg style="width:24px;height:24px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M0 4C0 1.79086 1.79086 0 4 0H20C22.2091 0 24 1.79086 24 4V20C24 22.2091 22.2091 24 20 24H4C1.79086 24 0 22.2091 0 20V4Z" fill="#FFCA28"></path><path d="M5.68718 5.68718L11.8787 7.23507L12 7.26539L12.1213 7.23507L18.3128 5.68718L16.7649 11.8787L16.7346 12L16.7649 12.1213L18.3128 18.3128L12.1213 16.7649L12 16.7346L11.8787 16.7649L5.68718 18.3128L7.23507 12.1213L7.26539 12L7.23507 11.8787L5.68718 5.68718Z" stroke="white"></path></svg>
+                        Compress PDF</a></li>
+                      <li><a href="#" class="nav-link">
+                        <svg style="width:24px;height:24px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M0 4C0 1.79086 1.79086 0 4 0H20C22.2091 0 24 1.79086 24 4V20C24 22.2091 22.2091 24 20 24H4C1.79086 24 0 22.2091 0 20V4Z" fill="#FFCA28"></path><rect x="5.5" y="5.5" width="4" height="6" stroke="white"></rect><rect x="14.5" y="12.5" width="4" height="6" stroke="white"></rect><path d="M12 7.00014L11.6464 6.64658L11.2929 7.00014L11.6464 7.35369L12 7.00014ZM17 7H17.5V6.49999L17 6.5L17 7ZM13.9091 5.79813L14.2627 5.44458L13.5556 4.73747L13.202 5.09103L13.9091 5.79813ZM13.202 8.90924L13.5556 9.2628L14.2627 8.55569L13.9091 8.20214L13.202 8.90924ZM12 7.50014L17 7.5L17 6.5L12 6.50014L12 7.50014ZM16.5 7V11H17.5V7H16.5ZM12.3536 7.35369L13.9091 5.79813L13.202 5.09103L11.6464 6.64658L12.3536 7.35369ZM11.6464 7.35369L13.202 8.90924L13.9091 8.20214L12.3536 6.64658L11.6464 7.35369Z" fill="white"></path><path d="M12 17L12.3536 17.3536L12.7071 17L12.3536 16.6464L12 17ZM7 17L6.5 17L6.49999 17.5H7V17ZM10.0909 18.202L9.73734 18.5556L10.4444 19.2627L10.798 18.9091L10.0909 18.202ZM10.798 15.0909L10.4444 14.7373L9.73734 15.4444L10.0909 15.798L10.798 15.0909ZM12 16.5H7V17.5H12V16.5ZM7.5 17L7.50007 13L6.50007 13L6.5 17L7.5 17ZM11.6464 16.6464L10.0909 18.202L10.798 18.9091L12.3536 17.3536L11.6464 16.6464ZM12.3536 16.6464L10.798 15.0909L10.0909 15.798L11.6464 17.3536L12.3536 16.6464Z" fill="white"></path></svg>
+                        PDF Converter</a></li>
+                    </ul>
+                  </div>
+                  <div class="col-3">
+                    <span class="mega-menu-title">
+                      Split & Merge
+                    </span>
+                    <ul class="mega-menu-list">
+                      <li><a href="#" class="nav-link">
+                        <svg style="width:24px;height:24px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M0 4C0 1.79086 1.79086 0 4 0H20C22.2091 0 24 1.79086 24 4V20C24 22.2091 22.2091 24 20 24H4C1.79086 24 0 22.2091 0 20V4Z" fill="#5C6BC0"></path><path fill-rule="evenodd" clip-rule="evenodd" fill="#ffff" d="M6.85831 18.8325C8.32448 19.3557 9.94657 18.6121 10.4813 17.1717L11.9999 13.0811L13.5185 17.1717C14.0533 18.6121 15.6754 19.3557 17.1416 18.8325C18.6077 18.3093 19.3628 16.7175 18.828 15.277C18.2933 13.8365 16.6712 13.0929 15.205 13.6161C14.5251 13.8587 13.9981 14.3312 13.6817 14.9118L12.501 11.7314L15 5L14.4262 5.2889C14.0028 5.50205 13.6769 5.86442 13.514 6.30332L11.9999 10.3817L10.4859 6.30332C10.3229 5.86442 9.99709 5.50205 9.57372 5.2889L8.99988 5L11.4989 11.7314L10.3182 14.9118C10.0018 14.3312 9.4748 13.8587 8.79487 13.6161C7.3287 13.0929 5.70661 13.8365 5.17184 15.277C4.63707 16.7175 5.39213 18.3093 6.85831 18.8325ZM7.18109 17.963C8.15854 18.3118 9.23993 17.8161 9.59645 16.8558C9.95296 15.8955 9.44959 14.8342 8.47214 14.4854C7.49468 14.1366 6.41329 14.6324 6.05678 15.5927C5.70027 16.553 6.20364 17.6142 7.18109 17.963ZM16.8188 17.963C17.7963 17.6142 18.2996 16.553 17.9431 15.5927C17.5866 14.6324 16.5052 14.1366 15.5278 14.4854C14.5503 14.8342 14.0469 15.8955 14.4035 16.8558C14.76 17.8161 15.8414 18.3118 16.8188 17.963Z"></path></svg>
+                        Split PDF</a></li>
+                      <li><a href="#" class="nav-link">
+                        <svg style="width:24px;height:24px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M0 4C0 1.79086 1.79086 0 4 0H20C22.2091 0 24 1.79086 24 4V20C24 22.2091 22.2091 24 20 24H4C1.79086 24 0 22.2091 0 20V4Z" fill="#5C6BC0"></path><path d="M10 16H6V5H14V8" stroke="white"></path><path d="M10.5 8.5H18.5V18.5H10.5V8.5Z" stroke="white"></path><path d="M14.5 11V16" stroke="white"></path><path d="M12 13.5H17" stroke="white"></path></svg>
+                        Merge PDF</a></li>
+                    </ul>
+                  </div>
+                  <div class="col-3">
+                    <span class="mega-menu-title">
+                      View & Edit
+                    </span>
+                    <ul class="mega-menu-list">
+                      <li><a href="#" class="nav-link">
+                        <svg style="width:24px;height:24px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M0 4C0 1.79086 1.79086 0 4 0H20C22.2091 0 24 1.79086 24 4V20C24 22.2091 22.2091 24 20 24H4C1.79086 24 0 22.2091 0 20V4Z" fill="#0FC0C5"></path><path fill-rule="evenodd" clip-rule="evenodd" d="M12 10.4444L17.4444 5L19 6.55556L13.5556 12H12V10.4444Z" fill="white"></path><path d="M15 5.5H5.5V18.5H15.5V12" stroke="white"></path><path d="M7 12.5H10" stroke="white"></path><path d="M7 16.5H10" stroke="white"></path><path d="M8.5 12.5V16.5" stroke="white"></path></svg>
+                        Edit PDF</a></li>
+                      <li><a href="#" class="nav-link">
+                        <svg style="width:24px;height:24px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M0 4C0 1.79086 1.79086 0 4 0H20C22.2091 0 24 1.79086 24 4V20C24 22.2091 22.2091 24 20 24H4C1.79086 24 0 22.2091 0 20V4Z" fill="#0FC0C5"></path><path d="M6.5 19.4698V4.5H14.5L17.5 7.5V19.5L6.5 19.4698Z" stroke="white"></path><path d="M14.5 4.5V7.5H17.5" stroke="white"></path><path d="M5 14H12V17H5V14Z" fill="white"></path><path d="M8 12.5H16" stroke="white"></path><path d="M13 14.5H16" stroke="white"></path><path d="M13 16.5H16" stroke="white"></path><path d="M8 10.5H16" stroke="white"></path></svg>
+                        PDF Reader</a></li>
+                      <li><a href="#" class="nav-link">
+                        <svg style="width:24px;height:24px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M0 4C0 1.79086 1.79086 0 4 0H20C22.2091 0 24 1.79086 24 4V20C24 22.2091 22.2091 24 20 24H4C1.79086 24 0 22.2091 0 20V4Z" fill="#0FC0C5"></path><rect x="5.5" y="5.5" width="8" height="10" stroke="white"></rect><path fill-rule="evenodd" clip-rule="evenodd" d="M8 13V12.2504H8.86929V9.93858H8.11969V9.36535C8.55433 9.28346 8.8315 9.17008 9.11496 9H9.79528V12.2504H10.5449V13H8Z" fill="white"></path><path fill-rule="evenodd" clip-rule="evenodd" d="M15.0845 16V15.6105L15.4224 15.2893C15.9894 14.7437 16.3642 14.3298 16.3642 13.9784C16.3642 13.6909 16.2019 13.5332 15.9469 13.5332C15.7336 13.5332 15.5713 13.677 15.4229 13.8346L15.052 13.4683C15.3441 13.1577 15.6177 13 16.0396 13C16.6192 13 17.0134 13.3709 17.0134 13.9366C17.0134 14.4328 16.5497 14.9614 16.0721 15.4621C16.2205 15.4436 16.4245 15.425 16.5636 15.425H17.1571V16H15.0845Z" fill="white"></path><path d="M14 8.5H18.5V18.5001H10.5V15.5001" stroke="white"></path></svg>
+                        Number Pages</a></li>
+                      <li><a href="#" class="nav-link">
+                        <svg style="width:24px;height:24px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M0 4C0 1.79086 1.79086 0 4 0H20C22.2091 0 24 1.79086 24 4V20C24 22.2091 22.2091 24 20 24H4C1.79086 24 0 22.2091 0 20V4Z" fill="#0FC0C5"></path><path d="M8.5 8V5.5H15.5V8" stroke="white"></path><path d="M5 8.5H19" stroke="white"></path><path d="M8.5 18.5L7.5 10.5001L16.5 10.5L15.5 18.5H8.5Z" stroke="white"></path><path d="M10.5 12V16" stroke="white"></path><path d="M13.5 12V16" stroke="white"></path></svg>
+                        Delete PDF Pages</a></li>
+                      <li><a href="#" class="nav-link">
+                        <svg style="width:24px;height:24px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M0 4C0 1.79086 1.79086 0 4 0H20C22.2091 0 24 1.79086 24 4V20C24 22.2091 22.2091 24 20 24H4C1.79086 24 0 22.2091 0 20V4Z" fill="#0FC0C5"></path><path d="M12 18.5C15.3137 18.5 18 15.8664 18 12.6176C18 11.0144 17.3458 9.56103 16.2849 8.5" stroke="white" stroke-width="0.5" stroke-dasharray="1 1"></path><path d="M12 18.5C8.68629 18.5 6 15.8137 6 12.5C6 9.18629 8.68629 6.5 12 6.5" stroke="white"></path><path d="M12 4L14.5 6.5L12 9V4Z" fill="white"></path></svg>
+                        Rotate PDF</a></li>
+                    </ul>
+                  </div>
+                  <div class="col-3">
+                    <span class="mega-menu-title">
+                      Convert from PDF
+                    </span>
+                    <ul class="mega-menu-list">
+                      <li><a href="#" class="nav-link">
+                        <svg style="width:24px;height:24px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M0 4C0 1.79086 1.79086 0 4 0H20C22.2091 0 24 1.79086 24 4V20C24 22.2091 22.2091 24 20 24H4C1.79086 24 0 22.2091 0 20V4Z" fill="#26C6DA"></path><path d="M10.5 15.5H5.5V5.5H13.5V8.5" stroke="white"></path><rect x="10.5" y="8.5" width="8" height="10" stroke="white"></rect><path d="M12 15.5H17" stroke="white"></path><path d="M12 13.5H17" stroke="white"></path><path d="M12 11.5H17" stroke="white"></path></svg>
+                        PDF To Word</a></li>
+                      <li><a href="#" class="nav-link">
+                        <svg style="width:24px;height:24px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M0 4C0 1.79086 1.79086 0 4 0H20C22.2091 0 24 1.79086 24 4V20C24 22.2091 22.2091 24 20 24H4C1.79086 24 0 22.2091 0 20V4Z" fill="#00CC44"></path><path d="M10.5 15.5H5.5V5.5H13.5V8.5" stroke="white"></path><rect x="10.5" y="8.5" width="8" height="10" stroke="white"></rect><path d="M12.5 12.5H16.5V16.5H12.5V12.5Z" stroke="white"></path><path d="M12.5 14.5H16.5" stroke="white"></path><path d="M14.5 12.5V16.5" stroke="white"></path></svg>
+                        PDF To Excel</a></li>
+                      <li><a href="#" class="nav-link">
+                        <svg style="width:24px;height:24px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M0 4C0 1.79086 1.79086 0 4 0H20C22.2091 0 24 1.79086 24 4V20C24 22.2091 22.2091 24 20 24H4C1.79086 24 0 22.2091 0 20V4Z" fill="#FF8000"></path><path d="M10.5 15.5H5.5V5.5H13.5V8.5" stroke="white"></path><rect x="10.5" y="8.5" width="8" height="10" stroke="white"></rect><path d="M16 14C16 15.1046 15.1046 16 14 16C12.8954 16 12 15.1046 12 14C12 12.8954 12.8954 12 14 12V14H16Z" fill="white"></path><path d="M15 11C16.1046 11 17 11.8954 17 13H15V11Z" fill="white"></path></svg>
+                        PDF To PPT</a></li>
+                      <li><a href="#" class="nav-link">
+                        <svg style="width:24px;height:24px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M0 4C0 1.79086 1.79086 0 4 0H20C22.2091 0 24 1.79086 24 4V20C24 22.2091 22.2091 24 20 24H4C1.79086 24 0 22.2091 0 20V4Z" fill="#7E57C2"></path><path d="M10.5 15.5H5.5V5.5H13.5V8.5" stroke="white"></path><rect x="10.5" y="8.5" width="8" height="10" stroke="white"></rect><path d="M10.5 15.5L12 14L14.5 16.5L16 15L18.5 17.5" stroke="white"></path><circle cx="16" cy="11" r="0.5" fill="white" stroke="white"></circle></svg>
+                        PDF To JPG</a></li>
+                    </ul>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-3">
+                    <span class="mega-menu-title">
+                      Convert to PDF
+                    </span>
+                    <ul class="mega-menu-list">
+                      <li><a href="#" class="nav-link">
+                        <svg style="width:24px;height:24px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M0 4C0 1.79086 1.79086 0 4 0H20C22.2091 0 24 1.79086 24 4V20C24 22.2091 22.2091 24 20 24H4C1.79086 24 0 22.2091 0 20V4Z" fill="#26C6DA"></path><rect x="5.5" y="5.5" width="8" height="10" stroke="white"></rect><path d="M14 8.5H18.5V18.5001H10.5V15.5001" stroke="white"></path><path d="M7 12.5H12" stroke="white"></path><path d="M7 10.5H12" stroke="white"></path><path d="M7 8.5H12" stroke="white"></path></svg>
+                        Word To PDF</a></li>
+                      <li><a href="#" class="nav-link">
+                        <svg style="width:24px;height:24px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M0 4C0 1.79086 1.79086 0 4 0H20C22.2091 0 24 1.79086 24 4V20C24 22.2091 22.2091 24 20 24H4C1.79086 24 0 22.2091 0 20V4Z" fill="#00CC44"></path><rect x="5.5" y="5.5" width="8" height="10" stroke="white"></rect><path d="M7.5 9.5H11.5V13.5H7.5V9.5Z" stroke="white"></path><path d="M7.5 11.5H11.5" stroke="white"></path><path d="M9.5 9.5V13.5" stroke="white"></path><path d="M14 8.5H18.5V18.5001H10.5V15.5001" stroke="white"></path></svg>
+                        Excel To PDF</a></li>
+                      <li><a href="#" class="nav-link">
+                        <svg style="width:24px;height:24px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M0 4C0 1.79086 1.79086 0 4 0H20C22.2091 0 24 1.79086 24 4V20C24 22.2091 22.2091 24 20 24H4C1.79086 24 0 22.2091 0 20V4Z" fill="#FF8000"></path><rect x="5.5" y="5.5" width="8" height="10" stroke="white"></rect><path d="M11 11C11 12.1046 10.1046 13 9 13C7.89543 13 7 12.1046 7 11C7 9.89543 7.89543 9 9 9V11H11Z" fill="white"></path><path d="M10 8C11.1046 8 12 8.89543 12 10H10V8Z" fill="white"></path><path d="M14 8.5H18.5V18.5001H10.5V15.5001" stroke="white"></path></svg>
+                        PPT To PDF</a></li>
+                      <li><a href="#" class="nav-link">
+                        <svg style="width:24px;height:24px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M0 4C0 1.79086 1.79086 0 4 0H20C22.2091 0 24 1.79086 24 4V20C24 22.2091 22.2091 24 20 24H4C1.79086 24 0 22.2091 0 20V4Z" fill="#7E57C2"></path><rect x="5.5" y="5.5" width="8" height="10" stroke="white"></rect><path d="M5.5 12.5L7 11L9.5 13.5L11 12L13.5 14.5" stroke="white"></path><circle cx="11" cy="8" r="0.5" fill="white" stroke="white"></circle><path d="M14 8.5H18.5V18.5001H10.5V15.5001" stroke="white"></path></svg>
+                        JPG To PDF</a></li>
+                    </ul>
+                  </div>
+                  <div class="col-3">
+                    <span class="mega-menu-title">
+                      Sign & Security
+                    </span>
+                    <ul class="mega-menu-list">
+                      <li><a href="#" class="nav-link">
+                        <svg style="width:24px;height:24px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M0 4C0 1.79086 1.79086 0 4 0H20C22.2091 0 24 1.79086 24 4V20C24 22.2091 22.2091 24 20 24H4C1.79086 24 0 22.2091 0 20V4Z" fill="#FF7043"></path><path d="M16.4795 10.9074L12 18.9704L7.52205 10.9101L8.09391 7.5H15.9471L16.4795 10.9074Z" stroke="white"></path><path d="M12 13V18" stroke="white"></path><path d="M8.30775 7.50205L6.80571 4.49795H17.1943L15.6922 7.50205H8.30775Z" stroke="white" stroke-width="0.995907"></path><circle cx="12" cy="11" r="2" stroke="white"></circle></svg>
+                        eSign PDF</a></li>
+                      <li><a href="#" class="nav-link">
+                        <svg style="width:24px;height:24px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M0 4C0 1.79086 1.79086 0 4 0H20C22.2091 0 24 1.79086 24 4V20C24 22.2091 22.2091 24 20 24H4C1.79086 24 0 22.2091 0 20V4Z" fill="#FF5975"></path><rect x="5.5" y="10.5" width="10" height="8" stroke="white"></rect><path d="M18.5 8C18.5 6.34315 16.933 5 15 5C13.067 5 11.5 6.34315 11.5 8" stroke="white"></path><path d="M11.5 8V10" stroke="white"></path><path d="M18.5 8V9" stroke="white"></path></svg>
+                        Unlock PDF</a></li>
+                      <li><a href="#" class="nav-link">
+                        <svg style="width:24px;height:24px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M0 4C0 1.79086 1.79086 0 4 0H20C22.2091 0 24 1.79086 24 4V20C24 22.2091 22.2091 24 20 24H4C1.79086 24 0 22.2091 0 20V4Z" fill="#FF5975"></path><path d="M11.8748 5.58096L12 5.534L12.1252 5.58096L12.9182 5.87832L15.3244 6.78066L17.7307 7.68301L18.4936 7.96909C18.3717 12.3117 16.7249 14.9298 15.1218 16.4699C14.2936 17.2655 13.4687 17.7813 12.8535 18.0971C12.5461 18.2549 12.2921 18.3622 12.1177 18.4294C12.0768 18.4451 12.0403 18.4586 12.0086 18.47C11.9761 18.4572 11.9385 18.4419 11.8963 18.4242C11.7209 18.3505 11.4657 18.2339 11.1572 18.0657C10.5395 17.7291 9.71169 17.188 8.88098 16.3743C7.27294 14.7991 5.62989 12.1803 5.50664 7.96901L6.26931 7.68301L8.67556 6.78066L11.0818 5.87832L11.8748 5.58096Z" stroke="white"></path></svg>
+                        Protect PDF</a></li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div> <!-- dropdown-mega-menu.// -->
+          </li>
+
+          <li class="nav-item">
+            <a class="nav-link" href="#" tabindex="-1" aria-disabled="true">about</a>
+          </li>
+        </ul>
+        <!-- end navbar list -->
+
+
+      
+      </div>
+      <!-- end computer and tablet navbar -->
+
+      
+
+      <!-- change theme button -->
+
+      <ul class="navbar-nav hot-botton-ul me-auto mb-2 mb-lg-0">
+        <li class="nav-item">
+          <div class="scheme nav-link">
+            <i class="bi bi-sun-fill"></i> 
+            <label class="switch">
+                <input type="checkbox">
+                <span class="slider round"></span>
+            </label>
+            <i class="bi bi-moon-stars-fill"></i>
+          </div>
+        </li>
+
+
+        <li class="nav-item">
+<!-- language -->
+
+      <!-- Language botton -->
+      <a type="button" class="nav-link" data-bs-toggle="modal" href="#languagemodal">
+        <i class="bi bi-globe"></i> &nbsp; <span>English</span>
+      </a>
+
+      <!-- language Modal -->
+      <div class="modal fade" id="languagemodal" tabindex="-1" aria-labelledby="languagemodalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="languagemodalLabel">Select Language</h5>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+              <div class="list- list-group-flush">
+                <a href="#" class="list-group-item list-group-item-action">English</a>
+                <a href="#" class="list-group-item list-group-item-action">فارسی</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+        </li>
+      </ul>
+      
+      
+
+    
+
+      <!-- start mobile navbar -->
+
+
+      <!-- button whit show mobile navbar -->
+      <a class="d-block d-lg-none mobile-navbar-button" type="button" data-bs-toggle="offcanvas" href="#main_nav">
+        <i class="bi bi-list"></i>
+      </a>
+
+      <div class="offcanvas offcanvas-start" tabindex="-1" id="main_nav">
+        <div class="offcanvas-header">
+          <h5 class="offcanvas-title" id="main_nav_Label">Logo</h5>
+        </div>
+        <div class="offcanvas-body">
+
+          <!-- start navbar list -->
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="#">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Link</a>
+            </li>
+            <!-- mega menu li -->
+            <li class="nav-item dropdown has-megamenu">
+              <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown">Mega menu</a>
+              <div class="dropdown-menu megamenu" role="menu">
+                <div class="container">
+                  <div class="row">
+                    <div class="col-12">
+                      <span class="mega-menu-title">
+                        Convert & Compress
+                      </span>
+                      <ul class="mega-menu-list">
+                        <li><a href="#" class="nav-link">
+                            <svg style="width:24px;height:24px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M0 4C0 1.79086 1.79086 0 4 0H20C22.2091 0 24 1.79086 24 4V20C24 22.2091 22.2091 24 20 24H4C1.79086 24 0 22.2091 0 20V4Z" fill="#FFCA28"></path><path d="M5.68718 5.68718L11.8787 7.23507L12 7.26539L12.1213 7.23507L18.3128 5.68718L16.7649 11.8787L16.7346 12L16.7649 12.1213L18.3128 18.3128L12.1213 16.7649L12 16.7346L11.8787 16.7649L5.68718 18.3128L7.23507 12.1213L7.26539 12L7.23507 11.8787L5.68718 5.68718Z" stroke="white"></path></svg>
+                          Compress PDF</a></li>
+                        <li><a href="#" class="nav-link">
+                          <svg style="width:24px;height:24px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M0 4C0 1.79086 1.79086 0 4 0H20C22.2091 0 24 1.79086 24 4V20C24 22.2091 22.2091 24 20 24H4C1.79086 24 0 22.2091 0 20V4Z" fill="#FFCA28"></path><rect x="5.5" y="5.5" width="4" height="6" stroke="white"></rect><rect x="14.5" y="12.5" width="4" height="6" stroke="white"></rect><path d="M12 7.00014L11.6464 6.64658L11.2929 7.00014L11.6464 7.35369L12 7.00014ZM17 7H17.5V6.49999L17 6.5L17 7ZM13.9091 5.79813L14.2627 5.44458L13.5556 4.73747L13.202 5.09103L13.9091 5.79813ZM13.202 8.90924L13.5556 9.2628L14.2627 8.55569L13.9091 8.20214L13.202 8.90924ZM12 7.50014L17 7.5L17 6.5L12 6.50014L12 7.50014ZM16.5 7V11H17.5V7H16.5ZM12.3536 7.35369L13.9091 5.79813L13.202 5.09103L11.6464 6.64658L12.3536 7.35369ZM11.6464 7.35369L13.202 8.90924L13.9091 8.20214L12.3536 6.64658L11.6464 7.35369Z" fill="white"></path><path d="M12 17L12.3536 17.3536L12.7071 17L12.3536 16.6464L12 17ZM7 17L6.5 17L6.49999 17.5H7V17ZM10.0909 18.202L9.73734 18.5556L10.4444 19.2627L10.798 18.9091L10.0909 18.202ZM10.798 15.0909L10.4444 14.7373L9.73734 15.4444L10.0909 15.798L10.798 15.0909ZM12 16.5H7V17.5H12V16.5ZM7.5 17L7.50007 13L6.50007 13L6.5 17L7.5 17ZM11.6464 16.6464L10.0909 18.202L10.798 18.9091L12.3536 17.3536L11.6464 16.6464ZM12.3536 16.6464L10.798 15.0909L10.0909 15.798L11.6464 17.3536L12.3536 16.6464Z" fill="white"></path></svg>
+                          PDF Converter</a></li>
+                      </ul>
+                    </div>
+                    <div class="col-12">
+                      <span class="mega-menu-title">
+                        Split & Merge
+                      </span>
+                      <ul class="mega-menu-list">
+                        <li><a href="#" class="nav-link">
+                          <svg style="width:24px;height:24px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M0 4C0 1.79086 1.79086 0 4 0H20C22.2091 0 24 1.79086 24 4V20C24 22.2091 22.2091 24 20 24H4C1.79086 24 0 22.2091 0 20V4Z" fill="#5C6BC0"></path><path fill-rule="evenodd" clip-rule="evenodd" fill="#ffff" d="M6.85831 18.8325C8.32448 19.3557 9.94657 18.6121 10.4813 17.1717L11.9999 13.0811L13.5185 17.1717C14.0533 18.6121 15.6754 19.3557 17.1416 18.8325C18.6077 18.3093 19.3628 16.7175 18.828 15.277C18.2933 13.8365 16.6712 13.0929 15.205 13.6161C14.5251 13.8587 13.9981 14.3312 13.6817 14.9118L12.501 11.7314L15 5L14.4262 5.2889C14.0028 5.50205 13.6769 5.86442 13.514 6.30332L11.9999 10.3817L10.4859 6.30332C10.3229 5.86442 9.99709 5.50205 9.57372 5.2889L8.99988 5L11.4989 11.7314L10.3182 14.9118C10.0018 14.3312 9.4748 13.8587 8.79487 13.6161C7.3287 13.0929 5.70661 13.8365 5.17184 15.277C4.63707 16.7175 5.39213 18.3093 6.85831 18.8325ZM7.18109 17.963C8.15854 18.3118 9.23993 17.8161 9.59645 16.8558C9.95296 15.8955 9.44959 14.8342 8.47214 14.4854C7.49468 14.1366 6.41329 14.6324 6.05678 15.5927C5.70027 16.553 6.20364 17.6142 7.18109 17.963ZM16.8188 17.963C17.7963 17.6142 18.2996 16.553 17.9431 15.5927C17.5866 14.6324 16.5052 14.1366 15.5278 14.4854C14.5503 14.8342 14.0469 15.8955 14.4035 16.8558C14.76 17.8161 15.8414 18.3118 16.8188 17.963Z"></path></svg>
+                          Split PDF</a></li>
+                        <li><a href="#" class="nav-link">
+                          <svg style="width:24px;height:24px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M0 4C0 1.79086 1.79086 0 4 0H20C22.2091 0 24 1.79086 24 4V20C24 22.2091 22.2091 24 20 24H4C1.79086 24 0 22.2091 0 20V4Z" fill="#5C6BC0"></path><path d="M10 16H6V5H14V8" stroke="white"></path><path d="M10.5 8.5H18.5V18.5H10.5V8.5Z" stroke="white"></path><path d="M14.5 11V16" stroke="white"></path><path d="M12 13.5H17" stroke="white"></path></svg>
+                          Merge PDF</a></li>
+                      </ul>
+                    </div>
+                    <div class="col-12">
+                      <span class="mega-menu-title">
+                        View & Edit
+                      </span>
+                      <ul class="mega-menu-list">
+                        <li><a href="#" class="nav-link">
+                          <svg style="width:24px;height:24px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M0 4C0 1.79086 1.79086 0 4 0H20C22.2091 0 24 1.79086 24 4V20C24 22.2091 22.2091 24 20 24H4C1.79086 24 0 22.2091 0 20V4Z" fill="#0FC0C5"></path><path fill-rule="evenodd" clip-rule="evenodd" d="M12 10.4444L17.4444 5L19 6.55556L13.5556 12H12V10.4444Z" fill="white"></path><path d="M15 5.5H5.5V18.5H15.5V12" stroke="white"></path><path d="M7 12.5H10" stroke="white"></path><path d="M7 16.5H10" stroke="white"></path><path d="M8.5 12.5V16.5" stroke="white"></path></svg>
+                          Edit PDF</a></li>
+                        <li><a href="#" class="nav-link">
+                          <svg style="width:24px;height:24px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M0 4C0 1.79086 1.79086 0 4 0H20C22.2091 0 24 1.79086 24 4V20C24 22.2091 22.2091 24 20 24H4C1.79086 24 0 22.2091 0 20V4Z" fill="#0FC0C5"></path><path d="M6.5 19.4698V4.5H14.5L17.5 7.5V19.5L6.5 19.4698Z" stroke="white"></path><path d="M14.5 4.5V7.5H17.5" stroke="white"></path><path d="M5 14H12V17H5V14Z" fill="white"></path><path d="M8 12.5H16" stroke="white"></path><path d="M13 14.5H16" stroke="white"></path><path d="M13 16.5H16" stroke="white"></path><path d="M8 10.5H16" stroke="white"></path></svg>
+                          PDF Reader</a></li>
+                        <li><a href="#" class="nav-link">
+                          <svg style="width:24px;height:24px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M0 4C0 1.79086 1.79086 0 4 0H20C22.2091 0 24 1.79086 24 4V20C24 22.2091 22.2091 24 20 24H4C1.79086 24 0 22.2091 0 20V4Z" fill="#0FC0C5"></path><rect x="5.5" y="5.5" width="8" height="10" stroke="white"></rect><path fill-rule="evenodd" clip-rule="evenodd" d="M8 13V12.2504H8.86929V9.93858H8.11969V9.36535C8.55433 9.28346 8.8315 9.17008 9.11496 9H9.79528V12.2504H10.5449V13H8Z" fill="white"></path><path fill-rule="evenodd" clip-rule="evenodd" d="M15.0845 16V15.6105L15.4224 15.2893C15.9894 14.7437 16.3642 14.3298 16.3642 13.9784C16.3642 13.6909 16.2019 13.5332 15.9469 13.5332C15.7336 13.5332 15.5713 13.677 15.4229 13.8346L15.052 13.4683C15.3441 13.1577 15.6177 13 16.0396 13C16.6192 13 17.0134 13.3709 17.0134 13.9366C17.0134 14.4328 16.5497 14.9614 16.0721 15.4621C16.2205 15.4436 16.4245 15.425 16.5636 15.425H17.1571V16H15.0845Z" fill="white"></path><path d="M14 8.5H18.5V18.5001H10.5V15.5001" stroke="white"></path></svg>
+                          Number Pages</a></li>
+                        <li><a href="#" class="nav-link">
+                          <svg style="width:24px;height:24px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M0 4C0 1.79086 1.79086 0 4 0H20C22.2091 0 24 1.79086 24 4V20C24 22.2091 22.2091 24 20 24H4C1.79086 24 0 22.2091 0 20V4Z" fill="#0FC0C5"></path><path d="M8.5 8V5.5H15.5V8" stroke="white"></path><path d="M5 8.5H19" stroke="white"></path><path d="M8.5 18.5L7.5 10.5001L16.5 10.5L15.5 18.5H8.5Z" stroke="white"></path><path d="M10.5 12V16" stroke="white"></path><path d="M13.5 12V16" stroke="white"></path></svg>
+                          Delete PDF Pages</a></li>
+                        <li><a href="#" class="nav-link">
+                          <svg style="width:24px;height:24px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M0 4C0 1.79086 1.79086 0 4 0H20C22.2091 0 24 1.79086 24 4V20C24 22.2091 22.2091 24 20 24H4C1.79086 24 0 22.2091 0 20V4Z" fill="#0FC0C5"></path><path d="M12 18.5C15.3137 18.5 18 15.8664 18 12.6176C18 11.0144 17.3458 9.56103 16.2849 8.5" stroke="white" stroke-width="0.5" stroke-dasharray="1 1"></path><path d="M12 18.5C8.68629 18.5 6 15.8137 6 12.5C6 9.18629 8.68629 6.5 12 6.5" stroke="white"></path><path d="M12 4L14.5 6.5L12 9V4Z" fill="white"></path></svg>
+                          Rotate PDF</a></li>
+                      </ul>
+                    </div>
+                    <div class="col-12">
+                      <span class="mega-menu-title">
+                        Convert from PDF
+                      </span>
+                      <ul class="mega-menu-list">
+                        <li><a href="#" class="nav-link">
+                          <svg style="width:24px;height:24px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M0 4C0 1.79086 1.79086 0 4 0H20C22.2091 0 24 1.79086 24 4V20C24 22.2091 22.2091 24 20 24H4C1.79086 24 0 22.2091 0 20V4Z" fill="#26C6DA"></path><path d="M10.5 15.5H5.5V5.5H13.5V8.5" stroke="white"></path><rect x="10.5" y="8.5" width="8" height="10" stroke="white"></rect><path d="M12 15.5H17" stroke="white"></path><path d="M12 13.5H17" stroke="white"></path><path d="M12 11.5H17" stroke="white"></path></svg>
+                          PDF To Word</a></li>
+                        <li><a href="#" class="nav-link">
+                          <svg style="width:24px;height:24px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M0 4C0 1.79086 1.79086 0 4 0H20C22.2091 0 24 1.79086 24 4V20C24 22.2091 22.2091 24 20 24H4C1.79086 24 0 22.2091 0 20V4Z" fill="#00CC44"></path><path d="M10.5 15.5H5.5V5.5H13.5V8.5" stroke="white"></path><rect x="10.5" y="8.5" width="8" height="10" stroke="white"></rect><path d="M12.5 12.5H16.5V16.5H12.5V12.5Z" stroke="white"></path><path d="M12.5 14.5H16.5" stroke="white"></path><path d="M14.5 12.5V16.5" stroke="white"></path></svg>
+                          PDF To Excel</a></li>
+                        <li><a href="#" class="nav-link">
+                          <svg style="width:24px;height:24px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M0 4C0 1.79086 1.79086 0 4 0H20C22.2091 0 24 1.79086 24 4V20C24 22.2091 22.2091 24 20 24H4C1.79086 24 0 22.2091 0 20V4Z" fill="#FF8000"></path><path d="M10.5 15.5H5.5V5.5H13.5V8.5" stroke="white"></path><rect x="10.5" y="8.5" width="8" height="10" stroke="white"></rect><path d="M16 14C16 15.1046 15.1046 16 14 16C12.8954 16 12 15.1046 12 14C12 12.8954 12.8954 12 14 12V14H16Z" fill="white"></path><path d="M15 11C16.1046 11 17 11.8954 17 13H15V11Z" fill="white"></path></svg>
+                          PDF To PPT</a></li>
+                        <li><a href="#" class="nav-link">
+                          <svg style="width:24px;height:24px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M0 4C0 1.79086 1.79086 0 4 0H20C22.2091 0 24 1.79086 24 4V20C24 22.2091 22.2091 24 20 24H4C1.79086 24 0 22.2091 0 20V4Z" fill="#7E57C2"></path><path d="M10.5 15.5H5.5V5.5H13.5V8.5" stroke="white"></path><rect x="10.5" y="8.5" width="8" height="10" stroke="white"></rect><path d="M10.5 15.5L12 14L14.5 16.5L16 15L18.5 17.5" stroke="white"></path><circle cx="16" cy="11" r="0.5" fill="white" stroke="white"></circle></svg>
+                          PDF To JPG</a></li>
+                      </ul>
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="col-12">
+                      <span class="mega-menu-title">
+                        Convert to PDF
+                      </span>
+                      <ul class="mega-menu-list">
+                        <li><a href="#" class="nav-link">
+                          <svg style="width:24px;height:24px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M0 4C0 1.79086 1.79086 0 4 0H20C22.2091 0 24 1.79086 24 4V20C24 22.2091 22.2091 24 20 24H4C1.79086 24 0 22.2091 0 20V4Z" fill="#26C6DA"></path><rect x="5.5" y="5.5" width="8" height="10" stroke="white"></rect><path d="M14 8.5H18.5V18.5001H10.5V15.5001" stroke="white"></path><path d="M7 12.5H12" stroke="white"></path><path d="M7 10.5H12" stroke="white"></path><path d="M7 8.5H12" stroke="white"></path></svg>
+                          Word To PDF</a></li>
+                        <li><a href="#" class="nav-link">
+                          <svg style="width:24px;height:24px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M0 4C0 1.79086 1.79086 0 4 0H20C22.2091 0 24 1.79086 24 4V20C24 22.2091 22.2091 24 20 24H4C1.79086 24 0 22.2091 0 20V4Z" fill="#00CC44"></path><rect x="5.5" y="5.5" width="8" height="10" stroke="white"></rect><path d="M7.5 9.5H11.5V13.5H7.5V9.5Z" stroke="white"></path><path d="M7.5 11.5H11.5" stroke="white"></path><path d="M9.5 9.5V13.5" stroke="white"></path><path d="M14 8.5H18.5V18.5001H10.5V15.5001" stroke="white"></path></svg>
+                          Excel To PDF</a></li>
+                        <li><a href="#" class="nav-link">
+                          <svg style="width:24px;height:24px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M0 4C0 1.79086 1.79086 0 4 0H20C22.2091 0 24 1.79086 24 4V20C24 22.2091 22.2091 24 20 24H4C1.79086 24 0 22.2091 0 20V4Z" fill="#FF8000"></path><rect x="5.5" y="5.5" width="8" height="10" stroke="white"></rect><path d="M11 11C11 12.1046 10.1046 13 9 13C7.89543 13 7 12.1046 7 11C7 9.89543 7.89543 9 9 9V11H11Z" fill="white"></path><path d="M10 8C11.1046 8 12 8.89543 12 10H10V8Z" fill="white"></path><path d="M14 8.5H18.5V18.5001H10.5V15.5001" stroke="white"></path></svg>
+                          PPT To PDF</a></li>
+                        <li><a href="#" class="nav-link">
+                          <svg style="width:24px;height:24px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M0 4C0 1.79086 1.79086 0 4 0H20C22.2091 0 24 1.79086 24 4V20C24 22.2091 22.2091 24 20 24H4C1.79086 24 0 22.2091 0 20V4Z" fill="#7E57C2"></path><rect x="5.5" y="5.5" width="8" height="10" stroke="white"></rect><path d="M5.5 12.5L7 11L9.5 13.5L11 12L13.5 14.5" stroke="white"></path><circle cx="11" cy="8" r="0.5" fill="white" stroke="white"></circle><path d="M14 8.5H18.5V18.5001H10.5V15.5001" stroke="white"></path></svg>
+                          JPG To PDF</a></li>
+                      </ul>
+                    </div>
+                    <div class="col-12">
+                      <span class="mega-menu-title">
+                        Sign & Security
+                      </span>
+                      <ul class="mega-menu-list">
+                        <li><a href="#" class="nav-link">
+                          <svg style="width:24px;height:24px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M0 4C0 1.79086 1.79086 0 4 0H20C22.2091 0 24 1.79086 24 4V20C24 22.2091 22.2091 24 20 24H4C1.79086 24 0 22.2091 0 20V4Z" fill="#FF7043"></path><path d="M16.4795 10.9074L12 18.9704L7.52205 10.9101L8.09391 7.5H15.9471L16.4795 10.9074Z" stroke="white"></path><path d="M12 13V18" stroke="white"></path><path d="M8.30775 7.50205L6.80571 4.49795H17.1943L15.6922 7.50205H8.30775Z" stroke="white" stroke-width="0.995907"></path><circle cx="12" cy="11" r="2" stroke="white"></circle></svg>
+                          eSign PDF</a></li>
+                        <li><a href="#" class="nav-link">
+                          <svg style="width:24px;height:24px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M0 4C0 1.79086 1.79086 0 4 0H20C22.2091 0 24 1.79086 24 4V20C24 22.2091 22.2091 24 20 24H4C1.79086 24 0 22.2091 0 20V4Z" fill="#FF5975"></path><rect x="5.5" y="10.5" width="10" height="8" stroke="white"></rect><path d="M18.5 8C18.5 6.34315 16.933 5 15 5C13.067 5 11.5 6.34315 11.5 8" stroke="white"></path><path d="M11.5 8V10" stroke="white"></path><path d="M18.5 8V9" stroke="white"></path></svg>
+                          Unlock PDF</a></li>
+                        <li><a href="#" class="nav-link">
+                          <svg style="width:24px;height:24px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M0 4C0 1.79086 1.79086 0 4 0H20C22.2091 0 24 1.79086 24 4V20C24 22.2091 22.2091 24 20 24H4C1.79086 24 0 22.2091 0 20V4Z" fill="#FF5975"></path><path d="M11.8748 5.58096L12 5.534L12.1252 5.58096L12.9182 5.87832L15.3244 6.78066L17.7307 7.68301L18.4936 7.96909C18.3717 12.3117 16.7249 14.9298 15.1218 16.4699C14.2936 17.2655 13.4687 17.7813 12.8535 18.0971C12.5461 18.2549 12.2921 18.3622 12.1177 18.4294C12.0768 18.4451 12.0403 18.4586 12.0086 18.47C11.9761 18.4572 11.9385 18.4419 11.8963 18.4242C11.7209 18.3505 11.4657 18.2339 11.1572 18.0657C10.5395 17.7291 9.71169 17.188 8.88098 16.3743C7.27294 14.7991 5.62989 12.1803 5.50664 7.96901L6.26931 7.68301L8.67556 6.78066L11.0818 5.87832L11.8748 5.58096Z" stroke="white"></path></svg>
+                          Protect PDF</a></li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+              </div> <!-- dropdown-mega-menu.// -->
+            </li>
+
+            <li class="nav-item">
+              <a class="nav-link" href="#" tabindex="-1" aria-disabled="true">about</a>
+            </li>
+          </ul>
+          <!-- end navbar list -->
+
+
+        </div>
+      </div>
+      <!-- end mobile navbar -->
+
+      
+    </div>
+  </nav>
+</header>
+<!-- end header -->
+
+<!-- start main -->
+  <main>
+    <div class="container">
+      <!-- start home main -->
+      <div class="home-main">
+
+        <!-- start file upload box -->
+        <div class="section main-file-upload-box">
+          <div class="row align-items-center text-center">
+
+            <div class="col-12">
+              <div class="file-upload-box-header d-flex text-center align-items-center justify-content-center w-100 mt-5">
+                <svg style="width:34px;height:34px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M0 4C0 1.79086 1.79086 0 4 0H20C22.2091 0 24 1.79086 24 4V20C24 22.2091 22.2091 24 20 24H4C1.79086 24 0 22.2091 0 20V4Z" fill="#FFCA28"></path><path d="M5.68718 5.68718L11.8787 7.23507L12 7.26539L12.1213 7.23507L18.3128 5.68718L16.7649 11.8787L16.7346 12L16.7649 12.1213L18.3128 18.3128L12.1213 16.7649L12 16.7346L11.8787 16.7649L5.68718 18.3128L7.23507 12.1213L7.26539 12L7.23507 11.8787L5.68718 5.68718Z" stroke="white"></path></svg>
+                <div class="h3 ms-3">Copress</div>   
+
+                <div class="dropdown">
+                  
+                  <button type="button" class="dropdown-label">Menu</button>
+                    <div class="dropdown-items" style="position: fixed; z-index: 999;">
+                      <a href="#" class="dropdown-item">À Propos</a>
+                      <a href="#" class="dropdown-item">Blog</a>
+                      <a href="#" class="dropdown-item">Contact</a>
+                    </div>
+                  
+                </div>
+                <i class="bi bi-caret-down-fill"></i>
+              </div>
+            </div>
+            
+            <!-- upload file box -->
+            <div class="col-12">
+              <div class="upload">
+                <div class="upload-files">
+                 <header>
+                  <p>
+                   <i class="fa fa-cloud-upload" aria-hidden="true"></i>
+                   <span class="up">Choose</span>
+                   <span class="load">File</span>
+                  </p>
+                 </header>
+
+<svg class="w-0">
+      <defs>
+        <filter id="w-0">
+          <feGaussianBlur in="SourceGraphic" stdDeviation="7" result="blur" />
+          <feColorMatrix
+            in="blur"
+            mode="matrix"
+            values="1 0 0 0 0 0 1 0 0 0 0 0 1 0 0 0 0 0 20 -10"
+            result="res"
+          />
+          <feComposite in="SourceGraphic" in2="res" operator="atop" />
+        </filter>
+      </defs>
+    </svg>
+    
+<svg class="f-w-0" width="200" height="200" viewBox="0 0 200 200">
+      <defs>
+        <linearGradient id="linear-gradient">
+          <stop class="stop1" offset="0" />
+          <stop class="stop2" offset="1" />
+        </linearGradient>
+        <linearGradient
+          y2="160"
+          x2="160"
+          y1="40"
+          x1="40"
+          gradientUnits="userSpaceOnUse"
+          id="gradient"
+          xlink:href="#linear-gradient"
+        />
+      </defs>
+      
+      <path
+        class="path-class"
+        d="m 164,100 c 0,-35.346224 -28.65378,-64 -64,-64 -35.346224,0 -64,28.653776
+           -64,64 0,35.34622 28.653776,64 64,64 35.34622,0 64,-26.21502 64,-64
+           0,-37.784981 -26.92058,-64 -64,-64 -37.079421,0 -65.267479,26.922736
+           -64,64 1.267479,37.07726 26.703171,65.05317 64,64 37.29683,-1.05317
+           64,-64 64,-64"
+      />
+      <circle class="cricle-class" cx="100" cy="100" r="64" />
+      
+    </svg>
+    <p>Processing...</p>
+    </svg>
+                 
+
+                 <div class="body" id="drop">
+                  <i class="fa fa-file-text-o pointer-none" aria-hidden="true"></i>
+                  
+                  <p class="pointer-none"><a href="" id="triggerFile">browse</a> to begin the upload</p>
+                     <input type="file" multiple="multiple" />
+
+
+                     <!-- upload from google drive -->
+                     <div class="upload-other-location">
+                      <div class="other-location-circle google-drive"><a href="#" data-bs-toggle="tooltip" data-bs-placement="top" title="Google Drive"></a></div>
+                     </div>
+                 </div>
+				 
+				 
+				 
+
+				 
+				 
+                 <footer>
+                  <div class="divider">
+                   <span><AR>FILES</AR></span>
+                  </div>
+                  <div class="list-files">
+                   <!--   template   -->
+                  </div>
+                     <button class="importar btn" >UPDATE FILES</button>
+                     <div class="btn-sniper btn">
+                      <span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>
+                     </div>
+                     <button class="up-convert-btn upload-btn btn visually-hidden"data-bs-toggle="modal" data-bs-target="#youremailmodal">
+                      <span class="btn-text">Upload and Convert</span>
+                    </button>
+
+                     
+                    
+                 </footer>
+                </div>
+               </div>
+            </div>
+
+            <div class="modal fade" id="youremailmodal" tabindex="-1" aria-labelledby="youremailmodalLabel" aria-hidden="true">
+              <div class="modal-dialog modal-dialog-centered">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <h5 class="modal-title" id="youremailmodalLabel">Enter your Email</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                  </div>
+                  <div class="modal-body p-5">
+                    <form action="">
+                      <input type="email" class="form-control mb-3" placeholder="example@gmail.com">
+                      <button class="btn btn-outline-primary w-100">Enter</button>
+                    </form>
+                  </div>
+                </div>
+              </div>
+            </div>
+             
+
+           
+
+          </div>
+        </div>
+        <!-- end file upload box -->
+
+        <!-- start how work tools -->
+        <div class="section main-how-work-tools-box">
+          <div class="row justify-content-center text-center">
+
+            <div class="col-7 mb-5">
+              <h4>Lorem ipsum dolor sit amet consectetur adipisicing elit.</h4>
+            </div>
+
+            <div class="main-how-work-tools-content">
+              <div class="row align-items-center text-center">
+
+                <!-- how work tools step 1 -->
+                <div class="col-12 col-lg-4">
+                  <div class="work-tools-step-card">
+                    <div class="step-card-counter">
+                      <div class="counter rounded-circle">1</div>
+                    </div>
+                    <div class="step-card-body">
+                      Lorem, ipsum dolor sit amet consectetur adipisicing elit. Beatae quis, odio quae cumque ea saepe quod dolorum explicabo ex veritatis mollitia suscipit, a reprehenderit, repudiandae dolores unde quaerat nostrum eligendi.
+                    </div>
+                  </div>
+                </div>
+
+                <!-- how work tools step 2 -->
+                <div class="col-12 col-lg-4">
+                  <div class="work-tools-step-card">
+                    <div class="step-card-counter">
+                      <div class="counter rounded-circle">2</div>
+                    </div>
+                    <div class="step-card-body">
+                      Lorem, ipsum dolor sit amet consectetur adipisicing elit. Beatae quis, odio quae cumque ea saepe quod dolorum explicabo ex veritatis mollitia suscipit, a reprehenderit, repudiandae dolores unde quaerat nostrum eligendi.
+                    </div>
+                  </div>
+                </div>
+
+                <!-- how work tools step 3 -->
+                <div class="col-12 col-lg-4">
+                  <div class="work-tools-step-card">
+                    <div class="step-card-counter">
+                      <div class="counter rounded-circle">3</div>
+                    </div>
+                    <div class="step-card-body">
+                      Lorem, ipsum dolor sit amet consectetur adipisicing elit. Beatae quis, odio quae cumque ea saepe quod dolorum explicabo ex veritatis mollitia suscipit, a reprehenderit, repudiandae dolores unde quaerat nostrum eligendi.
+                    </div>
+                  </div>
+                </div>
+
+              </div>
+            </div>
+
+          </div>
+        </div>
+        <!-- end how work tools -->
+
+        <!-- start section main services info box -->
+        <div class="section main-services-info-box">
+          <div class="row justify-content-center">
+            <div class="col-7 text-center">
+              <h2>Lorem ipsum, Test Title</h2>
+              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quaerat voluptates laborum reprehenderit odit corrupti perspiciatis dolores laboriosam sequi culpa cum magni perferendis accusamus</p>
+            </div>
+
+
+            <div class="main-service-info-content">
+              <div class="row align-items-center justify-content-center text-center">
+
+                <!-- service info 1 -->
+                <div class="col-8">
+                  <div class="service-info-card">
+                    <img src="./images/img-2.svg" alt="">
+                      <h1 class="mb-4 mt-5">Lorem Ipsom</h1>
+                      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloremque hic rem corporis consequatur voluptatibus, architecto soluta eaque dicta debitis, dolores enim labore excepturi, nam fugit praesentium laudantium repellendus laborum eius! Lorem ipsum dolor, sit amet consectetur adipisicing elit. Non porro id ducimus laudantium, doloribus modi dicta vel itaque nam dolor amet error incidunt officiis autem eum consectetur cumque, in quidem.</p>
+                  </div>
+                </div>
+
+                <!-- service info 2 -->
+                <!-- <div class="col-12 col-sm-6">
+                  <div class="service-info-card">
+                    <img src="./images/img-2.svg" alt="">
+                      <h1 class="mb-4">Lorem Ipsom</h1>
+                      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Facere nobis aliquid beatae modi, nemo a magni pariatur eius, explicabo eum sapiente facilis earum similique commodi vero laboriosam sit tempora quidem.</p>
+                  </div>
+                </div> -->
+
+                <!-- service info 3 -->
+                <!-- <div class="col-12 col-sm-6">
+                  <div class="service-info-card">
+                    <img src="./images/img-2.svg" alt="">
+                      <h1 class="mb-4">Lorem Ipsom</h1>
+                      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Facere nobis aliquid beatae modi, nemo a magni pariatur eius, explicabo eum sapiente facilis earum similique commodi vero laboriosam sit tempora quidem.</p>
+                  </div>
+                </div> -->
+
+                <!-- service info 4 -->
+                <!-- <div class="col-12 col-sm-6">
+                  <div class="service-info-card">
+                    <img src="./images/img-2.svg" alt="">
+                      <h1 class="mb-4">Lorem Ipsom</h1>
+                      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Facere nobis aliquid beatae modi, nemo a magni pariatur eius, explicabo eum sapiente facilis earum similique commodi vero laboriosam sit tempora quidem.</p>
+                  </div>
+                </div> -->
+
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- end section main services info box -->
+
+        <!-- start section main tools box -->
+        <div class="section main-tools-box">
+          <div class="row justify-content-center text-center">
+            <div class="col-7 mb-3">
+              <h2>All PDF Tools</h2>
+              <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit.</p>
+            </div>
+            <div class="main-tools-content">
+              <div class="row row-cols-2 row-cols-sm-3 row-cols-md-4 row-cols-lg-6 g-3">
+                <!-- item 1 -->
+                <div class="col">
+                  <a class="main-tools-card-link text-reset" href="#">
+                    <div class="main-tools-card my-bg-light">
+                      <span class="card-icon convert-cart-icon mb-3">
+                        <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M0 4C0 1.79086 1.79086 0 4 0H20C22.2091 0 24 1.79086 24 4V20C24 22.2091 22.2091 24 20 24H4C1.79086 24 0 22.2091 0 20V4Z" fill="#FFCA28"></path><path d="M5.68718 5.68718L11.8787 7.23507L12 7.26539L12.1213 7.23507L18.3128 5.68718L16.7649 11.8787L16.7346 12L16.7649 12.1213L18.3128 18.3128L12.1213 16.7649L12 16.7346L11.8787 16.7649L5.68718 18.3128L7.23507 12.1213L7.26539 12L7.23507 11.8787L5.68718 5.68718Z" stroke="white"></path></svg>
+                      </span>
+                      <h6 class="card-title">Compress PDF</h6>
+                      <!-- <p>Convert PDFs to editable Word documents</p> -->
+                    </div>
+                  </a>
+                </div>
+                <!-- item 2 -->
+                <div class="col">
+                  <a class="main-tools-card-link text-reset" href="#">
+                    <div class="main-tools-card my-bg-light">
+                      <span class="card-icon mb-3">
+                        <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M0 4C0 1.79086 1.79086 0 4 0H20C22.2091 0 24 1.79086 24 4V20C24 22.2091 22.2091 24 20 24H4C1.79086 24 0 22.2091 0 20V4Z" fill="#FFCA28"></path><rect x="5.5" y="5.5" width="4" height="6" stroke="white"></rect><rect x="14.5" y="12.5" width="4" height="6" stroke="white"></rect><path d="M12 7.00014L11.6464 6.64658L11.2929 7.00014L11.6464 7.35369L12 7.00014ZM17 7H17.5V6.49999L17 6.5L17 7ZM13.9091 5.79813L14.2627 5.44458L13.5556 4.73747L13.202 5.09103L13.9091 5.79813ZM13.202 8.90924L13.5556 9.2628L14.2627 8.55569L13.9091 8.20214L13.202 8.90924ZM12 7.50014L17 7.5L17 6.5L12 6.50014L12 7.50014ZM16.5 7V11H17.5V7H16.5ZM12.3536 7.35369L13.9091 5.79813L13.202 5.09103L11.6464 6.64658L12.3536 7.35369ZM11.6464 7.35369L13.202 8.90924L13.9091 8.20214L12.3536 6.64658L11.6464 7.35369Z" fill="white"></path><path d="M12 17L12.3536 17.3536L12.7071 17L12.3536 16.6464L12 17ZM7 17L6.5 17L6.49999 17.5H7V17ZM10.0909 18.202L9.73734 18.5556L10.4444 19.2627L10.798 18.9091L10.0909 18.202ZM10.798 15.0909L10.4444 14.7373L9.73734 15.4444L10.0909 15.798L10.798 15.0909ZM12 16.5H7V17.5H12V16.5ZM7.5 17L7.50007 13L6.50007 13L6.5 17L7.5 17ZM11.6464 16.6464L10.0909 18.202L10.798 18.9091L12.3536 17.3536L11.6464 16.6464ZM12.3536 16.6464L10.798 15.0909L10.0909 15.798L11.6464 17.3536L12.3536 16.6464Z" fill="white"></path></svg>
+                      </span>
+                      <h6 class="card-title">PDF Converter</h6>
+                      <!-- <p>Combine multiple PDFs into one unified document</p> -->
+                    </div>
+                  </a>
+                </div>
+                <!-- item 3 -->
+                <div class="col">
+                  <a class="main-tools-card-link text-reset" href="#">
+                    <div class="main-tools-card my-bg-light">
+                      <span class="card-icon mb-3">
+                        <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M0 4C0 1.79086 1.79086 0 4 0H20C22.2091 0 24 1.79086 24 4V20C24 22.2091 22.2091 24 20 24H4C1.79086 24 0 22.2091 0 20V4Z" fill="#5C6BC0"></path><path fill-rule="evenodd" clip-rule="evenodd" fill="#ffff" d="M6.85831 18.8325C8.32448 19.3557 9.94657 18.6121 10.4813 17.1717L11.9999 13.0811L13.5185 17.1717C14.0533 18.6121 15.6754 19.3557 17.1416 18.8325C18.6077 18.3093 19.3628 16.7175 18.828 15.277C18.2933 13.8365 16.6712 13.0929 15.205 13.6161C14.5251 13.8587 13.9981 14.3312 13.6817 14.9118L12.501 11.7314L15 5L14.4262 5.2889C14.0028 5.50205 13.6769 5.86442 13.514 6.30332L11.9999 10.3817L10.4859 6.30332C10.3229 5.86442 9.99709 5.50205 9.57372 5.2889L8.99988 5L11.4989 11.7314L10.3182 14.9118C10.0018 14.3312 9.4748 13.8587 8.79487 13.6161C7.3287 13.0929 5.70661 13.8365 5.17184 15.277C4.63707 16.7175 5.39213 18.3093 6.85831 18.8325ZM7.18109 17.963C8.15854 18.3118 9.23993 17.8161 9.59645 16.8558C9.95296 15.8955 9.44959 14.8342 8.47214 14.4854C7.49468 14.1366 6.41329 14.6324 6.05678 15.5927C5.70027 16.553 6.20364 17.6142 7.18109 17.963ZM16.8188 17.963C17.7963 17.6142 18.2996 16.553 17.9431 15.5927C17.5866 14.6324 16.5052 14.1366 15.5278 14.4854C14.5503 14.8342 14.0469 15.8955 14.4035 16.8558C14.76 17.8161 15.8414 18.3118 16.8188 17.963Z"></path></svg>
+                      </span>
+                      <h6 class="card-title">Split PDF</h6>
+                      <!-- <p>Transform JPG, PNG, BMP, GIF, and TIFF images to PDF</p> -->
+                    </div>
+                  </a>
+                </div>
+                <!-- item 4 -->
+                <div class="col">
+                  <a class="main-tools-card-link text-reset" href="#">
+                    <div class="main-tools-card my-bg-light">
+                      <span class="card-icon mb-3">
+                        <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M0 4C0 1.79086 1.79086 0 4 0H20C22.2091 0 24 1.79086 24 4V20C24 22.2091 22.2091 24 20 24H4C1.79086 24 0 22.2091 0 20V4Z" fill="#5C6BC0"></path><path d="M10 16H6V5H14V8" stroke="white"></path><path d="M10.5 8.5H18.5V18.5H10.5V8.5Z" stroke="white"></path><path d="M14.5 11V16" stroke="white"></path><path d="M12 13.5H17" stroke="white"></path></svg>
+                      </span>
+                      <h6 class="card-title">Merge PDF</h6>
+                      <!-- <p>Create your signature, sign your PDF and request people to sign</p> -->
+                    </div>
+                  </a>
+                </div>
+                <!-- item 5 -->
+                <div class="col">
+                  <a class="main-tools-card-link text-reset" href="#">
+                    <div class="main-tools-card my-bg-light">
+                      <span class="card-icon mb-3">
+                        <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M0 4C0 1.79086 1.79086 0 4 0H20C22.2091 0 24 1.79086 24 4V20C24 22.2091 22.2091 24 20 24H4C1.79086 24 0 22.2091 0 20V4Z" fill="#0FC0C5"></path><path fill-rule="evenodd" clip-rule="evenodd" d="M12 10.4444L17.4444 5L19 6.55556L13.5556 12H12V10.4444Z" fill="white"></path><path d="M15 5.5H5.5V18.5H15.5V12" stroke="white"></path><path d="M7 12.5H10" stroke="white"></path><path d="M7 16.5H10" stroke="white"></path><path d="M8.5 12.5V16.5" stroke="white"></path></svg>
+                      </span>
+                      <h6 class="card-title">Edit PDF</h6>
+                      <!-- <p>Add text, shapes, images and freehand annotations to your PDF</p> -->
+                    </div>
+                  </a>
+                </div>
+                <!-- item 6 -->
+                <div class="col">
+                  <a class="main-tools-card-link text-reset" href="#">
+                    <div class="main-tools-card my-bg-light">
+                      <span class="card-icon mb-3">
+                        <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M0 4C0 1.79086 1.79086 0 4 0H20C22.2091 0 24 1.79086 24 4V20C24 22.2091 22.2091 24 20 24H4C1.79086 24 0 22.2091 0 20V4Z" fill="#0FC0C5"></path><path d="M6.5 19.4698V4.5H14.5L17.5 7.5V19.5L6.5 19.4698Z" stroke="white"></path><path d="M14.5 4.5V7.5H17.5" stroke="white"></path><path d="M5 14H12V17H5V14Z" fill="white"></path><path d="M8 12.5H16" stroke="white"></path><path d="M13 14.5H16" stroke="white"></path><path d="M13 16.5H16" stroke="white"></path><path d="M8 10.5H16" stroke="white"></path></svg>
+                      </span>
+                      <h6 class="card-title">PDF Reader</h6>
+                      <!-- <p>Reduce the size of your PDF without losing quality</p> -->
+                    </div>
+                  </a>
+                </div>
+                <!-- item 7 -->
+                <div class="col">
+                  <a class="main-tools-card-link text-reset" href="#">
+                    <div class="main-tools-card my-bg-light">
+                      <span class="card-icon mb-3">
+                        <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M0 4C0 1.79086 1.79086 0 4 0H20C22.2091 0 24 1.79086 24 4V20C24 22.2091 22.2091 24 20 24H4C1.79086 24 0 22.2091 0 20V4Z" fill="#0FC0C5"></path><rect x="5.5" y="5.5" width="8" height="10" stroke="white"></rect><path fill-rule="evenodd" clip-rule="evenodd" d="M8 13V12.2504H8.86929V9.93858H8.11969V9.36535C8.55433 9.28346 8.8315 9.17008 9.11496 9H9.79528V12.2504H10.5449V13H8Z" fill="white"></path><path fill-rule="evenodd" clip-rule="evenodd" d="M15.0845 16V15.6105L15.4224 15.2893C15.9894 14.7437 16.3642 14.3298 16.3642 13.9784C16.3642 13.6909 16.2019 13.5332 15.9469 13.5332C15.7336 13.5332 15.5713 13.677 15.4229 13.8346L15.052 13.4683C15.3441 13.1577 15.6177 13 16.0396 13C16.6192 13 17.0134 13.3709 17.0134 13.9366C17.0134 14.4328 16.5497 14.9614 16.0721 15.4621C16.2205 15.4436 16.4245 15.425 16.5636 15.425H17.1571V16H15.0845Z" fill="white"></path><path d="M14 8.5H18.5V18.5001H10.5V15.5001" stroke="white"></path></svg>
+                      </span>
+                      <h6 class="card-title">Number Pages</h6>
+                      <!-- <p>Reduce the size of your PDF without losing quality</p> -->
+                    </div>
+                  </a>
+                </div>
+                <!-- item 8 -->
+                <div class="col">
+                  <a class="main-tools-card-link text-reset" href="#">
+                    <div class="main-tools-card my-bg-light">
+                      <span class="card-icon mb-3">
+                        <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M0 4C0 1.79086 1.79086 0 4 0H20C22.2091 0 24 1.79086 24 4V20C24 22.2091 22.2091 24 20 24H4C1.79086 24 0 22.2091 0 20V4Z" fill="#0FC0C5"></path><path d="M8.5 8V5.5H15.5V8" stroke="white"></path><path d="M5 8.5H19" stroke="white"></path><path d="M8.5 18.5L7.5 10.5001L16.5 10.5L15.5 18.5H8.5Z" stroke="white"></path><path d="M10.5 12V16" stroke="white"></path><path d="M13.5 12V16" stroke="white"></path></svg>
+                      </span>
+                      <h6 class="card-title">Delete PDF Pages</h6>
+                      <!-- <p>Reduce the size of your PDF without losing quality</p> -->
+                    </div>
+                  </a>
+                </div>
+                 <!-- item 9 -->
+                 <div class="col">
+                  <a class="main-tools-card-link text-reset" href="#">
+                    <div class="main-tools-card my-bg-light">
+                      <span class="card-icon mb-3">
+                        <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M0 4C0 1.79086 1.79086 0 4 0H20C22.2091 0 24 1.79086 24 4V20C24 22.2091 22.2091 24 20 24H4C1.79086 24 0 22.2091 0 20V4Z" fill="#0FC0C5"></path><path d="M12 18.5C15.3137 18.5 18 15.8664 18 12.6176C18 11.0144 17.3458 9.56103 16.2849 8.5" stroke="white" stroke-width="0.5" stroke-dasharray="1 1"></path><path d="M12 18.5C8.68629 18.5 6 15.8137 6 12.5C6 9.18629 8.68629 6.5 12 6.5" stroke="white"></path><path d="M12 4L14.5 6.5L12 9V4Z" fill="white"></path></svg>
+                      </span>
+                      <h6 class="card-title">Rotate PDF</h6>
+                      <!-- <p>Reduce the size of your PDF without losing quality</p> -->
+                    </div>
+                  </a>
+                </div>
+                <!-- item 10 -->
+                <div class="col">
+                  <a class="main-tools-card-link text-reset" href="#">
+                    <div class="main-tools-card my-bg-light">
+                      <span class="card-icon mb-3">
+                        <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M0 4C0 1.79086 1.79086 0 4 0H20C22.2091 0 24 1.79086 24 4V20C24 22.2091 22.2091 24 20 24H4C1.79086 24 0 22.2091 0 20V4Z" fill="#26C6DA"></path><path d="M10.5 15.5H5.5V5.5H13.5V8.5" stroke="white"></path><rect x="10.5" y="8.5" width="8" height="10" stroke="white"></rect><path d="M12 15.5H17" stroke="white"></path><path d="M12 13.5H17" stroke="white"></path><path d="M12 11.5H17" stroke="white"></path></svg>
+                      </span>
+                      <h6 class="card-title">PDF To Word</h6>
+                      <!-- <p>Reduce the size of your PDF without losing quality</p> -->
+                    </div>
+                  </a>
+                </div>
+                <!-- item 11 -->
+                <div class="col">
+                  <a class="main-tools-card-link text-reset" href="#">
+                    <div class="main-tools-card my-bg-light">
+                      <span class="card-icon mb-3">
+                        <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M0 4C0 1.79086 1.79086 0 4 0H20C22.2091 0 24 1.79086 24 4V20C24 22.2091 22.2091 24 20 24H4C1.79086 24 0 22.2091 0 20V4Z" fill="#00CC44"></path><path d="M10.5 15.5H5.5V5.5H13.5V8.5" stroke="white"></path><rect x="10.5" y="8.5" width="8" height="10" stroke="white"></rect><path d="M12.5 12.5H16.5V16.5H12.5V12.5Z" stroke="white"></path><path d="M12.5 14.5H16.5" stroke="white"></path><path d="M14.5 12.5V16.5" stroke="white"></path></svg>
+                      </span>
+                      <h6 class="card-title">PDF To Excel</h6>
+                      <!-- <p>Reduce the size of your PDF without losing quality</p> -->
+                    </div>
+                  </a>
+                </div>
+                <!-- item 12 -->
+                <div class="col">
+                  <a class="main-tools-card-link text-reset" href="#">
+                    <div class="main-tools-card my-bg-light">
+                      <span class="card-icon mb-3">
+                        <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M0 4C0 1.79086 1.79086 0 4 0H20C22.2091 0 24 1.79086 24 4V20C24 22.2091 22.2091 24 20 24H4C1.79086 24 0 22.2091 0 20V4Z" fill="#FF8000"></path><path d="M10.5 15.5H5.5V5.5H13.5V8.5" stroke="white"></path><rect x="10.5" y="8.5" width="8" height="10" stroke="white"></rect><path d="M16 14C16 15.1046 15.1046 16 14 16C12.8954 16 12 15.1046 12 14C12 12.8954 12.8954 12 14 12V14H16Z" fill="white"></path><path d="M15 11C16.1046 11 17 11.8954 17 13H15V11Z" fill="white"></path></svg>
+                      </span>
+                      <h6 class="card-title">PDF To PPT</h6>
+                      <!-- <p>Reduce the size of your PDF without losing quality</p> -->
+                    </div>
+                  </a>
+                </div>
+                 <!-- item 13 -->
+                 <div class="col">
+                  <a class="main-tools-card-link text-reset" href="#">
+                    <div class="main-tools-card my-bg-light">
+                      <span class="card-icon mb-3">
+                        <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M0 4C0 1.79086 1.79086 0 4 0H20C22.2091 0 24 1.79086 24 4V20C24 22.2091 22.2091 24 20 24H4C1.79086 24 0 22.2091 0 20V4Z" fill="#7E57C2"></path><path d="M10.5 15.5H5.5V5.5H13.5V8.5" stroke="white"></path><rect x="10.5" y="8.5" width="8" height="10" stroke="white"></rect><path d="M10.5 15.5L12 14L14.5 16.5L16 15L18.5 17.5" stroke="white"></path><circle cx="16" cy="11" r="0.5" fill="white" stroke="white"></circle></svg>
+                      </span>
+                      <h6 class="card-title">PDF To JPG</h6>
+                      <!-- <p>Reduce the size of your PDF without losing quality</p> -->
+                    </div>
+                  </a>
+                </div>
+                <!-- item 14 -->
+                <div class="col">
+                  <a class="main-tools-card-link text-reset" href="#">
+                    <div class="main-tools-card my-bg-light">
+                      <span class="card-icon mb-3">
+                        <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M0 4C0 1.79086 1.79086 0 4 0H20C22.2091 0 24 1.79086 24 4V20C24 22.2091 22.2091 24 20 24H4C1.79086 24 0 22.2091 0 20V4Z" fill="#26C6DA"></path><rect x="5.5" y="5.5" width="8" height="10" stroke="white"></rect><path d="M14 8.5H18.5V18.5001H10.5V15.5001" stroke="white"></path><path d="M7 12.5H12" stroke="white"></path><path d="M7 10.5H12" stroke="white"></path><path d="M7 8.5H12" stroke="white"></path></svg>
+                      </span>
+                      <h6 class="card-title">Word To PDF</h6>
+                      <!-- <p>Reduce the size of your PDF without losing quality</p> -->
+                    </div>
+                  </a>
+                </div>
+                <!-- item 15 -->
+                <div class="col">
+                  <a class="main-tools-card-link text-reset" href="#">
+                    <div class="main-tools-card my-bg-light">
+                      <span class="card-icon mb-3">
+                        <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M0 4C0 1.79086 1.79086 0 4 0H20C22.2091 0 24 1.79086 24 4V20C24 22.2091 22.2091 24 20 24H4C1.79086 24 0 22.2091 0 20V4Z" fill="#00CC44"></path><rect x="5.5" y="5.5" width="8" height="10" stroke="white"></rect><path d="M7.5 9.5H11.5V13.5H7.5V9.5Z" stroke="white"></path><path d="M7.5 11.5H11.5" stroke="white"></path><path d="M9.5 9.5V13.5" stroke="white"></path><path d="M14 8.5H18.5V18.5001H10.5V15.5001" stroke="white"></path></svg>
+                      </span>
+                      <h6 class="card-title">Excel To PDF</h6>
+                      <!-- <p>Reduce the size of your PDF without losing quality</p> -->
+                    </div>
+                  </a>
+                </div>
+                <!-- item 16 -->
+                <div class="col">
+                  <a class="main-tools-card-link text-reset" href="#">
+                    <div class="main-tools-card my-bg-light">
+                      <span class="card-icon mb-3">
+                        <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M0 4C0 1.79086 1.79086 0 4 0H20C22.2091 0 24 1.79086 24 4V20C24 22.2091 22.2091 24 20 24H4C1.79086 24 0 22.2091 0 20V4Z" fill="#FF8000"></path><rect x="5.5" y="5.5" width="8" height="10" stroke="white"></rect><path d="M11 11C11 12.1046 10.1046 13 9 13C7.89543 13 7 12.1046 7 11C7 9.89543 7.89543 9 9 9V11H11Z" fill="white"></path><path d="M10 8C11.1046 8 12 8.89543 12 10H10V8Z" fill="white"></path><path d="M14 8.5H18.5V18.5001H10.5V15.5001" stroke="white"></path></svg>
+                      </span>
+                      <h6 class="card-title">PPT To PDF</h6>
+                      <!-- <p>Reduce the size of your PDF without losing quality</p> -->
+                    </div>
+                  </a>
+                </div>
+                <!-- item 17 -->
+                <div class="col">
+                  <a class="main-tools-card-link text-reset" href="#">
+                    <div class="main-tools-card my-bg-light">
+                      <span class="card-icon mb-3">
+                        <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M0 4C0 1.79086 1.79086 0 4 0H20C22.2091 0 24 1.79086 24 4V20C24 22.2091 22.2091 24 20 24H4C1.79086 24 0 22.2091 0 20V4Z" fill="#7E57C2"></path><rect x="5.5" y="5.5" width="8" height="10" stroke="white"></rect><path d="M5.5 12.5L7 11L9.5 13.5L11 12L13.5 14.5" stroke="white"></path><circle cx="11" cy="8" r="0.5" fill="white" stroke="white"></circle><path d="M14 8.5H18.5V18.5001H10.5V15.5001" stroke="white"></path></svg>
+                      </span>
+                      <h6 class="card-title">JPG To PDF</h6>
+                      <!-- <p>Reduce the size of your PDF without losing quality</p> -->
+                    </div>
+                  </a>
+                </div>
+                <!-- item 18 -->
+                <div class="col">
+                  <a class="main-tools-card-link text-reset" href="#">
+                    <div class="main-tools-card my-bg-light">
+                      <span class="card-icon mb-3">
+                        <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M0 4C0 1.79086 1.79086 0 4 0H20C22.2091 0 24 1.79086 24 4V20C24 22.2091 22.2091 24 20 24H4C1.79086 24 0 22.2091 0 20V4Z" fill="#FF7043"></path><path d="M16.4795 10.9074L12 18.9704L7.52205 10.9101L8.09391 7.5H15.9471L16.4795 10.9074Z" stroke="white"></path><path d="M12 13V18" stroke="white"></path><path d="M8.30775 7.50205L6.80571 4.49795H17.1943L15.6922 7.50205H8.30775Z" stroke="white" stroke-width="0.995907"></path><circle cx="12" cy="11" r="2" stroke="white"></circle></svg>
+                      </span>
+                      <h6 class="card-title">eSign PDF</h6>
+                      <!-- <p>Reduce the size of your PDF without losing quality</p> -->
+                    </div>
+                  </a>
+                </div>
+                <!-- item 19 -->
+                <div class="col">
+                  <a class="main-tools-card-link text-reset" href="#">
+                    <div class="main-tools-card my-bg-light">
+                      <span class="card-icon mb-3">
+                        <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M0 4C0 1.79086 1.79086 0 4 0H20C22.2091 0 24 1.79086 24 4V20C24 22.2091 22.2091 24 20 24H4C1.79086 24 0 22.2091 0 20V4Z" fill="#FF5975"></path><rect x="5.5" y="10.5" width="10" height="8" stroke="white"></rect><path d="M18.5 8C18.5 6.34315 16.933 5 15 5C13.067 5 11.5 6.34315 11.5 8" stroke="white"></path><path d="M11.5 8V10" stroke="white"></path><path d="M18.5 8V9" stroke="white"></path></svg>
+                      </span>
+                      <h6 class="card-title">Unlock PDF</h6>
+                      <!-- <p>Reduce the size of your PDF without losing quality</p> -->
+                    </div>
+                  </a>
+                </div>
+                <!-- item 20 -->
+                <div class="col">
+                  <a class="main-tools-card-link text-reset" href="#">
+                    <div class="main-tools-card my-bg-light">
+                      <span class="card-icon mb-3">
+                        <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M0 4C0 1.79086 1.79086 0 4 0H20C22.2091 0 24 1.79086 24 4V20C24 22.2091 22.2091 24 20 24H4C1.79086 24 0 22.2091 0 20V4Z" fill="#FF5975"></path><path d="M11.8748 5.58096L12 5.534L12.1252 5.58096L12.9182 5.87832L15.3244 6.78066L17.7307 7.68301L18.4936 7.96909C18.3717 12.3117 16.7249 14.9298 15.1218 16.4699C14.2936 17.2655 13.4687 17.7813 12.8535 18.0971C12.5461 18.2549 12.2921 18.3622 12.1177 18.4294C12.0768 18.4451 12.0403 18.4586 12.0086 18.47C11.9761 18.4572 11.9385 18.4419 11.8963 18.4242C11.7209 18.3505 11.4657 18.2339 11.1572 18.0657C10.5395 17.7291 9.71169 17.188 8.88098 16.3743C7.27294 14.7991 5.62989 12.1803 5.50664 7.96901L6.26931 7.68301L8.67556 6.78066L11.0818 5.87832L11.8748 5.58096Z" stroke="white"></path></svg>
+                      </span>
+                      <h6 class="card-title">Protect PDF</h6>
+                      <!-- <p>Reduce the size of your PDF without losing quality</p> -->
+                    </div>
+                  </a>
+                </div>
+                
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- end section main tools box -->
+
+      </div>
+      <!-- end home main -->
+    </div>
+  </main>
+<!-- end main -->
+
+
+<!-- start footer -->
+  <footer id="footer">
+
+            <!-- start rate this page -->
+            <div class="section main-rate-page-box">
+              <div class="main-rate-page-content">
+                <div class="container">
+                  <div class="row justify-content-center text-center">
+                    <div class="col-12">
+                      <div class="rating">
+                        <span><strong class="me-3">Rate this tool</strong></span>
+                        <i class="rating__star bi bi-star" data-bs-toggle="tooltip" data-bs-placement="top" title="Awful"></i>
+                        <i class="rating__star bi bi-star" data-bs-toggle="tooltip" data-bs-placement="top" title="Poor"></i>
+                        <i class="rating__star bi bi-star" data-bs-toggle="tooltip" data-bs-placement="top" title="Average"></i>
+                        <i class="rating__star bi bi-star" data-bs-toggle="tooltip" data-bs-placement="top" title="Good"></i>
+                        <i class="rating__star bi bi-star" data-bs-toggle="tooltip" data-bs-placement="top" title="Excellent"></i>
+                        <span><strong class="ms-3">4.5</strong> / 5 - 481,490 votes</span>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="row justify-content-center text-start">
+                    <div class="col-12 col-lg-6">
+                      <form action="">
+                        <div class="mb-3 mt-3">
+                          <input type="email" class="form-control" id="Emailaddress" placeholder="Full Name">
+                        </div>
+                        <div class="mb-3 mt-3">
+                          <input type="email" class="form-control" id="Emailaddress" placeholder="Email Address">
+                        </div>
+                        <div class="mb-3 mt-3">
+                          <textarea class="form-control" id="Message" rows="3" placeholder="Your Message"></textarea>
+                        </div>
+                        <div class="mb-3 mt-3 text-center">
+                          capcha box
+                        </div>
+                        <button class="btn btn-outline-primary w-100">Send</button>
+                      </form>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- end rate this page -->
+    
+    <!-- start top footer -->
+    <div class="container">
+      <div class="top-footer">
+
+        <!-- footer social media -->
+        <div class="row">
+          <div class="col">
+            <div class="footer-social-media">
+              <a href="#" class="fsm-link fsm-telegram" data-bs-toggle="tooltip" data-bs-placement="top" title="Telegram"><i class="bi bi-telegram"></i></a>
+              <a href="#" class="fsm-link fsm-instagram" data-bs-toggle="tooltip" data-bs-placement="top" title="Instagram"><i class="bi bi-instagram"></i></a>
+              <a href="#" class="fsm-link fsm-twitter" data-bs-toggle="tooltip" data-bs-placement="top" title="Twitter"><i class="bi bi-twitter"></i></a>
+              <a href="#" class="fsm-link fsm-youtube" data-bs-toggle="tooltip" data-bs-placement="top" title="Youtube"><i class="bi bi-youtube"></i></a>
+              <a href="#" class="fsm-link fsm-linkedin" data-bs-toggle="tooltip" data-bs-placement="top" title="Linkedin"><i class="bi bi-linkedin"></i></a>
+              <a href="#" class="fsm-link fsm-facebook" data-bs-toggle="tooltip" data-bs-placement="top" title="Facebook"><i class="bi bi-facebook"></i></a>
+              <a href="#" class="fsm-link fsm-spotify" data-bs-toggle="tooltip" data-bs-placement="top" title="Spotify"><i class="bi bi-spotify"></i></a>
+            </div>
+          </div>
+        </div>
+
+        <hr>
+
+        <!-- footer info and links -->
+        <div class="row">
+          <div class="col-12 col-md-3 mb-4 mb-lg-0">
+            <h2 style="color: #0025ea;">Logo</h2>
+            <p class="text-muted">Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+          </div>
+          <div class="col-6 col-md-3 mb-4 mb-lg-0">
+            <span class="footer-title mb-3">Footer Title 1</span>
+            <ul>
+              <li><a href="#">Footer link</a></li>
+              <li><a href="#">Footer link</a></li>
+              <li><a href="#">Footer link</a></li>
+            </ul>
+          </div>
+          <div class="col-6 col-md-3 mb-4 mb-lg-0">
+            <span class="footer-title mb-3">Footer Title 2</span>
+            <ul>
+              <li><a href="#">Footer link</a></li>
+              <li><a href="#">Footer link</a></li>
+              <li><a href="#">Footer link</a></li>
+            </ul>
+          </div>
+          <div class="col-6 col-md-3 mb-4 mb-lg-0">
+            <span class="footer-title mb-3">Footer Title 3</span>
+            <ul>
+              <li><a href="#">Footer link</a></li>
+              <li><a href="#">Footer link</a></li>
+              <li><a href="#">Footer link</a></li>
+            </ul>
+          </div>  
+        </div>
+
+      </div>
+    </div>
+    <!-- end top footer -->
+
+    <!-- start bottom footer -->
+    <div class="bottom-footer bg-light mt-3">
+     <div class="container">
+      <div class="row align-items-center">
+        <div class="col-12 col-md-6 mb-4 mb-lg-0 text-muted">
+          &COPY; 2022 YourSiteName - made whit <span class="heart">&hearts;</span> for the people of the internet.
+        </div>
+        <div class="col-12 col-md-6">
+          <ul>
+            <li><a href="#">Privacy Notice</a></li>
+            <li><a href="#">Terms & Conditions</a></li>
+            <li><a href="#">Contact Us</a></li>
+          </ul>
+        </div>
+      </div>
+     </div>
+    </div>
+    <!-- end bottom footer -->
+
+
+  </footer>
+<!-- end footer -->
+
+
+
+
+    <!-- script -->
+    <script src="./js/jquery.min.js"></script>
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <script src="js/uploadfile-convert.js"></script>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    
+
+    <script>
+
+      // dark mode
+        bodyDOM = document.getElementsByTagName("body")[0];
+        const schemeDOM = document.querySelector(".switch input");
+        schemeDOM.addEventListener("change" , function(event){
+        const thisElement = event.target;
+          if(thisElement.checked){
+            // Dark Mode
+            bodyDOM.classList.add("dark-mode");
+          }else{
+           // Light Mode
+            bodyDOM.classList.remove("dark-mode");
+          }
+        });
+
+
+        // enable tooltip
+        var tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'))
+        var tooltipList = tooltipTriggerList.map(function (tooltipTriggerEl) {
+          return new bootstrap.Tooltip(tooltipTriggerEl)
+        })
+
+        
+
+        // rating page
+        const ratingStars = [...document.getElementsByClassName("rating__star")];
+
+        function executeRating(stars) {
+        const starClassActive = "rating__star bi bi-star-fill";
+        const starClassInactive = "rating__star bi bi-star";
+        const starsLength = stars.length;
+        let i;
+        stars.map((star) => {
+          star.onclick = () => {
+            i = stars.indexOf(star);
+
+           if (star.className===starClassInactive) {
+             for (i; i >= 0; --i) stars[i].className = starClassActive;
+           } else {
+             for (i; i < starsLength; ++i) stars[i].className = starClassInactive;
+           }
+         };
+        });
+}
+executeRating(ratingStars);
+
+    </script>
+
+
+<script>
+     
+</script>
+
+  </body>
+</html>

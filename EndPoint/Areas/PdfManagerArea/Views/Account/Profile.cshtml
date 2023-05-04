@@ -1,0 +1,301 @@
+﻿@model Common.ResultMessage<Application.Services.Query.Admin.ReturnAdminDetails.ResultReturnAdminDetailsDto>;
+@{ Layout = "~/Areas/PdfManagerArea/Views/Shared/_Adminlayout.cshtml";}
+
+
+<head>
+    <link href="~/Areas/Admin/css/Profile.css" rel="stylesheet">
+    <title>PdfConverter | Admin-Profile</title>
+</head>
+
+<div class="container">
+    <div class="row ">
+        <div class="col-lg-12">
+            <ul class=" nav nav-tabs justify-content-center s-nav">
+                <li><a href="">Profile</a></li>
+            </ul>
+        </div>
+    </div>
+    <div class="img" style="    background-image: linear-gradient(150deg, rgba(63, 174, 0, .3)15%, rgba(63, 174, 255, .3)70%, rgba(63, 174, 255, .3)94%), url(/img/Login/796832.jpg);
+    height: 350px;background-size: cover;"></div>
+    <div class="card social-prof" style="margin-left: auto; margin-right: auto; width: 70em;">
+        <div class="card-body">
+            <div class="wrapper">
+                <img src="~/@Common.GetPath.GetAdminImagePath()/@Model.Enything.Id/@Model.Enything.AccountImage" alt="Avatar" style="cursor:pointer" onclick="OpenModal('EditImage')" title="Edit Image" class="user-profile">
+                <h3>@Model.Enything.FullName</h3>
+                <div class="col-xl-12 col-lg-12 col-md-12 mb-1">
+                    <form id="Details" role="form">
+
+                        <fieldset class="form-group">
+                            <label for="basicInput">FullName</label>
+                            <input type="text" value="@Model.Enything.FullName" class="form-control" id="Edit_FullName">
+                        </fieldset>
+
+                        <fieldset class="form-group">
+                            <label for="basicInput">Email</label>
+                            <input type="email" value="@Model.Enything.Email" class="form-control" id="Edit_Email">
+                        </fieldset>
+
+
+                        <a style="color:blue; cursor:pointer" onclick="OpenModal('ChangePass')">  change your password </a>
+                    </form>
+                </div>
+                <a class="btn btn-primary" onclick="OpenModal('Pass')">Save Change</a>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+<link href="~/Sweetalert2/sweetalert2.min.css" rel="stylesheet" />
+<script src="~/Sweetalert2/sweetalert2.min.js"></script>
+
+<script>
+    function EditDetails() {
+        var data = new FormData();
+        data.append("FullName", $("#Edit_FullName").val());
+        data.append("Email", $("#Edit_Email").val());
+        data.append("Password", $("#Password").val());
+
+        $.ajax({
+            type: "POST",
+            url: "/PdfManagerArea/Account/EditUserDetails/",
+            contentType: false,
+            processData: false,
+            data: data,
+            success: function (data) {
+
+                if (data.success == true) {
+
+                    swal.fire(
+                        'Success',
+                        data.message,
+                        'success'
+                    ).then(function (isConfirm) {
+                        window.location.reload();
+                    });
+                }
+                else {
+
+                    swal.fire(
+                        'Warning',
+                        data.message,
+                        'warning'
+                    );
+                }
+
+            },
+            error: function (xhr, ajaxOptions, thrownError) {
+                alert(xhr.status);
+                alert(thrownError);
+            }
+
+        });
+
+    }
+
+    function EditImage() {
+
+        var ImageFilter = /(\.jpg|\.jpeg|\.png|\.bmp|\.jfif|\.)$/i;
+        if (!ImageFilter.exec(document.getElementById("upload").value)) {
+            swal.fire
+                (
+                    "warning",
+                    "Profile Image Format Invalid",
+                    "warning"
+                );
+            return;
+        }
+
+        var formData = new FormData();
+        formData.append("File", document.getElementById("upload").files[0]);
+
+        $.ajax({
+            type: "POST",
+            url: "/PdfManagerArea/Account/EditUserImage/",
+            contentType: false,
+            processData: false,
+            data: formData,
+            success: function (data) {
+                if (data.success == true) {
+                    window.location.reload();
+                }
+                else {
+                    swal.fire(
+                        'warning',
+                        data.message,
+                        'warning'
+                    );
+                }
+
+            },
+            error: function (xhr, ajaxOptions, thrownError) {
+                alert(xhr.status);
+                alert(thrownError);
+            }
+
+        });
+
+    }
+
+    function ChangePass() {
+        var data = new FormData();
+        data.append("OldPassword", $("#OldPass").val());
+        data.append("NewPassword", $("#NewPass").val());
+        data.append("RepPassword", $("#RepPass").val());
+
+        $.ajax({
+            type: "POST",
+            url: "/PdfManagerArea/Account/ChangeYourPass/",
+            contentType: false,
+            processData: false,
+            data: data,
+            success: function (data) {
+                if (data.success == true) {
+                    swal.fire(
+                        'Success',
+                        data.message,
+                        'success'
+                    ).then(function (isConfirm) {
+                        window.location.replace("/PdfManagerArea/Home/Logout/");
+                    });
+                }
+                else {
+                    swal.fire(
+                        'warning',
+                        data.message,
+                        'warning'
+                    );
+                }
+
+            },
+            error: function (xhr, ajaxOptions, thrownError) {
+                alert(xhr.status);
+                alert(thrownError);
+            }
+
+        });
+
+
+    }
+
+    function changePicture() {
+        $('#upload').click();
+    }
+
+    function OpenModal(id) {
+        $("#" + id).modal('show');
+    }
+
+    function readURL(input) {
+        if (input.files && input.files[0]) {
+            var reader = new FileReader();
+            reader.onload = function (e) {
+                $('#image')
+                    .attr('src', e.target.result);
+
+            };
+            reader.readAsDataURL(input.files[0]);
+        }
+    }
+
+</script>
+
+
+@section ImageModals
+{
+    <!-- Modal Edit UserImage -->
+    <div class="modal fade" id="EditImage" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLongTitle">Edit Image</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <div class="col-xl-12 col-lg-12 col-md-12 mb-1">
+
+                        <div id="userphoto">
+
+                            <div class="change-picture-slide" style="top: 30px;">
+                                <input accept="image/*" type="file" id="upload" name="upload" onchange="readURL(this);" style="visibility: hidden;" />
+                                <img id="image" src="~/@Common.GetPath.GetAdminImagePath()/@Model.Enything.Id/@Model.Enything.AccountImage" alt="Avatar" class="logo" width="75" />
+                                <i class="fa fa-search">
+                                    <label href="" class="btn" for="files" onclick="changePicture(); return false">Chosse Image</label>
+                                </i>
+                            </div>
+                        </div>
+
+                        <div class="modal-footer">
+                            <a class="btn btn-secondary" data-dismiss="modal">Close</a>
+                            <button class="btn btn-primary" onclick="EditImage()" type="submit">Edit</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+}
+
+
+@section Modals{
+    <!-- Modal Password -->
+    <div class="modal fade" id="Pass" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <div class="col-xl-12 col-lg-12 col-md-12 mb-1">
+
+                        <div id="userphoto">
+                            <input type="password" placeholder="Your Password" class="form-control" id="Password">
+                        </div>
+
+                        <div class="modal-footer">
+                            <a class="btn btn-secondary" data-dismiss="modal">Cancel</a>
+                            <button class="btn btn-primary" onclick="EditDetails()" type="submit">Submit</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+}
+
+@section Other{
+    <div class="modal fade" id="ChangePass" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    Change Your Password
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <div class="col-xl-12 col-lg-12 col-md-12 mb-1">
+                        <fieldset class="form-group">
+                            <input type="password" placeholder="Your Old Password" class="form-control" id="OldPass">
+                        </fieldset>
+                        <fieldset class="form-group">
+                            <input type="password" placeholder="Your New Password" class="form-control" id="NewPass">
+                        </fieldset>
+                        <fieldset class="form-group">
+                            <input type="password" placeholder="Your RepPassword" class="form-control" id="RepPass">
+                        </fieldset>
+
+                        <div class="modal-footer">
+                            <a class="btn btn-secondary" data-dismiss="modal">Cancel</a>
+                            <button class="btn btn-primary" onclick="ChangePass()" type="submit">Submit</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+}

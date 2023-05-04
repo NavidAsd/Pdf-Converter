@@ -1,0 +1,349 @@
+﻿@model ResultMessage<ResultGetAllFeaturesDetailsDto>
+@using Common;
+@using Application.Services.Query.GetAllFeaturesDetails
+@{
+    ViewData["Title"] = "Services";
+    Layout = "~/Areas/PdfManagerArea/Views/Shared/_Adminlayout.cshtml";
+}
+
+<head>
+    <link href="~/Areas/Admin/css/NoResult.css" rel="stylesheet" />
+    <link rel="shortcut icon" type="image/png" href="~/images/logo/66-modified.png">
+    <title>PdfConverter | Admin-Service</title>
+</head>
+
+<style>
+    body {
+        align-items: center;
+        background-color: var(--blue);
+        background: url("/Areas/Admin/images/New_A.jpg");
+        background-attachment: fixed;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        display: grid;
+        height: 100vh;
+        place-items: center;
+    }
+</style>
+
+    <form method="get" class="form-inline">
+        <input name="filter" class="form-control" placeholder="filter"
+           value="@Model.Enything.Filter" />
+        <button type="submit" class="btn btn-info">
+            <span class="glyphicon glyphicon-search" aria-hidden="true"></span> Search
+        </button>
+    </form>
+
+<div class="content-wrapper">
+    <div class="container-fluid">
+        <!-- Zero configuration table -->
+        <secti id="configuration">
+
+            <div class="row">
+                <div class="col-12">
+                    <div class="card">
+                        <p>
+                            <br />
+                            <br />
+                        </p>
+                        <table class="table table-striped">
+                            <thead>
+                                <tr>
+                                    <th></th>
+
+                                    <th>
+                                        ServiceName
+                                    </th>
+                                    <th>
+                                        HelpContext
+                                    </th>
+                                    <th>
+                                        Rate
+                                    </th>
+                                    <th>
+                                        CountUse
+                                    </th>
+
+                                    <th>
+                                        State
+                                    </th>
+
+                                    <th></th>
+                                </tr>
+                            </thead>
+
+                            <tbody>
+                                @if (Model.Enything.Features != null)
+                                {
+                                    @foreach (var item in Model.Enything.Features)
+                                    {
+                                        <tr>
+                                            <td></td>
+                                            <td>
+                                                @item.Name
+                                            </td>
+                                            @if (item.HelpContext != null)
+                                            {
+                                                <td style="cursor:pointer" title="More" onclick="ShowModal('@item.HelpContext')">
+
+                                                    @if (item.HelpContext.Length > 8)
+                                                    {
+                                                        @(
+                                                                                                item.HelpContext.Substring(0, item.HelpContext.Length / 2).ToString() + "..."
+                                                                                                )
+                                                        ;
+                                                    }
+                                                    else
+                                                    {
+                                                        @item.HelpContext
+                                                    }
+                                                </td>
+                                            }
+                                            else
+                                            {
+                                                <td>@item.HelpContext</td>
+                                            }
+                                            <td>
+                                                @item.Rate
+                                            </td>
+                                            <td>
+                                                @item.CountUse
+                                            </td>
+
+                                            @if (item.IsRemoved == false)
+                                            {
+                                                <td>
+                                                    <img src="~/Areas/Admin/images/microsoft_todo_2019_240px.png" width="40" style="cursor:pointer" title="Click To Disabled Service" onclick="ChangeState('@item.Service', false, '@item.Name')" />
+                                                </td>
+                                            }
+                                            else
+                                            {
+                                                <td>
+                                                    <img src="~/Areas/Admin/images/delete_240px.png" width="40" style="cursor:pointer" title="Click To Enabled Service" onclick="ChangeState('@item.Service',true, '@item.Name')" />
+                                                </td>
+                                            }
+
+                                            <td>
+                                                <a style="color:blue" href="/PdfManagerArea/Services/Edit?Service=@item.Service">Edit</a> |
+                                                <a style="color:blue" href="/PdfManagerArea/Users/FrequentlyQuestions?Service=@item.Service">FAQ</a> |
+                                                <a style="color:blue" onclick="OpenImageModal('@Common.GetPath.GetServiceImages().Replace("wwwroot","")/pdfconverter-@item.Name.Insert(item.Name.Length,item.ImageFormat)','@item.Name','@item.ImageTitle','@item.ImageAlt')">Image</a>
+                                            </td>
+
+                                        </tr>
+                                    }
+                                }
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+</div>
+
+<link href="~/Sweetalert2/sweetalert2.min.css" rel="stylesheet" />
+<script src="~/Sweetalert2/sweetalert2.min.js"></script>
+
+<script>
+
+    function ChangeState(Service, State, Name) {
+        var action;
+        if (State == true) {
+            action = "Active";
+        }
+        else {
+            action = "DeActive"
+        }
+        swal.fire({
+            title: 'Change Service State',
+            text: "?Are you sure you want to " + action + " service " + Name + "",
+            icon: 'question',
+            showCancelButton: true,
+            confirmButtonColor: '#3085d6',
+            cancelButtonColor: '#d33',
+            confirmButtonText: 'Yes , imSure',
+            cancelButtonText: 'No'
+        }).then((result) => {
+            if (result.value) {
+
+                var postdata = {
+                    'Service': Service,
+                    'State': State
+                };
+                $.ajax({
+                    contentType: 'application/x-www-form-urlencoded',
+                    dataType: 'json',
+                    type: "POST",
+                    url: "/PdfManagerArea/Services/ChangeState/",
+                    data: postdata,
+                    success: function(data) {
+                        if (data.success == true) {
+                            location.reload();
+                        }
+                        else {
+                            swal.fire(
+                                'warning',
+                                data.message,
+                                'warning'
+                            );
+                        }
+                    },
+                    error: function(request, status, error) {
+                        alert(request.responseText);
+                    }
+
+                });
+            }
+
+        })
+    }
+
+    function UpdateImage() {
+        var ImageFilter = /\.(png?g|png|webp)$/;
+        if (!ImageFilter.exec(document.getElementById("upload").value)) {
+            swal.fire
+                (
+                    "warning",
+                    "Just .webp,.png File Format Valid",
+                    "warning"
+                );
+            return;
+        }
+
+        var formData = new FormData();
+        formData.append("Image", document.getElementById("upload").files[0]);
+        formData.append("Name", document.getElementById("_id").textContent);
+        formData.append("Alt", document.getElementById("imagealt").value);
+        formData.append("Title", document.getElementById("imagetitle").value);
+
+        $.ajax({
+            type: "POST",
+            url: "/PdfManagerArea/Services/UpdateImage/",
+            contentType: false,
+            processData: false,
+            data: formData,
+            success: function(data) {
+                if (data.success == true) {
+                    swal.fire(
+                        'Success',
+                        data.message,
+                        'success'
+                    ).then(function(isConfirm) {
+                        location.reload();
+                    });
+                }
+                else {
+                    swal.fire(
+                        'warning',
+                        data.message,
+                        'warning'
+                    );
+                }
+
+            },
+            error: function(xhr, ajaxOptions, thrownError) {
+                alert(xhr.status);
+                alert(thrownError);
+            }
+
+        });
+    }
+
+
+    function ShowModal(Message) {
+        document.getElementById("areaContext").value = Message;
+        $("#mdlContext").modal('show');
+    }
+
+    function OpenImageModal(src, name,title,alt) {
+        document.getElementById('_id').textContent = name;
+        document.getElementById('image').src = src;
+        document.getElementById('imagealt').value = alt;
+        document.getElementById('imagetitle').value = title;
+        $("#EditImage").modal('show');
+    }
+
+    function changePicture() {
+        $('#upload').click();
+    }
+
+    function readURL(input) {
+        if (input.files && input.files[0]) {
+            var reader = new FileReader();
+            reader.onload = function(e) {
+                $('#image')
+                    .attr('src', e.target.result);
+
+            };
+            reader.readAsDataURL(input.files[0]);
+        }
+    }
+</script>
+
+@section ImageModals
+    {
+            <!-- Modal Edit Image -->
+            <div class="modal fade" id="EditImage" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+                <div class="modal-dialog modal-dialog-centered" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="exampleModalLongTitle">Edit Image</h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <div class="modal-body">
+                            <div class="col-xl-12 col-lg-12 col-md-12 mb-1">
+                          <div class="col-xl-12 col-lg-12 col-md-12 mb-1">
+                                <div id="userphoto">
+                                    <div class="change-picture-slide" style="top: 30px;">
+                                        <p style="display:none" id="_id"></p>
+                                        <input accept="image/*" type="file" id="upload" name="upload" onchange="readURL(this);" style="visibility: hidden;" />
+                                        <img id="image" src="" alt="Img" class="logo" width="185" />
+                                        <i class="fa fa-search">
+                                            <label href="" class="btn" for="files" onclick="changePicture(); return false">Chosse Image</label>
+                                        </i>
+                                    </div>
+                                </div>
+                                <br />
+                                <input type="text" class="form-control " id="imagealt" placeholder="ImageAlt" value="" />
+                                <br />
+                                <input type="text" class="form-control " id="imagetitle" placeholder="ImageTitle" value="" />
+
+                                <div class="modal-footer">
+                                    <a class="btn btn-secondary" data-dismiss="modal">Close</a>
+                                    <button class="btn btn-primary" onclick="UpdateImage()" type="submit">Edit</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+}
+
+@section Modals
+    {
+            <!-- Modal Context -->
+            <div class="modal fade" id="mdlContext" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+                <div class="modal-dialog modal-dialog-centered" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="exampleModalLongTitle">Context</h5>
+                        </div>
+
+                        <div class="modal-body">
+                            <div class="col-xl-12 col-lg-12 col-md-12 mb-1">
+                                <form>
+                                    <fieldset class="form-group">
+                                        <textarea id="areaContext" class="form-control " rows="5" readonly> None </textarea>
+                                    </fieldset>
+                                </form>
+                            </div>
+                        </div>
+                        <div class="modal-footer">
+                        </div>
+                    </div>
+                </div>
+            </div>
+}

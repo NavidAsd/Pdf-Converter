@@ -1,0 +1,21 @@
+﻿@{ Layout = null; }
+
+@if(ViewBag.State == false){
+<link href="~/css/Cookie.css" rel="stylesheet">
+<!-- start cookie part -->
+<div class="section-cookie">
+        <img class="img-cookie" title="PDF Converter - quickly, online, free" alt="PDF Converter Cookie-Policy" alt="" src="~/images/cookie.webp">
+    <p>
+        This website uses cookies. Cookies allow us to provide you with the best experience on this site, to operate our sites reliably and securely, to improve them, to identify and fix problems, and to provide our services free of charge at our usual high quality. Please allow us to use them.
+    </p>
+    <div class="div-cookie" style="">
+        <button onclick="setCookie()" class="btn-accept-coo">Accept</button>
+        <button onclick="slideDown(document.getElementsByClassName('section-cookie')[0])" id="dismis" class="btn-dismis-coo">Dismiss</button>
+    </div>
+</div>
+
+<!-- end cookie part -->
+
+<script src="~/js/cookie.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+}

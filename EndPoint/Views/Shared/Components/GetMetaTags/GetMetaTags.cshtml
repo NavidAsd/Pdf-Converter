@@ -1,0 +1,37 @@
+﻿@model Common.ResultMessage<Application.Services.Query.Seo.ReturnMetatags.Metatags>
+@{
+    Layout = null;
+}
+
+@if (Model.Success)
+{
+    if (Model.Enything.PageName == "All")
+    {
+        @if (ViewBag.Keywords.Success)
+        {
+            string Keys = "";
+            @foreach (var item in ViewBag.Keywords.Enything)
+            {
+                Keys += item.Key + ", ";
+            }
+                                        <meta name="keywords" content="@Keys">
+        }
+        @Html.Raw(Model.Enything.Other)
+    }
+    else
+    {
+            <title>@Model.Enything.Title</title>
+                <meta name="description" content="@Model.Enything.Description">
+        @if (ViewBag.Keywords.Success)
+        {
+            string Keys = "";
+            @foreach (var item in ViewBag.Keywords.Enything)
+            {
+                Keys += item.Key + ", ";
+            }
+                            <meta name="keywords" content="@Keys">
+        }
+                <meta name="author" content="@Model.Enything.Author">
+        @Html.Raw(Model.Enything.Other)
+    }
+}

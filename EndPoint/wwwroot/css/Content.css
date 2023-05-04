@@ -1,0 +1,29 @@
+.learn-list {
+    width: 100%;
+
+}
+
+.learn-list-item {
+    padding: 45px 38px;
+    border: 1px solid #e5e9ec;
+    border-radius: 5px;
+}
+
+    .learn-list-item > h5 {
+        font: 700 18px/1.25 "Poppins",sans-serif;
+        word-wrap: break-word;
+        text-align: center;
+            
+    }
+
+    .learn-list-item > img {
+        width: 120px;
+        height: 120px;
+    }
+
+    .learn-list-item > p {
+        font: 400 16px/1.6 "Poppins",sans-serif;
+        text-align: center;
+        height: 40%;
+        word-wrap: break-word;
+    }

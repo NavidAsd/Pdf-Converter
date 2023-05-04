@@ -1,0 +1,177 @@
+﻿@model Common.ResultMessage<Application.Services.Query.Seo.ReturnMetatags.ResultReturnMetatagsDto>
+@addTagHelper *, LazZiya.TagHelpers
+@{
+    Layout = "~/Areas/PdfManagerArea/Views/Shared/_Adminlayout.cshtml";
+}
+
+
+<head>
+    <link href="~/Areas/Admin/css/NoResult.css" rel="stylesheet" />
+    <link rel="shortcut icon" type="image/png" href="~/images/logo/66-modified.png">
+    <title>PdfConverter | Admin-Metatags</title>
+</head>
+
+<form method="get" class="form-inline">
+    <input name="filter" class="form-control" placeholder="filter"
+           value="@Model.Enything.Filter" />
+    <button type="submit" class="btn btn-info">
+        <span class="glyphicon glyphicon-search" aria-hidden="true"></span> Search
+    </button>
+</form>
+
+<div class="  text-center">
+    <paging total-records="@Model.Enything.TotalRow"
+            page-no="@Model.Enything.PageIndex"
+            page-size="@Model.Enything.PageSize"
+            show-prev-next="true"
+            show-total-pages="false"
+            show-total-records="false"
+            show-page-size-nav="false"
+            show-first-numbered-page="true"
+            show-last-numbered-page="true"
+            query-string-key-page-no="PageIndex"
+            query-string-key-page-size="Size"
+            query-string-value="@@(Request.QueryString.Value)"
+            gap-size="2">
+    </paging>
+</div>
+
+
+<div class="content-wrapper">
+    <div class="container-fluid">
+        <!-- Zero configuration table -->
+        <section id="configuration">
+            <div class="row">
+                <div class="col-12">
+                    <div class="card">
+                                                <a class="btn btn-success col-md-12" href="/PdfManagerArea/Seo/AddMetaForAll"> Add Metatags For All Pages </a>
+
+                        <p>
+                            <br />
+                            <br />
+                        </p>
+                        <table class="table table-striped">
+                            <thead>
+                                <tr>
+                                    <th>
+
+                                    </th>
+                                    <th>
+                                        PageName
+                                    </th>
+                                    <th>
+                                        Title
+                                    </th>
+                                    <th>
+                                        Author
+                                    </th>
+
+                                    <th></th>
+                                </tr>
+                            </thead>
+
+                            <tbody>
+                                @if (Model.Success)
+                                {
+                                    int cv = 1;
+                                    @foreach (var item in Model.Enything.Metatags)
+                                    {
+                                        <tr>
+                                            <td>
+                                                @cv
+                                            </td>
+                                            <td>
+                                                @item.PageName
+                                            </td>
+                                            <td>
+                                                @item.Title
+                                            </td>
+                                            <td>
+                                                @item.Author
+                                            </td>
+                                            @if (item.IsRemoved == false)
+                                            {
+                                                <td>
+                                                    <img src="~/Areas/Admin/images/microsoft_todo_2019_240px.png" width="40" style="cursor:pointer;" title="Change Item Status" onclick="SendData('@item.Id',true)" />
+                                                </td>
+                                            }
+                                            else
+                                            {
+                                                <td>
+                                                    <img src="~/Areas/Admin/images/delete_240px.png" width="40" style="cursor:pointer;" title="Change Item Status" onclick="SendData('@item.Id',false)" />
+                                                </td>
+                                            }
+                                            <td>
+                                                <a style="color:blue" href="/PdfManagerArea/Seo/EditMetatag?id=@item.Id">Edit</a> |
+                                                <a style="color:blue" href="/PdfManagerArea/Seo/MetatagKeywords?MetaId=@item.Id">Keywords</a>
+                                            </td>
+                                        </tr>
+                                        cv += 1;
+                                    }
+                                }
+
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+</div>
+
+<div class="  text-center">
+    <paging total-records="@Model.Enything.TotalRow"
+            page-no="@Model.Enything.PageIndex"
+            page-size="@Model.Enything.PageSize"
+            show-prev-next="true"
+            show-total-pages="false"
+            show-total-records="false"
+            show-page-size-nav="false"
+            show-first-numbered-page="true"
+            show-last-numbered-page="true"
+            query-string-key-page-no="PageIndex"
+            query-string-key-page-size="Size"
+            query-string-value="@@(Request.QueryString.Value)"
+            gap-size="2">
+    </paging>
+
+</div>
+
+
+
+<script src="https://code.jquery.com/jquery-1.12.3.min.js"></script>
+
+<link href="~/Sweetalert2/sweetalert2.min.css" rel="stylesheet" />
+<script src="~/Sweetalert2/sweetalert2.min.js"></script>
+
+
+<script>
+    function SendData(Id, State) {
+        var Data = new FormData();
+        Data.append("Id", Id);
+        Data.append("State", State);
+        $.ajax({
+            type: "POST",
+            url: "/PdfManagerArea/Seo/ChangeTagState/",
+            contentType: false,
+            processData: false,
+            data: Data,
+            success: function (data) {
+                if (data.success == true) {
+                    location.reload();
+                }
+                else {
+                    swal.fire(
+                        'Warning',
+                        data.message,
+                        'warning'
+                    );
+                }
+            },
+            error: function (xhr, ajaxOptions, thrownError) {
+                alert(xhr.status);
+                alert(thrownError);
+            }
+        });
+    }
+</script>

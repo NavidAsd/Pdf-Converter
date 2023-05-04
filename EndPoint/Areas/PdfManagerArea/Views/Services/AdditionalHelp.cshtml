@@ -1,0 +1,190 @@
+﻿@model ResultMessage<List<Domain.Entities.OtherContext.AdditionalHelp>>
+@using Common;
+@using Application.Services.Query.GetAllFeaturesDetails
+@{
+    Layout = "~/Areas/PdfManagerArea/Views/Shared/_Adminlayout.cshtml";
+}
+
+
+<head>
+    <link href="~/Areas/Admin/css/NoResult.css" rel="stylesheet" />
+    <link rel="shortcut icon" type="image/png" href="~/images/logo/66-modified.png">
+    <title>PdfConverter | Admin-AdditionalHelps</title>
+</head>
+
+
+<style>
+    body {
+        align-items: center;
+        background-color: var(--blue);
+        background: url("/Areas/Admin/images/New_A.jpg");
+        background-attachment: fixed;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        display: grid;
+        height: 100vh;
+        place-items: center;
+    }
+</style>
+
+
+
+<div class="content-wrapper">
+    <div class="container-fluid">
+        <!-- Zero configuration table -->
+        <section id="configuration">
+
+            <div class="row">
+                <div class="col-12">
+                    <div class="card">
+                        <p>
+                            <br />
+                            <br />
+                        </p>
+                        <table class="table table-striped">
+                            <thead>
+                                <tr>
+                                    <th></th>
+
+                                    <th>
+                                        ServiceName
+                                    </th>
+                                    <th>
+                                        Title
+                                    </th>
+                                    <th>
+                                        LastUpdate
+                                    </th>
+                                    <th>
+                                        State
+                                    </th>
+
+                                    <th></th>
+                                </tr>
+                            </thead>
+
+                            <tbody>
+                                @foreach (var item in Model.Enything)
+                                {
+                                    <tr>
+                                        <td></td>
+                                        <td>
+                                            @item.Service
+                                        </td>
+                                        <td>
+                                            @item.Title
+                                        </td>
+                                        <td>
+                                            @item.LastUpdate
+                                        </td>
+
+                                        @if (item.IsRemoved == false)
+                                        {
+                                            <td>
+                                                <img src="~/Areas/Admin/images/microsoft_todo_2019_240px.png" width="40" style="cursor:pointer" title="Click To Disabled Service" onclick="ChangeState('@item.Id', true)" />
+                                            </td>
+                                        }
+                                        else
+                                        {
+                                            <td>
+                                                <img src="~/Areas/Admin/images/delete_240px.png" width="40" style="cursor:pointer" title="Click To Enabled Service" onclick="ChangeState('@item.Id',false)" />
+                                            </td>
+                                        }
+
+                                        <td>
+                                            <a style="color:blue" href="/PdfManagerArea/Services/EditAdditionalHelp?Id=@item.Id">Edit</a>|
+                                            <a style="color:blue" href="/PdfManagerArea/Services/EditBlock?Id=@item.Id&Type=1">left </a>|
+                                            <a style="color:blue" href="/PdfManagerArea/Services/EditBlock?Id=@item.Id&Type=2">center </a>|
+                                            <a style="color:blue" href="/PdfManagerArea/Services/EditBlock?Id=@item.Id&Type=3">right </a>
+                                        </td>
+
+                                    </tr>
+                                }
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+</div>
+
+<link href="~/Sweetalert2/sweetalert2.min.css" rel="stylesheet" />
+<script src="~/Sweetalert2/sweetalert2.min.js"></script>
+
+<script>
+
+    function ChangeState(Id, State) {
+
+        var postdata = {
+            'Id': Id,
+            'State': State
+        };
+        $.ajax({
+            contentType: 'application/x-www-form-urlencoded',
+            dataType: 'json',
+            type: "POST",
+            url: "/PdfManagerArea/Services/ChangeStatusAdditional/",
+            data: postdata,
+            success: function(data) {
+                if (data.success == true) {
+                    location.reload();
+                }
+                else {
+                    swal.fire(
+                        'warning',
+                        data.message,
+                        'warning'
+                    );
+                }
+            },
+            error: function(request, status, error) {
+                alert(request.responseText);
+            }
+
+        });
+
+
+    }
+
+
+
+    function ShowModal(Message) {
+        document.getElementById("areaContext").value = Message;
+        $("#mdlContext").modal('show');
+    }
+
+    function OpenImageModal(src, name) {
+        document.getElementById('_id').textContent = name;
+        document.getElementById('image').src = src;
+        $("#EditImage").modal('show');
+    }
+
+</script>
+
+@section Modals
+    {
+    <!-- Modal Context -->
+    <div class="modal fade" id="mdlContext" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLongTitle">Context</h5>
+                </div>
+
+                <div class="modal-body">
+                    <div class="col-xl-12 col-lg-12 col-md-12 mb-1">
+                        <form>
+                            <fieldset class="form-group">
+                                <textarea id="areaContext" class="form-control " rows="5" readonly> None </textarea>
+                            </fieldset>
+                        </form>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                </div>
+            </div>
+        </div>
+    </div>
+}

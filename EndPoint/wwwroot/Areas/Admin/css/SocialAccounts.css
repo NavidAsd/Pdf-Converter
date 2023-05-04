@@ -1,0 +1,238 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background: #2E3740;
+    color: #435160;
+    font-family: "Open Sans", sans-serif;
+}
+
+h2 {
+    color: #6D7781;
+    font-family: "Sofia", cursive;
+    font-size: 15px;
+    font-weight: bold;
+    font-size: 3.6em;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+img[id="prof"] {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    margin-bottom: 20px;
+    border: 5px solid #fff;
+    /*border: 10px solid #70b5e6ee;*/
+}
+
+a {
+    color: #435160;
+    text-decoration: none;
+}
+
+.login {
+    width: 350px;
+    position: absolute;
+    top: 10%;
+    left: 50%;
+    margin-left: -175px;
+}
+
+
+input[id="reddit"] {
+    width: 550px;
+    padding: 20px 0px;
+    background: transparent;
+    border: 0;
+    border-bottom: 1px solid #00a2ed;
+    outline: none;
+    color: #fff;
+    font-size: 16px;
+    background: url("/images/SnAccount/reddit-modified.png") no-repeat left;
+    background-size: 35px;
+    padding-left: 30px;
+}
+
+input[id="pinterest"] {
+    width: 550px;
+    padding: 20px 0px;
+    background: transparent;
+    border: 0;
+    border-bottom: 1px solid #00a2ed;
+    outline: none;
+    color: #fff;
+    font-size: 16px;
+    background: url("/images/SnAccount/pinterest-modified.png") no-repeat left;
+    background-size: 35px;
+    padding-left: 30px;
+}
+
+input[id="medium"] {
+    width: 550px;
+    padding: 20px 0px;
+    background: transparent;
+    border: 0;
+    border-bottom: 1px solid #cd486b;
+    outline: none;
+    color: #fff;
+    background: url("/images/SnAccount/medium-modified.png") no-repeat left;
+    background-size: 35px;
+    font-size: 16px;
+}
+
+input[id="vk"] {
+    width: 550px;
+    padding: 20px 0px;
+    background: transparent;
+    border: 0;
+    border-bottom: 1px solid #cd486b;
+    outline: none;
+    color: #fff;
+    background: url("/images/SnAccount/vk-modified.png") no-repeat left;
+    background-size: 35px;
+    font-size: 16px;
+}
+
+input[id="tumblr"] {
+    width: 550px;
+    padding: 20px 0px;
+    background: transparent;
+    border: 0;
+    border-bottom: 1px solid #00a2ed;
+    outline: none;
+    color: #fff;
+    background: url("/images/SnAccount/tumblr-modified.png") no-repeat left;
+    background-size: 35px;
+    font-size: 16px;
+}
+
+input[id="okru"] {
+    width: 550px;
+    padding: 20px 0px;
+    background: transparent;
+    border: 0;
+    border-bottom: 1px solid #00a2ed;
+    outline: none;
+    color: #fff;
+    background: url("/images/SnAccount/okru-modified.png") no-repeat left;
+    background-size: 35px;
+    font-size: 16px;
+}
+
+input[id="facebook"] {
+    width: 550px;
+    padding: 20px 0px;
+    background: transparent;
+    border: 0;
+    border-bottom: 1px solid #00a2ed;
+    outline: none;
+    color: #fff;
+    background: url("/images/SnAccount/facebook-modified.png") no-repeat left;
+    background-size: 35px;
+    font-size: 16px;
+}
+
+input[id="twitter"] {
+    width: 550px;
+    padding: 20px 0px;
+    background: transparent;
+    border: 0;
+    border-bottom: 1px solid #00a2ed;
+    outline: none;
+    color: #fff;
+    background: url("/images/SnAccount/twitter-modified.png") no-repeat left;
+    background-size: 35px;
+    font-size: 16px;
+}
+
+
+p {
+    color: #fff;
+}
+
+label {
+    display: block;
+    position: absolute;
+    margin-right: 10px;
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: transparent;
+    content: "";
+    transition: all 0.3s ease-in-out;
+    cursor: pointer;
+    border: 3px solid #435160;
+}
+
+#agree:checked ~ label[for=agree] {
+    background: #fff;
+    color: #fff
+}
+
+input[type="submit"] {
+    background: #1FCE6D;
+    border: 0;
+    width: 550px;
+    height: 40px;
+    border-radius: 3px;
+    color: #fff;
+    font-size: 12px;
+    cursor: pointer;
+    transition: background 0.3s ease-in-out;
+}
+
+    input[type="submit"]:hover {
+        background: #16aa56;
+        animation-name: shake;
+    }
+
+.forgot {
+    margin-top: 30px;
+    display: block;
+    font-size: 11px;
+    text-align: center;
+    font-weight: bold;
+}
+
+    .forgot:hover {
+        margin-top: 30px;
+        display: block;
+        font-size: 11px;
+        text-align: center;
+        font-weight: bold;
+        color: #6D7781;
+    }
+
+.agree {
+    padding: 30px 0px;
+    font-size: 12px;
+    text-indent: 25px;
+    line-height: 15px;
+}
+
+::-webkit-input-placeholder {
+    color: #435160;
+    font-size: 12px;
+}
+
+.animated {
+    animation-fill-mode: both;
+    animation-duration: 1s;
+}
+
+@keyframes shake {
+    0%, 100% {
+        transform: translateX(0);
+    }
+
+    10%, 30%, 50%, 70%, 90% {
+        transform: translateX(-10px);
+    }
+
+    20%, 40%, 60%, 80% {
+        transform: translateX(10px);
+    }
+}

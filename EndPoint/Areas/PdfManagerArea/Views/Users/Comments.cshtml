@@ -1,0 +1,270 @@
+﻿@model Common.ResultMessage<Application.Services.Query.ReturnUsersCommnets.ResultReturnUsersCommnetsDto>
+@addTagHelper *, LazZiya.TagHelpers
+@{
+    Layout = "~/Areas/PdfManagerArea/Views/Shared/_Adminlayout.cshtml";
+}
+
+
+<head>
+    <link href="~/Areas/Admin/css/NoResult.css" rel="stylesheet" />
+    <link rel="shortcut icon" type="image/png" href="~/images/logo/66-modified.png">
+    <title> PdfConverter | Admin-UsersMessages </title>
+</head>
+
+
+<style>
+    body {
+        align-items: center;
+        background-color: var(--blue);
+        background: url("/Areas/Admin/images/New_A.jpg");
+        background-attachment: fixed;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        display: grid;
+        height: 100vh;
+        place-items: center;
+    }
+</style>
+
+<form method="get" class="form-inline">
+    <input name="filter" class="form-control" placeholder="filter"
+           value="@Model.Enything.Filter" />
+    <button type="submit" class="btn btn-info">
+        <span class="glyphicon glyphicon-search" aria-hidden="true"></span> Search
+    </button>
+</form>
+
+<div class="  text-center">
+    <paging total-records="@Model.Enything.TotalRow"
+            page-no="@Model.Enything.PageIndex"
+            page-size="@Model.Enything.Pagesize"
+            show-prev-next="true"
+            show-total-pages="false"
+            show-total-records="false"
+            show-page-size-nav="false"
+            show-first-numbered-page="true"
+            show-last-numbered-page="true"
+            query-string-key-page-no="PageIndex"
+            query-string-key-page-size="Size"
+            query-string-value="@@(Request.QueryString.Value)"
+            gap-size="2">
+    </paging>
+
+</div>
+
+
+<div class="content-wrapper">
+    <div class="container-fluid">
+        <!-- Zero configuration table -->
+        <section id="configuration">
+
+            <div class="row">
+                <div class="col-12">
+                    <div class="card">
+                        <p>
+                            <br />
+                            <br />
+                        </p>
+                        <table class="table table-striped">
+                            <thead>
+                                <tr>
+                                    <th></th>
+
+                                    <th>
+                                        UserName
+                                    </th>
+                                    <th>
+                                        Email
+                                    </th>
+                                    <th>
+                                        Message
+                                    </th>
+                                    <th>
+                                        Service
+                                    </th>
+                                    <th>
+                                        Rate
+                                    </th>
+                                    <th>
+                                        State
+                                    </th>
+                                    <th></th>
+
+                                </tr>
+                            </thead>
+
+                            <tbody>
+                                @foreach (var item in Model.Enything.UserComments)
+                                {
+                                    <tr>
+                                        <td></td>
+                                        <td>
+                                            @item.UserName
+                                        </td>
+                                        <td>
+                                            @item.UserEmail
+                                        </td>
+                                        @if (item.Message != null)
+                                        {
+
+                                        <td style="cursor:pointer" title="More" onclick="ShowModal('@item.Message')">
+                                            @if (item.Message.Length > 21)
+                                            {
+                                            @(item.Message.Substring(0, item.Message.Length / 2).ToString() + "...");
+                                            }
+                                            else
+                                            {
+                                            @item.Message
+                                            }
+
+                                        </td>
+                                        }
+                                        else{
+                                        <td>@item.Message</td>
+                                        }
+                                        <td>
+                                            @item.ServiceName
+                                        </td>
+                                        <td>
+                                            @item.Rate
+                                        </td>
+                                            <td>
+                                                <img src="~/Areas/Admin/images/microsoft_todo_2019_240px.png" width="40" style="cursor:pointer" title="Click to add to unaccepted list" onclick="ChangeCommentAccepted('@item.Id')" />
+                                            </td>
+                                        <td><a class="btn btn-danger" title="Click To Remove Comment" onclick="ChangeCommentState('@item.Id', false)" >Delete</a></td>
+
+                                    </tr>
+                                }
+                            </tbody>
+                        </table>
+
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+</div>
+
+<div class="  text-center">
+    <paging total-records="@Model.Enything.TotalRow"
+            page-no="@Model.Enything.PageIndex"
+            page-size="@Model.Enything.Pagesize"
+            show-prev-next="true"
+            show-total-pages="false"
+            show-total-records="false"
+            show-page-size-nav="false"
+            show-first-numbered-page="true"
+            show-last-numbered-page="true"
+            query-string-key-page-no="PageIndex"
+            query-string-key-page-size="Size"
+            query-string-value="@@(Request.QueryString.Value)"
+            gap-size="2">
+    </paging>
+
+</div>
+
+
+
+<link href="~/Sweetalert2/sweetalert2.min.css" rel="stylesheet" />
+<script src="~/Sweetalert2/sweetalert2.min.js"></script>
+
+
+<script>
+
+    function ChangeCommentState(Id, State) {
+        var Data = {
+            "State": State,
+            "Id": Id
+        };
+        console.log(Id);
+        $.ajax({
+            contentType: 'application/x-www-form-urlencoded',
+            dataType: 'json',
+            type: "POST",
+            url: "/PdfManagerArea/Users/ChangeRemoveState/",
+            data: Data,
+            success: function (data) {
+                if (data.success == true) {
+                    location.reload();
+                }
+                else {
+                    swal.fire(
+                        'warning',
+                        data.message,
+                        'warning'
+                    );
+                }
+            },
+            error: function (request, status, error) {
+                alert(request.responseText);
+            }
+
+        });
+    }
+
+    function ChangeCommentAccepted(Id) {
+        var Data = {
+            "State": false,
+            "Id": Id
+        };
+        console.log(Id);
+        $.ajax({
+            contentType: 'application/x-www-form-urlencoded',
+            dataType: 'json',
+            type: "POST",
+            url: "/PdfManagerArea/Users/ChangeAccepted/",
+            data: Data,
+            success: function (data) {
+                if (data.success == true) {
+                    location.reload();
+                }
+                else {
+                    swal.fire(
+                        'warning',
+                        data.message,
+                        'warning'
+                    );
+                }
+            },
+            error: function (request, status, error) {
+                alert(request.responseText);
+            }
+
+        });
+    }
+
+
+    function ShowModal(Message) {
+        document.getElementById("areaMessage").value = Message;
+        $("#mdlMessage").modal('show');
+    }
+
+</script>
+
+
+@section Modals
+{
+<!-- Modal Message -->
+<div class="modal fade" id="mdlMessage" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLongTitle">Message</h5>
+            </div>
+
+            <div class="modal-body">
+                <div class="col-xl-12 col-lg-12 col-md-12 mb-1">
+                    <form>
+                        <fieldset class="form-group">
+                            <textarea id="areaMessage" class="form-control " rows="5" readonly> None </textarea>
+                        </fieldset>
+                    </form>
+                </div>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div>
+}

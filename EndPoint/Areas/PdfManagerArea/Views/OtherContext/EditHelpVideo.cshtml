@@ -1,0 +1,166 @@
+﻿@model Common.ResultMessage<Application.Services.Query.ViewContext.ReturnTreeStepHelp.ResultReturnTreeStepHelpDto>
+@{
+    ViewData["Title"] = "Edit Service";
+    Layout = "~/Areas/PdfManagerArea/Views/Shared/_Adminlayout.cshtml";
+}
+
+
+<head>
+    <link rel="shortcut icon" type="image/png" href="~/images/logo/66-modified.png">
+    <link rel="stylesheet" href="~/Areas/Admin/css/EditVideo.css" />
+    <title>PdfConverter | Admin-Edit Help Video</title>
+</head>
+
+
+<p id="_Id" style="visibility:hidden">@Model.Enything.Id</p>
+<section class="basic-elements">
+    <div class="row">
+    </div>
+    <div class="row">
+        <div class="col-md-12">
+            <div class="card">
+                <div class="card-header">
+                    <div class="card-title-wrap bar-success">
+                        <h5 class="card-title mb-0">Service: @Model.Enything.Service</h5>
+                    </div>
+                </div>
+                <div class="card-body">
+
+                    <div class="container">
+                        <div class="form-group" x-data="{ fileName: '' }">
+                            <br />
+                            <div class="input-group shadow">
+
+                                <img src="~/Areas/Admin/images/Video Crop_240px.png" width="55">
+                                <input type="file" x-ref="file" id="File" class="d-none" onchange="SetName()">
+                                <input type="text" class="form-control form-control-lg" placeholder="Upload File" id="Text" x-model="fileName" style="font-size:large" readonly>
+                                <button class="browse btn btn-primary px-4" type="button" onclick="$('#File').click();">Browse</button>
+
+                            </div>
+                            <img src="~/Areas/Admin/images/question_mark_512px.png" width="30" style="cursor:pointer" title="Acceptable formats" onclick="ShowFormats()" />
+
+                        </div>
+
+                    </div>
+                    <div class="btn col-md-12" style="cursor:default;display:none;" id="Loading">
+                        <img src="~/images/load2.gif" width="150" />
+                        <p>...Uploading<p>
+                    </div>
+                    <br />
+
+                    <a class="btn btn-blue col-md-12" onclick="EditVideo()" id="btnUpload"> Upload Video </a>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+@{string fr = "";
+
+    foreach (var item in Common.Formating.VideosFormat)
+    {
+        fr += item + ", ";
+    }
+    <p id="formats" style="display:none">@fr</p>
+}
+<hr />
+
+@if (Model.Enything.VideoName != null)
+{
+    <video style="width:60%; max-height:60%; position:center; background-color: #000;" controls>
+        @foreach (var item in Common.Formating.VideosFormat)
+        {
+            <source src="@Common.GetPath.GetHelpVideoPath().Replace("wwwroot", "")/@Model.Enything.VideoName" type="video/@item">
+        }
+        Your browser does not support the video display
+    </video>
+}
+
+
+<script src="https://code.jquery.com/jquery-1.12.3.min.js"></script>
+<link href="~/Sweetalert2/sweetalert2.min.css" rel="stylesheet" />
+<script src="~/Sweetalert2/sweetalert2.min.js"></script>
+
+
+<script>
+    var formats = document.getElementById("formats").textContent;
+
+    function Loading(State) {
+        if (State == true) {
+            document.getElementById("Loading").style.display = "unset";
+            document.getElementById("btnUpload").setAttribute('onclick', '');
+            document.getElementById("btnUpload").style.cursor = "wait";
+        }
+        else {
+            document.getElementById("Loading").style.display = "none";
+            document.getElementById("btnUpload").setAttribute('onclick', 'EditVideo()');
+            document.getElementById("btnUpload").style.cursor = "pointer";
+        }
+    }
+
+    function ShowFormats() {
+        swal.fire(
+            'acceptable formats',
+            formats,
+            'info'
+        );
+    }
+
+    function EditVideo() {
+        var File = document.getElementById("File").files[0];
+        console.log(File);
+        var Filter = /(\.mp4|\.webm|\.ogg|\.3gp|\.)$/i;
+        if (!Filter.exec(File.name)) {
+            swal.fire
+                (
+                    "warning",
+                    "." + File.name.substring(File.name.lastIndexOf('.') + 1) + " Format Invalid",
+                    "warning"
+                );
+            return;
+        }
+
+        var Data = new FormData();
+        Data.append("File", File);
+        Data.append("Id", document.getElementById("_Id").textContent);
+
+        Loading(true);
+        $.ajax({
+            type: "POST",
+            url: "/PdfManagerArea/OtherContext/UpdateHelpVideo/",
+            contentType: false,
+            processData: false,
+            data: Data,
+            success: function (data) {
+                Loading(false);
+                if (data.success == true) {
+                    swal.fire(
+                        'success',
+                        data.message,
+                        'success'
+                    ).then(function (isConfirm) {
+                        location.reload();
+                    });
+                }
+                else {
+                    swal.fire(
+                        'warning',
+                        data.message,
+                        'warning'
+                    );
+                }
+            },
+            error: function (request, status, error) {
+                alert(request.responseText);
+            }
+        });
+    }
+
+    function SetName() {
+        try {
+            document.getElementById("Text").value = document.getElementById("File").files[0].name;
+            Loading(false);
+        }
+        catch { }
+    }
+</script>

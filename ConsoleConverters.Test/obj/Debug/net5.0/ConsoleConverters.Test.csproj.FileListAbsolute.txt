@@ -1,0 +1,16 @@
+E:\C#\Web\Core\PdfConverter\ConsoleConverters.Test\bin\Debug\net5.0\ConsoleConverters.Test.exe
+E:\C#\Web\Core\PdfConverter\ConsoleConverters.Test\bin\Debug\net5.0\ConsoleConverters.Test.deps.json
+E:\C#\Web\Core\PdfConverter\ConsoleConverters.Test\bin\Debug\net5.0\ConsoleConverters.Test.runtimeconfig.json
+E:\C#\Web\Core\PdfConverter\ConsoleConverters.Test\bin\Debug\net5.0\ConsoleConverters.Test.runtimeconfig.dev.json
+E:\C#\Web\Core\PdfConverter\ConsoleConverters.Test\bin\Debug\net5.0\ConsoleConverters.Test.dll
+E:\C#\Web\Core\PdfConverter\ConsoleConverters.Test\bin\Debug\net5.0\ref\ConsoleConverters.Test.dll
+E:\C#\Web\Core\PdfConverter\ConsoleConverters.Test\bin\Debug\net5.0\ConsoleConverters.Test.pdb
+E:\C#\Web\Core\PdfConverter\ConsoleConverters.Test\obj\Debug\net5.0\ConsoleConverters.Test.csproj.AssemblyReference.cache
+E:\C#\Web\Core\PdfConverter\ConsoleConverters.Test\obj\Debug\net5.0\ConsoleConverters.Test.GeneratedMSBuildEditorConfig.editorconfig
+E:\C#\Web\Core\PdfConverter\ConsoleConverters.Test\obj\Debug\net5.0\ConsoleConverters.Test.AssemblyInfoInputs.cache
+E:\C#\Web\Core\PdfConverter\ConsoleConverters.Test\obj\Debug\net5.0\ConsoleConverters.Test.AssemblyInfo.cs
+E:\C#\Web\Core\PdfConverter\ConsoleConverters.Test\obj\Debug\net5.0\ConsoleConverters.Test.csproj.CoreCompileInputs.cache
+E:\C#\Web\Core\PdfConverter\ConsoleConverters.Test\obj\Debug\net5.0\ConsoleConverters.Test.dll
+E:\C#\Web\Core\PdfConverter\ConsoleConverters.Test\obj\Debug\net5.0\ref\ConsoleConverters.Test.dll
+E:\C#\Web\Core\PdfConverter\ConsoleConverters.Test\obj\Debug\net5.0\ConsoleConverters.Test.pdb
+E:\C#\Web\Core\PdfConverter\ConsoleConverters.Test\obj\Debug\net5.0\ConsoleConverters.Test.genruntimeconfig.cache

@@ -1,0 +1,314 @@
+﻿@model Common.ResultMessage<Application.Services.Query.ViewContext.ReturnHomeContext.ResultReturnHomeContextDto>
+@{
+    Layout = "~/Areas/PdfManagerArea/Views/Shared/_Adminlayout.cshtml";
+}
+
+
+<head>
+    <link rel="shortcut icon" type="image/png" href="~/images/logo/66-modified.png">
+    <title>PdfConverter | Admin-HomeContext</title>
+</head>
+
+
+@{
+    string[] context = new string[] { Model.Enything.TopTitleText, Model.Enything.MainServicesPText, Model.Enything.ServicesInfoPText, Model.Enything.MainServicesH2Text, Model.Enything.ServicesInfoH1Text };
+}
+@{
+    string[] part = new string[] { "TopTitleText", "MainServicesDownText", "ServicesInfoDownText", "MainServicesTopText", "ServicesInfoTopText" };
+}
+@{
+    string[] nameoff = new string[] { nameof(Model.Enything.TopTitleText), nameof(Model.Enything.MainServicesPText), nameof(Model.Enything.ServicesInfoPText), nameof(Model.Enything.MainServicesH2Text), nameof(Model.Enything.ServicesInfoH1Text) };
+}
+
+
+<div class="content-wrapper">
+    <div class="container-fluid">
+        <!-- Zero configuration table -->
+        <section id="configuration">
+            <p id="_Id" style="display:none">@Model.Enything.Id</p>
+            <div class="row">
+                <div class="col-12">
+                    <div class="card">
+                        <p>
+                            <br />
+                            <br />
+                        </p>
+                        <table class="table table-striped">
+                            <thead>
+                                <tr>
+                                    <th>
+                                        Part
+                                    </th>
+                                    <th>
+                                        Context
+                                    </th>
+                                    <th>
+                                        State
+                                    </th>
+                                    <th>
+                                        LastUpdate
+                                    </th>
+
+                                    <th></th>
+                                </tr>
+                            </thead>
+
+                            <tbody>
+
+                                @for (int i = 0; i < part.Length; i++)
+                                {
+                                    <tr>
+                                        <td id="_@i">
+                                            @part[i]
+                                        </td>
+                                        <td>
+                                            @if (!string.IsNullOrWhiteSpace(context[i]))
+                                            {
+                                                @if (context[i].Length > 12)
+                                                {
+                                                    @(context[i].Substring(0, context[i].Length / 2).ToString() + "...")
+                                                    ;
+                                                }
+                                                else
+                                                {
+                                                    @context[i]
+                                                }
+                                            }
+                                        </td>
+                                        <td>
+                                            True
+                                        </td>
+                                        @if (Model.Success == true)
+                                        {
+                                            <td>
+                                                @Model.Enything.LastUpdate
+                                            </td>
+                                        }
+                                        else
+                                        {
+                                            <td></td>
+                                        }
+                                        <td>
+                                            <a style="color:blue" onclick="OpenModal('@part[i]','@context[i]','@nameoff[i]')">Edit</a>
+                                        </td>
+                                        @if (i == 1 || i == 2)
+                                        {
+                                            <td>
+                                                @if (i == 1)
+                                                {
+                                                    <a style="color:blue" onclick="OpenImageModal('@Common.GetPath.GetHomeImages().Replace("wwwroot","")/@Common.GetPath.HomeTopImage','@i')">Image</a>
+                                                }
+                                                else
+                                                {
+                                                    <a style="color:blue" onclick="OpenImageModal('@Common.GetPath.GetHomeImages().Replace("wwwroot","")/@Common.GetPath.HomeDownImage','@i')">Image</a>
+                                                }
+                                            </td>
+                                        }
+                                    </tr>
+                                }
+
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+</div>
+
+<script src="https://code.jquery.com/jquery-1.12.3.min.js"></script>
+<!---
+<script src="//cdn.ckeditor.com/4.5.9/standard/ckeditor.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/ckeditor/4.5.9/adapters/jquery.js"></script>
+    -->
+
+<link href="~/Sweetalert2/sweetalert2.min.css" rel="stylesheet" />
+<script src="~/Sweetalert2/sweetalert2.min.js"></script>
+
+
+<script>
+    function SendData() {
+        var Data = new FormData();
+        Data.append("Id", document.getElementById("_Id").textContent);
+
+        Data.append(document.getElementById('nameofModalLongTitle').textContent, $("#normaltextArea").val());
+        $.ajax({
+            type: "POST",
+            url: "/PdfManagerArea/OtherContext/UpdateHomeContext/",
+            contentType: false,
+            processData: false,
+            data: Data,
+            success: function(data) {
+                if (data.success == true) {
+
+                    swal.fire(
+                        'Success',
+                        data.message,
+                        'success'
+                    ).then(function(isConfirm) {
+                        location.reload();
+                    });
+                }
+                else {
+                    swal.fire(
+                        'Warning',
+                        data.message,
+                        'warning'
+                    );
+                }
+            },
+            error: function(xhr, ajaxOptions, thrownError) {
+                alert(xhr.status);
+                alert(thrownError);
+            }
+
+        });
+    }
+
+    function UpdateImage() {
+        var ImageFilter = /(\.webp|\.png|\.)$/i;
+        if (!ImageFilter.exec(document.getElementById("upload").value)) {
+            swal.fire
+                (
+                    "warning",
+                    "Just .webp,.png File Format Valid",
+                    "warning"
+                );
+            return;
+        }
+
+        var formData = new FormData();
+        formData.append("Image", document.getElementById("upload").files[0]);
+        formData.append("Id", document.getElementById("_id").textContent);
+
+        $.ajax({
+            type: "POST",
+            url: "/PdfManagerArea/OtherContext/UpdateHomeImage/",
+            contentType: false,
+            processData: false,
+            data: formData,
+            success: function(data) {
+                if (data.success == true) {
+                    swal.fire(
+                        'Success',
+                        data.message,
+                        'success'
+                    ).then(function(isConfirm) {
+                        location.reload();
+                    });
+                }
+                else {
+                    swal.fire(
+                        'warning',
+                        data.message,
+                        'warning'
+                    );
+                }
+
+            },
+            error: function(xhr, ajaxOptions, thrownError) {
+                alert(xhr.status);
+                alert(thrownError);
+            }
+
+        });
+    }
+
+    function OpenModal(part, context, nameof, type) {
+        document.getElementById('nameofModalLongTitle').textContent = nameof;
+        document.getElementById('NexampleModalLongTitle').textContent = part;
+        $("#normaltextArea").val(context);
+        $("#normalmdlContext").modal('show');
+    }
+
+    function OpenImageModal(src, id) {
+        document.getElementById('_id').textContent = id;
+        document.getElementById('image').src = src;
+        $("#EditImage").modal('show');
+    }
+
+    function changePicture() {
+        $('#upload').click();
+    }
+
+    function readURL(input) {
+        if (input.files && input.files[0]) {
+            var reader = new FileReader();
+            reader.onload = function(e) {
+                $('#image')
+                    .attr('src', e.target.result);
+
+            };
+            reader.readAsDataURL(input.files[0]);
+        }
+    }
+
+</script>
+
+@section ImageModals
+    {
+    <!-- Modal Edit Image -->
+    <div class="modal fade" id="EditImage" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLongTitle">Edit Image</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <div class="col-xl-12 col-lg-12 col-md-12 mb-1">
+
+                        <div id="userphoto">
+                            <div class="change-picture-slide" style="top: 30px;">
+                                <p style="display:none" id="_id"></p>
+                                <input accept="image/*" type="file" id="upload" name="upload" onchange="readURL(this);" style="visibility: hidden;" />
+                                <img id="image" src="" alt="Img" class="logo" width="185" />
+                                <i class="fa fa-search">
+                                    <label href="" class="btn" for="files" onclick="changePicture(); return false">Chosse Image</label>
+                                </i>
+                            </div>
+                        </div>
+
+                        <div class="modal-footer">
+                            <a class="btn btn-secondary" data-dismiss="modal">Close</a>
+                            <button class="btn btn-primary" onclick="UpdateImage()" type="submit">Edit</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+}
+
+
+    @section Other
+    {
+    <!-- Modal Context -->
+    <div class="modal fade" id="normalmdlContext" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="NexampleModalLongTitle"></h5>
+                    <p class="modal-title" id="nameofModalLongTitle" style="display:none"></p>
+                </div>
+
+                <div class="modal-body">
+                    <div class="col-xl-12 col-lg-12 col-md-12 mb-1">
+                        <div class="col-xl-12 col-lg-12 col-md-12 mb-1">
+                            <form>
+                                <fieldset class="form-group">
+                                    <textarea rows="7" cols="45" id="normaltextArea"></textarea>
+                                </fieldset>
+                            </form>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-success" onclick="SendData()">Save Changes</button>
+                        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    }

@@ -1,0 +1,334 @@
+﻿@{
+    ViewData["Title"] = "Edit Service";
+    Layout = "~/Areas/PdfManagerArea/Views/Shared/_Adminlayout.cshtml";
+}
+
+
+<head>
+    <link rel="shortcut icon" type="image/png" href="~/images/logo/66-modified.png">
+    <title>PdfConverter | Admin-Create New Question</title>
+    <link href="~/Areas/Admin/css/UploadFIle.css" rel="stylesheet"/>
+</head>
+
+
+<style>
+    .ck-editor__editable {
+        min-height: 300px;
+        min-width: 850px;
+    }
+</style>
+
+
+<section class="basic-elements">
+    <div class="row">
+    </div>
+    <div class="row">
+        <div class="col-md-12">
+            <div class="card">
+                <p style="display:none" id="Service">@ViewBag.Service</p>
+                <div class="card-header">
+                    <div class="card-title-wrap bar-success">
+                        @if (ViewBag.ServiceName != null)
+                        {
+                                                                        <h4 class="card-title mb-0"> Create New Question For <b>@ViewBag.ServiceName</b> <a href="/PdfManagerArea/Services/Index" target="_blank">Service</a></h4>
+                                                                        <br />
+                                                                                                             <button onclick="Redirect('/PdfManagerArea/Users/FrequentlyQuestions?Service=@ViewBag.Service')" type="submit" class="btn btn-info">
+                                                            <span class="glyphicon glyphicon-search" aria-hidden="true"></span> FAQ List
+                                                        </button>
+                        }
+                        else
+                        {
+                                                                        <h4 class="card-title mb-0"> Create New Question </h4>
+                                                                        <br />
+                                                                                                         <button onclick="Redirect('/PdfManagerArea/Users/FrequentlyQuestions')" type="submit" class="btn btn-info">
+                                                        <span class="glyphicon glyphicon-search" aria-hidden="true"></span> FAQ List
+                                                    </button>
+
+                        }
+                        |
+                         <button type="submit" class="btn btn-deep-purple" onclick="OpenModal(0,'@ViewBag.Faq')">
+        <span class="glyphicon glyphicon-search" aria-hidden="true" ></span> Add Faq Schema
+    </button>
+                        |
+                         <button type="submit" class="btn btn-blue-grey" onclick="OpenModal(1,'@ViewBag.HowTo')">
+        <span class="glyphicon glyphicon-search" aria-hidden="true" ></span> Add HowTo Schema
+    </button>
+                        |
+                         <button type="submit" class="btn btn-blue" onclick="OpenModal(2,'@ViewBag.Video')">
+        <span class="glyphicon glyphicon-search" aria-hidden="true" ></span> Add Video Schema
+    </button>
+
+
+                    </div>
+                </div>
+                <hr />
+
+                <div class="col-xl-12 col-lg-12 col-md-12 mb-1">
+                    <fieldset class="form-group">
+                        <label>Question</label>
+                        <textarea id="Qu_editor" class="form-control " rows="5" required=""></textarea>
+
+
+                    </fieldset>
+                </div>
+
+                <div class="col-xl-12 col-lg-12 col-md-12 mb-1">
+                    <fieldset class="form-group">
+                        <label>Answer</label>
+                        <div id="An_editor"></div>
+
+
+                    </fieldset>
+                </div>
+
+
+            </div>
+            <a class="btn btn-success col-md-12" onclick="SendData()"> Save Changes </a>
+        </div>
+    </div>
+</section>
+
+
+<script src="https://code.jquery.com/jquery-1.12.3.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src="https://cdn.ckeditor.com/ckeditor5/34.0.0/classic/ckeditor.js"></script>
+
+
+<link href="~/Sweetalert2/sweetalert2.min.css" rel="stylesheet" />
+<script src="~/Sweetalert2/sweetalert2.min.js"></script>
+
+
+<script>
+    var Answer;
+
+    ClassicEditor
+        .create(document.querySelector('#An_editor'))
+        .then(editor => {
+            Answer = editor;
+        })
+        .catch(error => {
+            console.error(error);
+        });
+</script>
+
+
+<script>
+    function Redirect(url){
+        window.open(url, '_blank').focus();
+    }
+
+    function SendData() {
+        var Data = new FormData();
+        Data.append("Question", $("#Qu_editor").val());
+        Data.append("Answer", Answer.getData());
+        Data.append("Service", document.getElementById("Service").textContent);
+
+
+        $.ajax({
+            type: "POST",
+            url: "/PdfManagerArea/Users/AddNewQuestion/",
+            contentType: false,
+            processData: false,
+            data: Data,
+            success: function(data) {
+                if (data.success == true) {
+
+                    swal.fire(
+                        'Success',
+                        data.message,
+                        'success'
+                    ).then(function(isConfirm) {
+                        location.reload();
+
+                    });
+                }
+                else {
+                    swal.fire(
+                        'Warning',
+                        data.message,
+                        'warning'
+                    );
+                }
+            },
+            error: function(xhr, ajaxOptions, thrownError) {
+                alert(xhr.status);
+                alert(thrownError);
+            }
+        });
+    }
+
+    async function UploadFile(){
+                var File = document.getElementById("Jsonfile");
+        var Filter = /(\.json|\.)$/i;
+        if (!Filter.exec(File.value)) {
+            swal.fire
+                (
+                    "warning",
+                    "File Format Invalid",
+                    "warning"
+                );
+            return;
+        }
+
+        var Data = new FormData();
+        Data.append("File",File.files[0]);
+        Data.append("Service", document.getElementById("Service").textContent);
+        Data.append("Type", document.getElementById("type").textContent);
+        Loading(true);
+        await fetch('/PdfManagerArea/Users/AddNewQuestionFromFile/', {
+            method: "POST",
+            body: Data
+        })
+            .then(response => response.json())
+            .then((data) => {
+                Loading(false);
+                if (data.success) {
+                    swal.fire(
+                        "success",
+                        data.message,
+                        "success"
+                    ).then(function (isConfirm) {
+                        window.location.reload();
+                    });
+                }
+                else {
+                    swal.fire(
+                        "warning",
+                        data.message,
+                        "warning"
+                    );
+                }
+            })
+    }
+
+        function Click(id) {
+        $('#' + id).click();
+    }
+    function SetFileName(input, id) {
+        if (input.files && input.files[0]) {
+            var reader = new FileReader();
+            reader.onload = function (e) {
+                $('#' + id)
+                    .attr('value', input.files[0].name);
+
+            };
+            reader.readAsDataURL(input.files[0]);
+        }
+    }
+
+    function Loading(state){
+        if(state){
+
+            document.getElementById("btnUpload").style.cursor = "not-allowed";
+        }
+        else{
+            document.getElementById("loadingGf").style.display = "none";
+            document.getElementById("btnUpload").style.cursor = "pointer";
+        }
+    }
+
+    function OpenModal(Type,ShowDeleteBtn){
+        if(ShowDeleteBtn == true || ShowDeleteBtn =="True" || ShowDeleteBtn == "true"){
+            document.getElementById("Deletebtn").style.display ="unset";
+        }
+        else{
+            document.getElementById("Deletebtn").style.display ="none";
+        }
+        document.getElementById("type").innerHTML = Type;
+        if(Type == 0){
+       document.getElementById("exampleModalLongTitle").innerHTML = "Upload Faq Json File";
+        }
+         if(Type == 1){
+           document.getElementById("exampleModalLongTitle").innerHTML = "Upload HowTo Json File";
+        }
+        if(Type == 2){
+           document.getElementById("exampleModalLongTitle").innerHTML = "Upload Video Json File";
+        }
+        $('#mdlSchema').modal('show');
+    }
+
+    function RemoveSchema(){
+        var Data = new FormData();
+        Data.append("Service", document.getElementById("Service").textContent);
+        Data.append("Type", document.getElementById("type").textContent);
+
+        $.ajax({
+            type: "POST",
+            url: "/PdfManagerArea/Users/DeleteSchema/",
+            contentType: false,
+            processData: false,
+            data: Data,
+            success: function(data) {
+                if (data.success == true) {
+
+                    swal.fire(
+                        'Success',
+                        data.message,
+                        'success'
+                    ).then(function(isConfirm) {
+                        location.reload();
+                    });
+                }
+                else {
+                    swal.fire(
+                        'Warning',
+                        data.message,
+                        'warning'
+                    );
+                }
+            },
+            error: function(xhr, ajaxOptions, thrownError) {
+                alert(xhr.status);
+                alert(thrownError);
+            }
+        });
+    }
+</script>
+@section Modals
+    {
+                                            <!-- Modal Faq Schema -->
+                                            <div class="modal fade" id="mdlSchema"  tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+                                                <div class="modal-dialog modal-dialog-centered" role="document">
+                                                    <div class="modal-content">
+                                                        <div class="modal-header">
+                                                            <h5 class="modal-title" id="exampleModalLongTitle">Upload Json File</h5>
+                                                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                    <span aria-hidden="true">&times;</span>
+                                                </button>
+                                                        </div>
+                                                        <p id="type" style="display:none">0</p>
+                                                        <div class="modal-body">
+                                                            <div class="col-xl-12 col-lg-12 col-md-12 mb-1">
+                                                                        <button id="Deletebtn" style="display:unset;" type="submit" class="btn btn-red" onclick="RemoveSchema()">
+            <span class="glyphicon glyphicon-search" aria-hidden="true"></span> Delete Schema
+            </button>
+
+                                                                <form>
+                                                                            <div class="container">
+
+                                                <div class="input-group shadow">
+
+                                                        <img src="~/Areas/Admin/Images/Json-logo.png" width="55">
+                                                        <input type="file" accept=".json" x-ref="file" id="Jsonfile" class="d-none" onchange="SetFileName(this,'Text')">
+                                                    <input type="text" class="form-control form-control-lg" placeholder="None" id="Text" x-model="fileName" style="font-size:large" readonly>
+                                                    <button class="browse btn btn-primary px-4" type="button" onclick="Click('Jsonfile')">Choose</button>
+
+                                                </div>
+                                                </div>
+                                                                    </form>
+                                                                    <br />
+                                                                    <div>
+                                                                            <p>Only schemas generated in  this  <a href="@Common.GetPath.GetValidSchemaCreatortools()" target="_blank">address</a> are acceptable</p>                                        
+                                                                            <p> <img src="/Areas/Admin/Images/question-mark.png" width="25" style="cursor:pointer" onclick="Redirect('https://en.wikipedia.org/wiki/Schema.org')" title="?Wath is Schema"> Repetitive questions will be deleted</p>
+                                                                       </div>      
+                                                                   <img src="~/Areas/Admin/images/loading-97.gif" id="loadingGf" width="100" style="margin-right:35%; display:none" title="..uploading"/>
+                                                                            </div>
+                                                        </div>
+                                                        <div class="modal-footer">
+                                                                  <a class="btn btn-secondary" data-dismiss="modal">Cancel</a>
+                                                        <button class="btn btn-primary" id="btnUpload" onclick="UploadFile()" type="submit">Upload</button>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+    }

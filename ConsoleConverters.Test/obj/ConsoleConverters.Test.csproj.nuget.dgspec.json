@@ -1,0 +1,329 @@
+{
+  "format": 1,
+  "restore": {
+    "E:\\C#\\Web\\Core\\PdfConverter\\ConsoleConverters.Test\\ConsoleConverters.Test.csproj": {}
+  },
+  "projects": {
+    "E:\\C#\\Web\\Core\\PdfConverter\\Application\\Application.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "E:\\C#\\Web\\Core\\PdfConverter\\Application\\Application.csproj",
+        "projectName": "Application",
+        "projectPath": "E:\\C#\\Web\\Core\\PdfConverter\\Application\\Application.csproj",
+        "packagesPath": "C:\\Users\\Mr.Win\\.nuget\\packages\\",
+        "outputPath": "E:\\C#\\Web\\Core\\PdfConverter\\Application\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\Mr.Win\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net5.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net5.0": {
+            "targetAlias": "net5.0",
+            "projectReferences": {
+              "E:\\C#\\Web\\Core\\PdfConverter\\Common\\Common.csproj": {
+                "projectPath": "E:\\C#\\Web\\Core\\PdfConverter\\Common\\Common.csproj"
+              },
+              "E:\\C#\\Web\\Core\\PdfConverter\\Domain\\Domain.csproj": {
+                "projectPath": "E:\\C#\\Web\\Core\\PdfConverter\\Domain\\Domain.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net5.0": {
+          "targetAlias": "net5.0",
+          "dependencies": {
+            "Aspose.PDF": {
+              "target": "Package",
+              "version": "[22.2.0, )"
+            },
+            "GroupDocs.Conversion": {
+              "target": "Package",
+              "version": "[22.2.0, )"
+            },
+            "Microsoft.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[5.0.9, )"
+            },
+            "Microsoft.EntityFrameworkCore.Design": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[5.0.9, )"
+            },
+            "Microsoft.EntityFrameworkCore.SqlServer": {
+              "target": "Package",
+              "version": "[5.0.9, )"
+            },
+            "Microsoft.EntityFrameworkCore.Tools": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[5.0.9, )"
+            },
+            "PdfiumViewer": {
+              "target": "Package",
+              "version": "[2.13.0, )"
+            },
+            "PdfiumViewer.Native.x86.v8-xfa": {
+              "target": "Package",
+              "version": "[2018.4.8.256, )"
+            },
+            "PdfiumViewer.Native.x86_64.v8-xfa": {
+              "target": "Package",
+              "version": "[2018.4.8.256, )"
+            },
+            "System.Drawing.Common": {
+              "target": "Package",
+              "version": "[6.0.0, )"
+            },
+            "sautinsoft.pdffocus": {
+              "target": "Package",
+              "version": "[8.2.1.18, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.102\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "E:\\C#\\Web\\Core\\PdfConverter\\Common\\Common.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "E:\\C#\\Web\\Core\\PdfConverter\\Common\\Common.csproj",
+        "projectName": "Common",
+        "projectPath": "E:\\C#\\Web\\Core\\PdfConverter\\Common\\Common.csproj",
+        "packagesPath": "C:\\Users\\Mr.Win\\.nuget\\packages\\",
+        "outputPath": "E:\\C#\\Web\\Core\\PdfConverter\\Common\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\Mr.Win\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net5.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net5.0": {
+            "targetAlias": "net5.0",
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net5.0": {
+          "targetAlias": "net5.0",
+          "dependencies": {
+            "Microsoft.Extensions.Configuration.Abstractions": {
+              "target": "Package",
+              "version": "[6.0.0, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.102\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "E:\\C#\\Web\\Core\\PdfConverter\\ConsoleConverters.Test\\ConsoleConverters.Test.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "E:\\C#\\Web\\Core\\PdfConverter\\ConsoleConverters.Test\\ConsoleConverters.Test.csproj",
+        "projectName": "ConsoleConverters.Test",
+        "projectPath": "E:\\C#\\Web\\Core\\PdfConverter\\ConsoleConverters.Test\\ConsoleConverters.Test.csproj",
+        "packagesPath": "C:\\Users\\Mr.Win\\.nuget\\packages\\",
+        "outputPath": "E:\\C#\\Web\\Core\\PdfConverter\\ConsoleConverters.Test\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\Mr.Win\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net5.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net5.0": {
+            "targetAlias": "net5.0",
+            "projectReferences": {
+              "E:\\C#\\Web\\Core\\PdfConverter\\Application\\Application.csproj": {
+                "projectPath": "E:\\C#\\Web\\Core\\PdfConverter\\Application\\Application.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net5.0": {
+          "targetAlias": "net5.0",
+          "dependencies": {
+            "Microsoft.NET.Test.Sdk": {
+              "target": "Package",
+              "version": "[17.1.0, )"
+            },
+            "xunit": {
+              "target": "Package",
+              "version": "[2.4.1, )"
+            },
+            "xunit.runner.console": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[2.4.1, )"
+            },
+            "xunit.runner.visualstudio": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[2.4.3, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.102\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "E:\\C#\\Web\\Core\\PdfConverter\\Domain\\Domain.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "E:\\C#\\Web\\Core\\PdfConverter\\Domain\\Domain.csproj",
+        "projectName": "Domain",
+        "projectPath": "E:\\C#\\Web\\Core\\PdfConverter\\Domain\\Domain.csproj",
+        "packagesPath": "C:\\Users\\Mr.Win\\.nuget\\packages\\",
+        "outputPath": "E:\\C#\\Web\\Core\\PdfConverter\\Domain\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\Mr.Win\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net5.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net5.0": {
+            "targetAlias": "net5.0",
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net5.0": {
+          "targetAlias": "net5.0",
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.102\\RuntimeIdentifierGraph.json"
+        }
+      }
+    }
+  }
+}

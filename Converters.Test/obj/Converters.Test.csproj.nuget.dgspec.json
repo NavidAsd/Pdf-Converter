@@ -1,20 +1,24 @@
 {
   "format": 1,
   "restore": {
-    "D:\\C#\\Web\\Core\\PdfConverter\\Converters.Test\\Converters.Test.csproj": {}
+    "D:\\C#\\Web\\Core\\PdfConverter_NewView\\PdfConverter\\Converters.Test\\Converters.Test.csproj": {}
   },
   "projects": {
-    "D:\\C#\\Web\\Core\\PdfConverter\\Application\\Application.csproj": {
+    "D:\\C#\\Web\\Core\\PdfConverter_NewView\\PdfConverter\\Application\\Application.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\C#\\Web\\Core\\PdfConverter\\Application\\Application.csproj",
+        "projectUniqueName": "D:\\C#\\Web\\Core\\PdfConverter_NewView\\PdfConverter\\Application\\Application.csproj",
         "projectName": "Application",
-        "projectPath": "D:\\C#\\Web\\Core\\PdfConverter\\Application\\Application.csproj",
+        "projectPath": "D:\\C#\\Web\\Core\\PdfConverter_NewView\\PdfConverter\\Application\\Application.csproj",
         "packagesPath": "C:\\Users\\Mr.Win\\.nuget\\packages\\",
-        "outputPath": "D:\\C#\\Web\\Core\\PdfConverter\\Application\\obj\\",
+        "outputPath": "D:\\C#\\Web\\Core\\PdfConverter_NewView\\PdfConverter\\Application\\obj\\",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
         "configFilePaths": [
           "C:\\Users\\Mr.Win\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -22,17 +26,18 @@
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "C:\\Program Files\\dotnet\\library-packs": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
           "net5.0": {
             "targetAlias": "net5.0",
             "projectReferences": {
-              "D:\\C#\\Web\\Core\\PdfConverter\\Common\\Common.csproj": {
-                "projectPath": "D:\\C#\\Web\\Core\\PdfConverter\\Common\\Common.csproj"
+              "D:\\C#\\Web\\Core\\PdfConverter_NewView\\PdfConverter\\Common\\Common.csproj": {
+                "projectPath": "D:\\C#\\Web\\Core\\PdfConverter_NewView\\PdfConverter\\Common\\Common.csproj"
               },
-              "D:\\C#\\Web\\Core\\PdfConverter\\Domain\\Domain.csproj": {
-                "projectPath": "D:\\C#\\Web\\Core\\PdfConverter\\Domain\\Domain.csproj"
+              "D:\\C#\\Web\\Core\\PdfConverter_NewView\\PdfConverter\\Domain\\Domain.csproj": {
+                "projectPath": "D:\\C#\\Web\\Core\\PdfConverter_NewView\\PdfConverter\\Domain\\Domain.csproj"
               }
             }
           }
@@ -148,21 +153,25 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.202\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.203\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "D:\\C#\\Web\\Core\\PdfConverter\\Common\\Common.csproj": {
+    "D:\\C#\\Web\\Core\\PdfConverter_NewView\\PdfConverter\\Common\\Common.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\C#\\Web\\Core\\PdfConverter\\Common\\Common.csproj",
+        "projectUniqueName": "D:\\C#\\Web\\Core\\PdfConverter_NewView\\PdfConverter\\Common\\Common.csproj",
         "projectName": "Common",
-        "projectPath": "D:\\C#\\Web\\Core\\PdfConverter\\Common\\Common.csproj",
+        "projectPath": "D:\\C#\\Web\\Core\\PdfConverter_NewView\\PdfConverter\\Common\\Common.csproj",
         "packagesPath": "C:\\Users\\Mr.Win\\.nuget\\packages\\",
-        "outputPath": "D:\\C#\\Web\\Core\\PdfConverter\\Common\\obj\\",
+        "outputPath": "D:\\C#\\Web\\Core\\PdfConverter_NewView\\PdfConverter\\Common\\obj\\",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
         "configFilePaths": [
           "C:\\Users\\Mr.Win\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -170,14 +179,15 @@
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "C:\\Program Files\\dotnet\\library-packs": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
           "net5.0": {
             "targetAlias": "net5.0",
             "projectReferences": {
-              "D:\\C#\\Web\\Core\\PdfConverter\\Domain\\Domain.csproj": {
-                "projectPath": "D:\\C#\\Web\\Core\\PdfConverter\\Domain\\Domain.csproj"
+              "D:\\C#\\Web\\Core\\PdfConverter_NewView\\PdfConverter\\Domain\\Domain.csproj": {
+                "projectPath": "D:\\C#\\Web\\Core\\PdfConverter_NewView\\PdfConverter\\Domain\\Domain.csproj"
               }
             }
           }
@@ -229,21 +239,25 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.202\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.203\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "D:\\C#\\Web\\Core\\PdfConverter\\Converters.Test\\Converters.Test.csproj": {
+    "D:\\C#\\Web\\Core\\PdfConverter_NewView\\PdfConverter\\Converters.Test\\Converters.Test.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\C#\\Web\\Core\\PdfConverter\\Converters.Test\\Converters.Test.csproj",
+        "projectUniqueName": "D:\\C#\\Web\\Core\\PdfConverter_NewView\\PdfConverter\\Converters.Test\\Converters.Test.csproj",
         "projectName": "Converters.Test",
-        "projectPath": "D:\\C#\\Web\\Core\\PdfConverter\\Converters.Test\\Converters.Test.csproj",
+        "projectPath": "D:\\C#\\Web\\Core\\PdfConverter_NewView\\PdfConverter\\Converters.Test\\Converters.Test.csproj",
         "packagesPath": "C:\\Users\\Mr.Win\\.nuget\\packages\\",
-        "outputPath": "D:\\C#\\Web\\Core\\PdfConverter\\Converters.Test\\obj\\",
+        "outputPath": "D:\\C#\\Web\\Core\\PdfConverter_NewView\\PdfConverter\\Converters.Test\\obj\\",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
         "configFilePaths": [
           "C:\\Users\\Mr.Win\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -251,14 +265,15 @@
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "C:\\Program Files\\dotnet\\library-packs": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
           "net5.0": {
             "targetAlias": "net5.0",
             "projectReferences": {
-              "D:\\C#\\Web\\Core\\PdfConverter\\Application\\Application.csproj": {
-                "projectPath": "D:\\C#\\Web\\Core\\PdfConverter\\Application\\Application.csproj"
+              "D:\\C#\\Web\\Core\\PdfConverter_NewView\\PdfConverter\\Application\\Application.csproj": {
+                "projectPath": "D:\\C#\\Web\\Core\\PdfConverter_NewView\\PdfConverter\\Application\\Application.csproj"
               }
             }
           }
@@ -354,21 +369,25 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.202\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.203\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "D:\\C#\\Web\\Core\\PdfConverter\\Domain\\Domain.csproj": {
+    "D:\\C#\\Web\\Core\\PdfConverter_NewView\\PdfConverter\\Domain\\Domain.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\C#\\Web\\Core\\PdfConverter\\Domain\\Domain.csproj",
+        "projectUniqueName": "D:\\C#\\Web\\Core\\PdfConverter_NewView\\PdfConverter\\Domain\\Domain.csproj",
         "projectName": "Domain",
-        "projectPath": "D:\\C#\\Web\\Core\\PdfConverter\\Domain\\Domain.csproj",
+        "projectPath": "D:\\C#\\Web\\Core\\PdfConverter_NewView\\PdfConverter\\Domain\\Domain.csproj",
         "packagesPath": "C:\\Users\\Mr.Win\\.nuget\\packages\\",
-        "outputPath": "D:\\C#\\Web\\Core\\PdfConverter\\Domain\\obj\\",
+        "outputPath": "D:\\C#\\Web\\Core\\PdfConverter_NewView\\PdfConverter\\Domain\\obj\\",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
         "configFilePaths": [
           "C:\\Users\\Mr.Win\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -376,6 +395,7 @@
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "C:\\Program Files\\dotnet\\library-packs": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -415,7 +435,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.202\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.203\\RuntimeIdentifierGraph.json"
         }
       }
     }

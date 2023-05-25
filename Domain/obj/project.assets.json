@@ -58,11 +58,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\C#\\Web\\Core\\PdfConverter\\Domain\\Domain.csproj",
+      "projectUniqueName": "D:\\C#\\Web\\Core\\PdfConverter_NewView\\PdfConverter\\Domain\\Domain.csproj",
       "projectName": "Domain",
-      "projectPath": "D:\\C#\\Web\\Core\\PdfConverter\\Domain\\Domain.csproj",
+      "projectPath": "D:\\C#\\Web\\Core\\PdfConverter_NewView\\PdfConverter\\Domain\\Domain.csproj",
       "packagesPath": "C:\\Users\\Mr.Win\\.nuget\\packages\\",
-      "outputPath": "D:\\C#\\Web\\Core\\PdfConverter\\Domain\\obj\\",
+      "outputPath": "D:\\C#\\Web\\Core\\PdfConverter_NewView\\PdfConverter\\Domain\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"

@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "a261FFsbicdjGvN9NsfAKpMh1J8zwd+zb+DAOw60nj08gl3kOey+Kb2s2JNsklhl1GinU+J+JT7M6far98iOBA==",
+  "dgSpecHash": "2uxZaJd3YEsZ4mjgXh7UjG7u+DTTldEO4sykl+LnU0vQPWn6cO3/OWce8+H7FEfAacFN7lQjY2oK2HrmOWnTvA==",
   "success": true,
-  "projectFilePath": "D:\\C#\\Web\\Core\\PdfConverter\\Domain\\Domain.csproj",
+  "projectFilePath": "D:\\C#\\Web\\Core\\PdfConverter_NewView\\PdfConverter\\Domain\\Domain.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Mr.Win\\.nuget\\packages\\newtonsoft.json\\13.0.1\\newtonsoft.json.13.0.1.nupkg.sha512"
   ],

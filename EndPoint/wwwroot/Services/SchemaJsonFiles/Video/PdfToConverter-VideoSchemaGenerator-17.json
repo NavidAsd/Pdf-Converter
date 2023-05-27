@@ -1,0 +1,15 @@
+{
+  "@context": "https://schema.org",
+  "@type": "VideoObject",
+  "name": "Compress PDF Files Online",
+  "description": "Achieve Amazing Results with Just a Few Clicks: Compress Your PDF Files Instantly!
+Compress Your PDFs in Seconds - Discover How to Easily Reduce Your File Size! This tool is free forever and you are not going to pay anything, so don't wait and compress big PDF files using this tool to take up less space on your device. Video tutorial on how to Compress PDF In this video, you will learn how to Compress PDF file in a few minutes",
+  "thumbnailUrl": "https://pdftoconverter.com/videos/poster/How-to-compress-PDF-files-online.jpg",
+  "uploadDate": "2022-11-01",
+  "contentUrl": "https://pdftoconverter.com/videos/Video-tutorial-on-how-to-CompressPdf.mp4",
+  "potentialAction": {
+    "@type": "SeekToAction",
+    "target": "https://pdftoconverter.com/compress-pdf/={seek_to_second_number}",
+    "startOffset-input": "required name=seek_to_second_number"
+  }
+}

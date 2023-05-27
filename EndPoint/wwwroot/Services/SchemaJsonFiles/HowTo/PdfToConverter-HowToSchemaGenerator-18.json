@@ -1,0 +1,27 @@
+{
+  "@context": "https://schema.org/", 
+  "@type": "HowTo", 
+  "name": "How To Merge Pdf files Online for Free",
+  "description": "You are only 3 steps away from merge pdf files
+Merge multiple PDFs into a single document - quickly and easily!",
+  "image": "https://pdftoconverter.com/images/Services/pdfconverter-MergePdf.png",
+  "step": [{
+    "@type": "HowToStep",
+    "text": "To merge and combine PDF files, first select the desired files and click on the “Choose file” button or drag and drop your PDF file in the box. You can also choose PDF from Google Drive or Dropbox.",
+    "image": "https://pdftoconverter.com/images/Services/pdfconverter-MergePdf.png",
+    "name": "Choose File",
+    "url": "https://pdftoconverter.com/merge-pdf/"
+  },{
+    "@type": "HowToStep",
+    "text": "Click on the "Upload and Convert" button and wait a few moments. Files are processed over the Internet and after combining the files, the message "Files Successfully Merged" will be displayed.",
+    "image": "https://pdftoconverter.com/images/Services/pdfconverter-MergePdf.png",
+    "name": "File converted successfully",
+    "url": "https://pdftoconverter.com/merge-pdf/"
+  },{
+    "@type": "HowToStep",
+    "text": "Download a merged PDF to your device or scan QR code on your phone or send the PDF file to your Google Drive account or Easily email the PDF file to yourself and your friends also you can send the download link to others",
+    "image": "https://pdftoconverter.com/images/Services/pdfconverter-PdfToPdfA.png",
+    "name": "Download",
+    "url": "https://pdftoconverter.com/merge-pdf/"
+  }]    
+}

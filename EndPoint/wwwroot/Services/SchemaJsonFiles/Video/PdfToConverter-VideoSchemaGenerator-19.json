@@ -1,0 +1,17 @@
+{
+  "@context": "https://schema.org",
+  "@type": "VideoObject",
+  "name": "Video tutorial on how to Rotate PDF",
+  "description": "It's really simple to rotate a PDF document! Just select the file from your device, pick the angle, and hit the button. Your PDF is secure on our server!
+In this video, you will learn how to Rotate PDF file in a few minutes",
+  "thumbnailUrl": "https://pdftoconverter.com/videos/poster/How-to-Easily-Rotate-Your-PDF-Files-in-Seconds.jpg",
+  "uploadDate": "2022-09-02",
+  "duration": "PT0M48S",
+  "contentUrl": "https://pdftoconverter.com/videos/Video-tutorial-on-how-to-RotatePdf.mp4",
+  "embedUrl": "https://pdftoconverter.com/videos/Video-tutorial-on-how-to-RotatePdf.mp4",
+  "potentialAction": {
+    "@type": "SeekToAction",
+    "target": "https://pdftoconverter.com/rotate-pdf/={seek_to_second_number}",
+    "startOffset-input": "required name=seek_to_second_number"
+  }
+}

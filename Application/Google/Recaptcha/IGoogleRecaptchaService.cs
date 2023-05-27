@@ -54,6 +54,7 @@ namespace Application.Services.Google.Recaptcha
             request.Method = "POST";
             request.ContentLength = postData.Length;
             request.ContentType = "application/x-www-form-urlencoded";
+            request.Timeout = 240000; // 4 min
 
             using (var streamWriter = new StreamWriter(request.GetRequestStream()))
             {

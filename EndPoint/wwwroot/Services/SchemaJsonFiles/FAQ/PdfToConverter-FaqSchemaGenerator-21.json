@@ -1,0 +1,74 @@
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [{
+    "@type": "Question",
+    "name": "Why should we protect the PDF file?",
+    "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "Encrypt and protect PDF with a password to safeguard sensitive information
+If you want your PDF file to be locked and no one can edit, print or copy the texts, be sure to put a password on your PDF file.
+
+PDF file :
+✅ Copy pdf text
+✅ Edite and modify text
+✅ Print pdf files
+Protected PDF file : 
+❌ It is not possible to copy texts
+❌ It is not possible to edit and modify the texts
+❌ Not printable"
+    }
+  },{
+    "@type": "Question",
+    "name": "How to protect the PDF file?",
+    "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "You can create an encrypted PDF file or set a password for your PDF file
+1- Choose the PDF you want from the \"File Selection\" section
+2- Choose a suitable and unobtainable password from the \"Choose Password\" section.
+3- Repeat your password
+4- Click on \"Upload and Encrypt\" option
+5- Wait a few seconds and then you will see the message \"File SuccessFully Locked\"."
+    }
+  },{
+    "@type": "Question",
+    "name": "How do you make a pdf read only?",
+    "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "By adding a password to the PDF file, no one else will be able to copy or print your PDF document
+By using \"PDF Protection\" tool , your PDF file will be read only"
+    }
+  },{
+    "@type": "Question",
+    "name": "Can others open the protected PDF file?",
+    "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "Yes, they can open the PDF file, but they cannot copy or print the texts or edit and modify your PDF file."
+    }
+  },{
+    "@type": "Question",
+    "name": "Is it possible to copy protected PDF files (read only PDF)?",
+    "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "If the existing PDF file is read only, copying the file will fail and it is not possible to copy or edit and modify the file"
+    }
+  },{
+    "@type": "Question",
+    "name": "Why Protect A PDF?",
+    "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "Adding password protection to your PDF can serve many purposes. On one hand, it makes sure that only people you gave the password to can open and view the content of your file.
+
+On the other hand, you can keep the people you send the PDF to from copying or printing your PDF document."
+    }
+  },{
+    "@type": "Question",
+    "name": "Does it cost to encrypt a PDF file?",
+    "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "Never ,
+This service is free forever and you can encrypt your PDF files whenever you need.
+Tell your friends , that PDF to Converter service is always free to protect PDF"
+    }
+  }]
+}

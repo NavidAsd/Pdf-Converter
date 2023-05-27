@@ -1,0 +1,47 @@
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [{
+    "@type": "Question",
+    "name": "How to change word to PDF for free?",
+    "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "PDFtoConverter.com provides a free online file converter for you to change your Word to PDF files. Simply select the file you want to convert, and use the online converter to turn your Word Document into an pdf"
+    }
+  },{
+    "@type": "Question",
+    "name": "How to convert Word to PDF on Windows or Mac ?",
+    "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "PDFtoConverter.com converters support multiple platforms to help turn your Words documents into PDF. Use PDFtoConverter.com on your Mac  or Windows by opening it in your browser and then select the Doc / Docx  files from your local drive or cloud storage to begin the process."
+    }
+  },{
+    "@type": "Question",
+    "name": "How can I convert a Doc or Docx file to PDF file?",
+    "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "1- Choose a file
+Upload a Word file to convert to PDF from your pc or a cloud storage service such as Google Drive or Dropbox.
+2- Click 'Upload and convert' to transform the word to PDF files
+3 - View and download
+Easily access your new PDF by downloading it to your computer or device and viewing the conversion in your browser."
+    }
+  },{
+    "@type": "Question",
+    "name": "Why should I save Word to PDF?",
+    "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "PDF is the best format for file sharing since it can be opened in any operating systems or devices and retained everything, so it looks the same anywhere, all you need is a free PDF reader."
+    }
+  },{
+    "@type": "Question",
+    "name": "How to Convert Word to PDF Online?",
+    "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "1- Select a doc or docx file, drag it to the Word to PDF converter.
+2- Click 'Upload and convert' button, the conversion will start.
+3- Wait for the conversion to finish and download the converted PDF file.
+4- The file will be removed automatically after 24 hours. You can also click 'Delete' button to remove the files from server instantly."
+    }
+  }]
+}

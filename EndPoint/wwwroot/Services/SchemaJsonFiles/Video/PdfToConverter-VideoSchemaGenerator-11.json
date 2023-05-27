@@ -1,0 +1,18 @@
+{
+  "@context": "https://schema.org",
+  "@type": "VideoObject",
+  "name": "Video tutorial on how to convert Excel to PDF",
+  "description": "In this video, you will learn how to convert a Excel file to PDF in a few minutes
+
+Turn Your Excel Spreadsheets Into Secure PDFs in Seconds.Unlimited .No registration or account creation required . No downloads or apps required . No watermark",
+  "thumbnailUrl": "https://pdftoconverter.com/videos/poster/How-to-Convert-Excel-To-Pdf-Online-for-Free-in-a-few-minutes.jpg",
+  "uploadDate": "2022-09-02",
+  "duration": "PT0M44S",
+  "contentUrl": "https://pdftoconverter.com/videos/Video-tutorial-on-how-to-convert-Excel-To-Pdf.mp4",
+  "embedUrl": "https://pdftoconverter.com/videos/Video-tutorial-on-how-to-convert-Excel-To-Pdf.mp4",
+  "potentialAction": {
+    "@type": "SeekToAction",
+    "target": "https://pdftoconverter.com/excel-to-pdf/={seek_to_second_number}",
+    "startOffset-input": "required name=seek_to_second_number"
+  }
+}

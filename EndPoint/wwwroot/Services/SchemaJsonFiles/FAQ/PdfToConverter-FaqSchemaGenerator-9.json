@@ -1,0 +1,175 @@
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [{
+    "@type": "Question",
+    "name": "Is it secure to use PDF to PDFA Tools?",
+    "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "PDFtoConverter.com takes the protection of files and data very seriously. We want our users to be able to trust us. Security aspects are therefore a permanent part of our work.
+
+✅All file transfers are encrypted.
+✅All files are automatically deleted from the processing server within 24 hour after processing.
+✅We do not store files and do not evaluate them. Files will only be used for the intended purpose."
+    }
+  },{
+    "@type": "Question",
+    "name": "Can I use your PDF to PDFA Converter tool on Mac, Linux or smartphone?",
+    "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "Yes, you can use \"pdftoconverter.com\" PDF to PDFA Tools on any system with which you have access to the Internet. Open pdftoconverter.com Tools in a web browser and use the tools directly in the web browser. You do not need to install any other software."
+    }
+  },{
+    "@type": "Question",
+    "name": "What is PDF/A-1B format?",
+    "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "PDF/A-1B is a standard format for digital books that preserves the appearance and functionality of printed books.
+PDF/A-1b: Level B (basic) conformance with mandatory requirements:
+
+✅ Include Embed fonts
+✅ Include Color Management guides
+✅ Include Metadata"
+    }
+  },{
+    "@type": "Question",
+    "name": "What are the advantages of PDF/A-3b?",
+    "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "✅ JPEG 2000 image compression
+✅  Support for transparency effects and layers
+✅  Embedding of OpenType fonts
+✅  Provisions for digital signatures in accordance with the PDF 
+✅ Advanced Electronic Signatures
+✅ The option of embedding PDF/A files to facilitate archiving of sets of documents with a single file"
+    }
+  },{
+    "@type": "Question",
+    "name": "What is the difference between PDF A 1 and PDF A 2?",
+    "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "PDF A 1 is the standard PDF format and is the most commonly used format. PDF A 2 is a more advanced format that allows for higher quality graphics and PDF files that are smaller in size."
+    }
+  },{
+    "@type": "Question",
+    "name": "Which PDF A version is best?",
+    "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "PDF/A-2 is the best standardized format to archive your digital documents!"
+    }
+  },{
+    "@type": "Question",
+    "name": "What is PDF Type A?",
+    "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "PDF/A is an archival format of PDF that embeds all fonts used in the document within the PDF file. This means that a user of your file will not have to have the same fonts that you used to create the file installed on their computer to read the file.
+
+All kinds of PDF/A formats:
+
+PDF/A-1A, PDF/A-2A, PDF/A-3A"
+    }
+  },{
+    "@type": "Question",
+    "name": "What is a PDF B?",
+    "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "PDF/A-1b: Referred to as Level B Conformance, this category is considered to be the minimal compliance level for PDF/A. This level guarantees that the document can be displayed and read on a computer monitor, but the legibility of the text is not guaranteed
+
+All kinds of PDF/A-B formats:
+PDF/A-1B, PDF/A-2B, PDF/A-3B"
+    }
+  },{
+    "@type": "Question",
+    "name": "What is PDF Type U pr PDF/U?",
+    "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "PDF U is a PDF creation and editing tool that allows users to create and edit PDFs with ease. With PDF U, users can create PDFs from scratch or edit existing PDFs with ease. PDF U also allows users to merge and split PDFs, add layers to PDFs, and more.
+
+All kinds of PDF/A-B formats:
+PDF/A-1U, PDF/A-2U, PDF/A-3U"
+    }
+  },{
+    "@type": "Question",
+    "name": "What pdf format is designed for future readability?",
+    "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "Extensible. All that extensible means is that the readability of a digital file will extend into the future, that a file will not become unreadable as software changes. The PDF/A standard is designed so that the earliest PDF/A will always be readable in the most current PDF viewer."
+    }
+  },{
+    "@type": "Question",
+    "name": "How do I convert a PDF to PdfA?",
+    "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "Some tips on converting PDF files to PDF/A formats include using Adobe Acrobat or another PDF conversion software, disabling comments and formatting, and compressing the file size.
+You can also, To convert a PDF to a PDF/A file, you can use the \"PDF to PdfA\" Online tool on pdftoconverter.com."
+    }
+  },{
+    "@type": "Question",
+    "name": "How to convert pdf to pdf/a on mac?",
+    "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "One way to convert a PDF document to PDF/A on a Mac is to use the \"PDF to PDF/A\" feature in Adobe Acrobat.
+To convert a PDF file to PDF/A on a Mac, open the PDF file in Preview, select File > Export As, and choose PDF/A from the Format menu.
+You can also, To convert a PDF to a PDF/A file, you can use the \"PDF to PdfA\" Online tool on pdftoconverter.com."
+    }
+  },{
+    "@type": "Question",
+    "name": "How to convert word to pdf/A?",
+    "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "Some tips on how to convert word to pdf/A using different word processing programs include:
+
+- In Microsoft Word, you can use the \"File\" > \"Export\" command to create a pdf/A file.
+- In Google Docs, you can use the \"File\" > \"Export\" command to create a pdf/A file.
+- In Apple Pages, you can use the \"Print\" command to create a pdf/A file."
+    }
+  },{
+    "@type": "Question",
+    "name": "How to Convert Pdf to PdfA format in mobile?",
+    "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "Some basic steps you can follow to convert a PDF file to a PDF/A format on a mobile device include: 
+1. Open the PDF file in your mobile app. 
+2. Tap the three lines in the top left corner of the screen. 
+3. Tap the 'Settings' option. 
+4. Under 'Output format,' tap 'PDF/A.' 
+5. Tap the 'Convert' button."
+    }
+  },{
+    "@type": "Question",
+    "name": "How to convert Pdf to Pdf/A in IOS?",
+    "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "In iOS, you can convert PDFs to PDF/A by following these steps:
+
+1. Open the PDF file you want to convert.
+2. Tap the \"PDF/A\" button in the toolbar.
+3. In the \"Conversion Options\" section, tap the \"Convert to PDF/A\" button.
+4. Follow the on-screen instructions."
+    }
+  },{
+    "@type": "Question",
+    "name": "How to convert a PDF to a Pdf A file in Adobe?",
+    "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "To convert a PDF to a PDF file in Adobe, follow these steps:
+
+1. Open the PDF file in Adobe Acrobat.
+
+2. Click the Tools button and select Convert to PDF.
+
+3. In the Convert to PDF dialog box, click the Source button and select Adobe PDF File.
+
+4. In the Destination folder field, type the location where you want the PDF file to be created.
+
+5. Click the Save button."
+    }
+  },{
+    "@type": "Question",
+    "name": "How to convert Pdf to Pdf A formats without software?",
+    "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "You can also change the format of your PDF files to PDF A any software  through the Internet, If you have an active internet connection and want to turn a PDF into a pdf/A file,  Open the page in your preferred browser, and type \"PDFtoConverter.com\" in the address bar, then select the PDF to PDF/A tool from the top menu, upload a PDF, wait for the conversion to complete, and download your PdfA file."
+    }
+  }]
+}

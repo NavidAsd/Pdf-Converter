@@ -1,0 +1,17 @@
+{
+  "@context": "https://schema.org",
+  "@type": "VideoObject",
+  "name": "Video tutorial on how to convert Word to PDF",
+  "description": "Easily Convert Word Docs to PDFs in Minutes - Try It Free Now! Get Professional-Looking Documents in Minutes with the Word to PDF Converter!
+In this video, you will learn how to convert a Word file to PDF in a few minutes",
+  "thumbnailUrl": "https://pdftoconverter.com/videos/poster/How-to-Convert-Word-To-Pdf-Online-for-Free-without-any-software.jpg",
+  "uploadDate": "2022-09-02",
+  "duration": "PT0M44S",
+  "contentUrl": "https://pdftoconverter.com/videos/Video-tutorial-on-how-to-DocToPdf.mp4",
+  "embedUrl": "https://pdftoconverter.com/videos/Video-tutorial-on-how-to-DocToPdf.mp4",
+  "potentialAction": {
+    "@type": "SeekToAction",
+    "target": "https://pdftoconverter.com/word-to-pdf/={seek_to_second_number}",
+    "startOffset-input": "required name=seek_to_second_number"
+  }
+}

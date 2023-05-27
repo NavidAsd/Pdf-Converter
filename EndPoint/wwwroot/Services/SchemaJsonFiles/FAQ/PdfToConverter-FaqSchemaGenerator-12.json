@@ -1,0 +1,38 @@
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [{
+    "@type": "Question",
+    "name": "How to change PPT to PDF for free?",
+    "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "PDFtoConverter.com provides a free online file converter for you to change your ppt/pptx to PDF files. Simply select the file you want to convert, and use the online converter to turn your Powerpoint Document into an pdf"
+    }
+  },{
+    "@type": "Question",
+    "name": "How to convert PPT to PDF on Windows or Mac or Android or IOS?",
+    "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "PDFtoConverter.com converters support multiple platforms to help turn your Powerpoint documents into PDF. Use PDFtoConverter.com on your Mac  or Windows by opening it in your browser and then select the Doc / Docx  files from your local drive or cloud storage to begin the process."
+    }
+  },{
+    "@type": "Question",
+    "name": "How can I convert a PPT or PPTX file to PDF file?",
+    "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "1- Choose a file
+Upload a Powerpoint file to convert to PDF from your pc or a cloud storage service such as Google Drive or Dropbox.
+2- Click 'Upload and convert' to transform the Powerpoint to PDF files
+3 - View and download
+Easily access your new PDF by downloading it to your computer or device and viewing the conversion in your browser."
+    }
+  },{
+    "@type": "Question",
+    "name": "Is PDFtoConverter.com safe to convert Powerpoint(ppt/pptx) document to PDF?",
+    "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "We completely protect your information and we will your Powerpoint and PDF files in a secure platform. Your files will be stored on our server for only 24 hours and will be deleted forever after that.
+Also, if you want, you can delete the file from our server forever by clicking the \"Delete\" button."
+    }
+  }]
+}

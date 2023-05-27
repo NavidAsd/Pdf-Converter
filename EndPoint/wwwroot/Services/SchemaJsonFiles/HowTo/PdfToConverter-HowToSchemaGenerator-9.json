@@ -1,0 +1,27 @@
+{
+  "@context": "https://schema.org/", 
+  "@type": "HowTo", 
+  "name": "How To Convert Pdf To Pdf/A Online for Free",
+  "description": "Convert PDF to a specific PDF/A ISO conformance level
+In this video, you will learn how to convert a PDF file to PDF/A in a few minutes",
+  "image": "https://pdftoconverter.com/images/Services/pdfconverter-PdfToPdfA.png",
+  "step": [{
+    "@type": "HowToStep",
+    "text": "To convert a PDF file to PDF/A format , first Upload the document that you want to archive for a long term preservation, click or drag and drop your PDF on the “Choose file” box inPDF to PDF/A converter tool.",
+    "image": "https://pdftoconverter.com/images/Services/pdfconverter-PdfToPdfA.png",
+    "name": "Choose File",
+    "url": "https://pdftoconverter.com/pdf-to-pdfa/"
+  },{
+    "@type": "HowToStep",
+    "text": "Select your preferred PDF/A standard: PDF/A-1A, PDF/A-1B, PDF/A-2A,PDF/A-2B, PDF/A-3A, PDF/A-3B, PDF/A-2U, PDF/A-3U and Click on the "Upload and Convert" button and wait a few moments to to convert a PDF to a PDF.A file",
+    "image": "https://pdftoconverter.com/images/Services/pdfconverter-PdfToPdfA.png",
+    "name": "File converted successfully",
+    "url": "https://pdftoconverter.com/pdf-to-pdfa/"
+  },{
+    "@type": "HowToStep",
+    "text": "Converting a PDF to a PDF/A file is processed over the Internet You can Download the PDF/A file to your device or scan QR code on your Phone. also send the PDF file to others by email or by sending a download link.",
+    "image": "https://pdftoconverter.com/images/Services/pdfconverter-PdfToPdfA.png",
+    "name": "Download",
+    "url": "https://pdftoconverter.com/pdf-to-pdfa/"
+  }]    
+}

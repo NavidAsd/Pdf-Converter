@@ -1,0 +1,17 @@
+{
+  "@context": "https://schema.org",
+  "@type": "VideoObject",
+  "name": "Video tutorial on how to Remove PDF Protection",
+  "description": "In this video, you will learn how to Remove PDF Protection file in a few minutes
+ Remove PDF Protection in a single click. Remove PDF Restrictions with PDFtoConverter. Delete protect from PDF without software in seconds. Free and easy to use.",
+  "thumbnailUrl": "https://pdftoconverter.com/videos/poster/How-To-Online-Remove-PDF-Protection.jpg",
+  "uploadDate": "2022-09-02",
+  "duration": "PT0M47S",
+  "contentUrl": "https://pdftoconverteVideo-tutorial-on-how-to-RemvePdfProtection.mp4",
+  "embedUrl": "https://pdftoconverter.com/videos/Video-tutorial-on-how-to-RemvePdfProtection.mp4",
+  "potentialAction": {
+    "@type": "SeekToAction",
+    "target": "https://pdftoconverter.com/remove-pdf-protection/={seek_to_second_number}",
+    "startOffset-input": "required name=seek_to_second_number"
+  }
+}

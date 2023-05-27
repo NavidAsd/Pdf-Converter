@@ -1,0 +1,18 @@
+{
+  "@context": "https://schema.org",
+  "@type": "VideoObject",
+  "name": "Video tutorial on how to convert PDF to PDF/A",
+  "description": "In this video, you will learn how to convert a PDF file to PDF/A in a few minutes
+Convert Pdf To  PDF/A-1A, PDF/A-1B, PDF/A-2A,PDF/A-2B, PDF/A-3A, PDF/A-3B, PDF/A-2U, PDF/A-3U 
+Change PDFs to PDF/A format for long-term storage & archiving .",
+  "thumbnailUrl": "https://pdftoconverter.com/videos/poster/how-to-convert-pdf-to-pdfa.jpg",
+  "uploadDate": "2022-09-02",
+  "duration": "PT0M51S",
+  "contentUrl": "https://pdftoconverter.com/videos/Video-tutorial-on-how-to-convert-Pdf-To-PdfA.mp4",
+  "embedUrl": "https://pdftoconverter.com/videos/Video-tutorial-on-how-to-convert-Pdf-To-PdfA.mp4",
+  "potentialAction": {
+    "@type": "SeekToAction",
+    "target": "https://pdftoconverter.com/pdf-to-pdfa/={seek_to_second_number}",
+    "startOffset-input": "required name=seek_to_second_number"
+  }
+}

@@ -1,0 +1,26 @@
+{
+  "@context": "https://schema.org/", 
+  "@type": "HowTo", 
+  "name": "How To Convert Html To Pdf Online for Free",
+  "description": "You are only 3 steps away from converting the file html to pdf",
+  "image": "https://pdftoconverter.com/videos/poster/How-to-Convert-Html-files-to-Pdf-without-losing-formatting.jpg",
+  "step": [{
+    "@type": "HowToStep",
+    "text": "To convert a web or HTML page into a PDF document, first you need to click on the Inter URL button and in the window that opens, type the URL of the page in full and with the protocol(http/https).",
+    "image": "https://pdftoconverter.com/videos/poster/How-to-Convert-Html-files-to-Pdf-without-losing-formatting.jpg",
+    "name": "Enter Url",
+    "url": "https://pdftoconverter.com/html-to-pdf/"
+  },{
+    "@type": "HowToStep",
+    "text": "t doesn't take much time to process the page and you can download the generated PDF from the html page ,when you see the "File Successfully Converted" message.",
+    "image": "https://pdftoconverter.com/videos/poster/How-to-Convert-Html-files-to-Pdf-without-losing-formatting.jpg",
+    "name": "File Successfully Converted",
+    "url": "https://pdftoconverter.com/html-to-pdf/"
+  },{
+    "@type": "HowToStep",
+    "text": "After converting HTML to PDF file , you can Download PDF file on your device or Share link or scan QR and Send file with email also you can Upload on Google Drive or Dropbox.",
+    "image": "https://pdftoconverter.com/videos/poster/How-to-Convert-Html-files-to-Pdf-without-losing-formatting.jpg",
+    "name": "Download",
+    "url": "https://pdftoconverter.com/html-to-pdf/"
+  }]    
+}

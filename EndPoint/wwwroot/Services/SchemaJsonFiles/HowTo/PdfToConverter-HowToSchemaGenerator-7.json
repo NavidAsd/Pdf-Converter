@@ -1,0 +1,27 @@
+{
+  "@context": "https://schema.org/", 
+  "@type": "HowTo", 
+  "name": "How To Convert Pdf To Ppt Online for Free",
+  "description": "In this video, you will learn how to convert a PDF file to PPT in a few minutes",
+  "image": "https://pdftoconverter.com/images/Services/pdfconverter-PdfToPpt.png",
+  "step": [{
+    "@type": "HowToStep",
+    "text": "To convert a PDF file to PPT, first select file and click on the “Choose file” button or drag and drop your PDF document in our online PDF to PPT converter.You can also choose file from Google Drive or Dropbox.",
+    "image": "https://pdftoconverter.com/images/Services/pdfconverter-PdfToPpt.png",
+    "name": "Choose File",
+    "url": "https://pdftoconverter.com/pdf-to-ppt/"
+  },{
+    "@type": "HowToStep",
+    "text": "Click on the "Upload and Convert" button and wait a few moments. The files are processed over the Internet and it takes no more than a few moments to convert a PDF document to a PowerPoint slide file",
+    "image": "https://pdftoconverter.com/images/Services/pdfconverter-PdfToPpt.png",
+    "name": "File converted successfully",
+    "url": "https://pdftoconverter.com/pdf-to-ppt/"
+  },{
+    "@type": "HowToStep",
+    "text": "3
+Download the PPT file to your device or scan QR code on your phone or send the Powerpoint to your Google Drive account or Easily email the Powerpoint( .ppt file )or send the download link to yourself and others.",
+    "image": "https://pdftoconverter.com/images/Services/pdfconverter-PdfToPpt.png",
+    "name": "Download",
+    "url": "https://pdftoconverter.com/pdf-to-ppt/"
+  }]    
+}

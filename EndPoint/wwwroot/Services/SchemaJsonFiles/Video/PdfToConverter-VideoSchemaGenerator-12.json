@@ -1,0 +1,17 @@
+{
+  "@context": "https://schema.org",
+  "@type": "VideoObject",
+  "name": "Video tutorial on how to convert PPT to PDF",
+  "description": "Get Your PowerPoint Presentations Instantly Converted to PDF - Free and Easy! Easily convert PowerPoint presentations to PDF without loss of formatting.
+In this video, you will learn how to convert a PPT file to PDF in a few minutes",
+  "thumbnailUrl": "https://pdftoconverter.com/videos/poster/How-to-Convert-PowerPoint-presentation-to-PDF-in-a-few-minutes.jpg",
+  "uploadDate": "2022-09-02",
+  "duration": "PT0M48S",
+  "contentUrl": "https://pdftoconverter.com/videos/Video-tutorial-on-how-to-convert-Ppt-To-Pdf.mp4",
+  "embedUrl": "https://pdftoconverter.com/videos/Video-tutorial-on-how-to-convert-Ppt-To-Pdf.mp4",
+  "potentialAction": {
+    "@type": "SeekToAction",
+    "target": "https://pdftoconverter.com/ppt-to-pdf/={seek_to_second_number}",
+    "startOffset-input": "required name=seek_to_second_number"
+  }
+}

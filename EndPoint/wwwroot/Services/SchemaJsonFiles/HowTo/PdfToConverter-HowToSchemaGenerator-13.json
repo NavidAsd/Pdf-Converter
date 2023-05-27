@@ -1,0 +1,26 @@
+{
+  "@context": "https://schema.org/", 
+  "@type": "HowTo", 
+  "name": "How To Convert Word To Pdf Online for Free",
+  "description": "You are only 3 steps away from converting the file word to pdf",
+  "image": "https://pdftoconverter.com/videos/poster/How-to-Convert-Word-To-Pdf-Online-for-Free-without-any-software.jpg",
+  "step": [{
+    "@type": "HowToStep",
+    "text": "By clicking on the big box above, you can select the word file from among the files in your system (Doc or Docx).And click the upload button to start processing",
+    "image": "https://pdftoconverter.com/videos/poster/How-to-Convert-Word-To-Pdf-Online-for-Free-without-any-software.jpg",
+    "name": "Choose File",
+    "url": "https://pdftoconverter.com/word-to-pdf/"
+  },{
+    "@type": "HowToStep",
+    "text": "Using the buttons below the large box, you can upload the file to start the process. The processing does not take much time and after a few minutes you can download the PDF file",
+    "image": "https://pdftoconverter.com/videos/poster/How-to-Convert-Word-To-Pdf-Online-for-Free-without-any-software.jpg",
+    "name": "File converted successfully",
+    "url": "https://pdftoconverter.com/word-to-pdf/"
+  },{
+    "@type": "HowToStep",
+    "text": "After converting Word to PDF file , you can Download PDF file on your device or Share link or scan QR and Send file with email also you can Upload on Google Drive or Dropbox.",
+    "image": "https://pdftoconverter.com/videos/poster/How-to-Convert-Word-To-Pdf-Online-for-Free-without-any-software.jpg",
+    "name": "Download",
+    "url": "https://pdftoconverter.com/word-to-pdf/"
+  }]    
+}

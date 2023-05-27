@@ -1,0 +1,6 @@
+User-agent: *
+Disallow: /uploads/
+Disallow: /processed/
+Disallow: /*={seek_to_second_number}
+
+Sitemap: https://pdftoconverter.com/sitemap.xml

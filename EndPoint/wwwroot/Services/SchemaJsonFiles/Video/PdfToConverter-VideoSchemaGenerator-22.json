@@ -1,0 +1,15 @@
+{
+  "@context": "https://schema.org",
+  "@type": "VideoObject",
+  "name": "Easily Unlock Your PDFs in Seconds - Try It Free Now!",
+  "description": "Enjoy Freedom and Convenience. Unlock Your PDFs Instantly & Securely. No Password Required! Online PDF Password Remover %100 Free",
+  "thumbnailUrl": "https://pdftoconverter.com/videos/poster/How-To-Easily-Unlock-Your-PDFs-in-Seconds.jpg",
+  "uploadDate": "2022-11-01",
+  "duration": "PT0M49S",
+  "contentUrl": "https://pdftoconverter.com/videos/Video-tutorial-on-how-to-UnlockPdf.mp4",
+  "potentialAction": {
+    "@type": "SeekToAction",
+    "target": "https://pdftoconverter.com/unlock-pdf/={seek_to_second_number}",
+    "startOffset-input": "required name=seek_to_second_number"
+  }
+}

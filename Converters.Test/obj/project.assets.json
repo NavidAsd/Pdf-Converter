@@ -9881,11 +9881,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\C#\\Web\\Core\\PdfConverter_NewView\\PdfConverter\\Converters.Test\\Converters.Test.csproj",
+      "projectUniqueName": "D:\\C#\\Web\\Core\\Pdf-Converter\\Pdf-Converter\\Converters.Test\\Converters.Test.csproj",
       "projectName": "Converters.Test",
-      "projectPath": "D:\\C#\\Web\\Core\\PdfConverter_NewView\\PdfConverter\\Converters.Test\\Converters.Test.csproj",
+      "projectPath": "D:\\C#\\Web\\Core\\Pdf-Converter\\Pdf-Converter\\Converters.Test\\Converters.Test.csproj",
       "packagesPath": "C:\\Users\\Mr.Win\\.nuget\\packages\\",
-      "outputPath": "D:\\C#\\Web\\Core\\PdfConverter_NewView\\PdfConverter\\Converters.Test\\obj\\",
+      "outputPath": "D:\\C#\\Web\\Core\\Pdf-Converter\\Pdf-Converter\\Converters.Test\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -9907,8 +9907,8 @@
         "net5.0": {
           "targetAlias": "net5.0",
           "projectReferences": {
-            "D:\\C#\\Web\\Core\\PdfConverter_NewView\\PdfConverter\\Application\\Application.csproj": {
-              "projectPath": "D:\\C#\\Web\\Core\\PdfConverter_NewView\\PdfConverter\\Application\\Application.csproj"
+            "D:\\C#\\Web\\Core\\Pdf-Converter\\Pdf-Converter\\Application\\Application.csproj": {
+              "projectPath": "D:\\C#\\Web\\Core\\Pdf-Converter\\Pdf-Converter\\Application\\Application.csproj"
             }
           }
         }

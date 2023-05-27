@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "u0bkF1NFdmIDtH8TRyhML3O1iVdXi4I5Z18v4GGtNl3Y9JCC5TUzyzhmPMhHNOaTAZ7DqyHiWd1LYiOvOpqHhw==",
+  "dgSpecHash": "dyJpFYRZ1iqbRrf9L3APfhG5+vsSccOW04ZxBeEWJ3Eab0RnpW6KVmnpECXvCT6c0u7JzvRDLGNj9ypgOl1n1g==",
   "success": true,
-  "projectFilePath": "D:\\C#\\Web\\Core\\PdfConverter_NewView\\PdfConverter\\Common\\Common.csproj",
+  "projectFilePath": "D:\\C#\\Web\\Core\\Pdf-Converter\\Pdf-Converter\\Common\\Common.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Mr.Win\\.nuget\\packages\\bouncycastle\\1.8.9\\bouncycastle.1.8.9.nupkg.sha512",
     "C:\\Users\\Mr.Win\\.nuget\\packages\\itextsharp\\5.5.13.3\\itextsharp.5.5.13.3.nupkg.sha512",

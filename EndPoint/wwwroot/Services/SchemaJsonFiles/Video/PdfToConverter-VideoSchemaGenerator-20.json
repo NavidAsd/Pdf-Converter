@@ -1,0 +1,17 @@
+{
+  "@context": "https://schema.org",
+  "@type": "VideoObject",
+  "name": "Video tutorial on how to Delete PDF Pages",
+  "description": "In this video, you will learn how to Delete PDF Pages in a few minutes
+Remove pages from a PDF online in seconds. It's free & secure & fast. No watermarks added. Our easy to use tools are free, secure, and fast - perfect for any task.",
+  "thumbnailUrl": "https://pdftoconverter.com/videos/poster/How-to-Delete-pages-from-PDF-With-our-fre-and-easy-to-use-tool.jpg",
+  "uploadDate": "2022-09-02",
+  "duration": "PT0M51S",
+  "contentUrl": "https://pdftoconverter.com/videos/Video-tutorial-on-how-to-DeletePdfPages.mp4",
+  "embedUrl": "https://pdftoconverter.com/videos/Video-tutorial-on-how-to-DeletePdfPages.mp4",
+  "potentialAction": {
+    "@type": "SeekToAction",
+    "target": "https://pdftoconverter.com/delete-pdf-pages/={seek_to_second_number}",
+    "startOffset-input": "required name=seek_to_second_number"
+  }
+}

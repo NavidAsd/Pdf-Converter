@@ -92,3 +92,49 @@ D:\C#\Web\Core\PdfConverter_NewView\PdfConverter\Infrastructure\obj\Debug\net5.0
 D:\C#\Web\Core\PdfConverter_NewView\PdfConverter\Infrastructure\obj\Debug\net5.0\refint\Infrastructure.dll
 D:\C#\Web\Core\PdfConverter_NewView\PdfConverter\Infrastructure\obj\Debug\net5.0\Infrastructure.pdb
 D:\C#\Web\Core\PdfConverter_NewView\PdfConverter\Infrastructure\obj\Debug\net5.0\ref\Infrastructure.dll
+C:\Front Issues\Source\Pdf-Converter-master\Infrastructure\bin\Debug\net5.0\runtimes\win-x64\native\wkhtmltox.dll
+C:\Front Issues\Source\Pdf-Converter-master\Infrastructure\bin\Debug\net5.0\runtimes\win-x86\native\wkhtmltox.dll
+C:\Front Issues\Source\Pdf-Converter-master\Infrastructure\bin\Debug\net5.0\x64\pdfium.dll
+C:\Front Issues\Source\Pdf-Converter-master\Infrastructure\bin\Debug\net5.0\x86\pdfium.dll
+C:\Front Issues\Source\Pdf-Converter-master\Infrastructure\bin\Debug\net5.0\Infrastructure.deps.json
+C:\Front Issues\Source\Pdf-Converter-master\Infrastructure\bin\Debug\net5.0\Infrastructure.dll
+C:\Front Issues\Source\Pdf-Converter-master\Infrastructure\bin\Debug\net5.0\Infrastructure.pdb
+C:\Front Issues\Source\Pdf-Converter-master\Infrastructure\bin\Debug\net5.0\Application.dll
+C:\Front Issues\Source\Pdf-Converter-master\Infrastructure\bin\Debug\net5.0\Common.dll
+C:\Front Issues\Source\Pdf-Converter-master\Infrastructure\bin\Debug\net5.0\Domain.dll
+C:\Front Issues\Source\Pdf-Converter-master\Infrastructure\bin\Debug\net5.0\Application.pdb
+C:\Front Issues\Source\Pdf-Converter-master\Infrastructure\bin\Debug\net5.0\Common.pdb
+C:\Front Issues\Source\Pdf-Converter-master\Infrastructure\bin\Debug\net5.0\Domain.pdb
+C:\Front Issues\Source\Pdf-Converter-master\Infrastructure\obj\Debug\net5.0\Infrastructure.csproj.AssemblyReference.cache
+C:\Front Issues\Source\Pdf-Converter-master\Infrastructure\obj\Debug\net5.0\Infrastructure.GeneratedMSBuildEditorConfig.editorconfig
+C:\Front Issues\Source\Pdf-Converter-master\Infrastructure\obj\Debug\net5.0\Infrastructure.AssemblyInfoInputs.cache
+C:\Front Issues\Source\Pdf-Converter-master\Infrastructure\obj\Debug\net5.0\Infrastructure.AssemblyInfo.cs
+C:\Front Issues\Source\Pdf-Converter-master\Infrastructure\obj\Debug\net5.0\Infrastructure.csproj.CoreCompileInputs.cache
+C:\Front Issues\Source\Pdf-Converter-master\Infrastructure\obj\Debug\net5.0\Infrastructure.csproj.CopyComplete
+C:\Front Issues\Source\Pdf-Converter-master\Infrastructure\obj\Debug\net5.0\Infrastructure.dll
+C:\Front Issues\Source\Pdf-Converter-master\Infrastructure\obj\Debug\net5.0\refint\Infrastructure.dll
+C:\Front Issues\Source\Pdf-Converter-master\Infrastructure\obj\Debug\net5.0\Infrastructure.pdb
+C:\Front Issues\Source\Pdf-Converter-master\Infrastructure\obj\Debug\net5.0\ref\Infrastructure.dll
+D:\C#\Web\Core\Pdf-Converter\Pdf-Converter\Infrastructure\bin\Debug\net5.0\runtimes\win-x64\native\wkhtmltox.dll
+D:\C#\Web\Core\Pdf-Converter\Pdf-Converter\Infrastructure\bin\Debug\net5.0\runtimes\win-x86\native\wkhtmltox.dll
+D:\C#\Web\Core\Pdf-Converter\Pdf-Converter\Infrastructure\bin\Debug\net5.0\x64\pdfium.dll
+D:\C#\Web\Core\Pdf-Converter\Pdf-Converter\Infrastructure\bin\Debug\net5.0\x86\pdfium.dll
+D:\C#\Web\Core\Pdf-Converter\Pdf-Converter\Infrastructure\bin\Debug\net5.0\Infrastructure.deps.json
+D:\C#\Web\Core\Pdf-Converter\Pdf-Converter\Infrastructure\bin\Debug\net5.0\Infrastructure.dll
+D:\C#\Web\Core\Pdf-Converter\Pdf-Converter\Infrastructure\bin\Debug\net5.0\Infrastructure.pdb
+D:\C#\Web\Core\Pdf-Converter\Pdf-Converter\Infrastructure\bin\Debug\net5.0\Application.dll
+D:\C#\Web\Core\Pdf-Converter\Pdf-Converter\Infrastructure\bin\Debug\net5.0\Common.dll
+D:\C#\Web\Core\Pdf-Converter\Pdf-Converter\Infrastructure\bin\Debug\net5.0\Domain.dll
+D:\C#\Web\Core\Pdf-Converter\Pdf-Converter\Infrastructure\bin\Debug\net5.0\Application.pdb
+D:\C#\Web\Core\Pdf-Converter\Pdf-Converter\Infrastructure\bin\Debug\net5.0\Common.pdb
+D:\C#\Web\Core\Pdf-Converter\Pdf-Converter\Infrastructure\bin\Debug\net5.0\Domain.pdb
+D:\C#\Web\Core\Pdf-Converter\Pdf-Converter\Infrastructure\obj\Debug\net5.0\Infrastructure.csproj.AssemblyReference.cache
+D:\C#\Web\Core\Pdf-Converter\Pdf-Converter\Infrastructure\obj\Debug\net5.0\Infrastructure.GeneratedMSBuildEditorConfig.editorconfig
+D:\C#\Web\Core\Pdf-Converter\Pdf-Converter\Infrastructure\obj\Debug\net5.0\Infrastructure.AssemblyInfoInputs.cache
+D:\C#\Web\Core\Pdf-Converter\Pdf-Converter\Infrastructure\obj\Debug\net5.0\Infrastructure.AssemblyInfo.cs
+D:\C#\Web\Core\Pdf-Converter\Pdf-Converter\Infrastructure\obj\Debug\net5.0\Infrastructure.csproj.CoreCompileInputs.cache
+D:\C#\Web\Core\Pdf-Converter\Pdf-Converter\Infrastructure\obj\Debug\net5.0\Infrastructure.csproj.CopyComplete
+D:\C#\Web\Core\Pdf-Converter\Pdf-Converter\Infrastructure\obj\Debug\net5.0\Infrastructure.dll
+D:\C#\Web\Core\Pdf-Converter\Pdf-Converter\Infrastructure\obj\Debug\net5.0\refint\Infrastructure.dll
+D:\C#\Web\Core\Pdf-Converter\Pdf-Converter\Infrastructure\obj\Debug\net5.0\Infrastructure.pdb
+D:\C#\Web\Core\Pdf-Converter\Pdf-Converter\Infrastructure\obj\Debug\net5.0\ref\Infrastructure.dll

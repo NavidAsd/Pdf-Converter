@@ -1,0 +1,17 @@
+{
+  "@context": "https://schema.org",
+  "@type": "VideoObject",
+  "name": "Video tutorial on how to convert PDF to PPT",
+  "description": "PDF to PPT: Convert PDF to PPT Online - Free
+Easily turn your PDFs into editable PowerPoint presentations. No watermarks & No installation required",
+  "thumbnailUrl": "https://pdftoconverter.com/videos/poster/How-to-Convert-PDF-file-to-PowerPoint-Slides-in-a-few-minutes.jpg",
+  "uploadDate": "2022-09-02",
+  "duration": "PT0M48S",
+  "contentUrl": "https://pdftoconverter.com/videos/Video-tutorial-on-how-to-convert-Pdf-To-Ppt.mp4",
+  "embedUrl": "https://pdftoconverter.com/videos/Video-tutorial-on-how-to-convert-Pdf-To-Ppt.mp4",
+  "potentialAction": {
+    "@type": "SeekToAction",
+    "target": "https://pdftoconverter.com/pdf-to-ppt/={seek_to_second_number}",
+    "startOffset-input": "required name=seek_to_second_number"
+  }
+}

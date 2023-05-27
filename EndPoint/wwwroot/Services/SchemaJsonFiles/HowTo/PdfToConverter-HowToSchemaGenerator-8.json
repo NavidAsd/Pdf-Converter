@@ -1,0 +1,35 @@
+{
+  "@context": "https://schema.org/", 
+  "@type": "HowTo", 
+  "name": "How to convert PDF to word in PDFtoConverter.com ?",
+  "description": "Below we show how to convert PDF pages to docx or Rtf document.
+Files are uploaded securely over an encrypted connection. Your files always remain safe and 24 hours after processing, they are permanently deleted.",
+  "image": "https://pdftoconverter.com/images/Services/pdfconverter-PdfToDoc.png",
+  "step": [{
+    "@type": "HowToStep",
+    "text": "Upload your PDF file ,you can upload the desired PDF file from your device, you can also choose PDF files from Dropbox or Google Drive.
+ To do this, click on "Select File" and select files from your local computer or mobile. Dragging and dropping files onto the page also works.
+Open the "Upload" drop-down menu and select your files.",
+    "image": "https://pdftoconverter.com/images/Services/pdfconverter-PdfToDoc.png",
+    "name": "Upload your PDF file",
+    "url": "https://pdftoconverter.com/pdf-to-word/"
+  },{
+    "@type": "HowToStep",
+    "text": "Choose a word format, the PDF will be converted to DOCX by default, you can save your PDF as RTF.",
+    "image": "https://pdftoconverter.com/images/Services/pdfconverter-PdfToDoc.png",
+    "name": "Upload your PDF file",
+    "url": "https://pdftoconverter.com/pdf-to-word/"
+  },{
+    "@type": "HowToStep",
+    "text": "After processing the PDF file, click on the "Upload and Convert" button",
+    "image": "https://pdftoconverter.com/images/Services/pdfconverter-PdfToDoc.png",
+    "name": "Upload and Convert",
+    "url": "https://pdftoconverter.com/pdf-to-word/"
+  },{
+    "@type": "HowToStep",
+    "text": "The processing does not take more than a few seconds and when the message "File Successfully Converted" is displayed. You can download the converted Word file from PDF.",
+    "image": "https://pdftoconverter.com/images/Services/pdfconverter-PdfToDoc.png",
+    "name": "File Successfully Converted",
+    "url": "https://pdftoconverter.com/pdf-to-word/"
+  }]    
+}

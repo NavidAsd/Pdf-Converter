@@ -1,0 +1,72 @@
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [{
+    "@type": "Question",
+    "name": "How to insert an image into a PDF?",
+    "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "Follow this easy guide to add a picture to your PDF in seconds
+
+1- Go to PDFtoConverter's Images to PDF tool.
+2- Select the file you want to edit or drag and drop it .
+3- select the Choose File button to import a file.
+4- After processing the images, click on the upload and convert button
+5- Download your edited PDF file."
+    }
+  },{
+    "@type": "Question",
+    "name": "Can an image be turned into a PDF?",
+    "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "Yes, 
+-An image can be turned into a PDF by using the PDF printer.
+-An image can be turned into a PDF by using the PDF conversion feature in Adobe Acrobat.
+-An image can be turned into a PDF by using the PDF creator in Microsoft Word.
+- An image can be converted to PDF using the tool \" Image to pdf\" on PDFTOCONVERTER Easily convert to PDF"
+    }
+  },{
+    "@type": "Question",
+    "name": "Is it better to save as JPEG or PDF?",
+    "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "JPEG is typically considered to be the best format for storing photographs because it offers a high degree of compression, which results in smaller file sizes. 
+PDF, on the other hand, is often used for documents that require a high degree of accuracy, such as business documents. Because PDFs are uncompressed, they can be larger than JPEGs, but they offer a level of protection that can be useful in some situations."
+    }
+  },{
+    "@type": "Question",
+    "name": "How to Create a PDF from Images on Android?",
+    "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "To create a PDF from images on Android, follow these steps:
+1- You can type \"PDFtoconverter.com\" in the browser.
+2- Select the \"Image to PDF\" tool from the services section
+3- Select your image files you want to convert to PDF,from the phone gallery and wait for it to be processed in the system
+4- Download the converted PDF file of the images"
+    }
+  },{
+    "@type": "Question",
+    "name": "how to convert jpg to pdf on windows?",
+    "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "There are a few different ways to convert JPEGs to PDFs on Windows. One way is to use the built-in Windows photo editor, which can be found in the Start menu under \"File\" and \"Edit\" > \"Photo Story.\" Another way is to use a third-party photo editor, such as Adobe Photoshop or GIMP.save the file.
+
+Also, you can use our image to PDF converter without installing software."
+    }
+  },{
+    "@type": "Question",
+    "name": "How to convert jpg to pdf on mac?",
+    "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "There are a few methods you can use to convert jpg files to pdf on a Mac. One option is to use the Preview app, which is included with Mac OS X. Another option is to use a third-party application, such as PDF Converter.
+Also, you can use our image to PDF converter without installing software."
+    }
+  },{
+    "@type": "Question",
+    "name": "How to change images to PDF for free?",
+    "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "PDFtoConverter.com provides a free online file converter for you to change your JPG, PNG , BMP , TIFF to PDF files. Simply select the file you want to convert, and use the online converter to turn your image into an pdf"
+    }
+  }]
+}

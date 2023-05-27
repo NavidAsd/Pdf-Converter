@@ -1,0 +1,26 @@
+{
+  "@context": "https://schema.org/", 
+  "@type": "HowTo", 
+  "name": "How To Delete Pdf Pages Online for Free",
+  "description": "You are only 3 steps away Delete Pdf Pages",
+  "image": "https://pdftoconverter.com/images/Services/pdfconverter-DeletePdfPages.png",
+  "step": [{
+    "@type": "HowToStep",
+    "text": "To Delete and Remove pages of PDF, first select the desired files and click on the “Choose file” button or drag and drop your PDF file in the box. You can also choose PDF from Google Drive or Dropbox.",
+    "image": "https://pdftoconverter.com/images/Services/pdfconverter-DeletePdfPages.png",
+    "name": "1",
+    "url": "https://pdftoconverter.com/delete-pdf-pages/"
+  },{
+    "@type": "HowToStep",
+    "text": "Click on the "Upload" and after displayed message "File Successfully Uploaded" , click on "Choose Page" , in the opened window, select the pages you want to delete from the PDF and click on the "Delete Selected Pages".",
+    "image": "https://pdftoconverter.com/images/Services/pdfconverter-DeletePdfPages.png",
+    "name": "2",
+    "url": "https://pdftoconverter.com/delete-pdf-pages/"
+  },{
+    "@type": "HowToStep",
+    "text": "Download modified PDF to your device or scan QR code on your phone or send the PDF file to your Google Drive account or Easily email the PDF to yourself or your friends also you can send the download link to others",
+    "image": "https://pdftoconverter.com/images/Services/pdfconverter-DeletePdfPages.png",
+    "name": "3",
+    "url": "https://pdftoconverter.com/delete-pdf-pages/"
+  }]    
+}

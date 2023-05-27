@@ -1,0 +1,18 @@
+{
+  "@context": "https://schema.org",
+  "@type": "VideoObject",
+  "name": "Video tutorial on how to Merge PDF",
+  "description": "In this video, you will learn how to Merge PDF files in a few minutes
+
+Make merging PDFs a breeze .Get your PDFs combined online, effortlessly and without any cost. No matter the number of pages - it's free and simple!",
+  "thumbnailUrl": "https://pdftoconverter.com/videos/poster/How-To-Merge-Pdf-files-quickly-and-easily.jpg",
+  "uploadDate": "2022-09-02",
+  "duration": "PT0M51S",
+  "contentUrl": "https://pdftoconverter.com/videos/Video-tutorial-on-how-to-MergePdf.mp4",
+  "embedUrl": "https://pdftoconverter.com/videos/Video-tutorial-on-how-to-MergePdf.mp4",
+  "potentialAction": {
+    "@type": "SeekToAction",
+    "target": "https://pdftoconverter.com/merge-pdf/={seek_to_second_number}",
+    "startOffset-input": "required name=seek_to_second_number"
+  }
+}

@@ -1,0 +1,59 @@
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [{
+    "@type": "Question",
+    "name": "What is the best free PDF viewer?",
+    "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "There is no definitive answer to this question as different people have different preferences and needs. Some popular free PDF viewers include Adobe Acrobat Reader and Foxit Reader.
+You can also use the PDF Reader tool of PDF to Converter site for free and unlimited."
+    }
+  },{
+    "@type": "Question",
+    "name": "How to read pdf online without downloading?",
+    "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "Some popular free PDF viewers include Adobe Reader and Preview.
+Also, you can view your PDF files online without installing any software using our PDF reader tool."
+    }
+  },{
+    "@type": "Question",
+    "name": "How much does it cost to read and view pdf files tool?",
+    "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "Nothing, On this website, use the \"PDF Reader\" tool to view & print and download your PDF files for free and without any restrictions."
+    }
+  },{
+    "@type": "Question",
+    "name": "How can we read the PDF online from the URL?",
+    "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "How can we read the PDF online from the URL?
+You can view your PDFs with any device that connects to the Internet. To do this, type \"PDFtoConverter.com\" in your browser, then select \"PDF Reader\" from among the available tools.
+After processing, view your PDF file in the system or share the file link for others!"
+    }
+  },{
+    "@type": "Question",
+    "name": "What devices can be used to view the PDF file?",
+    "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "Supporting all operating systems
+Pdf reader is a web application served through a web browser. Our Pdf reader tool, supports all types of browsers, including IE, Chrome, Safari, FireFox and Opera. Our Pdf reader tool works for any operating system you use - Windows, Linux or iOS."
+    }
+  },{
+    "@type": "Question",
+    "name": "What formats are supported for reading and viewing PDF files?",
+    "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "PDF Reader supports the most commonly used document formats, including Microsoft Office files. You can view the file with a PDF viewer and download the PDF file."
+    }
+  },{
+    "@type": "Question",
+    "name": "How to use PDF Reader on Windows 10?",
+    "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "PDFtoConverter.com free PDF tool supports multiple platforms to help you manage your PDF files. Open PDFtoConverter.com in your Windows 10 browser and select the PDF files from your local drive or cloud storage to begin viewing, annotating and editing PDFs.This tool can be used on Mac, Windows, Linux, iOS, and Android."
+    }
+  }]
+}

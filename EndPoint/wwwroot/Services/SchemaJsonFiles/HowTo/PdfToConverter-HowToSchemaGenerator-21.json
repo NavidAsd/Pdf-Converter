@@ -1,0 +1,26 @@
+{
+  "@context": "https://schema.org/", 
+  "@type": "HowTo", 
+  "name": "How To Protect Pdf Online for Free",
+  "description": "You are only 3 steps away from protect Pdf file",
+  "image": "https://pdftoconverter.com/images/Services/pdfconverter-ProtectPdf.png",
+  "step": [{
+    "@type": "HowToStep",
+    "text": "To Secure PDF With Password and protect PDF file, select the desired file and click on the “Choose file” button or drag and drop your PDF file in the box. You can also choose PDF from Google Drive or Dropbox.",
+    "image": "https://pdftoconverter.com/images/Services/pdfconverter-ProtectPdf.png",
+    "name": "Choose File",
+    "url": "https://pdftoconverter.com/protect-pdf/"
+  },{
+    "@type": "HowToStep",
+    "text": "Click on the “Upload and Convert” button and wait a few moments. The files are processed through the Internet and Protect PDF does not take more than a few moments",
+    "image": "https://pdftoconverter.com/images/Services/pdfconverter-ProtectPdf.png",
+    "name": "File protected successfully",
+    "url": "https://pdftoconverter.com/protect-pdf/"
+  },{
+    "@type": "HowToStep",
+    "text": "Download the PDF file to your device or scan QR code on your phone or send the PDF file to your Google Drive account or Easily email the PDF file to yourself and your friends also you can send the download link to others",
+    "image": "https://pdftoconverter.com/images/Services/pdfconverter-ProtectPdf.png",
+    "name": "Download",
+    "url": "https://pdftoconverter.com/protect-pdf/"
+  }]    
+}

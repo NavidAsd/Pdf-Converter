@@ -1,0 +1,48 @@
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [{
+    "@type": "Question",
+    "name": "How to flip through PDF on Windows or Mac or Linux?",
+    "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "PDFtoConverter.com support multiple platforms to help rotate your PDF files. Use PDFtoConverter.com on your Mac or Windows by opening it in your browser and then selecting PDF files from your local drive or cloud storage to start the process."
+    }
+  },{
+    "@type": "Question",
+    "name": "How many PDF files can I rotate?",
+    "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "In each processing time, you can select a PDF file and turn it into a PDF converter.
+Note that there is no daily or hourly limit."
+    }
+  },{
+    "@type": "Question",
+    "name": "I received an upside down PDF file on my mobile, how can I reverse or rotate it?",
+    "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "Simply open pdftoconverter.com in your phone browser and use the \"Rotate PDF\" tool. To rotate your PDF file, choose one of the options: 90°, 270°, 180°, 360°.
+Then easily download the rotated PDF file to your phone."
+    }
+  },{
+    "@type": "Question",
+    "name": "How to rotate a PDF file permanently?",
+    "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "Choose the PDF you want to rotate ,By clicking on the large box above or drag it to the 'Rotate PDF' tool ."
+    }
+  },{
+    "@type": "Question",
+    "name": "How to download rotated PDF file?",
+    "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "You can download the PDF file in one of the following ways:
+1- Download the PDF file on your device
+2- Send the PDF to your Google Drive account
+3- Send the PDF file to your Dropbox account.
+4- Easily email the rotated PDF file to yourself and your friends
+5- Send a copy of the download link of the PDF file to others
+6- Scan the QR code on your phone"
+    }
+  }]
+}

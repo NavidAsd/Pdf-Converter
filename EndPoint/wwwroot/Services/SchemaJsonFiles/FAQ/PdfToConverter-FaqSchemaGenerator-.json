@@ -1,0 +1,51 @@
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [{
+    "@type": "Question",
+    "name": "How do I convert files to PDF",
+    "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "The PDFtoConverter lets you export PDF files to the following file types: DOC or DOCX, XLS or XLSX, PPT Or PPTX, JPEG, JPG,  BMP, PNG, TIFF and PDF/A Formet.
+
+Simply drag and drop or upload a PDF into the tool drop zone to convert your file. The tool also lets you convert these file formats to PDF using any web browser: 
+DOCX, DOC, XLSX, XLS, PPTX, PPT, TEXT, TXT, RTF, BMP, GIF, JPEG, JPG, PNG, TIFF, and TIF. Formet
+also you can convert HTML or HtmlCss to pdf
+
+The PDFtoConverter tools preserves your document formatting, images, and alignment, so your files will look as expected on Mac or Windows on any device.
+
+You can also try PDFtoConverter for free to convert HTML to PDF documents,merge PDFs, compress file size, unlock pdfs. protect pdf, rotate pdf. delete pdf pages."
+    }
+  },{
+    "@type": "Question",
+    "name": "What software do I need to convert files to PDF or convert PDF to any format?",
+    "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "Are you looking for a way to transform your documents to PDF format? Don't worry, you don't need to download any special software. All you need is an internet connection and a web browser. You can effortlessly convert any file to PDF format with any device, no matter where you're located!"
+    }
+  },{
+    "@type": "Question",
+    "name": "How much does it cost to convert PDF files?",
+    "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "Nothing, this service is free forever and you can convert any file to PDF or convert PDF to any format you like without any restrictions."
+    }
+  },{
+    "@type": "Question",
+    "name": "Are pdftoconverter tools safe?",
+    "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "No alterations will be done to your original file and it will remain stay on your device.
+We just store your converted file on the server for 24 hours in order to give you the option to share the download link with anyone you desire.
+If you would like, you can choose to remove the converted file from our server instantly by pressing the \"delete file\" button."
+    }
+  },{
+    "@type": "Question",
+    "name": "How long are the files kept on the server?",
+    "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "The converted files will remain on the server for only 24 hours, so if you want to share the download link for others, you only have 24 hours.
+You can also delete the files and disable the download link by clicking on the \"Delete \" button."
+    }
+  }]
+}

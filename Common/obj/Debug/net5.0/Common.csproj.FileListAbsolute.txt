@@ -66,3 +66,33 @@ D:\C#\Web\Core\PdfConverter_NewView\PdfConverter\Common\obj\Debug\net5.0\Common.
 D:\C#\Web\Core\PdfConverter_NewView\PdfConverter\Common\obj\Debug\net5.0\refint\Common.dll
 D:\C#\Web\Core\PdfConverter_NewView\PdfConverter\Common\obj\Debug\net5.0\Common.pdb
 D:\C#\Web\Core\PdfConverter_NewView\PdfConverter\Common\obj\Debug\net5.0\ref\Common.dll
+C:\Front Issues\Source\Pdf-Converter-master\Common\bin\Debug\net5.0\Common.deps.json
+C:\Front Issues\Source\Pdf-Converter-master\Common\bin\Debug\net5.0\Common.dll
+C:\Front Issues\Source\Pdf-Converter-master\Common\bin\Debug\net5.0\Common.pdb
+C:\Front Issues\Source\Pdf-Converter-master\Common\bin\Debug\net5.0\Domain.dll
+C:\Front Issues\Source\Pdf-Converter-master\Common\bin\Debug\net5.0\Domain.pdb
+C:\Front Issues\Source\Pdf-Converter-master\Common\obj\Debug\net5.0\Common.csproj.AssemblyReference.cache
+C:\Front Issues\Source\Pdf-Converter-master\Common\obj\Debug\net5.0\Common.GeneratedMSBuildEditorConfig.editorconfig
+C:\Front Issues\Source\Pdf-Converter-master\Common\obj\Debug\net5.0\Common.AssemblyInfoInputs.cache
+C:\Front Issues\Source\Pdf-Converter-master\Common\obj\Debug\net5.0\Common.AssemblyInfo.cs
+C:\Front Issues\Source\Pdf-Converter-master\Common\obj\Debug\net5.0\Common.csproj.CoreCompileInputs.cache
+C:\Front Issues\Source\Pdf-Converter-master\Common\obj\Debug\net5.0\Common.csproj.CopyComplete
+C:\Front Issues\Source\Pdf-Converter-master\Common\obj\Debug\net5.0\Common.dll
+C:\Front Issues\Source\Pdf-Converter-master\Common\obj\Debug\net5.0\refint\Common.dll
+C:\Front Issues\Source\Pdf-Converter-master\Common\obj\Debug\net5.0\Common.pdb
+C:\Front Issues\Source\Pdf-Converter-master\Common\obj\Debug\net5.0\ref\Common.dll
+D:\C#\Web\Core\Pdf-Converter\Pdf-Converter\Common\bin\Debug\net5.0\Common.deps.json
+D:\C#\Web\Core\Pdf-Converter\Pdf-Converter\Common\bin\Debug\net5.0\Common.dll
+D:\C#\Web\Core\Pdf-Converter\Pdf-Converter\Common\bin\Debug\net5.0\Common.pdb
+D:\C#\Web\Core\Pdf-Converter\Pdf-Converter\Common\bin\Debug\net5.0\Domain.dll
+D:\C#\Web\Core\Pdf-Converter\Pdf-Converter\Common\bin\Debug\net5.0\Domain.pdb
+D:\C#\Web\Core\Pdf-Converter\Pdf-Converter\Common\obj\Debug\net5.0\Common.csproj.AssemblyReference.cache
+D:\C#\Web\Core\Pdf-Converter\Pdf-Converter\Common\obj\Debug\net5.0\Common.GeneratedMSBuildEditorConfig.editorconfig
+D:\C#\Web\Core\Pdf-Converter\Pdf-Converter\Common\obj\Debug\net5.0\Common.AssemblyInfoInputs.cache
+D:\C#\Web\Core\Pdf-Converter\Pdf-Converter\Common\obj\Debug\net5.0\Common.AssemblyInfo.cs
+D:\C#\Web\Core\Pdf-Converter\Pdf-Converter\Common\obj\Debug\net5.0\Common.csproj.CoreCompileInputs.cache
+D:\C#\Web\Core\Pdf-Converter\Pdf-Converter\Common\obj\Debug\net5.0\Common.csproj.CopyComplete
+D:\C#\Web\Core\Pdf-Converter\Pdf-Converter\Common\obj\Debug\net5.0\Common.dll
+D:\C#\Web\Core\Pdf-Converter\Pdf-Converter\Common\obj\Debug\net5.0\refint\Common.dll
+D:\C#\Web\Core\Pdf-Converter\Pdf-Converter\Common\obj\Debug\net5.0\Common.pdb
+D:\C#\Web\Core\Pdf-Converter\Pdf-Converter\Common\obj\Debug\net5.0\ref\Common.dll

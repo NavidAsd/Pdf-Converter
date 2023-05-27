@@ -1,0 +1,74 @@
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [{
+    "@type": "Question",
+    "name": "What happens to the original file with Remove pages from PDF?",
+    "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "Nothing - the original file is saved on your device - we do not store the original file on our server - we only remove the pages you want to be removed from the original file and deliver a new PDF file to you."
+    }
+  },{
+    "@type": "Question",
+    "name": "How to Delete a Page in a Scanned PDF File?",
+    "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "To delete a page in a scanned PDF file, follow these steps:
+1. Open the scanned PDF file in Adobe Acrobat Reader.
+2. Click the button that says \"Page Setup\" on the toolbar.
+3. Click the button that says \"Delete Pages.\"
+4. Click the button that says \"OK.\"
+Also, To remove a page in a scanned PDF file, use the \"Delete PDF Pages\" option in our site menu."
+    }
+  },{
+    "@type": "Question",
+    "name": "How to delete pages from PDF on Mac?",
+    "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "To delete a page from a PDF on a Mac, open the PDF in Preview and select the page you want to delete. Press Command-Delete (or Apple-Delete on a Mac with a keyboard with the Command key).
+
+However, PDFtoConverter support multiple platforms to help remove pages from your PDF file. Use PDFtoConverter.com on your Mac by opening it in your browser and then select the file from your local drive or cloud storage to begin the process"
+    }
+  },{
+    "@type": "Question",
+    "name": "How to delete pdf pages in adobe reader?",
+    "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "To delete a page from a PDF:
+1. Open the PDF in Adobe Reader.
+2. Click the Pages tab.
+3. Select the page you want to delete.
+4. Click the Delete Page button.
+
+You can also use \"Delete pdf pages\" tool on PDFtoConverter.com. This tool is free and does not require registration or creating an account."
+    }
+  },{
+    "@type": "Question",
+    "name": "How to delete pdf pages Microsoft Edge?",
+    "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "To delete pages from a PDF in Microsoft Edge, follow these steps:
+1. Open PDF.
+2. Click the three lines in the top left corner of the window.
+3. Click the Pages tab.
+4. Select the page you want to delete.
+5. Click Delete button.
+You can remove pages of pdf without installing any software ,just type \"PDFtoconverter.com\" in your browser and use \"Delete pdf pages\" tool easily."
+    }
+  },{
+    "@type": "Question",
+    "name": "How to delete pdf pages on android?",
+    "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "To delete a page from a PDF document on Android, open the document and tap the three lines in the bottom left corner. (If the document is open in an app, such as Google Docs, the icon for the three lines might be different, but the steps are the same.) Tap the button with the cross on it and then select Delete Page."
+    }
+  },{
+    "@type": "Question",
+    "name": "How to delete pdf pages on iPhone?",
+    "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "- Press and hold the page you want to delete and then press the \"delete\" button on the iPhone's keyboard.
+- If you have multiple pages to delete, press and hold each one before pressing the \"delete\" button."
+    }
+  }]
+}

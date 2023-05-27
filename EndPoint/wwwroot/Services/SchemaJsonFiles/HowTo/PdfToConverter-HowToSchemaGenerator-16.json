@@ -1,0 +1,26 @@
+{
+  "@context": "https://schema.org/", 
+  "@type": "HowTo", 
+  "name": "How To Extract Pdf Images Online for Free",
+  "description": "You can quickly and easily download images stored in PDF files with just a single click! It's free, fast and doesn't require any setup or sign up. Plus, there are no ads or watermarks. This online tool extracts all images that can be saved so you can get them hassle-free!",
+  "image": "https://pdftoconverter.com/images/Services/pdfconverter-ExtractImagesFromPdf.png",
+  "step": [{
+    "@type": "HowToStep",
+    "text": "To extract pdf images, Select your files from which to extract images and click on the “Choose file” button or drag and drop your PDF in the box.and start the extraction and then click the "Upload and Extract" button.",
+    "image": "https://pdftoconverter.com/images/Services/pdfconverter-ExtractImagesFromPdf.png",
+    "name": "Choose File",
+    "url": "https://pdftoconverter.com/extract-pdf-images/"
+  },{
+    "@type": "HowToStep",
+    "text": "The processing of PDF files is done online and quickly, our server extracts the highest quality images from your PDF file and turns it into a compressed (zip) file for download.",
+    "image": "https://pdftoconverter.com/images/Services/pdfconverter-ExtractImagesFromPdf.png",
+    "name": "File converted successfully",
+    "url": "https://pdftoconverter.com/extract-pdf-images/"
+  },{
+    "@type": "HowToStep",
+    "text": "Download zip file to your device or scan QR code on your phone or send the PDF file to your Google Drive account or Easily email the PDF file to yourself and your friends also you can send the download link to others",
+    "image": "https://pdftoconverter.com/images/Services/pdfconverter-ExtractImagesFromPdf.png",
+    "name": "Download",
+    "url": "https://pdftoconverter.com/extract-pdf-images/"
+  }]    
+}

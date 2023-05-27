@@ -1,0 +1,16 @@
+{
+  "@context": "https://schema.org",
+  "@type": "VideoObject",
+  "name": "Video tutorial on how to convert Images to PDF",
+  "description": "In this video, you will learn how to convert a Images file to PDF in a few minutes",
+  "thumbnailUrl": "https://pdftoconverter.com/videos/poster/How-to-Convertimages-to-PDF-in-a-few-minutes.jpg",
+  "uploadDate": "2022-09-02",
+  "duration": "PT0M49S",
+  "contentUrl": "https://pdftoconverter.com/videos/Video-tutorial-on-how-to-convert-Images-To-Pdf.mp4",
+  "embedUrl": "https://pdftoconverter.com/videos/Video-tutorial-on-how-to-convert-Images-To-Pdf.mp4",
+  "potentialAction": {
+    "@type": "SeekToAction",
+    "target": "https://pdftoconverter.com/images-to-pdf/={seek_to_second_number}",
+    "startOffset-input": "required name=seek_to_second_number"
+  }
+}

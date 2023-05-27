@@ -1,0 +1,50 @@
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [{
+    "@type": "Question",
+    "name": "Can Excel 2007 Save as PDF?",
+    "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "Yes, Excel 2007 can save as a PDF."
+    }
+  },{
+    "@type": "Question",
+    "name": "How do I convert Excel a3 to PDF?",
+    "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "To convert Excel a3 to PDF, open the Excel document and click on the File tab. In the File menu, click on Export and then click on PDF. In the PDF export window, specify the location and name of the PDF file.
+The second method:
+To convert Excel a3 to PDF, open the Excel file in a PDF editor such as Adobe Acrobat. Select \"File\" > \"Export As\" and select \"PDF/A-1a.\""
+    }
+  },{
+    "@type": "Question",
+    "name": "Can you turn a Excel worksheet into a PDF?",
+    "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "Yes, you can turn a Excel worksheet into a PDF by following these steps:
+1. Open the Excel workbook that you want to convert to a PDF.
+2. On the Home tab, in the Editing group, click the PDF button.
+3. In the PDF dialog box, select the option to create a PDF from the File menu.
+4. In the Create PDF dialog box, enter the name of the PDF file, and click Save."
+    }
+  },{
+    "@type": "Question",
+    "name": "How to convert EXCEL to PDF on Windows or Mac ?",
+    "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "PDFtoConverter.com converters support multiple platforms to help turn your xls documents into PDF. Use PDFtoConverter.com on your Mac  or Windows by opening it in your browser and then select the .xls / .xlsx  files from your local drive or cloud storage to begin the process."
+    }
+  },{
+    "@type": "Question",
+    "name": "How can I convert a .xlsx or .xls file to PDF file?",
+    "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "1- Choose a file
+Upload  Excel file to convert to PDF from your pc or a cloud storage service such as Google Drive or Dropbox.
+2- Click 'Upload and convert' to transform the word to PDF files
+3 - View and download
+Easily access your new PDF by downloading it to your computer or device and viewing the conversion in your browser."
+    }
+  }]
+}

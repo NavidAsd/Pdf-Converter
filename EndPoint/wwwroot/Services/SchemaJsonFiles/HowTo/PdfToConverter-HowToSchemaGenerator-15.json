@@ -1,0 +1,26 @@
+{
+  "@context": "https://schema.org/", 
+  "@type": "HowTo", 
+  "name": "How To Read Pdf Online for Free",
+  "description": "You are only 3 steps away from read pdf file",
+  "image": "https://pdftoconverter.com/images/Services/pdfconverter-PdfReader.png",
+  "step": [{
+    "@type": "HowToStep",
+    "text": "Simply choose the document or PDFs you wish to view by uploading a file from a folder on your computer or by dragging and dropping your documents from your desktop into our PDF Reader box.",
+    "image": "https://pdftoconverter.com/images/Services/pdfconverter-PdfReader.png",
+    "name": "1",
+    "url": "https://pdftoconverter.com/read-pdf/"
+  },{
+    "@type": "HowToStep",
+    "text": "After your PDF file has been processed by the system, click the "Open PDF" button to open your high-quality PDF in a new tab. You can easily read, zoom, rotate or download and print the pages of the PDF file.",
+    "image": "https://pdftoconverter.com/images/Services/pdfconverter-PdfReader.png",
+    "name": "2",
+    "url": "https://pdftoconverter.com/read-pdf/"
+  },{
+    "@type": "HowToStep",
+    "text": "Our software will automatically open PDFs in our online PDF reader. you can rotate the orientation of your document, adjust the zoom level, and even compare two documents side by side!",
+    "image": "https://pdftoconverter.com/images/Services/pdfconverter-PdfReader.png",
+    "name": "3",
+    "url": "https://pdftoconverter.com/read-pdf/"
+  }]    
+}

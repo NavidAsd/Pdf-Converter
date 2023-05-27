@@ -1,0 +1,76 @@
+developed By: https://parscoders.com/resume/164376/navid
+Git Address: https://github.com/NavidAsd
+telegram: @N0avi0d
+
+[Pdf Converter Web Site]
+start at 1400/12/12
+
+[using]:
+.Net Asp Core ver 5.0
+sharpbox ver 0.0.1
+Quartz ver 3.4.0
+EntityFrameworkCore ver 5.0.9
+Lazzzia.TagHelpers ver 6.0.1
+Google.Apis.Drive.v3 ver 1.56.0.2601
+ITextSharp ver 5.5.13.3
+Syncfusion.HtmlToPdfConverter.Blink.Net.Cor ver 19.4.0.56
+sautinsoft.pdffocus ver 8.2.1.18
+RestSharp ver 107.3.0
+PDFsharp ver 1.50.5147
+PdfiumViewer ver 2.13.0
+PdfiumViewer.Native.x86_64.v8-xfa
+Xunit ver 2.4.1
+xunit.runner.console ver 2.4.1
+xunit.runner.visualstudio ver 2.4.3
+System.Text.Encoding.CodePag ver 6.0.0
+
+python 3
+py.flask
+py.pythoncom
+py.pdf2image
+py.pdfkit
+py.pandas
+py.pdf2docx
+py.fitz
+py.pptx
+py.pikepdf
+py.Io.BytesIO
+py.urllib.parse
+py.win32com.client
+https://qrickit.com/api > QrMaker
+
+[Services Libraries used]:
+PdfToWord > py.pdf2docx
+PdfToPpt > py.Io.BytesIO
+PdfToImages > PdfiumViewer
+PdfToPdf/A > SautinSoft.Document
+ExcelToPdf > py.pdfkit - py.pandas
+HtmlToPdf > WkHtmlToPdfDotNet - Syncfusion.HtmlConverter (This item requires a special configuration that is done on the server, please do not make any changes) 
+ImagesToPdf > iTextSharp
+PptToPdf > py.win32com.client
+WordToPdf > py.win32com.client
+ComperssingPdf > PdfSharp
+DeletePdfPages > iTextSharp
+MergPdf > PdfSharp
+RotatePdf > iTextSharp
+ExtractPdfImages > py.fitz
+ProtectPdf > PdfSharp
+RemovePdfProtection > iTextSharp
+UnlockPdf > pikepdf - using PWDLIST (The list can be updated) 
+
+[Architecture and methods]:
+Clean Architecture (Those of you who intend to change the code, please do not leave the framework of cleanliness, it is better for everyone)
+Design Facad Pattern
+SOLID
+
+*Project tests are not fully written
+
+
+
+
+
+
+
+
+
+

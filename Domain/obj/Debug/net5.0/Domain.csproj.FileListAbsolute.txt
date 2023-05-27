@@ -54,3 +54,27 @@ D:\C#\Web\Core\PdfConverter_NewView\PdfConverter\Domain\obj\Debug\net5.0\Domain.
 D:\C#\Web\Core\PdfConverter_NewView\PdfConverter\Domain\obj\Debug\net5.0\refint\Domain.dll
 D:\C#\Web\Core\PdfConverter_NewView\PdfConverter\Domain\obj\Debug\net5.0\Domain.pdb
 D:\C#\Web\Core\PdfConverter_NewView\PdfConverter\Domain\obj\Debug\net5.0\ref\Domain.dll
+C:\Front Issues\Source\Pdf-Converter-master\Domain\bin\Debug\net5.0\Domain.deps.json
+C:\Front Issues\Source\Pdf-Converter-master\Domain\bin\Debug\net5.0\Domain.dll
+C:\Front Issues\Source\Pdf-Converter-master\Domain\bin\Debug\net5.0\Domain.pdb
+C:\Front Issues\Source\Pdf-Converter-master\Domain\obj\Debug\net5.0\Domain.csproj.AssemblyReference.cache
+C:\Front Issues\Source\Pdf-Converter-master\Domain\obj\Debug\net5.0\Domain.GeneratedMSBuildEditorConfig.editorconfig
+C:\Front Issues\Source\Pdf-Converter-master\Domain\obj\Debug\net5.0\Domain.AssemblyInfoInputs.cache
+C:\Front Issues\Source\Pdf-Converter-master\Domain\obj\Debug\net5.0\Domain.AssemblyInfo.cs
+C:\Front Issues\Source\Pdf-Converter-master\Domain\obj\Debug\net5.0\Domain.csproj.CoreCompileInputs.cache
+C:\Front Issues\Source\Pdf-Converter-master\Domain\obj\Debug\net5.0\Domain.dll
+C:\Front Issues\Source\Pdf-Converter-master\Domain\obj\Debug\net5.0\refint\Domain.dll
+C:\Front Issues\Source\Pdf-Converter-master\Domain\obj\Debug\net5.0\Domain.pdb
+C:\Front Issues\Source\Pdf-Converter-master\Domain\obj\Debug\net5.0\ref\Domain.dll
+D:\C#\Web\Core\Pdf-Converter\Pdf-Converter\Domain\bin\Debug\net5.0\Domain.deps.json
+D:\C#\Web\Core\Pdf-Converter\Pdf-Converter\Domain\bin\Debug\net5.0\Domain.dll
+D:\C#\Web\Core\Pdf-Converter\Pdf-Converter\Domain\bin\Debug\net5.0\Domain.pdb
+D:\C#\Web\Core\Pdf-Converter\Pdf-Converter\Domain\obj\Debug\net5.0\Domain.csproj.AssemblyReference.cache
+D:\C#\Web\Core\Pdf-Converter\Pdf-Converter\Domain\obj\Debug\net5.0\Domain.GeneratedMSBuildEditorConfig.editorconfig
+D:\C#\Web\Core\Pdf-Converter\Pdf-Converter\Domain\obj\Debug\net5.0\Domain.AssemblyInfoInputs.cache
+D:\C#\Web\Core\Pdf-Converter\Pdf-Converter\Domain\obj\Debug\net5.0\Domain.AssemblyInfo.cs
+D:\C#\Web\Core\Pdf-Converter\Pdf-Converter\Domain\obj\Debug\net5.0\Domain.csproj.CoreCompileInputs.cache
+D:\C#\Web\Core\Pdf-Converter\Pdf-Converter\Domain\obj\Debug\net5.0\Domain.dll
+D:\C#\Web\Core\Pdf-Converter\Pdf-Converter\Domain\obj\Debug\net5.0\refint\Domain.dll
+D:\C#\Web\Core\Pdf-Converter\Pdf-Converter\Domain\obj\Debug\net5.0\Domain.pdb
+D:\C#\Web\Core\Pdf-Converter\Pdf-Converter\Domain\obj\Debug\net5.0\ref\Domain.dll

@@ -1,0 +1,26 @@
+{
+  "@context": "https://schema.org/", 
+  "@type": "HowTo", 
+  "name": "How To Compress Pdf Online for Free",
+  "description": "Compress Your PDFs in Seconds - Discover How to Easily Reduce Your File Size! This tool is free forever and you are not going to pay anything, so don't wait and compress big PDF files using this tool to take up less space on your device.",
+  "image": "https://pdftoconverter.com/videos/poster/How-to-compress-PDF-files-online.jpg",
+  "step": [{
+    "@type": "HowToStep",
+    "text": "To compress, resize, reduce PDF files, first select the desired files and click the "Choose File" button or drag and drop your PDF file into the box. You can also choose PDF from Google Drive or Dropbox.",
+    "image": "https://pdftoconverter.com/videos/poster/How-to-compress-PDF-files-online.jpg",
+    "name": "Choose File",
+    "url": "https://pdftoconverter.com/compress-pdf/"
+  },{
+    "@type": "HowToStep",
+    "text": "Click on the "Upload and Compress" button and wait a few moments. The files are processed over the Internet and after the files are combined, the message "File SuccessFully Compressed" will be displayed.",
+    "image": "https://pdftoconverter.com/videos/poster/How-to-compress-PDF-files-online.jpg",
+    "name": "File SuccessFully Compressed",
+    "url": "https://pdftoconverter.com/compress-pdf/"
+  },{
+    "@type": "HowToStep",
+    "text": "Download a compressed PDF to your device or scan QR code on your phone or send the PDF file to your Google Drive account or Easily email the PDF file to your friends also you can send the download link to others",
+    "image": "https://pdftoconverter.com/videos/poster/How-to-compress-PDF-files-online.jpg",
+    "name": "Download",
+    "url": "https://pdftoconverter.com/compress-pdf/"
+  }]    
+}

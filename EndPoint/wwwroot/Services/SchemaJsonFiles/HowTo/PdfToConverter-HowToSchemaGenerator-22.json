@@ -1,0 +1,26 @@
+{
+  "@context": "https://schema.org/", 
+  "@type": "HowTo", 
+  "name": "How To Unlock Pdf Online for Free",
+  "description": "You are only 3 steps away from unlock pdf file",
+  "image": "https://pdftoconverter.com/images/Services/pdfconverter-UnlockPdf.png",
+  "step": [{
+    "@type": "HowToStep",
+    "text": "To remove the password and Unlock PDF file, first select the desired file and click on the “Choose file” button or drag and drop your PDF file in the box. You can also choose PDF from Google Drive or Dropbox.",
+    "image": "https://pdftoconverter.com/images/Services/pdfconverter-UnlockPdf.png",
+    "name": "Choose File",
+    "url": "https://pdftoconverter.com/unlock-pdf/"
+  },{
+    "@type": "HowToStep",
+    "text": "Click on the “Upload and Convert” button and wait a few moments. The files are processed through the Internet and removing the PDF password or unlocking the PDF does not take more than a few moments",
+    "image": "https://pdftoconverter.com/images/Services/pdfconverter-UnlockPdf.png",
+    "name": "File converted successfully",
+    "url": "https://pdftoconverter.com/unlock-pdf/"
+  },{
+    "@type": "HowToStep",
+    "text": "Download the PDF file to your device or scan QR code on your phone or send the PDF file to your Google Drive account or Easily email the PDF file to yourself and your friends also you can send the download link to others",
+    "image": "https://pdftoconverter.com/images/Services/pdfconverter-UnlockPdf.png",
+    "name": "Download",
+    "url": "https://pdftoconverter.com/unlock-pdf/"
+  }]    
+}

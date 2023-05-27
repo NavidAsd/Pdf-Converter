@@ -1,0 +1,17 @@
+{
+  "@context": "https://schema.org",
+  "@type": "VideoObject",
+  "name": "Video tutorial on how to Extract PDF Images",
+  "description": "Free Online Tool to Extract Images in PDF files. Extracts all images that can be saved. No watermarks. Get high quality images from your PDFs - quickly and easily!
+In this video, you will learn how to Extract PDF Images in a few minutes",
+  "thumbnailUrl": "https://pdftoconverter.com/videos/poster/How-To-Extract-all-images-from-PDFs-with-ease.jpg",
+  "uploadDate": "2022-09-02",
+  "duration": "PT0M56S",
+  "contentUrl": "https://pdftoconverter.com/videos/Video-tutorial-on-how-to-ExtractImages-From-Pdf.mp4",
+  "embedUrl": "https://pdftoconverter.com/videos/Video-tutorial-on-how-to-ExtractImages-From-Pdf.mp4",
+  "potentialAction": {
+    "@type": "SeekToAction",
+    "target": "https://pdftoconverter.com/extract-pdf-images/={seek_to_second_number}",
+    "startOffset-input": "required name=seek_to_second_number"
+  }
+}

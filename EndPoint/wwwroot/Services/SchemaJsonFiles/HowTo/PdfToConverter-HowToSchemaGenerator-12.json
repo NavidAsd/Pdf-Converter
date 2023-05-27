@@ -1,0 +1,26 @@
+{
+  "@context": "https://schema.org/", 
+  "@type": "HowTo", 
+  "name": "How To Convert PowerPoint To PDFOnline for Free",
+  "description": "You are only 3 steps away from converting the PowerPoint file To PDF",
+  "image": "https://pdftoconverter.com/videos/poster/How-to-Convert-PowerPoint-presentation-to-PDF-in-a-few-minutes.jpg",
+  "step": [{
+    "@type": "HowToStep",
+    "text": "To convert a PPT or PPTX file to PDF, first select file and click on the “Choose file” button or drag and drop your powerpoint in our online PPT to PDF converter.You can also choose file from Google Drive or Dropbox.",
+    "image": "https://pdftoconverter.com/videos/poster/How-to-Convert-PowerPoint-presentation-to-PDF-in-a-few-minutes.jpg",
+    "name": "Choose File",
+    "url": "https://pdftoconverter.com/ppt-to-pdf/"
+  },{
+    "@type": "HowToStep",
+    "text": "Click on the “Upload and Convert” button and wait a few moments. The files are processed through the Internet and converting PowerPoint to pdf does not take more than a few moments",
+    "image": "https://pdftoconverter.com/videos/poster/How-to-Convert-PowerPoint-presentation-to-PDF-in-a-few-minutes.jpg",
+    "name": "File converted successfully",
+    "url": "https://pdftoconverter.com/ppt-to-pdf/"
+  },{
+    "@type": "HowToStep",
+    "text": "Download the PDF file to your device or scan QR code on your phone or send the PDF file to your Google Drive account or Easily email the PDF file to yourself and your friends also you can send the download link to others",
+    "image": "https://pdftoconverter.com/videos/poster/How-to-Convert-PowerPoint-presentation-to-PDF-in-a-few-minutes.jpg",
+    "name": "Download",
+    "url": "https://pdftoconverter.com/ppt-to-pdf/"
+  }]    
+}

@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "vA5p4mx2oHhLqdUYgSYbPY3ic+tfpM9PUa6cqnq6A5jjVLHKYx0NdG1Ew7J8U/Gc/YlEMAkYs8gZ635czejVLg==",
+  "dgSpecHash": "ECfqRbgVbSGk3bR8sPZ+SL7X0fO0pF9zYLRGHSTeZZCfizhv6EmY/pnas2lptad2aVvfWV2kbX6R64JFW7mmkQ==",
   "success": true,
-  "projectFilePath": "D:\\C#\\Web\\Core\\PdfConverter_NewView\\PdfConverter\\Application\\Application.csproj",
+  "projectFilePath": "D:\\C#\\Web\\Core\\Pdf-Converter\\Pdf-Converter\\Application\\Application.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Mr.Win\\.nuget\\packages\\bouncycastle\\1.8.9\\bouncycastle.1.8.9.nupkg.sha512",
     "C:\\Users\\Mr.Win\\.nuget\\packages\\dropbox.api\\6.25.0\\dropbox.api.6.25.0.nupkg.sha512",

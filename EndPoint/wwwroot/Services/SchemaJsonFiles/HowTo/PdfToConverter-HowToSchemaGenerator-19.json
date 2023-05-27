@@ -1,0 +1,26 @@
+{
+  "@context": "https://schema.org/", 
+  "@type": "HowTo", 
+  "name": "How To Rotate Pdf file Online for Free",
+  "description": "You are only 3 steps away from rotating pdf file",
+  "image": "https://pdftoconverter.com/images/Services/pdfconverter-RotatePdf.png",
+  "step": [{
+    "@type": "HowToStep",
+    "text": "Choose the PDF you want to rotate ,By clicking on the large box above or drag it to the 'Rotate PDF' tool .",
+    "image": "https://pdftoconverter.com/images/Services/pdfconverter-RotatePdf.png",
+    "name": "1- Choose file",
+    "url": "https://pdftoconverter.com/rotate-pdf/"
+  },{
+    "@type": "HowToStep",
+    "text": "Set the rotation direction,Normal, 90 degrees ,180 degrees , 270 degrees and 360 degrees are available.",
+    "image": "https://pdftoconverter.com/images/Services/pdfconverter-RotatePdf.png",
+    "name": "2-Set rotation",
+    "url": "https://pdftoconverter.com/rotate-pdf/"
+  },{
+    "@type": "HowToStep",
+    "text": "Click 'Upload' button to start rotating the PDF online.Download the rotated PDF file after processing.",
+    "image": "https://pdftoconverter.com/images/Services/pdfconverter-RotatePdf.png",
+    "name": "3- Download",
+    "url": "https://pdftoconverter.com/rotate-pdf/"
+  }]    
+}

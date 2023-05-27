@@ -1,0 +1,16 @@
+{
+  "@context": "https://schema.org",
+  "@type": "VideoObject",
+  "name": "Video tutorial on how to convert PDF to WORD",
+  "description": "Transform your PDF file into an editable Word document quickly and easily. No watermarks & No Email .Easily & Quickly. Get Professional-Looking Documents Instantly!",
+  "thumbnailUrl": "https://pdftoconverter.com/videos/poster/How-to-Convert-PDF-To-Word-Online-for-Free-without-any-software.jpg",
+  "uploadDate": "2022-09-02",
+  "duration": "PT0M55S",
+  "contentUrl": "https://pdftoconverter.com/videos/Video-tutorial-on-how-to-convert-Pdf-To-Doc.mp4",
+  "embedUrl": "https://pdftoconverter.com/videos/Video-tutorial-on-how-to-convert-Pdf-To-Doc.mp4",
+  "potentialAction": {
+    "@type": "SeekToAction",
+    "target": "https://pdftoconverter.com/pdf-to-word/={seek_to_second_number}",
+    "startOffset-input": "required name=seek_to_second_number"
+  }
+}

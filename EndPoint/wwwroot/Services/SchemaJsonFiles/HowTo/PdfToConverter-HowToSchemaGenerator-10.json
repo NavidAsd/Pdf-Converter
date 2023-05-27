@@ -1,0 +1,26 @@
+{
+  "@context": "https://schema.org/", 
+  "@type": "HowTo", 
+  "name": "Video tutorial on how to convert Images to PDF",
+  "description": "In this video, you will learn how to convert a Images file to PDF in a few minutes",
+  "image": "https://pdftoconverter.com/images/Services/pdfconverter-ImagesToPdf.png",
+  "step": [{
+    "@type": "HowToStep",
+    "text": "To convert Image file to PDF, first select Images and click on the “Choose file” button or drag and drop your Images in our online Image to PDF converter. JPG, PNG, BMP,Tiff formats are acceptable.",
+    "image": "https://pdftoconverter.com/images/Services/pdfconverter-ImagesToPdf.png",
+    "name": "Choose File",
+    "url": "https://pdftoconverter.com/images-to-pdf/"
+  },{
+    "@type": "HowToStep",
+    "text": "Click on the “Upload and Convert” button and wait a few moments. The files are processed through the Internet and converting Image files to pdf does not take more than a few moments",
+    "image": "https://pdftoconverter.com/images/Services/pdfconverter-ImagesToPdf.png",
+    "name": "File converted successfully",
+    "url": "https://pdftoconverter.com/images-to-pdf/"
+  },{
+    "@type": "HowToStep",
+    "text": "Download the PDF file to your device or scan QR code on your phone or send the PDF file to your Google Drive account or Easily email the PDF file to yourself and your friends also you can send the download link to others",
+    "image": "https://pdftoconverter.com/images/Services/pdfconverter-ImagesToPdf.png",
+    "name": "Download",
+    "url": "https://pdftoconverter.com/images-to-pdf/"
+  }]    
+}

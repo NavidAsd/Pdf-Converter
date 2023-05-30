@@ -4,6 +4,7 @@ using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Threading.Tasks;
 
 //https://localhost:44304/Downloader/DownloadLink?OutFileName=PdfToConverter.com-AllPages-ModifiedToJpg_5-22-2022_4-52-20_PM-902.zip&Id=18&LogService=ConverterLog
 namespace Application.Services.Query.ViewContext.ReturnFrequentlyQuestion
@@ -12,7 +13,7 @@ namespace Application.Services.Query.ViewContext.ReturnFrequentlyQuestion
     {
         ResultMessage<ResultReturnFrequentlyQuestionDto> ReturnAllForAdmin(RequestReturnFrequentlyQuestionDto request);
         ResultMessage<FrequentlyQuestions> FindQuestion(long Id);
-        ResultMessage<List<FrequentlyQuestions>> ReturnAll(long? Service, int? Count);
+        Task<ResultMessage<List<FrequentlyQuestions>>> ReturnAllAsync(long? Service, int? Count);
     }
     public class RequestReturnFrequentlyQuestionDto
     {
@@ -116,7 +117,7 @@ namespace Application.Services.Query.ViewContext.ReturnFrequentlyQuestion
                 Message = "Question Not Found"
             };
         }
-        ResultMessage<List<FrequentlyQuestions>> IReturnFrequentlyQuestionService.ReturnAll(long? Service, int? Count)
+        async Task<ResultMessage<List<FrequentlyQuestions>>> IReturnFrequentlyQuestionService.ReturnAllAsync(long? Service, int? Count)
         {
             var result = _Context.FrequentlyQuestions.Where(p => p.IsRemoved == false && p.Service == Service).Select(o => new FrequentlyQuestions
             {

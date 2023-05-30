@@ -9221,11 +9221,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\C#\\Web\\Core\\Pdf-Converter\\Pdf-Converter\\EndPoint\\EndPoint.csproj",
+      "projectUniqueName": "D:\\C#\\Web\\Core\\PdfConverter\\EndPoint\\EndPoint.csproj",
       "projectName": "EndPoint",
-      "projectPath": "D:\\C#\\Web\\Core\\Pdf-Converter\\Pdf-Converter\\EndPoint\\EndPoint.csproj",
+      "projectPath": "D:\\C#\\Web\\Core\\PdfConverter\\EndPoint\\EndPoint.csproj",
       "packagesPath": "C:\\Users\\Mr.Win\\.nuget\\packages\\",
-      "outputPath": "D:\\C#\\Web\\Core\\Pdf-Converter\\Pdf-Converter\\EndPoint\\obj\\",
+      "outputPath": "D:\\C#\\Web\\Core\\PdfConverter\\EndPoint\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -9247,20 +9247,20 @@
         "net5.0": {
           "targetAlias": "net5.0",
           "projectReferences": {
-            "D:\\C#\\Web\\Core\\Pdf-Converter\\Pdf-Converter\\Application\\Application.csproj": {
-              "projectPath": "D:\\C#\\Web\\Core\\Pdf-Converter\\Pdf-Converter\\Application\\Application.csproj"
+            "D:\\C#\\Web\\Core\\PdfConverter\\Application\\Application.csproj": {
+              "projectPath": "D:\\C#\\Web\\Core\\PdfConverter\\Application\\Application.csproj"
             },
-            "D:\\C#\\Web\\Core\\Pdf-Converter\\Pdf-Converter\\Common\\Common.csproj": {
-              "projectPath": "D:\\C#\\Web\\Core\\Pdf-Converter\\Pdf-Converter\\Common\\Common.csproj"
+            "D:\\C#\\Web\\Core\\PdfConverter\\Common\\Common.csproj": {
+              "projectPath": "D:\\C#\\Web\\Core\\PdfConverter\\Common\\Common.csproj"
             },
-            "D:\\C#\\Web\\Core\\Pdf-Converter\\Pdf-Converter\\Domain\\Domain.csproj": {
-              "projectPath": "D:\\C#\\Web\\Core\\Pdf-Converter\\Pdf-Converter\\Domain\\Domain.csproj"
+            "D:\\C#\\Web\\Core\\PdfConverter\\Domain\\Domain.csproj": {
+              "projectPath": "D:\\C#\\Web\\Core\\PdfConverter\\Domain\\Domain.csproj"
             },
-            "D:\\C#\\Web\\Core\\Pdf-Converter\\Pdf-Converter\\Infrastructure\\Infrastructure.csproj": {
-              "projectPath": "D:\\C#\\Web\\Core\\Pdf-Converter\\Pdf-Converter\\Infrastructure\\Infrastructure.csproj"
+            "D:\\C#\\Web\\Core\\PdfConverter\\Infrastructure\\Infrastructure.csproj": {
+              "projectPath": "D:\\C#\\Web\\Core\\PdfConverter\\Infrastructure\\Infrastructure.csproj"
             },
-            "D:\\C#\\Web\\Core\\Pdf-Converter\\Pdf-Converter\\Persistance\\Persistance.csproj": {
-              "projectPath": "D:\\C#\\Web\\Core\\Pdf-Converter\\Pdf-Converter\\Persistance\\Persistance.csproj"
+            "D:\\C#\\Web\\Core\\PdfConverter\\Persistance\\Persistance.csproj": {
+              "projectPath": "D:\\C#\\Web\\Core\\PdfConverter\\Persistance\\Persistance.csproj"
             }
           }
         }

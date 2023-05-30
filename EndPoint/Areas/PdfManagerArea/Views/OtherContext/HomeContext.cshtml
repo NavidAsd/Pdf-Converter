@@ -89,7 +89,7 @@
                                             <td></td>
                                         }
                                         <td>
-                                            <a style="color:blue" onclick="OpenModal('@part[i]','@context[i]','@nameoff[i]')">Edit</a>
+                                            <a style="color:blue" onclick="OpenModal('@part[i]','@context[i].Replace("'","")','@nameoff[i]')">Edit</a>
                                         </td>
                                         @if (i == 1 || i == 2)
                                         {

@@ -34,12 +34,12 @@ namespace EndPoint.Controllers
             _Environment = environment;
         }
         [Route("extract-pdf-images")]
-        public IActionResult ExtractPdfImages()
+        public async Task<IActionResult> ExtractPdfImages()
         {
             var FetureDetails = _FeaturesDetails.ReturnFeatureDetailsService.Excute(new RequestReturnFeatureDetailsDto { ServiceType = Domain.Entities.Features.OtherFeatures.ExtractImagesFromPdf });
-            ViewBag.Comments = _FeaturesDetails.ReturnUsersCommnetsService.ReturnAllTopRatingCommnets(GetPath.GetCommentCount(), Domain.Entities.Features.OtherFeatures.ExtractImagesFromPdf);
+            ViewBag.Comments = await _FeaturesDetails.ReturnUsersCommnetsService.ReturnAllTopRatingCommnetsAsync(GetPath.GetCommentCount(), Domain.Entities.Features.OtherFeatures.ExtractImagesFromPdf);
             ViewBag.ThreeStepHelp = _ViewFacad.ReturnTreeStepHelpService.FindWithService(Domain.Entities.Features.OtherFeatures.ExtractImagesFromPdf);
-            ViewBag.FAQ = _ViewFacad.ReturnFrequentlyQuestionService.ReturnAll(Domain.Entities.Features.OtherFeatures.ExtractImagesFromPdf,GetPath.GetFAQCount()); //FAQ
+            ViewBag.FAQ = await _ViewFacad.ReturnFrequentlyQuestionService.ReturnAllAsync(Domain.Entities.Features.OtherFeatures.ExtractImagesFromPdf,GetPath.GetFAQCount()); //FAQ
             if (FetureDetails.Success)
                 return View(FetureDetails);
             else
@@ -47,12 +47,12 @@ namespace EndPoint.Controllers
         }
 
         [Route("read-pdf")]
-        public IActionResult ReadPdf()
+        public async Task<IActionResult> ReadPdf()  
         {
             var FetureDetails = _FeaturesDetails.ReturnFeatureDetailsService.Excute(new RequestReturnFeatureDetailsDto { ServiceType = Domain.Entities.Features.OtherFeatures.PdfReader });
-            ViewBag.Comments = _FeaturesDetails.ReturnUsersCommnetsService.ReturnAllTopRatingCommnets(GetPath.GetCommentCount(), Domain.Entities.Features.OtherFeatures.PdfReader);
+            ViewBag.Comments = await _FeaturesDetails.ReturnUsersCommnetsService.ReturnAllTopRatingCommnetsAsync(GetPath.GetCommentCount(), Domain.Entities.Features.OtherFeatures.PdfReader);
             ViewBag.ThreeStepHelp = _ViewFacad.ReturnTreeStepHelpService.FindWithService(Domain.Entities.Features.OtherFeatures.PdfReader);
-            ViewBag.FAQ = _ViewFacad.ReturnFrequentlyQuestionService.ReturnAll(Domain.Entities.Features.OtherFeatures.PdfReader,GetPath.GetFAQCount()); //FAQ
+            ViewBag.FAQ = await _ViewFacad.ReturnFrequentlyQuestionService.ReturnAllAsync(Domain.Entities.Features.OtherFeatures.PdfReader,GetPath.GetFAQCount()); //FAQ
             if (FetureDetails.Success)
                 return View(FetureDetails);
             else

@@ -3,6 +3,7 @@ using Common;
 using Microsoft.EntityFrameworkCore;
 using System.Collections.Generic;
 using System.Linq;
+using System.Threading.Tasks;
 
 namespace Application.Services.Query.ReturnUsersCommnets
 {
@@ -11,7 +12,7 @@ namespace Application.Services.Query.ReturnUsersCommnets
         ResultMessage<ResultReturnUsersCommnetsDto> ReturnAllAcceptedCommnetsForAdmin(RequestReturnUsersCommentsDto request);
         ResultMessage<ResultReturnUsersCommnetsDto> ReturnAllUnAcceptedCommnetsForAdmin(RequestReturnUsersCommentsDto request);
         ResultMessage<ResultReturnUsersCommnetsDto> ReturnAllDeletedCommnetsForAdmin(RequestReturnUsersCommentsDto request);
-        ResultMessage<List<UserComment>> ReturnAllTopRatingCommnets(int ReturnCount, int? ServiceType);
+        Task<ResultMessage<List<UserComment>>> ReturnAllTopRatingCommnetsAsync(int ReturnCount, int? ServiceType);
         ResultMessage<UserComment> ReturnCommentForAdmin(long Id);
         ResultMessage<ResultReturnUnAcceptedCommentsCountDto> ReturnUnAcceptedCommentsCountForAdmin();
     }
@@ -179,7 +180,7 @@ namespace Application.Services.Query.ReturnUsersCommnets
                 Message = "No Comment Found!"
             };
         }
-        ResultMessage<List<UserComment>> IReturnUsersCommnetsService.ReturnAllTopRatingCommnets(int ReturnCount, int? ServiceType)
+        async Task<ResultMessage<List<UserComment>>> IReturnUsersCommnetsService.ReturnAllTopRatingCommnetsAsync(int ReturnCount, int? ServiceType)
         {
             var result = _Context.UserComments.Where(p => p.IsRemoved == false && p.Rate >= 3 && p.Accepted == true).Select(o => new UserComment
             {

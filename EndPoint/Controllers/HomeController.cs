@@ -29,59 +29,59 @@ namespace EndPoint.Controllers
         }
 
         [Route("")]
-        public IActionResult Index()
+        public async Task<IActionResult> Index()
         {
             ViewBag.HomeContext = _ViewFacad.ReturnHomeContextService.Execute();
             ViewBag.WhyChooseUsContext = _ViewFacad.ReturnWhyChooseUsService.Execute();
             ViewBag.BlogPosts = _ViewFacad.ReturnBlogPostsService.Execute(GetPath.GetBlogPostCountHome(), null,0);
             ViewBag.BlogPostsSlide = _ViewFacad.ReturnBlogPostsService.Execute(GetPath.GetBlogPostCountHomeSlide(), null, GetPath.GetBlogPostCountHome());
             ViewBag.Images = _ViewFacad.ReturnServiceImage.ReturnHomeImages();
-            ViewBag.FAQ = _ViewFacad.ReturnFrequentlyQuestionService.ReturnAll(null, null);
-            return View(_Features.ReturnUsersCommnetsService.ReturnAllTopRatingCommnets(GetPath.GetCommentCount(), null));
+            ViewBag.FAQ = await _ViewFacad.ReturnFrequentlyQuestionService.ReturnAllAsync(null, null);
+            return View( await _Features.ReturnUsersCommnetsService.ReturnAllTopRatingCommnetsAsync(GetPath.GetCommentCount(), null));
         }
         [Route("report-bug")]
-        public IActionResult ReportBug()
+        public async Task<IActionResult> ReportBug()
         {
             return View();
         }
         [Route("privacy")]
-        public IActionResult Privacy()
+        public async Task<IActionResult> Privacy()
         {
             return View(_ViewFacad.ReturnPrivacyPolicyService.Execute());
         }
         [Route("terms-of-use")]
-        public IActionResult TermsOfUse()
+        public async Task<IActionResult> TermsOfUse()
         {
             return View(_ViewFacad.ReturnTermsOfUseService.Execute());
         }
         [Route("about-us")]
-        public IActionResult AboutUs()
+        public async Task<IActionResult> AboutUs()
         {
             return View(_ViewFacad.ReturnTermsOfUseService.ReturnAboutUs());
         }
         [Route("contact-us")]
-        public IActionResult ContactUs()
+        public async Task<IActionResult> ContactUs()
         {
             return View();
         }
         [Route("dmca")]
-        public IActionResult Dmca()
+        public async Task<IActionResult> Dmca()
         {
             return View(_ViewFacad.ReturnTermsOfUseService.ReturnDmca());
         }
         [Route("questions")]
-        public IActionResult Questions()
+        public async Task<IActionResult> Questions()
         {
-            return View(_ViewFacad.ReturnFrequentlyQuestionService.ReturnAll(null, null));
+            return View(await _ViewFacad.ReturnFrequentlyQuestionService.ReturnAllAsync(null, null));
         }
         [Route("services")]
-        public IActionResult Services()
+        public async Task<IActionResult> Services()
         {
             return View();
         }
         [HttpPost]
         [Route("accept")]
-        public IActionResult Accept()
+        public async Task<IActionResult> Accept()
         {
             var option = new CookieOptions();
             option.Expires = new System.DateTimeOffset(2038, 1, 1, 0, 0, 0, TimeSpan.FromHours(0));

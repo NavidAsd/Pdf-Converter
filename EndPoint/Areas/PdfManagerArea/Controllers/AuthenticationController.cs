@@ -13,6 +13,7 @@ using EndPoint.Areas.PdfManagerArea.Models.Validation;
 using Application.Services.Query.Admin.LoginAdmin;
 using System.Linq;
 using Application.Service.SendEmailCode;
+using System.Threading.Tasks;
 
 namespace EndPoint.Areas.PdfManagerArea.Controllers
 {
@@ -27,16 +28,16 @@ namespace EndPoint.Areas.PdfManagerArea.Controllers
             _adminFacad = adminFacad;
             _ancillaryFacad = ancillaryFacad;
         }
-        public IActionResult Login()
+        public async Task<IActionResult> Login()
         {
             return View();
         }
-        public IActionResult Code()
+        public async Task<IActionResult> Code()
         {
             try
             {
                 //var ghgh = long.Parse(HttpContext.User.Claims.First(c => c.Type == ClaimTypes.NameIdentifier).Value);
-                var user = _adminFacad.UserPassRecoveryService.GetUserRecovery(long.Parse(HttpContext.User.Claims.First(c => c.Type == ClaimTypes.NameIdentifier).Value));
+                var user = await _adminFacad.UserPassRecoveryService.GetUserRecoveryAsync(long.Parse(HttpContext.User.Claims.First(c => c.Type == ClaimTypes.NameIdentifier).Value));
                 if (user.Success)
                 {
                     ViewBag.Time = user.Enything.ExpireTime;
@@ -51,8 +52,9 @@ namespace EndPoint.Areas.PdfManagerArea.Controllers
             }
         }
         [HttpPost]
-        public IActionResult SignIn(LoginAdminViewModel request)
+        public async Task<IActionResult> SignIn(LoginAdminViewModel request)
         {
+            #region Validation
             try
             {
                 LoginAdminValidation validation = new LoginAdminValidation();
@@ -77,6 +79,7 @@ namespace EndPoint.Areas.PdfManagerArea.Controllers
                     Message = "Something Wrong Please Try Again",
                 });
             }
+            #endregion
             var user = _adminFacad.LoginAdminService.Execute(new RequestLoginAdminDto
             {
                 Email = request.Email,
@@ -85,7 +88,7 @@ namespace EndPoint.Areas.PdfManagerArea.Controllers
 
             if (user.Success)
             {
-                var lastUserCode = _adminFacad.UserPassRecoveryService.GetUserRecovery(user.Enything.Id);
+                var lastUserCode = await _adminFacad.UserPassRecoveryService.GetUserRecoveryAsync(user.Enything.Id);
                 if (lastUserCode.Success)
                     if (lastUserCode.Enything.Used == false && lastUserCode.Enything.ExpireTime > System.DateTime.Now)
                     {
@@ -93,7 +96,7 @@ namespace EndPoint.Areas.PdfManagerArea.Controllers
                     }
                 // \\
                 SetClaimes(user.Enything.Id, request.Email);
-                var result = _ancillaryFacad.EmailSenderService.CodeSender(new EmailSenderDetails
+                var result = await _ancillaryFacad.EmailSenderService.CodeSenderAsync(new EmailSenderDetails
                 {
                     EmailSender = GetPath.GetCompanyEmail(),
                     EmailPass = GetPath.GetCompanyEmailPass(),
@@ -111,7 +114,7 @@ namespace EndPoint.Areas.PdfManagerArea.Controllers
                 if (result.Success)
                 {
                     // Add Data
-                    _adminFacad.UserPassRecoveryService.AddNewCode(new Application.Services.Command.Admin.UserRecoveryPass.RequestAddNewRecoveryCodeDto
+                    await _adminFacad.UserPassRecoveryService.AddNewCodeAsync(new Application.Services.Command.Admin.UserRecoveryPass.RequestAddNewRecoveryCodeDto
                     {
                         Id = user.Enything.Id,
                         Code = result.Enything.Code,
@@ -125,7 +128,7 @@ namespace EndPoint.Areas.PdfManagerArea.Controllers
         }
 
         [HttpPost]
-        public IActionResult VerifyCode(UserPassRecoveryCodeViewModel request)
+        public async Task<IActionResult> VerifyCode(UserPassRecoveryCodeViewModel request)
         {
             #region Validation
             try
@@ -156,18 +159,18 @@ namespace EndPoint.Areas.PdfManagerArea.Controllers
             #endregion
             try
             {
-                var user = _adminFacad.UserPassRecoveryService.GetUserRecovery(long.Parse(HttpContext.User.Claims.First(c => c.Type == ClaimTypes.NameIdentifier).Value));
+                var user = await _adminFacad.UserPassRecoveryService.GetUserRecoveryAsync(long.Parse(HttpContext.User.Claims.First(c => c.Type == ClaimTypes.NameIdentifier).Value));
                 if (user.Success)
                     if (user.Enything.Used == false && user.Enything.ExpireTime > System.DateTime.Now)
                     {
-                        var result = _adminFacad.UserPassRecoveryService.CheckCode(new Application.Services.Command.Admin.UserRecoveryPass.RequestAddNewRecoveryCodeDto
+                        var result = await _adminFacad.UserPassRecoveryService.CheckCodeAsync(new Application.Services.Command.Admin.UserRecoveryPass.RequestAddNewRecoveryCodeDto
                         {
                             Code = request.Code,
                             Id = long.Parse(HttpContext.User.Claims.First(c => c.Type == ClaimTypes.NameIdentifier).Value)
                         });
                         if (result.Success)
                         {
-                            _adminFacad.UserPassRecoveryService.AcceptCode(long.Parse(HttpContext.User.Claims.First(c => c.Type == ClaimTypes.NameIdentifier).Value));
+                            await _adminFacad.UserPassRecoveryService.AcceptCodeAsync(long.Parse(HttpContext.User.Claims.First(c => c.Type == ClaimTypes.NameIdentifier).Value));
                             var Claims = new List<Claim>()
                 {
                     new Claim(ClaimTypes.NameIdentifier,result.Enything.Id.ToString()),
@@ -196,17 +199,17 @@ namespace EndPoint.Areas.PdfManagerArea.Controllers
         }
 
         [HttpPost]
-        public IActionResult ResendCode()
+        public async Task<IActionResult> ResendCode()
         {
             try
             {
-                var lastUserCode = _adminFacad.UserPassRecoveryService.GetUserRecovery(long.Parse(HttpContext.User.Claims.First(c => c.Type == ClaimTypes.NameIdentifier).Value));
+                var lastUserCode =await _adminFacad.UserPassRecoveryService.GetUserRecoveryAsync(long.Parse(HttpContext.User.Claims.First(c => c.Type == ClaimTypes.NameIdentifier).Value));
                 if (lastUserCode.Success)
                     if (lastUserCode.Enything.Used == true && lastUserCode.Enything.ExpireTime > System.DateTime.Now)
                     {
                         return Json(new ResultMessage { Success = false, Message = $"{lastUserCode.Enything.ExpireTime - System.DateTime.Now} minutes until the expiration of the previous code left for your submission" });
                     }
-                var result = _ancillaryFacad.EmailSenderService.CodeSender(new EmailSenderDetails
+                var result = await _ancillaryFacad.EmailSenderService.CodeSenderAsync(new EmailSenderDetails
                 {
                     EmailSender = GetPath.GetCompanyEmail(),
                     EmailPass = GetPath.GetCompanyEmailPass(),
@@ -224,7 +227,7 @@ namespace EndPoint.Areas.PdfManagerArea.Controllers
                 if (result.Success)
                 {
                     // Add Recovery Data
-                    _adminFacad.UserPassRecoveryService.AddNewCode(new Application.Services.Command.Admin.UserRecoveryPass.RequestAddNewRecoveryCodeDto
+                    await _adminFacad.UserPassRecoveryService.AddNewCodeAsync(new Application.Services.Command.Admin.UserRecoveryPass.RequestAddNewRecoveryCodeDto
                     {
                         Id = long.Parse(HttpContext.User.Claims.First(c => c.Type == ClaimTypes.NameIdentifier).Value),
                         Code = result.Enything.Code,

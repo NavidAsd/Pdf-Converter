@@ -32,49 +32,49 @@ namespace EndPoint.Controllers
             _ViewFacad = view;
         }
         [Route("pdf-to-ppt/")]
-        public IActionResult PdfToPpt()
+        public async Task<IActionResult> PdfToPpt()
         {
             var FetureDetails = _FeaturesDetails.ReturnFeatureDetailsService.Excute(new RequestReturnFeatureDetailsDto { ServiceType = Domain.Entities.Features.ConvertFromPdf.PdfToPpt });
-            ViewBag.Comments = _FeaturesDetails.ReturnUsersCommnetsService.ReturnAllTopRatingCommnets(GetPath.GetCommentCount(), Domain.Entities.Features.ConvertFromPdf.PdfToPpt);
+            ViewBag.Comments = await _FeaturesDetails.ReturnUsersCommnetsService.ReturnAllTopRatingCommnetsAsync(GetPath.GetCommentCount(), Domain.Entities.Features.ConvertFromPdf.PdfToPpt);
             ViewBag.ThreeStepHelp = _ViewFacad.ReturnTreeStepHelpService.FindWithService(Domain.Entities.Features.ConvertFromPdf.PdfToPpt);
-            ViewBag.FAQ = _ViewFacad.ReturnFrequentlyQuestionService.ReturnAll(Domain.Entities.Features.ConvertFromPdf.PdfToPpt,GetPath.GetFAQCount()); //FAQ
+            ViewBag.FAQ = await _ViewFacad.ReturnFrequentlyQuestionService.ReturnAllAsync(Domain.Entities.Features.ConvertFromPdf.PdfToPpt, GetPath.GetFAQCount()); //FAQ
             if (FetureDetails.Success)
                 return View(FetureDetails);
             else
                 return RedirectToAction("PageNotFound", "Error");
         }
         [Route("pdf-to-images/")]
-        public IActionResult PdfToImages()
+        public async Task<IActionResult> PdfToImages()
         {
             var FetureDetails = _FeaturesDetails.ReturnFeatureDetailsService.Excute(new RequestReturnFeatureDetailsDto { ServiceType = Domain.Entities.Features.ConvertFromPdf.PdfToJpg });
-            ViewBag.Comments = _FeaturesDetails.ReturnUsersCommnetsService.ReturnAllTopRatingCommnets(GetPath.GetCommentCount(), Domain.Entities.Features.ConvertFromPdf.PdfToJpg);
+            ViewBag.Comments = await _FeaturesDetails.ReturnUsersCommnetsService.ReturnAllTopRatingCommnetsAsync(GetPath.GetCommentCount(), Domain.Entities.Features.ConvertFromPdf.PdfToJpg);
             ViewBag.ThreeStepHelp = _ViewFacad.ReturnTreeStepHelpService.FindWithService(Domain.Entities.Features.ConvertFromPdf.PdfToJpg);
-            ViewBag.FAQ = _ViewFacad.ReturnFrequentlyQuestionService.ReturnAll(Domain.Entities.Features.ConvertFromPdf.PdfToJpg,GetPath.GetFAQCount()); //FAQ
+            ViewBag.FAQ = await _ViewFacad.ReturnFrequentlyQuestionService.ReturnAllAsync(Domain.Entities.Features.ConvertFromPdf.PdfToJpg, GetPath.GetFAQCount()); //FAQ
             if (FetureDetails.Success)
                 return View(FetureDetails);
             else
                 return RedirectToAction("PageNotFound", "Error");
         }
         [Route("pdf-to-word")]
-        public IActionResult PdfToWord()
+        public async Task<IActionResult> PdfToWord()
         {
             var FetureDetails = _FeaturesDetails.ReturnFeatureDetailsService.Excute(new RequestReturnFeatureDetailsDto { ServiceType = Domain.Entities.Features.ConvertFromPdf.PdfToDoc });
-            ViewBag.Comments = _FeaturesDetails.ReturnUsersCommnetsService.ReturnAllTopRatingCommnets(GetPath.GetCommentCount(), Domain.Entities.Features.ConvertFromPdf.PdfToDoc);
+            ViewBag.Comments = await _FeaturesDetails.ReturnUsersCommnetsService.ReturnAllTopRatingCommnetsAsync(GetPath.GetCommentCount(), Domain.Entities.Features.ConvertFromPdf.PdfToDoc);
             ViewBag.ThreeStepHelp = _ViewFacad.ReturnTreeStepHelpService.FindWithService(Domain.Entities.Features.ConvertFromPdf.PdfToDoc);
             ViewBag.Images = _ViewFacad.ReturnServiceImage.ReturnServiceImage(Domain.Entities.Features.ConvertFromPdf.PdfToDoc);
-            ViewBag.FAQ = _ViewFacad.ReturnFrequentlyQuestionService.ReturnAll(Domain.Entities.Features.ConvertFromPdf.PdfToDoc,GetPath.GetFAQCount()); //FAQ
-           if (FetureDetails.Success)
+            ViewBag.FAQ = await _ViewFacad.ReturnFrequentlyQuestionService.ReturnAllAsync(Domain.Entities.Features.ConvertFromPdf.PdfToDoc, GetPath.GetFAQCount()); //FAQ
+            if (FetureDetails.Success)
                 return View(FetureDetails);
             else
                 return RedirectToAction("PageNotFound", "Error");
         }
         [Route("pdf-to-pdfa")]
-        public IActionResult PdfToPdfA()
+        public async Task<IActionResult> PdfToPdfA()
         {
             var FetureDetails = _FeaturesDetails.ReturnFeatureDetailsService.Excute(new RequestReturnFeatureDetailsDto { ServiceType = Domain.Entities.Features.ConvertFromPdf.PdfToPdfA });
-            ViewBag.Comments = _FeaturesDetails.ReturnUsersCommnetsService.ReturnAllTopRatingCommnets(GetPath.GetCommentCount(), Domain.Entities.Features.ConvertFromPdf.PdfToPdfA);
+            ViewBag.Comments = await _FeaturesDetails.ReturnUsersCommnetsService.ReturnAllTopRatingCommnetsAsync(GetPath.GetCommentCount(), Domain.Entities.Features.ConvertFromPdf.PdfToPdfA);
             ViewBag.ThreeStepHelp = _ViewFacad.ReturnTreeStepHelpService.FindWithService(Domain.Entities.Features.ConvertFromPdf.PdfToPdfA);
-            ViewBag.FAQ = _ViewFacad.ReturnFrequentlyQuestionService.ReturnAll(Domain.Entities.Features.ConvertFromPdf.PdfToPdfA,GetPath.GetFAQCount()); //FAQ
+            ViewBag.FAQ = await _ViewFacad.ReturnFrequentlyQuestionService.ReturnAllAsync(Domain.Entities.Features.ConvertFromPdf.PdfToPdfA, GetPath.GetFAQCount()); //FAQ
             if (FetureDetails.Success)
                 return View(FetureDetails);
             else
@@ -505,7 +505,7 @@ namespace EndPoint.Controllers
 
         private async void SaveInputFileData(string FileName, long FileSize, string UserIp)
         {
-           await _FeaturesDetails.AddInputFileService.ExecuteAsync(new Application.Services.Command.AddInpuFile.RequestAddInputFileDto
+            await _FeaturesDetails.AddInputFileService.ExecuteAsync(new Application.Services.Command.AddInpuFile.RequestAddInputFileDto
             {
                 FileName = FileName,
                 FileSize = FileSize.ToString(),

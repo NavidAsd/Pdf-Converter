@@ -33,36 +33,36 @@ namespace EndPoint.Controllers
             _ViewFacad = view;
         }
         [Route("merge-pdf")]
-        public IActionResult MergPdf()
+        public async Task<IActionResult> MergPdf()
         {
             var FetureDetails = _FeaturesDetails.ReturnFeatureDetailsService.Excute(new RequestReturnFeatureDetailsDto { ServiceType = Domain.Entities.Features.Organizers.MergePdf });
-            ViewBag.Comments = _FeaturesDetails.ReturnUsersCommnetsService.ReturnAllTopRatingCommnets(GetPath.GetCommentCount(), Domain.Entities.Features.Organizers.MergePdf);
+            ViewBag.Comments =await _FeaturesDetails.ReturnUsersCommnetsService.ReturnAllTopRatingCommnetsAsync(GetPath.GetCommentCount(), Domain.Entities.Features.Organizers.MergePdf);
             ViewBag.ThreeStepHelp = _ViewFacad.ReturnTreeStepHelpService.FindWithService(Domain.Entities.Features.Organizers.MergePdf);
-            ViewBag.FAQ = _ViewFacad.ReturnFrequentlyQuestionService.ReturnAll(Domain.Entities.Features.Organizers.MergePdf,GetPath.GetFAQCount()); //FAQ
+            ViewBag.FAQ =await _ViewFacad.ReturnFrequentlyQuestionService.ReturnAllAsync(Domain.Entities.Features.Organizers.MergePdf,GetPath.GetFAQCount()); //FAQ
             if (FetureDetails.Success)
                 return View(FetureDetails);
             else
                 return RedirectToAction("PageNotFound", "Error");
         }
         [Route("rotate-pdf")]
-        public IActionResult RotatePdf()
+        public async Task<IActionResult> RotatePdf()
         {
             var FetureDetails = _FeaturesDetails.ReturnFeatureDetailsService.Excute(new RequestReturnFeatureDetailsDto { ServiceType = Domain.Entities.Features.Organizers.RotatePdf });
-            ViewBag.Comments = _FeaturesDetails.ReturnUsersCommnetsService.ReturnAllTopRatingCommnets(GetPath.GetCommentCount(), Domain.Entities.Features.Organizers.RotatePdf);
+            ViewBag.Comments = await _FeaturesDetails.ReturnUsersCommnetsService.ReturnAllTopRatingCommnetsAsync(GetPath.GetCommentCount(), Domain.Entities.Features.Organizers.RotatePdf);
             ViewBag.ThreeStepHelp = _ViewFacad.ReturnTreeStepHelpService.FindWithService(Domain.Entities.Features.Organizers.RotatePdf);
-            ViewBag.FAQ = _ViewFacad.ReturnFrequentlyQuestionService.ReturnAll(Domain.Entities.Features.Organizers.RotatePdf,GetPath.GetFAQCount()); //FAQ
+            ViewBag.FAQ =await _ViewFacad.ReturnFrequentlyQuestionService.ReturnAllAsync(Domain.Entities.Features.Organizers.RotatePdf,GetPath.GetFAQCount()); //FAQ
             if (FetureDetails.Success)
                 return View(FetureDetails);
             else
                 return RedirectToAction("PageNotFound", "Error");
         }
         [Route("delete-pdf-pages")]
-        public IActionResult DeletePdfPages()
+        public async Task<IActionResult> DeletePdfPages()
         {
             var FetureDetails = _FeaturesDetails.ReturnFeatureDetailsService.Excute(new RequestReturnFeatureDetailsDto { ServiceType = Domain.Entities.Features.Organizers.DeletePdfPages });
-            ViewBag.Comments = _FeaturesDetails.ReturnUsersCommnetsService.ReturnAllTopRatingCommnets(GetPath.GetCommentCount(), Domain.Entities.Features.Organizers.DeletePdfPages);
+            ViewBag.Comments =await _FeaturesDetails.ReturnUsersCommnetsService.ReturnAllTopRatingCommnetsAsync(GetPath.GetCommentCount(), Domain.Entities.Features.Organizers.DeletePdfPages);
             ViewBag.ThreeStepHelp = _ViewFacad.ReturnTreeStepHelpService.FindWithService(Domain.Entities.Features.Organizers.DeletePdfPages);
-            ViewBag.FAQ = _ViewFacad.ReturnFrequentlyQuestionService.ReturnAll(Domain.Entities.Features.Organizers.DeletePdfPages,GetPath.GetFAQCount()); //FAQ
+            ViewBag.FAQ =await _ViewFacad.ReturnFrequentlyQuestionService.ReturnAllAsync(Domain.Entities.Features.Organizers.DeletePdfPages,GetPath.GetFAQCount()); //FAQ
             if (FetureDetails.Success)
                 return View(FetureDetails);
             else

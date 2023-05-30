@@ -29,18 +29,18 @@ namespace EndPoint.Areas.PdfManagerArea.Controllers
             _FeaturesDetails = featuresDetails;
             _Environment = environment;
         }
-        public IActionResult SnAccount()
+        public async Task<IActionResult> SnAccount()
         {
             if (HttpContext.User.Identity.IsAuthenticated)
             {
                 ViewBag.Data = LayoutData();
                 ViewBag.CommentCount = _FeaturesDetails.ReturnUsersCommnetsService.ReturnUnAcceptedCommentsCountForAdmin();
-                return View(_ViewContextFacad.ReturnAllSocialNetworks.Execute());
+                return View(await _ViewContextFacad.ReturnAllSocialNetworks.Execute());
             }
             else
                 return Redirect($"{GetPath.GetDomainHttps()}/PdfManagerArea/Authentication/Login");
         }
-        public IActionResult HomeContext()
+        public async Task<IActionResult> HomeContext()
         {
             if (HttpContext.User.Identity.IsAuthenticated)
             {
@@ -51,7 +51,7 @@ namespace EndPoint.Areas.PdfManagerArea.Controllers
             else
                 return Redirect($"{GetPath.GetDomainHttps()}/PdfManagerArea/Authentication/Login");
         }
-        public IActionResult TermsOfUseContext()
+        public async Task<IActionResult> TermsOfUseContext()
         {
             if (HttpContext.User.Identity.IsAuthenticated)
             {
@@ -62,7 +62,7 @@ namespace EndPoint.Areas.PdfManagerArea.Controllers
             else
                 return Redirect($"{GetPath.GetDomainHttps()}/PdfManagerArea/Authentication/Login");
         }
-        public IActionResult PrivacyPolicyContext()
+        public async Task<IActionResult> PrivacyPolicyContext()
         {
             if (HttpContext.User.Identity.IsAuthenticated)
             {
@@ -73,7 +73,7 @@ namespace EndPoint.Areas.PdfManagerArea.Controllers
             else
                 return Redirect($"{GetPath.GetDomainHttps()}/PdfManagerArea/Authentication/Login");
         }
-        public IActionResult RemovedReportedBugs(string Filter, int PageIndex)
+        public async Task<IActionResult> RemovedReportedBugs(string Filter, int PageIndex)
         {
             if (HttpContext.User.Identity.IsAuthenticated)
             {
@@ -89,7 +89,7 @@ namespace EndPoint.Areas.PdfManagerArea.Controllers
             else
                 return Redirect($"{GetPath.GetDomainHttps()}/PdfManagerArea/Authentication/Login");
         }
-        public IActionResult ReportedBugs(string Filter, int PageIndex)
+        public async Task<IActionResult> ReportedBugs(string Filter, int PageIndex)
         {
             if (HttpContext.User.Identity.IsAuthenticated)
             {
@@ -105,7 +105,7 @@ namespace EndPoint.Areas.PdfManagerArea.Controllers
             else
                 return Redirect($"{GetPath.GetDomainHttps()}/PdfManagerArea/Authentication/Login");
         }
-        public IActionResult WhyChooseUsContext(int Type)
+        public async Task<IActionResult> WhyChooseUsContext(int Type)
         {
             if (HttpContext.User.Identity.IsAuthenticated)
             {
@@ -117,7 +117,7 @@ namespace EndPoint.Areas.PdfManagerArea.Controllers
             else
                 return Redirect($"{GetPath.GetDomainHttps()}/PdfManagerArea/Authentication/Login");
         }
-        public IActionResult ThreeStepHelp(string Filter, int PageIndex)
+        public async Task<IActionResult> ThreeStepHelp(string Filter, int PageIndex)
         {
             if (HttpContext.User.Identity.IsAuthenticated)
             {
@@ -133,7 +133,7 @@ namespace EndPoint.Areas.PdfManagerArea.Controllers
             else
                 return Redirect($"{GetPath.GetDomainHttps()}/PdfManagerArea/Authentication/Login");
         }
-        public IActionResult EditStepsHelpContext(long Id)
+        public async Task<IActionResult> EditStepsHelpContext(long Id)
         {
             if (HttpContext.User.Identity.IsAuthenticated)
             {
@@ -148,7 +148,7 @@ namespace EndPoint.Areas.PdfManagerArea.Controllers
             else
                 return Redirect($"{GetPath.GetDomainHttps()}/PdfManagerArea/Authentication/Login");
         }
-        public IActionResult AboutUsContext()
+        public async Task<IActionResult> AboutUsContext()
         {
             if (HttpContext.User.Identity.IsAuthenticated)
             {
@@ -159,7 +159,7 @@ namespace EndPoint.Areas.PdfManagerArea.Controllers
             else
                 return Redirect($"{GetPath.GetDomainHttps()}/PdfManagerArea/Authentication/Login");
         }
-        public IActionResult DmcaContext()
+        public async Task<IActionResult> DmcaContext()
         {
             if (HttpContext.User.Identity.IsAuthenticated)
             {
@@ -170,7 +170,7 @@ namespace EndPoint.Areas.PdfManagerArea.Controllers
             else
                 return Redirect($"{GetPath.GetDomainHttps()}/PdfManagerArea/Authentication/Login");
         }
-        public IActionResult EditHelpVideo(long Id)
+        public async Task<IActionResult> EditHelpVideo(long Id)
         {
             if (HttpContext.User.Identity.IsAuthenticated)
             {
@@ -190,7 +190,7 @@ namespace EndPoint.Areas.PdfManagerArea.Controllers
         }
 
         [HttpPost]
-        public IActionResult UpdateAccounts(RequsetUpdateSocialNetworkViewModel requset)
+        public async Task<IActionResult> UpdateAccounts(RequsetUpdateSocialNetworkViewModel requset)
         {
             return Json(_ViewContextFacad.UpdateSocialNetworksService.Execute(new Application.Services.Command.ViewContext.UpdateSocialNetworks.RequestUpdateSocialNetworksDto
             {
@@ -207,7 +207,7 @@ namespace EndPoint.Areas.PdfManagerArea.Controllers
 
         }
         [HttpPost]
-        public IActionResult UpdateHomeContext(RequestUpdateHomeContextViewModel request)
+        public async Task<IActionResult> UpdateHomeContext(RequestUpdateHomeContextViewModel request)
         {
             return Json(_ViewContextFacad.UpdateHomeContextService.Execute(new Application.Services.Command.ViewContext.UpdateHomeContext.RequestUpdateHomeContextDto
             {
@@ -220,7 +220,7 @@ namespace EndPoint.Areas.PdfManagerArea.Controllers
             }));
         }
         [HttpPost]
-        public IActionResult UpdateTermsOfUse(RequestUpdateTermsOfUseViewModel request)
+        public async Task<IActionResult> UpdateTermsOfUse(RequestUpdateTermsOfUseViewModel request)
         {
             return Json(_ViewContextFacad.UpdateTermsOfUseService.Execute(new Application.Services.Command.ViewContext.UpdateTermsOfUse.RequestUpdateTermsOfUseDto
             {
@@ -229,7 +229,7 @@ namespace EndPoint.Areas.PdfManagerArea.Controllers
             }));
         }
         [HttpPost]
-        public IActionResult UpdatePrivacyPolicy(RequestUpdateTermsOfUseViewModel request)
+        public async Task<IActionResult> UpdatePrivacyPolicy(RequestUpdateTermsOfUseViewModel request)
         {
             return Json(_ViewContextFacad.UpdatePrivacyPolicyService.Execute(new Application.Services.Command.ViewContext.UpdatePrivacyPolicy.RequestUpdatePrivacyPolicyDto
             {
@@ -238,12 +238,12 @@ namespace EndPoint.Areas.PdfManagerArea.Controllers
             }));
         }
         [HttpPost]
-        public IActionResult ChangeItemState(long Id, bool State)
-        {
+        public async Task<IActionResult> ChangeItemState(long Id, bool State)
+        { 
             return Json(_ViewContextFacad.ChangeReportedBugStateService.Execute(Id, State));
         }
         [HttpPost]
-        public IActionResult UpdateWhyChooseUsContext(RequestUpdateWhyChooseUsViewModel request)
+        public async Task<IActionResult> UpdateWhyChooseUsContext(RequestUpdateWhyChooseUsViewModel request)
         {
             #region Validation
             try
@@ -280,7 +280,7 @@ namespace EndPoint.Areas.PdfManagerArea.Controllers
             return Json(new ResultMessage { Success = false, Message = "Something Wrong Please Try Again" });
         }
         [HttpPost]
-        public IActionResult UpdateThreeStepHelpContext(RequestUpdateTreeHelpStepViewModel request)
+        public async Task<IActionResult> UpdateThreeStepHelpContext(RequestUpdateTreeHelpStepViewModel request)
         {
             #region Validation
             try
@@ -311,7 +311,7 @@ namespace EndPoint.Areas.PdfManagerArea.Controllers
             }));
         }
         [HttpPost]
-        public IActionResult UpdateAboutUsContext(UpdateAboutUsViewModel request)
+        public async Task<IActionResult> UpdateAboutUsContext(UpdateAboutUsViewModel request)
         {
             #region Validation
             try
@@ -340,7 +340,7 @@ namespace EndPoint.Areas.PdfManagerArea.Controllers
             }));
         }
         [HttpPost]
-        public IActionResult UpdateDmcaContext(UpdateAboutUsViewModel request)
+        public async Task<IActionResult> UpdateDmcaContext(UpdateAboutUsViewModel request)
         {
             #region Validation
             try

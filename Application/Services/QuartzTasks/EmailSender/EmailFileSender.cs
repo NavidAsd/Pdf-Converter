@@ -36,11 +36,11 @@ namespace Application.Services.QuartzTasks.EmailSender
                         FileFullPath = $"{GetPath.GetOutputPath()}\\{item.UserIp}\\{item.FileName}",
                         FileName = item.FileName,
                     };
-                    var Sender = _Ancillary.EmailSenderService.Sender(new Application.Service.SendEmailCode.RequestEmailSenderDto
+                    var Sender = _Ancillary.EmailSenderService.SenderAsync(new Application.Service.SendEmailCode.RequestEmailSenderDto
                     {
                         EmailDetilas = EmailDetails,
                         FileDetails = FileDetails,
-                    });
+                    }).Result;
                     if (Sender.Success || item.TryToSend > 3)
                         _Features.RemoveEmailFileSenderService.Execute(item.Id);
                     else

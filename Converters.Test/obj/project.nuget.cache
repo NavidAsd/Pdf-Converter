@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "V1+0e8LgVM2JAwqFcQBWo7YcSwH13GqS8ZefJPmqFuj//+pCQ5jrT+XcN/jXF/SNMZilDddj0WFed6BgmFT4mg==",
+  "dgSpecHash": "vT/n+UBbufD1LJjYLQbdimaXwlX+nqyFRq0NqmksmS8gq1n8MF7ZYyD2EbDdKt8vdWGUJzog8JEQycbV5Chxnw==",
   "success": true,
-  "projectFilePath": "D:\\C#\\Web\\Core\\Pdf-Converter\\Pdf-Converter\\Converters.Test\\Converters.Test.csproj",
+  "projectFilePath": "D:\\C#\\Web\\Core\\PdfConverter\\Converters.Test\\Converters.Test.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Mr.Win\\.nuget\\packages\\bouncycastle\\1.8.9\\bouncycastle.1.8.9.nupkg.sha512",
     "C:\\Users\\Mr.Win\\.nuget\\packages\\common.logging\\2.1.1\\common.logging.2.1.1.nupkg.sha512",

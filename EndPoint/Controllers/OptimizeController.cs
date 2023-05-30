@@ -28,12 +28,12 @@ namespace EndPoint.Controllers
             _ViewFacad = view;
         }
         [Route("compress-pdf")]
-        public IActionResult CompressPdf()
+        public async Task<IActionResult> CompressPdf()
         {
             var FetureDetails = _FeaturesDetails.ReturnFeatureDetailsService.Excute(new RequestReturnFeatureDetailsDto { ServiceType = Domain.Entities.Features.Optimizers.CompressPdf });
-            ViewBag.Comments = _FeaturesDetails.ReturnUsersCommnetsService.ReturnAllTopRatingCommnets(GetPath.GetCommentCount(), Domain.Entities.Features.Optimizers.CompressPdf);
+            ViewBag.Comments = await _FeaturesDetails.ReturnUsersCommnetsService.ReturnAllTopRatingCommnetsAsync(GetPath.GetCommentCount(), Domain.Entities.Features.Optimizers.CompressPdf);
             ViewBag.ThreeStepHelp = _ViewFacad.ReturnTreeStepHelpService.FindWithService(Domain.Entities.Features.Optimizers.CompressPdf);
-            ViewBag.FAQ = _ViewFacad.ReturnFrequentlyQuestionService.ReturnAll(Domain.Entities.Features.Optimizers.CompressPdf,GetPath.GetFAQCount()); //FAQ
+            ViewBag.FAQ = await _ViewFacad.ReturnFrequentlyQuestionService.ReturnAllAsync(Domain.Entities.Features.Optimizers.CompressPdf,GetPath.GetFAQCount()); //FAQ
             if (FetureDetails.Success)
                 return View(FetureDetails);
             else

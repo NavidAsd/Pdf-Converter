@@ -2,15 +2,16 @@
 using Common;
 using Microsoft.EntityFrameworkCore;
 using System.Linq;
+using System.Threading.Tasks;
 
 namespace Application.Services.Command.Admin.UserRecoveryPass
 {
     public interface IUserPassRecoveryService
     {
-        ResultMessage AddNewCode(RequestAddNewRecoveryCodeDto request);
-        ResultMessage AcceptCode(long Id);
-        ResultMessage<ResultGetUserRecoveryDto> GetUserRecovery(long Id);
-        ResultMessage<ResultCheckCodeDto> CheckCode(RequestAddNewRecoveryCodeDto request);
+        Task<ResultMessage> AddNewCodeAsync(RequestAddNewRecoveryCodeDto request);
+        Task<ResultMessage> AcceptCodeAsync(long Id);
+        Task<ResultMessage<ResultGetUserRecoveryDto>> GetUserRecoveryAsync(long Id);
+        Task<ResultMessage<ResultCheckCodeDto>> CheckCodeAsync(RequestAddNewRecoveryCodeDto request);
     }
     public class ResultGetUserRecoveryDto
     {
@@ -38,7 +39,7 @@ namespace Application.Services.Command.Admin.UserRecoveryPass
         {
             _Context = context;
         }
-        ResultMessage IUserPassRecoveryService.AddNewCode(RequestAddNewRecoveryCodeDto request)
+        async Task<ResultMessage> IUserPassRecoveryService.AddNewCodeAsync(RequestAddNewRecoveryCodeDto request)
         {
             var result = _Context.Admins.IgnoreQueryFilters().Where(p => p.Id == request.Id && p.IsRemoved == false).FirstOrDefault();
             if (result != null)
@@ -46,7 +47,7 @@ namespace Application.Services.Command.Admin.UserRecoveryPass
                 result.Code = request.Code;
                 result.CodeExpiration = request.ExpireTime;
                 result.Used = false;
-                _Context.SaveChanges();
+                await _Context.SaveChangesAsync();
                 return new ResultMessage
                 {
                     Success = true
@@ -58,7 +59,7 @@ namespace Application.Services.Command.Admin.UserRecoveryPass
                 Message = "User Not Found"
             };
         }
-        ResultMessage<ResultGetUserRecoveryDto> IUserPassRecoveryService.GetUserRecovery(long Id)
+        async Task<ResultMessage<ResultGetUserRecoveryDto>> IUserPassRecoveryService.GetUserRecoveryAsync(long Id)
         {
             var result = _Context.Admins.IgnoreQueryFilters().Where(p => p.IsRemoved == false && p.Id == Id).FirstOrDefault();
             if (result != null)
@@ -80,7 +81,7 @@ namespace Application.Services.Command.Admin.UserRecoveryPass
                 Message = "User Not Found"
             };
         }
-        ResultMessage<ResultCheckCodeDto> IUserPassRecoveryService.CheckCode(RequestAddNewRecoveryCodeDto request)
+        async Task<ResultMessage<ResultCheckCodeDto>> IUserPassRecoveryService.CheckCodeAsync(RequestAddNewRecoveryCodeDto request)
         {
             var result = _Context.Admins.IgnoreQueryFilters().Where(p => p.Id == request.Id && p.IsRemoved == false).FirstOrDefault();
             if (result != null)
@@ -128,13 +129,13 @@ namespace Application.Services.Command.Admin.UserRecoveryPass
                 Message = "User Not Found"
             };
         }
-        ResultMessage IUserPassRecoveryService.AcceptCode(long Id)
+        async Task<ResultMessage> IUserPassRecoveryService.AcceptCodeAsync(long Id)
         {
             var result = _Context.Admins.IgnoreQueryFilters().Where(p => p.IsRemoved == false && p.Id == Id).FirstOrDefault();
             if (result != null)
             {
                 result.Used = true;
-                _Context.SaveChanges();
+                await _Context.SaveChangesAsync();
                 return new ResultMessage
                 {
                     Success = true

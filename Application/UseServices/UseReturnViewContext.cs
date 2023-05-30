@@ -16,7 +16,7 @@ namespace Application.UseServices
         public static ReturnViewContext Use(IViewContextFacad _ViewFacad)
         {
             ReturnViewContext Context = new ReturnViewContext();
-            Context.SocialNetworkAccounts = _ViewFacad.ReturnAllSocialNetworks.Execute();
+            Context.SocialNetworkAccounts = _ViewFacad.ReturnAllSocialNetworks.Execute().Result;
             //Context.FooterContext = _ViewFacad.ReturnFooterContextService.Execute();
             return Context;
         }

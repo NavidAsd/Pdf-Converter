@@ -28,36 +28,36 @@ namespace EndPoint.Controllers
             _ViewFacad = view;
         }
         [Route("unlock-pdf")]
-        public IActionResult UnlockPdf()
+        public async Task<IActionResult> UnlockPdf()
         {
             var FetureDetails = _FeaturesDetails.ReturnFeatureDetailsService.Excute(new RequestReturnFeatureDetailsDto { ServiceType = Domain.Entities.Features.Security.UnlockPdf });
-            ViewBag.Comments = _FeaturesDetails.ReturnUsersCommnetsService.ReturnAllTopRatingCommnets(GetPath.GetCommentCount(), Domain.Entities.Features.Security.UnlockPdf);
+            ViewBag.Comments = await _FeaturesDetails.ReturnUsersCommnetsService.ReturnAllTopRatingCommnetsAsync(GetPath.GetCommentCount(), Domain.Entities.Features.Security.UnlockPdf);
             ViewBag.ThreeStepHelp = _ViewFacad.ReturnTreeStepHelpService.FindWithService(Domain.Entities.Features.Security.UnlockPdf);
-            ViewBag.FAQ = _ViewFacad.ReturnFrequentlyQuestionService.ReturnAll(Domain.Entities.Features.Security.UnlockPdf,GetPath.GetFAQCount()); //FAQ
+            ViewBag.FAQ = await _ViewFacad.ReturnFrequentlyQuestionService.ReturnAllAsync(Domain.Entities.Features.Security.UnlockPdf, GetPath.GetFAQCount()); //FAQ
             if (FetureDetails.Success)
                 return View(FetureDetails);
             else
                 return RedirectToAction("PageNotFound", "Error");
         }
         [Route("protect-pdf")]
-        public IActionResult ProtectPdf()
+        public async Task<IActionResult> ProtectPdf()
         {
             var FetureDetails = _FeaturesDetails.ReturnFeatureDetailsService.Excute(new RequestReturnFeatureDetailsDto { ServiceType = Domain.Entities.Features.Security.ProtectPdf });
-            ViewBag.Comments = _FeaturesDetails.ReturnUsersCommnetsService.ReturnAllTopRatingCommnets(GetPath.GetCommentCount(), Domain.Entities.Features.Security.ProtectPdf);
+            ViewBag.Comments = await _FeaturesDetails.ReturnUsersCommnetsService.ReturnAllTopRatingCommnetsAsync(GetPath.GetCommentCount(), Domain.Entities.Features.Security.ProtectPdf);
             ViewBag.ThreeStepHelp = _ViewFacad.ReturnTreeStepHelpService.FindWithService(Domain.Entities.Features.Security.ProtectPdf);
-            ViewBag.FAQ = _ViewFacad.ReturnFrequentlyQuestionService.ReturnAll(Domain.Entities.Features.Security.ProtectPdf,GetPath.GetFAQCount()); //FAQ
+            ViewBag.FAQ = await _ViewFacad.ReturnFrequentlyQuestionService.ReturnAllAsync(Domain.Entities.Features.Security.ProtectPdf, GetPath.GetFAQCount()); //FAQ
             if (FetureDetails.Success)
                 return View(FetureDetails);
             else
                 return RedirectToAction("PageNotFound", "Error");
         }
         [Route("remove-pdf-protection")]
-        public IActionResult RemovePdfProtection()
+        public async Task<IActionResult> RemovePdfProtection()
         {
             var FetureDetails = _FeaturesDetails.ReturnFeatureDetailsService.Excute(new RequestReturnFeatureDetailsDto { ServiceType = Domain.Entities.Features.Security.RemvePdfProtection });
-            ViewBag.Comments = _FeaturesDetails.ReturnUsersCommnetsService.ReturnAllTopRatingCommnets(GetPath.GetCommentCount(), Domain.Entities.Features.Security.RemvePdfProtection);
+            ViewBag.Comments = await _FeaturesDetails.ReturnUsersCommnetsService.ReturnAllTopRatingCommnetsAsync(GetPath.GetCommentCount(), Domain.Entities.Features.Security.RemvePdfProtection);
             ViewBag.ThreeStepHelp = _ViewFacad.ReturnTreeStepHelpService.FindWithService(Domain.Entities.Features.Security.RemvePdfProtection);
-            ViewBag.FAQ = _ViewFacad.ReturnFrequentlyQuestionService.ReturnAll(Domain.Entities.Features.Security.RemvePdfProtection,GetPath.GetFAQCount()); //FAQ
+            ViewBag.FAQ = await _ViewFacad.ReturnFrequentlyQuestionService.ReturnAllAsync(Domain.Entities.Features.Security.RemvePdfProtection, GetPath.GetFAQCount()); //FAQ
             if (FetureDetails.Success)
                 return View(FetureDetails);
             else
@@ -393,7 +393,7 @@ namespace EndPoint.Controllers
                 if (ReturnFile.Success)
                 {
                     //save email
-                    return Json( await _FeaturesDetails.AddNewEmailFileSenderService.ExecuteAsync(new Application.Services.Command.AddNewEmailFileSender.RequestAddNewEmailFileSenderDto
+                    return Json(await _FeaturesDetails.AddNewEmailFileSenderService.ExecuteAsync(new Application.Services.Command.AddNewEmailFileSender.RequestAddNewEmailFileSenderDto
                     {
                         FileName = request.OutFileName,
                         UserEmail = request.UserEmail,
@@ -473,7 +473,7 @@ namespace EndPoint.Controllers
 
         private async void SaveInputFileData(string FileName, long FileSize, string UserIp)
         {
-           await _FeaturesDetails.AddInputFileService.ExecuteAsync(new Application.Services.Command.AddInpuFile.RequestAddInputFileDto
+            await _FeaturesDetails.AddInputFileService.ExecuteAsync(new Application.Services.Command.AddInpuFile.RequestAddInputFileDto
             {
                 FileName = FileName,
                 FileSize = FileSize.ToString(),

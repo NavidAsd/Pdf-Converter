@@ -1,12 +1,14 @@
 ﻿using Application.Interface;
 using Common;
+using Microsoft.EntityFrameworkCore;
 using System.Linq;
+using System.Threading.Tasks;
 
 namespace Application.Services.Query.ViewContext.ReturnSocialNetworks
 {
     public interface IReturnAllSocialNetworksService
     {
-        ResultMessage<ResultReturnAllSocialNetworkDto> Execute();
+        Task<ResultMessage<ResultReturnAllSocialNetworkDto>> Execute();
     }
     public class ResultReturnAllSocialNetworkDto
     {
@@ -28,9 +30,9 @@ namespace Application.Services.Query.ViewContext.ReturnSocialNetworks
         {
             _Context = context;
         }
-        ResultMessage<ResultReturnAllSocialNetworkDto> IReturnAllSocialNetworksService.Execute()
+        async Task<ResultMessage<ResultReturnAllSocialNetworkDto>> IReturnAllSocialNetworksService.Execute()
         {
-            var result = _Context.SocialNetworks.FirstOrDefault();
+            var result = await _Context.SocialNetworks.FirstOrDefaultAsync();
             if (result != null)
             {
                 return new ResultMessage<ResultReturnAllSocialNetworkDto>

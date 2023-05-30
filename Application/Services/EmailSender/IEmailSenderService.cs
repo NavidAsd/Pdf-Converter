@@ -2,19 +2,20 @@
 using System.IO;
 using System.Net.Mail;
 using System.Text;
+using System.Threading.Tasks;
 using Common;
 
 namespace Application.Service.SendEmailCode
 {
     public interface IEmailSenderService
     {
-        ResultMessage Sender(RequestEmailSenderDto request);
-        ResultMessage<ResultSendEmailCodeDto> CodeSender(EmailSenderDetails request);
+        Task<ResultMessage> SenderAsync(RequestEmailSenderDto request);
+        Task<ResultMessage<ResultSendEmailCodeDto>> CodeSenderAsync(EmailSenderDetails request);
 
     }
     public class EmailSenderService : IEmailSenderService
     {
-        ResultMessage IEmailSenderService.Sender(RequestEmailSenderDto request)
+        async Task<ResultMessage> IEmailSenderService.SenderAsync(RequestEmailSenderDto request)
         {
 
             MailMessage message = new MailMessage(request.EmailDetilas.EmailSender, request.EmailDetilas.RecipientEmail);
@@ -43,7 +44,7 @@ namespace Application.Service.SendEmailCode
             client.Credentials = basicCredential1;
             try
             {
-                client.Send(message);
+                 client.Send(message);
             }
             catch (Exception ex)
             {
@@ -59,7 +60,7 @@ namespace Application.Service.SendEmailCode
                 Message = "Email successfully sent to destination",
             };
         }
-        ResultMessage<ResultSendEmailCodeDto> IEmailSenderService.CodeSender(EmailSenderDetails request)
+        async Task<ResultMessage<ResultSendEmailCodeDto>> IEmailSenderService.CodeSenderAsync(EmailSenderDetails request)
         {
             Random randint = new Random();
             long Code = randint.Next(GetPath.GetMinCode(), GetPath.GetMaxCode());
@@ -112,13 +113,13 @@ namespace Application.Service.SendEmailCode
         public EmailSenderDetails EmailDetilas { set; get; }
         public FileDetails FileDetails { set; get; }
     }
-        public class FileDetails
-        {
-            public string? FileFullPath { set; get; }
-            public string? FileName { set; get; }
-        }
-        public class ResultSendEmailCodeDto
-        {
-            public long Code { set; get; }
-        }
+    public class FileDetails
+    {
+        public string? FileFullPath { set; get; }
+        public string? FileName { set; get; }
     }
+    public class ResultSendEmailCodeDto
+    {
+        public long Code { set; get; }
+    }
+}

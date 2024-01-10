@@ -1,4 +1,5 @@
-﻿using Domain.Entities.Details;
+﻿using Domain.Entities.Blog;
+using Domain.Entities.Details;
 using Domain.Entities.Files;
 using Domain.Entities.Logs;
 using Domain.Entities.OtherContext;
@@ -34,6 +35,7 @@ namespace Application.Interface
         DbSet<Keywords> Keywords { get; set; }
         DbSet<AdditionalHelp> AdditionalHelps { get; set; }
         DbSet<UserMessages> UserMessages { get; set; }
+        DbSet<BlogPosts> BlogPosts { get; set; }
 
 
         int SaveChanges(bool acceptAllChangesOnSuccess);

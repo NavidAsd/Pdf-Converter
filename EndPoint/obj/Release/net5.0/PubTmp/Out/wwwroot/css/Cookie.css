@@ -46,9 +46,10 @@
     width: 50px;
     height: 50px;
     float: left;
-    margin-right: 50px;
+    margin-right: 47px;
     margin-top: 5px;
     animation: example 5s linear 2s infinite alternate;
+    margin-left: 40px;
 }
 
 @keyframes example {
@@ -85,7 +86,7 @@
     }
 
     .img-cookie {
-        display: none;
+        display: unset;
     }
 
     .btn-accept-coo {

@@ -97,14 +97,15 @@
                                     <div class="list-files">
                                         <!--   template   -->
                                     </div>
-                                    <div
-                                        <button onclick="SendData()" class="up-convert-btn upload-btn btn visually-hidden" data-bs-toggle="modal" data-bs-target="#youremailmodal">
+                                   <div class="" style="height: 45px;">
+                                        <button onclick="SendData()" class="up-convert-btn upload-btn btn active" data-bs-toggle="modal" data-bs-target="#youremailmodal" style="height: 100%;">
                                             <span class="btn-text">Upload</span>
                                         </button>
 
-                                        <button id="btnUpdateFiles" class="importar btn" title="Reset"><img width="25" src="~/images/pdftoconverter-reset.png" style="cursor:pointer" /></button>
+                                        <button id="btnUpdateFiles" class="importar btn active" title="Reset" style="height: 100%;"><img width="25" src="/images/pdftoconverter-reset.png" style="cursor:pointer"></button>
+                                        
 
-                                        <div class="btn-sniper btn">
+                                        <div class="btn-sniper btn active visually-hidden">
                                             <span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>
                                         </div>
                                         
@@ -156,6 +157,14 @@
 
                                     </svg>
                                     <p>Processing...</p>
+                                    <div class="progress">
+                                        <div class="progress-done" id="progressBar" data-done="70">
+                                                                                    
+                                         </div>
+                                    </div>
+                                    <br>
+                                    <h3 id="status"></h3><br>
+                                    <p id="uploaded_progress"></p>
                                     <p>It may take a few seconds</p>
                                     <a onclick="CancelProcess()" class="btn btn-outline-primary mt-4">Cancel</a>
 
@@ -257,7 +266,7 @@
                         <h3>Video tutorial on how to Read PDF </h3>
                         <p>In this video, you will learn how to Read PDF file in a few minutes</p>
                         string posterName = "View-PDF-Files-Easily-With-Our-Best-Online-PDF-Reader.jpg";
-                            <video poster="@Common.GetPath.GetHelpVideoPath().Replace("wwwroot", "")/poster/@posterName" alt="Help Video" title="Video tutorial on working with tools" style="width: @Common.GetPath.GetVideoSize(); max-height: @Common.GetPath.GetVideoSize(); position:center; background-color: #000;" controls>
+                            <video poster="@Common.GetPath.GetHelpVideoPath().Replace("wwwroot", "")/poster/@posterName" alt="Help Video" title="Video tutorial on working with tools" style="max-height: @Common.GetPath.GetVideoSize(); position:center; background-color: #000;" controls class="video-help">
                             @foreach (var item in Common.Formating.VideosFormat)
                             {
                                 <source src="@Common.GetPath.GetHelpVideoPath().Replace("wwwroot", "")/@ViewBag.ThreeStepHelp.Enything.VideoName" type="video/@item">
@@ -453,12 +462,9 @@
             }
 
             function OtherRowUpload(State) {
-                if (State == true) {
-                    document.getElementById("drop").style.visibility = "visible";
-                }
-                else {
-                    document.getElementById("drop").style.visibility = "hidden";
-                }
+        if (State == false) {
+            document.getElementById("drop").style.display = "none";
+        }
             }
 
             async function SendData() {
@@ -480,27 +486,62 @@
                 SelectFile(false);
                 OpenPdf(false);
                 OtherRowUpload(false);
-                await fetch('/Other/ReadPdfUpload/', {
-                    method: "POST",
-                    body: formData
-                })
-                    .then(response => response.json())
-                    .then((data) => {
-                        Loading(false);
-                        SelectFile(true);
-                        if (data.success) {
-                            OpenPdf(true, data.enything.fileSize, data.enything.id);
-                        }
-                        else {
-                            OtherRowUpload(true);
-                            swal.fire(
-                                "warning",
-                                data.message,
-                                "warning"
-                            );
-                        }
-                    })
+
+              var ajax = new XMLHttpRequest();
+                ajax.upload.addEventListener("progress", progressHandler, false);
+                ajax.addEventListener("load", completeHandler, false);
+                ajax.addEventListener("error", errorHandler, false);
+                ajax.addEventListener("abort", abortHandler, false);
+                ajax.open("POST", "/Other/ReadPdfUpload/");
+                ajax.send(formData);
+
             }
+
+function progressHandler(event) {
+    var loaded = new Number((event.loaded / 1048576));//Make loaded a "number" and divide bytes to get Megabytes
+    var total = new Number((event.total / 1048576));//Make total file size a "number" and divide bytes to get Megabytes
+    $("#uploaded_progress").innerHTML = "Uploaded <b>" + loaded.toPrecision(5) + "</b> Megabytes of " + total.toPrecision(5);//String output
+    var percent = (event.loaded / event.total) * 100;//Get percentage of upload progress
+    // $("#progressBar").innerHTML = Math.round(percent);//Round value to solid
+    const progress = document.querySelector('.progress-done');
+    progress.setAttribute("data-done" ,  Math.round(percent))
+    progress.style.width = progress.getAttribute('data-done') + '%';
+    $("#status").innerHTML = Math.round(percent) + "% uploaded";//String output
+}
+function completeHandler(event) {
+    Loading(false);
+    SelectFile(true);
+    const obj_upload_serv = JSON.parse(event.target.responseText)
+    const progress = document.querySelector('.progress');
+    if(obj_upload_serv.success){
+        $("#status").innerHTML = "Complate !";
+        progress.style.display = "none"
+        OpenPdf(true, obj_upload_serv.enything.fileSize, obj_upload_serv.enything.id);  
+    } 
+    else if (obj_upload_serv.enything == null) {
+                OtherRowUpload(true);
+                swal.fire(
+                    "warning",
+                    obj_upload_serv.message,
+                    "warning"
+                );
+            }
+    else {
+                OtherRowUpload(true);
+                //TryConvert(true, data.enything.filename, data.enything.userip);
+                swal.fire(
+                    "warning",
+                    obj_upload_serv.message,
+                    "warning"
+                );
+    }
+}
+function errorHandler(event) {
+    $("#status").innerHTML = "Upload Failed";//Switch status to upload failed
+}
+function abortHandler(event) {
+    $("#status").innerHTML = "Upload Aborted";//Switch status to aborted
+}
 
 
             async function SendMessage() {

@@ -34,9 +34,9 @@ namespace EndPoint.Controllers
         [Route("pdf-to-ppt/")]
         public async Task<IActionResult> PdfToPpt()
         {
-            var FetureDetails = _FeaturesDetails.ReturnFeatureDetailsService.Excute(new RequestReturnFeatureDetailsDto { ServiceType = Domain.Entities.Features.ConvertFromPdf.PdfToPpt });
+            var FetureDetails = await _FeaturesDetails.ReturnFeatureDetailsService.ExecuteAsync(new RequestReturnFeatureDetailsDto { ServiceType = Domain.Entities.Features.ConvertFromPdf.PdfToPpt });
             ViewBag.Comments = await _FeaturesDetails.ReturnUsersCommnetsService.ReturnAllTopRatingCommnetsAsync(GetPath.GetCommentCount(), Domain.Entities.Features.ConvertFromPdf.PdfToPpt);
-            ViewBag.ThreeStepHelp = _ViewFacad.ReturnTreeStepHelpService.FindWithService(Domain.Entities.Features.ConvertFromPdf.PdfToPpt);
+            ViewBag.ThreeStepHelp = await _ViewFacad.ReturnTreeStepHelpService.FindWithServiceAsync(Domain.Entities.Features.ConvertFromPdf.PdfToPpt);
             ViewBag.FAQ = await _ViewFacad.ReturnFrequentlyQuestionService.ReturnAllAsync(Domain.Entities.Features.ConvertFromPdf.PdfToPpt, GetPath.GetFAQCount()); //FAQ
             if (FetureDetails.Success)
                 return View(FetureDetails);
@@ -46,9 +46,9 @@ namespace EndPoint.Controllers
         [Route("pdf-to-images/")]
         public async Task<IActionResult> PdfToImages()
         {
-            var FetureDetails = _FeaturesDetails.ReturnFeatureDetailsService.Excute(new RequestReturnFeatureDetailsDto { ServiceType = Domain.Entities.Features.ConvertFromPdf.PdfToJpg });
+            var FetureDetails = await _FeaturesDetails.ReturnFeatureDetailsService.ExecuteAsync(new RequestReturnFeatureDetailsDto { ServiceType = Domain.Entities.Features.ConvertFromPdf.PdfToJpg });
             ViewBag.Comments = await _FeaturesDetails.ReturnUsersCommnetsService.ReturnAllTopRatingCommnetsAsync(GetPath.GetCommentCount(), Domain.Entities.Features.ConvertFromPdf.PdfToJpg);
-            ViewBag.ThreeStepHelp = _ViewFacad.ReturnTreeStepHelpService.FindWithService(Domain.Entities.Features.ConvertFromPdf.PdfToJpg);
+            ViewBag.ThreeStepHelp = await _ViewFacad.ReturnTreeStepHelpService.FindWithServiceAsync(Domain.Entities.Features.ConvertFromPdf.PdfToJpg);
             ViewBag.FAQ = await _ViewFacad.ReturnFrequentlyQuestionService.ReturnAllAsync(Domain.Entities.Features.ConvertFromPdf.PdfToJpg, GetPath.GetFAQCount()); //FAQ
             if (FetureDetails.Success)
                 return View(FetureDetails);
@@ -58,10 +58,10 @@ namespace EndPoint.Controllers
         [Route("pdf-to-word")]
         public async Task<IActionResult> PdfToWord()
         {
-            var FetureDetails = _FeaturesDetails.ReturnFeatureDetailsService.Excute(new RequestReturnFeatureDetailsDto { ServiceType = Domain.Entities.Features.ConvertFromPdf.PdfToDoc });
+            var FetureDetails = await _FeaturesDetails.ReturnFeatureDetailsService.ExecuteAsync(new RequestReturnFeatureDetailsDto { ServiceType = Domain.Entities.Features.ConvertFromPdf.PdfToDoc });
             ViewBag.Comments = await _FeaturesDetails.ReturnUsersCommnetsService.ReturnAllTopRatingCommnetsAsync(GetPath.GetCommentCount(), Domain.Entities.Features.ConvertFromPdf.PdfToDoc);
-            ViewBag.ThreeStepHelp = _ViewFacad.ReturnTreeStepHelpService.FindWithService(Domain.Entities.Features.ConvertFromPdf.PdfToDoc);
-            ViewBag.Images = _ViewFacad.ReturnServiceImage.ReturnServiceImage(Domain.Entities.Features.ConvertFromPdf.PdfToDoc);
+            ViewBag.ThreeStepHelp = await _ViewFacad.ReturnTreeStepHelpService.FindWithServiceAsync(Domain.Entities.Features.ConvertFromPdf.PdfToDoc);
+            ViewBag.Images = await _ViewFacad.ReturnServiceImage.ReturnServiceImageAsync(Domain.Entities.Features.ConvertFromPdf.PdfToDoc);
             ViewBag.FAQ = await _ViewFacad.ReturnFrequentlyQuestionService.ReturnAllAsync(Domain.Entities.Features.ConvertFromPdf.PdfToDoc, GetPath.GetFAQCount()); //FAQ
             if (FetureDetails.Success)
                 return View(FetureDetails);
@@ -71,9 +71,9 @@ namespace EndPoint.Controllers
         [Route("pdf-to-pdfa")]
         public async Task<IActionResult> PdfToPdfA()
         {
-            var FetureDetails = _FeaturesDetails.ReturnFeatureDetailsService.Excute(new RequestReturnFeatureDetailsDto { ServiceType = Domain.Entities.Features.ConvertFromPdf.PdfToPdfA });
+            var FetureDetails = await _FeaturesDetails.ReturnFeatureDetailsService.ExecuteAsync(new RequestReturnFeatureDetailsDto { ServiceType = Domain.Entities.Features.ConvertFromPdf.PdfToPdfA });
             ViewBag.Comments = await _FeaturesDetails.ReturnUsersCommnetsService.ReturnAllTopRatingCommnetsAsync(GetPath.GetCommentCount(), Domain.Entities.Features.ConvertFromPdf.PdfToPdfA);
-            ViewBag.ThreeStepHelp = _ViewFacad.ReturnTreeStepHelpService.FindWithService(Domain.Entities.Features.ConvertFromPdf.PdfToPdfA);
+            ViewBag.ThreeStepHelp = await _ViewFacad.ReturnTreeStepHelpService.FindWithServiceAsync(Domain.Entities.Features.ConvertFromPdf.PdfToPdfA);
             ViewBag.FAQ = await _ViewFacad.ReturnFrequentlyQuestionService.ReturnAllAsync(Domain.Entities.Features.ConvertFromPdf.PdfToPdfA, GetPath.GetFAQCount()); //FAQ
             if (FetureDetails.Success)
                 return View(FetureDetails);
@@ -454,7 +454,7 @@ namespace EndPoint.Controllers
             var captcha = await _AncillaryServices.GoogleRecaptchaService.Responsewithstring(request.Recaptcha);
             if (captcha.Success)
             {
-                var service = _FeaturesDetails.ReturnFeatureDetailsService.Excute(new RequestReturnFeatureDetailsDto { ServiceType = request.Service });
+                var service = await _FeaturesDetails.ReturnFeatureDetailsService.ExecuteAsync(new RequestReturnFeatureDetailsDto { ServiceType = request.Service });
                 if (service.Success)
                 {
                     var commnet = await _FeaturesDetails.AddNewUserCommentService.ExecuteAsync(new Application.Services.Command.AddNewUserComment.RequestAddNewUserCommentDto

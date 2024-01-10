@@ -1,13 +1,15 @@
 ﻿using Application.Interface;
 using Common;
+using Microsoft.EntityFrameworkCore;
 using System.Collections.Generic;
 using System.Linq;
+using System.Threading.Tasks;
 
 namespace Application.Services.Query.ViewContext.ReturnWhyChooseUs
 {
     public interface IReturnWhyChooseUsService
     {
-        ResultMessage<ResultReturnWhyChooseUsDto> Execute();
+        Task<ResultMessage<ResultReturnWhyChooseUsDto>> ExecuteAsync();
     }
     public class ResultReturnWhyChooseUsDto
     {
@@ -27,12 +29,12 @@ namespace Application.Services.Query.ViewContext.ReturnWhyChooseUs
         {
             _Context = context;
         }
-        ResultMessage<ResultReturnWhyChooseUsDto> IReturnWhyChooseUsService.Execute()
+        async Task<ResultMessage<ResultReturnWhyChooseUsDto>> IReturnWhyChooseUsService.ExecuteAsync()
         {
             try
             {
 
-                var result = _Context.WhyChooseUs.FirstOrDefault();
+                var result = await _Context.WhyChooseUs.FirstOrDefaultAsync();
                 if (result != null)
                 {
                     return new ResultMessage<ResultReturnWhyChooseUsDto>

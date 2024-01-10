@@ -25,6 +25,7 @@
 	  <PackageReference Include="PdfiumViewer.Native.x86_64.v8-xfa" Version="2018.4.8.256" />
 	  <PackageReference Include="PdfSharp" Version="1.50.5147" />
 	  <PackageReference Include="Pechkin.Synchronized" Version="0.5.8.1" />
+	  <PackageReference Include="RestSharp" Version="110.2.0" />
 	  <PackageReference Include="sautinsoft.document" Version="5.4.12.1" />
 	  <PackageReference Include="sautinsoft.pdffocus" Version="8.2.1.18" />
 	  <PackageReference Include="Syncfusion.HtmlToPdfConverter.Blink.Net.Core.Windows" Version="19.4.0.56" />

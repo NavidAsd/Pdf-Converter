@@ -83,7 +83,7 @@
                         <div class="col-12">
                             <div class="upload">
                                 <div class="upload-files">
-                                    <a onclick="select()" id="triggerFile">
+                                    <a onclick="selectttt()" id="triggerFile">
                                         <header style="cursor:pointer" id="headertriggerFile">
                                             <p>
                                                 <i class="fa fa-cloud-upload" aria-hidden="true"></i>
@@ -171,6 +171,14 @@
                                             <circle class="cricle-class" cx="100" cy="100" r="64" />
 
                                         </svg>
+                                        <div class="progress">
+                                            <div class="progress-done" id="progressBar" data-done="70">
+                                                                                        
+                                             </div>
+                                        </div>
+                                        <br>
+                                        <h3 id="status"></h3><br>
+                                        <p id="uploaded_progress"></p>
                                         <p>Processing...</p>
                                         <a onclick="CancelProcess()" class="btn btn-outline-primary mt-4">Cancel</a>
 
@@ -290,7 +298,7 @@
                         <h3>Video tutorial on how to convert PDF to Images</h3>
                         <p>In this video, you will learn how to convert a PDF file to Images in a few minutes</p>
                         string posterName = "How-to-Convert-your-PDFs-to-Images.jpg";
-                        <video poster="@Common.GetPath.GetHelpVideoPath().Replace("wwwroot", "")/poster/@posterName" alt="Help Video" title="Video tutorial on working with tools" style="width: @Common.GetPath.GetVideoSize(); max-height: @Common.GetPath.GetVideoSize(); position:center; background-color: #000;" controls>
+                        <video poster="@Common.GetPath.GetHelpVideoPath().Replace("wwwroot", "")/poster/@posterName" alt="Help Video" title="Video tutorial on working with tools" style="max-height: @Common.GetPath.GetVideoSize(); position:center; background-color: #000;" controls class="video-help">
                             @foreach (var item in Common.Formating.VideosFormat)
                             {
                                 <source src="@Common.GetPath.GetHelpVideoPath().Replace("wwwroot", "")/@ViewBag.ThreeStepHelp.Enything.VideoName" type="video/@item">
@@ -406,7 +414,23 @@
                 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
                 <script src="https://www.google.com/recaptcha/api.js?render=@GoogleCaptchaConfig.Value.Google_SiteKey"></script>
 
+                <script>
+                    function selectttt() {
+                    //    grecaptcha.execute('@GoogleCaptchaConfig.Value.Google_SiteKey', { action: 'submit' }).then(function(token) {
+                     //       document.getElementById("cpth").value = token;
+                     //   });
+                        const progress = document.querySelector('.progress-done');
+    progress.setAttribute("data-done" , "0");
 
+                        const progress1 = document.querySelector('.progress');
+                        progress1.style.display = "";
+                        Download(false);
+                       Loading(false);
+                       OtherRowUpload(true);
+                        $("#_upload").click();
+                  
+                    }
+                    </script>
                 <script>
                     grecaptcha.ready(function() {
                         grecaptcha.execute('@GoogleCaptchaConfig.Value.Google_SiteKey', { action: 'submit' }).then(function(token) {
@@ -460,7 +484,7 @@
 
                     function SelectFile(State) {
                         if (State == true) {
-                            document.getElementById("triggerFile").setAttribute('onclick', 'select()');
+                            document.getElementById("triggerFile").setAttribute('onclick', 'selectttt()');
                             document.getElementById("headertriggerFile").style.cursor = "pointer";
                         }
                         else {
@@ -487,12 +511,9 @@
                     }
 
                     function OtherRowUpload(State) {
-                        if (State == true) {
-                            document.getElementById("drop").style.visibility = "visible";
-                        }
-                        else {
-                            document.getElementById("drop").style.visibility = "hidden";
-                        }
+        if (State == false) {
+            document.getElementById("drop").style.display = "none";
+        }
                     }
 
                     function TryConvert(State, FileName, Ip) {
@@ -504,58 +525,86 @@
                         }
                     }
 
-                    async function SendData() {
-                        var File = document.getElementById("_upload");
-                        var Filter = /(\.pdf|\.)$/i;
-                        if (!Filter.exec(File.value)) {
-                            swal.fire
-                                (
-                                    "warning",
-                                    "File Format Invalid",
-                                    "warning"
-                                );
-                            return;
-                        }
-                        var formData = new FormData();
-                        formData.append("file", File.files[0]);
-                        formData.append("Service", document.getElementById("FileFormatService").innerHTML);
-                        formData.append("Recaptcha", document.getElementById("cpth").value);
-                        Loading(true);
-                        SelectFile(false);
-                        Download(false);
-                        OtherRowUpload(false);
-                        await fetch('/ConvertFromPdf/PdfToImageUpload/', {
-                            method: "POST",
-                            body: formData
-                        })
-                            .then(response => response.json())
-                            .then((data) => {
-                                Loading(false);
-                                SelectFile(true);
-                                if (data.success) {
-                                    Download(true, data.enything.outFileName, data.enything.id);
-                                    FileName = data.enything.outFileName;
-                                    Id = data.enything.id;
-                                }
-                                else if (data.enything == null) {
-                                    OtherRowUpload(true);
-                                    swal.fire(
-                                        "warning",
-                                        data.message,
-                                        "warning"
-                                    );
-                                }
-                                else {
-                                    OtherRowUpload(true);
-                                    //TryConvert(true, data.enything.filename, data.enything.userip);
-                                    swal.fire(
-                                        "warning",
-                                        data.message,
-                                        "warning"
-                                    );
-                                }
-                            })
-                    }
+   async function SendData() {
+    var File = document.getElementById("_upload");
+    var Filter = /(\.pdf|\.)$/i;
+    if (!Filter.exec(File.value)) {
+        swal.fire
+            (
+                "warning",
+                "File Format Invalid",
+                "warning"
+            );
+        return;
+    }
+    var formData = new FormData();
+    formData.append("file", File.files[0]);
+    formData.append("Service", document.getElementById("FileFormatService").innerHTML);
+    formData.append("Recaptcha", document.getElementById("cpth").value);
+
+    Loading(true);
+    SelectFile(false);
+    Download(false);
+    OtherRowUpload(false);
+
+    var ajax = new XMLHttpRequest();
+    ajax.upload.addEventListener("progress", progressHandler, false);
+    ajax.addEventListener("load", completeHandler, false);
+    ajax.addEventListener("error", errorHandler, false);
+    ajax.addEventListener("abort", abortHandler, false);
+    ajax.open("POST", "/ConvertFromPdf/PdfToImageUpload/");
+    ajax.send(formData);
+        
+}
+
+function progressHandler(event) {
+    var loaded = new Number((event.loaded / 1048576));//Make loaded a "number" and divide bytes to get Megabytes
+    var total = new Number((event.total / 1048576));//Make total file size a "number" and divide bytes to get Megabytes
+    $("#uploaded_progress").innerHTML = "Uploaded <b>" + loaded.toPrecision(5) + "</b> Megabytes of " + total.toPrecision(5);//String output
+    var percent = (event.loaded / event.total) * 100;//Get percentage of upload progress
+    // $("#progressBar").innerHTML = Math.round(percent);//Round value to solid
+    const progress = document.querySelector('.progress-done');
+    progress.setAttribute("data-done" ,  Math.round(percent))
+    progress.style.width = progress.getAttribute('data-done') + '%';
+    Loading(true)
+    $("#status").innerHTML = Math.round(percent) + "% uploaded";//String output
+}
+function completeHandler(event) {
+    Loading(false);
+    SelectFile(true);
+    const obj_upload_serv = JSON.parse(event.target.responseText)
+    const progress = document.querySelector('.progress');
+    if(obj_upload_serv.success){
+        $("#status").innerHTML = "Complate !";
+        progress.style.display = "none"
+        Download(true, obj_upload_serv.enything.outFileName, obj_upload_serv.enything.id);
+                FileName = obj_upload_serv.enything.outFileName;
+                Id = obj_upload_serv.enything.id;
+    } 
+    else if (obj_upload_serv.enything == null) {
+                OtherRowUpload(true);
+                swal.fire(
+                    "warning",
+                    obj_upload_serv.message,
+                    "warning"
+                );
+            }
+    else {
+                OtherRowUpload(true);
+                //TryConvert(true, data.enything.filename, data.enything.userip);
+                swal.fire(
+                    "warning",
+                    obj_upload_serv.message,
+                    "warning"
+                );
+    }
+}
+function errorHandler(event) {
+    $("#status").innerHTML = "Upload Failed";//Switch status to upload failed
+}
+function abortHandler(event) {
+    $("#status").innerHTML = "Upload Aborted";//Switch status to aborted
+}
 
                     async function SubmitEmail() {
                         var Data = new FormData();
@@ -625,16 +674,7 @@
                     }
 
 
-                    function select() {
-                        grecaptcha.execute('@GoogleCaptchaConfig.Value.Google_SiteKey', { action: 'submit' }).then(function(token) {
-                            document.getElementById("cpth").value = token;
-                        });
-
-                        Download(false);
-                        Loading(false);
-                        OtherRowUpload(true);
-                        $("#_upload").click();
-                    }
+                    
 
                     function SetFormat(Format, Service) {
                         document.getElementById("btnFileFormat").innerHTML = Format;

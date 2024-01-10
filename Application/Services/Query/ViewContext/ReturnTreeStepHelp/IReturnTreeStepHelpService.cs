@@ -3,14 +3,15 @@ using Common;
 using Microsoft.EntityFrameworkCore;
 using System.Collections.Generic;
 using System.Linq;
+using System.Threading.Tasks;
 
 namespace Application.Services.Query.ViewContext.ReturnTreeStepHelp
 {
     public interface IReturnTreeStepHelpService
     {
-        ResultMessage<ResultReturnTreeStepHelpListDto> ReturnAll(RequestReturnTreeStepHelpListDto request);
-        ResultMessage<ResultReturnTreeStepHelpDto> Execute(long Id);
-        ResultMessage<ResultReturnTreeStepHelpDto> FindWithService(int ServiceType);
+        Task<ResultMessage<ResultReturnTreeStepHelpListDto>> ReturnAllAsync(RequestReturnTreeStepHelpListDto request);
+        Task<ResultMessage<ResultReturnTreeStepHelpDto>> ExecuteAsync(long Id);
+        Task<ResultMessage<ResultReturnTreeStepHelpDto>> FindWithServiceAsync(int ServiceType);
     }
     public class ResultReturnTreeStepHelpDto
     {
@@ -45,9 +46,9 @@ namespace Application.Services.Query.ViewContext.ReturnTreeStepHelp
         {
             _Context = context;
         }
-        ResultMessage<ResultReturnTreeStepHelpDto> IReturnTreeStepHelpService.Execute(long Id)
+        async Task<ResultMessage<ResultReturnTreeStepHelpDto>> IReturnTreeStepHelpService.ExecuteAsync(long Id)
         {
-            var result = _Context.TreeHelpSteps.Find(Id);
+            var result =await _Context.TreeHelpSteps.FindAsync(Id);
             if (result != null)
             {
                 return new ResultMessage<ResultReturnTreeStepHelpDto>
@@ -74,9 +75,9 @@ namespace Application.Services.Query.ViewContext.ReturnTreeStepHelp
                 };
             }
         }
-        ResultMessage<ResultReturnTreeStepHelpDto> IReturnTreeStepHelpService.FindWithService(int ServiceType)
+        async Task<ResultMessage<ResultReturnTreeStepHelpDto>> IReturnTreeStepHelpService.FindWithServiceAsync(int ServiceType)
         {
-            var result = _Context.TreeHelpSteps.Where(p => p.ServiceType == ServiceType).FirstOrDefault();
+            var result = await _Context.TreeHelpSteps.Where(p => p.ServiceType == ServiceType).FirstOrDefaultAsync();
             if (result != null)
             {
                 return new ResultMessage<ResultReturnTreeStepHelpDto>
@@ -104,7 +105,7 @@ namespace Application.Services.Query.ViewContext.ReturnTreeStepHelp
             }
         }
 
-        ResultMessage<ResultReturnTreeStepHelpListDto> IReturnTreeStepHelpService.ReturnAll(RequestReturnTreeStepHelpListDto request)
+        async Task<ResultMessage<ResultReturnTreeStepHelpListDto>> IReturnTreeStepHelpService.ReturnAllAsync(RequestReturnTreeStepHelpListDto request)
         {
             int totalrow = 0;
             var Comments = _Context.TreeHelpSteps.Where(p => p.IsRemoved == false).AsQueryable();

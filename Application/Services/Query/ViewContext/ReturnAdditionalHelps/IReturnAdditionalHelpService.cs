@@ -1,5 +1,6 @@
 ﻿using Application.Interface;
 using Common;
+using Microsoft.EntityFrameworkCore;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
@@ -10,8 +11,8 @@ namespace Application.Services.Query.ViewContext.ReturnAdditionalHelps
     public interface IReturnAdditionalHelpService
     {
         ResultMessage<List<Domain.Entities.OtherContext.AdditionalHelp>> ReturnAllForAdmin();
-        ResultMessage<Domain.Entities.OtherContext.AdditionalHelp> ReturnWithId(long Id);
-        ResultMessage<Domain.Entities.OtherContext.AdditionalHelp> ReturnWithServiceType(int Service);
+        Task<ResultMessage<Domain.Entities.OtherContext.AdditionalHelp>> ReturnWithIdAsync(long Id);
+        Task<ResultMessage<Domain.Entities.OtherContext.AdditionalHelp>> ReturnWithServiceTypeAsync(int Service);
 
     }
     public class ReturnAdditionalHelpService : IReturnAdditionalHelpService
@@ -57,9 +58,9 @@ namespace Application.Services.Query.ViewContext.ReturnAdditionalHelps
                 Message = "No Item Found"
             };
         }
-        ResultMessage<Domain.Entities.OtherContext.AdditionalHelp> IReturnAdditionalHelpService.ReturnWithId(long Id)
+        async Task<ResultMessage<Domain.Entities.OtherContext.AdditionalHelp>> IReturnAdditionalHelpService.ReturnWithIdAsync(long Id)
         {
-            var result = _Context.AdditionalHelps.Find(Id);
+            var result = await _Context.AdditionalHelps.FindAsync(Id);
             if(result != null)
             {
                 return new ResultMessage<Domain.Entities.OtherContext.AdditionalHelp>
@@ -75,9 +76,9 @@ namespace Application.Services.Query.ViewContext.ReturnAdditionalHelps
                 Message = "Item Not Found"
             };
         }
-        ResultMessage<Domain.Entities.OtherContext.AdditionalHelp> IReturnAdditionalHelpService.ReturnWithServiceType(int Service)
+        async Task<ResultMessage<Domain.Entities.OtherContext.AdditionalHelp>> IReturnAdditionalHelpService.ReturnWithServiceTypeAsync(int Service)
         {
-            var result = _Context.AdditionalHelps.Where(p => p.ServiceType == Service).FirstOrDefault();
+            var result = await _Context.AdditionalHelps.Where(p => p.ServiceType == Service).FirstOrDefaultAsync();
             if(result != null)
             {
                 return new ResultMessage<Domain.Entities.OtherContext.AdditionalHelp>

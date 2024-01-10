@@ -1,4 +1,5 @@
 ﻿using Application.Services.Blog.ReturnBlogPostsData;
+using Application.Services.Command.AddNewBolgPost;
 using Application.Services.Command.ViewContext.AddNewFrequntlyQuestion;
 using Application.Services.Command.ViewContext.AddNewReportBug;
 using Application.Services.Command.ViewContext.ChangeReportState;
@@ -11,6 +12,7 @@ using Application.Services.Command.ViewContext.UpdateSocialNetworks;
 using Application.Services.Command.ViewContext.UpdateTermsOfUse;
 using Application.Services.Command.ViewContext.UpdateTreeStepHelp;
 using Application.Services.Command.ViewContext.UpdateWhyChooseUs;
+using Application.Services.Query.Blog;
 using Application.Services.Query.ReturnServiceImage;
 using Application.Services.Query.ViewContext.ReturnAdditionalHelps;
 using Application.Services.Query.ViewContext.ReturnFrequentlyQuestion;
@@ -49,5 +51,7 @@ namespace Application.Interface.FacadPattern
         IReturnServiceImage ReturnServiceImage { get; }
         IReturnAdditionalHelpService ReturnAdditionalHelpService { get; }
         IUpdateAdditionalHelpService UpdateAdditionalHelpService { get; }
+        IAddNewBlogPostService AddNewBlogPostService { get; }
+        IReturnBlogPostsFromDbService ReturnBlogPostsFromDbService { get; }
     }
 }

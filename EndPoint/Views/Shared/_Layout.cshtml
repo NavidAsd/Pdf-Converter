@@ -14,8 +14,10 @@
     <link href="~/css/bootstrap.min.css" rel="stylesheet">
     <link href="~/css/responsive.css" rel="stylesheet">
     <link href="~/css/style.css" rel="stylesheet">
-
 </head>
+
+
+
 <body id="layout">
     <!-- start header -->
     <header>
@@ -450,7 +452,6 @@
     </header>
     <!-- end header -->
     @await Component.InvokeAsync("GetCookie")
-
     <div class="container">
         <main role="main" class="pb-3">
             @RenderBody()
@@ -462,11 +463,26 @@
     <!-- end footer -->
     <script src="~/lib/jquery/dist/jquery.min.js"></script>
     <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+     <!-- Ezoic Code -->
+
+<script src="//www.ezojs.com/basicads.js?d=pdftoconverter.com" type="text/javascript"></script>
+
+<!-- Ezoic Code -->
+
     @await RenderSectionAsync("Scripts", required: false)
     <!-- start Schemas -->
     @await RenderSectionAsync("Schemas", required: false)
     <!-- end Schemas -->
     @RenderSection("Modals", false)
+
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-GJQH0MSXDR"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+        gtag('config', 'G-GJQH0MSXDR');
+    </script>
 
     <script>
 

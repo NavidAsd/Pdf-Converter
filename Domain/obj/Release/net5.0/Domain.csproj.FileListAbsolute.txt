@@ -22,3 +22,16 @@ D:\C#\Web\Core\PdfConverter\Domain\obj\Release\net5.0\Domain.dll
 D:\C#\Web\Core\PdfConverter\Domain\obj\Release\net5.0\refint\Domain.dll
 D:\C#\Web\Core\PdfConverter\Domain\obj\Release\net5.0\Domain.pdb
 D:\C#\Web\Core\PdfConverter\Domain\obj\Release\net5.0\ref\Domain.dll
+S:\navid\PdfConverter\Domain\bin\Release\net5.0\Domain.deps.json
+S:\navid\PdfConverter\Domain\bin\Release\net5.0\Domain.dll
+S:\navid\PdfConverter\Domain\bin\Release\net5.0\Domain.pdb
+S:\navid\PdfConverter\Domain\obj\Release\net5.0\Domain.csproj.AssemblyReference.cache
+S:\navid\PdfConverter\Domain\obj\Release\net5.0\Domain.GeneratedMSBuildEditorConfig.editorconfig
+S:\navid\PdfConverter\Domain\obj\Release\net5.0\Domain.AssemblyInfoInputs.cache
+S:\navid\PdfConverter\Domain\obj\Release\net5.0\Domain.AssemblyInfo.cs
+S:\navid\PdfConverter\Domain\obj\Release\net5.0\Domain.csproj.CoreCompileInputs.cache
+S:\navid\PdfConverter\Domain\obj\Release\net5.0\Domain.sourcelink.json
+S:\navid\PdfConverter\Domain\obj\Release\net5.0\Domain.dll
+S:\navid\PdfConverter\Domain\obj\Release\net5.0\refint\Domain.dll
+S:\navid\PdfConverter\Domain\obj\Release\net5.0\Domain.pdb
+S:\navid\PdfConverter\Domain\obj\Release\net5.0\ref\Domain.dll

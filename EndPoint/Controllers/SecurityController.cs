@@ -30,9 +30,9 @@ namespace EndPoint.Controllers
         [Route("unlock-pdf")]
         public async Task<IActionResult> UnlockPdf()
         {
-            var FetureDetails = _FeaturesDetails.ReturnFeatureDetailsService.Excute(new RequestReturnFeatureDetailsDto { ServiceType = Domain.Entities.Features.Security.UnlockPdf });
+            var FetureDetails = await _FeaturesDetails.ReturnFeatureDetailsService.ExecuteAsync(new RequestReturnFeatureDetailsDto { ServiceType = Domain.Entities.Features.Security.UnlockPdf });
             ViewBag.Comments = await _FeaturesDetails.ReturnUsersCommnetsService.ReturnAllTopRatingCommnetsAsync(GetPath.GetCommentCount(), Domain.Entities.Features.Security.UnlockPdf);
-            ViewBag.ThreeStepHelp = _ViewFacad.ReturnTreeStepHelpService.FindWithService(Domain.Entities.Features.Security.UnlockPdf);
+            ViewBag.ThreeStepHelp = await _ViewFacad.ReturnTreeStepHelpService.FindWithServiceAsync(Domain.Entities.Features.Security.UnlockPdf);
             ViewBag.FAQ = await _ViewFacad.ReturnFrequentlyQuestionService.ReturnAllAsync(Domain.Entities.Features.Security.UnlockPdf, GetPath.GetFAQCount()); //FAQ
             if (FetureDetails.Success)
                 return View(FetureDetails);
@@ -42,9 +42,9 @@ namespace EndPoint.Controllers
         [Route("protect-pdf")]
         public async Task<IActionResult> ProtectPdf()
         {
-            var FetureDetails = _FeaturesDetails.ReturnFeatureDetailsService.Excute(new RequestReturnFeatureDetailsDto { ServiceType = Domain.Entities.Features.Security.ProtectPdf });
+            var FetureDetails = await _FeaturesDetails.ReturnFeatureDetailsService.ExecuteAsync(new RequestReturnFeatureDetailsDto { ServiceType = Domain.Entities.Features.Security.ProtectPdf });
             ViewBag.Comments = await _FeaturesDetails.ReturnUsersCommnetsService.ReturnAllTopRatingCommnetsAsync(GetPath.GetCommentCount(), Domain.Entities.Features.Security.ProtectPdf);
-            ViewBag.ThreeStepHelp = _ViewFacad.ReturnTreeStepHelpService.FindWithService(Domain.Entities.Features.Security.ProtectPdf);
+            ViewBag.ThreeStepHelp = await _ViewFacad.ReturnTreeStepHelpService.FindWithServiceAsync(Domain.Entities.Features.Security.ProtectPdf);
             ViewBag.FAQ = await _ViewFacad.ReturnFrequentlyQuestionService.ReturnAllAsync(Domain.Entities.Features.Security.ProtectPdf, GetPath.GetFAQCount()); //FAQ
             if (FetureDetails.Success)
                 return View(FetureDetails);
@@ -54,9 +54,9 @@ namespace EndPoint.Controllers
         [Route("remove-pdf-protection")]
         public async Task<IActionResult> RemovePdfProtection()
         {
-            var FetureDetails = _FeaturesDetails.ReturnFeatureDetailsService.Excute(new RequestReturnFeatureDetailsDto { ServiceType = Domain.Entities.Features.Security.RemvePdfProtection });
+            var FetureDetails = await _FeaturesDetails.ReturnFeatureDetailsService.ExecuteAsync(new RequestReturnFeatureDetailsDto { ServiceType = Domain.Entities.Features.Security.RemvePdfProtection });
             ViewBag.Comments = await _FeaturesDetails.ReturnUsersCommnetsService.ReturnAllTopRatingCommnetsAsync(GetPath.GetCommentCount(), Domain.Entities.Features.Security.RemvePdfProtection);
-            ViewBag.ThreeStepHelp = _ViewFacad.ReturnTreeStepHelpService.FindWithService(Domain.Entities.Features.Security.RemvePdfProtection);
+            ViewBag.ThreeStepHelp = await _ViewFacad.ReturnTreeStepHelpService.FindWithServiceAsync(Domain.Entities.Features.Security.RemvePdfProtection);
             ViewBag.FAQ = await _ViewFacad.ReturnFrequentlyQuestionService.ReturnAllAsync(Domain.Entities.Features.Security.RemvePdfProtection, GetPath.GetFAQCount()); //FAQ
             if (FetureDetails.Success)
                 return View(FetureDetails);
@@ -445,7 +445,7 @@ namespace EndPoint.Controllers
             var captcha = await _AncillaryServices.GoogleRecaptchaService.Responsewithstring(request.Recaptcha);
             if (captcha.Success)
             {
-                var service = _FeaturesDetails.ReturnFeatureDetailsService.Excute(new RequestReturnFeatureDetailsDto { ServiceType = request.Service });
+                var service = await _FeaturesDetails.ReturnFeatureDetailsService.ExecuteAsync(new RequestReturnFeatureDetailsDto { ServiceType = request.Service });
                 if (service.Success)
                 {
                     var commnet = await _FeaturesDetails.AddNewUserCommentService.ExecuteAsync(new Application.Services.Command.AddNewUserComment.RequestAddNewUserCommentDto

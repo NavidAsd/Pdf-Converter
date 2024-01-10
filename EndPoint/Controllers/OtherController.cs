@@ -36,9 +36,9 @@ namespace EndPoint.Controllers
         [Route("extract-pdf-images")]
         public async Task<IActionResult> ExtractPdfImages()
         {
-            var FetureDetails = _FeaturesDetails.ReturnFeatureDetailsService.Excute(new RequestReturnFeatureDetailsDto { ServiceType = Domain.Entities.Features.OtherFeatures.ExtractImagesFromPdf });
+            var FetureDetails = await _FeaturesDetails.ReturnFeatureDetailsService.ExecuteAsync(new RequestReturnFeatureDetailsDto { ServiceType = Domain.Entities.Features.OtherFeatures.ExtractImagesFromPdf });
             ViewBag.Comments = await _FeaturesDetails.ReturnUsersCommnetsService.ReturnAllTopRatingCommnetsAsync(GetPath.GetCommentCount(), Domain.Entities.Features.OtherFeatures.ExtractImagesFromPdf);
-            ViewBag.ThreeStepHelp = _ViewFacad.ReturnTreeStepHelpService.FindWithService(Domain.Entities.Features.OtherFeatures.ExtractImagesFromPdf);
+            ViewBag.ThreeStepHelp = await _ViewFacad.ReturnTreeStepHelpService.FindWithServiceAsync(Domain.Entities.Features.OtherFeatures.ExtractImagesFromPdf);
             ViewBag.FAQ = await _ViewFacad.ReturnFrequentlyQuestionService.ReturnAllAsync(Domain.Entities.Features.OtherFeatures.ExtractImagesFromPdf,GetPath.GetFAQCount()); //FAQ
             if (FetureDetails.Success)
                 return View(FetureDetails);
@@ -49,9 +49,9 @@ namespace EndPoint.Controllers
         [Route("read-pdf")]
         public async Task<IActionResult> ReadPdf()  
         {
-            var FetureDetails = _FeaturesDetails.ReturnFeatureDetailsService.Excute(new RequestReturnFeatureDetailsDto { ServiceType = Domain.Entities.Features.OtherFeatures.PdfReader });
+            var FetureDetails = await _FeaturesDetails.ReturnFeatureDetailsService.ExecuteAsync(new RequestReturnFeatureDetailsDto { ServiceType = Domain.Entities.Features.OtherFeatures.PdfReader });
             ViewBag.Comments = await _FeaturesDetails.ReturnUsersCommnetsService.ReturnAllTopRatingCommnetsAsync(GetPath.GetCommentCount(), Domain.Entities.Features.OtherFeatures.PdfReader);
-            ViewBag.ThreeStepHelp = _ViewFacad.ReturnTreeStepHelpService.FindWithService(Domain.Entities.Features.OtherFeatures.PdfReader);
+            ViewBag.ThreeStepHelp = await _ViewFacad.ReturnTreeStepHelpService.FindWithServiceAsync(Domain.Entities.Features.OtherFeatures.PdfReader);
             ViewBag.FAQ = await _ViewFacad.ReturnFrequentlyQuestionService.ReturnAllAsync(Domain.Entities.Features.OtherFeatures.PdfReader,GetPath.GetFAQCount()); //FAQ
             if (FetureDetails.Success)
                 return View(FetureDetails);
@@ -291,7 +291,7 @@ namespace EndPoint.Controllers
             var captcha = await _AncillaryServices.GoogleRecaptchaService.Responsewithstring(request.Recaptcha);
             if (captcha.Success)
             {
-                var service = _FeaturesDetails.ReturnFeatureDetailsService.Excute(new RequestReturnFeatureDetailsDto { ServiceType = request.Service });
+                var service = await _FeaturesDetails.ReturnFeatureDetailsService.ExecuteAsync(new RequestReturnFeatureDetailsDto { ServiceType = request.Service });
                 if (service.Success)
                 {
                     var commnet = await _FeaturesDetails.AddNewUserCommentService.ExecuteAsync(new Application.Services.Command.AddNewUserComment.RequestAddNewUserCommentDto

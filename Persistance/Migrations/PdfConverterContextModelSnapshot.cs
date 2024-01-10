@@ -20,6 +20,48 @@ namespace Persistance.Migrations
                 .HasAnnotation("ProductVersion", "5.0.9")
                 .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
+            modelBuilder.Entity("Domain.Entities.Blog.BlogPosts", b =>
+                {
+                    b.Property<long>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("bigint")
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<string>("Content")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("ImgUrl")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<DateTime>("InsertTime")
+                        .HasColumnType("date");
+
+                    b.Property<bool>("IsRemoved")
+                        .HasColumnType("bit");
+
+                    b.Property<DateTime?>("LastUpdate")
+                        .HasColumnType("date");
+
+                    b.Property<DateTime?>("RemoveTime")
+                        .HasColumnType("date");
+
+                    b.Property<int>("ServiceId")
+                        .HasColumnType("int");
+
+                    b.Property<string>("ServiceName")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Title")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Url")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("BlogPosts");
+                });
+
             modelBuilder.Entity("Domain.Entities.Details.FeaturesDetails", b =>
                 {
                     b.Property<long>("Id")
@@ -651,25 +693,34 @@ namespace Persistance.Migrations
                     b.Property<DateTime>("InsertTime")
                         .HasColumnType("date");
 
-                    b.Property<string>("Instagram")
-                        .HasColumnType("nvarchar(max)");
-
                     b.Property<bool>("IsRemoved")
                         .HasColumnType("bit");
 
                     b.Property<DateTime?>("LastUpdate")
                         .HasColumnType("date");
 
+                    b.Property<string>("Medium")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Okru")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Pinterest")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Reddit")
+                        .HasColumnType("nvarchar(max)");
+
                     b.Property<DateTime?>("RemoveTime")
                         .HasColumnType("date");
 
-                    b.Property<string>("Telegram")
+                    b.Property<string>("Tumblr")
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Twitter")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("Youtube")
+                    b.Property<string>("VK")
                         .HasColumnType("nvarchar(max)");
 
                     b.HasKey("Id");

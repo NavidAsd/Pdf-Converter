@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("EndPoint")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Release")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+f4942292a5b4ab27756599c644837c0099cbae5a")]
 [assembly: System.Reflection.AssemblyProductAttribute("EndPoint")]
 [assembly: System.Reflection.AssemblyTitleAttribute("EndPoint")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

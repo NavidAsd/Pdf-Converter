@@ -67,7 +67,7 @@ namespace EndPoint.Areas.PdfManagerArea.Controllers
             else
                 return Redirect($"{GetPath.GetDomainHttps()}/PdfManagerArea/Authentication/Login");
         }
-        public IActionResult EditBlock(long Id, int Type)
+        public async Task<IActionResult> EditBlock(long Id, int Type)
         {
             if (HttpContext.User.Identity.IsAuthenticated)
             {
@@ -75,20 +75,20 @@ namespace EndPoint.Areas.PdfManagerArea.Controllers
                 ViewBag.CommentCount = _FeaturesDetails.ReturnUsersCommnetsService.ReturnUnAcceptedCommentsCountForAdmin();
                 ViewBag.Type = Type;
                 if (Type > 0 && Type < 4)
-                    return View(_ViewContext.ReturnAdditionalHelpService.ReturnWithId(Id));
+                    return View(await _ViewContext.ReturnAdditionalHelpService.ReturnWithIdAsync(Id));
                 else
                     return RedirectToAction("NotFound", "Error");
             }
             else
                 return Redirect($"{GetPath.GetDomainHttps()}/PdfManagerArea/Authentication/Login");
         }
-        public IActionResult EditAdditionalHelp(long Id)
+        public async Task<IActionResult> EditAdditionalHelp(long Id)
         {
             if (HttpContext.User.Identity.IsAuthenticated)
             {
                 ViewBag.Data = LayoutData();
                 ViewBag.CommentCount = _FeaturesDetails.ReturnUsersCommnetsService.ReturnUnAcceptedCommentsCountForAdmin();
-                return View(_ViewContext.ReturnAdditionalHelpService.ReturnWithId(Id));
+                return View(await _ViewContext.ReturnAdditionalHelpService.ReturnWithIdAsync(Id));
             }
             else
                 return Redirect($"{GetPath.GetDomainHttps()}/PdfManagerArea/Authentication/Login");

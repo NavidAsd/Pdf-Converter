@@ -1,9 +1,14 @@
 ﻿using Common.Schema;
+using iTextSharp.text.pdf.codec.wmf;
+using Newtonsoft.Json;
+using Org.BouncyCastle.Asn1.Crmf;
 using Org.BouncyCastle.Asn1.Ocsp;
+using RestSharp;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.IO.Compression;
+using System.Net;
 using System.Net.Http;
 using System.Net.Http.Headers;
 using System.Threading.Tasks;
@@ -122,14 +127,24 @@ namespace Common
                 return new InternalServiceResponse { StatusCode = 500 };
             }
         }
-        public static async Task<string> LinkShorter(string Url)
+        public static async Task<Common.someEntities.ShortUrl> LinkShorter(string Url)
         {
-            HttpClient client = new HttpClient();
             try
             {
-                var adr = $"https://is.gd/create.php?format=simple&url={HttpUtility.UrlEncode(Url)}";
-                var responseString = await client.GetStringAsync(adr);
-                return responseString.ToString();
+                var client = new RestClient("https://api.apilayer.com/short_url/hash");
+                var request = new RestRequest();
+                request.Method = Method.Post;
+                request.Timeout = -1;
+                request.AddHeader("apikey", "7mhH4cZ6B4uU7Sq7xDAJAsLwFR1wVxDM"); //key
+                request.AddParameter("text/plain", Url, ParameterType.RequestBody);
+
+                RestResponse response = await client.ExecuteAsync(request);
+
+                dynamic result = JsonConvert.DeserializeObject(response.Content);
+                someEntities.ShortUrl LinkGenerated = new someEntities.ShortUrl();
+                LinkGenerated.hash = result.hash; // for delete generatedlink on linkshorter server
+                LinkGenerated.short_url = result.short_url;
+                return LinkGenerated;
             }
             catch { return null; }
 

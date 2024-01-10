@@ -7,6 +7,7 @@ using Domain.Entities.Files;
 using Domain.Entities.Features;
 using Domain.Entities.OtherContext;
 using Domain.Entities.Seo;
+using Domain.Entities.Blog;
 #nullable disable
 
 namespace Persistance.Context
@@ -48,6 +49,7 @@ namespace Persistance.Context
         public virtual DbSet<Keywords> Keywords { get; set; }
         public virtual DbSet<AdditionalHelp> AdditionalHelps { get; set; }
         public virtual DbSet<UserMessages> UserMessages { get; set; }
+        public virtual DbSet<BlogPosts> BlogPosts { get; set; }
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {

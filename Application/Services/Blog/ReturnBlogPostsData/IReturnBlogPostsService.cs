@@ -3,13 +3,12 @@ using Domain.Entities.Blog;
 using Newtonsoft.Json;
 using System.Collections.Generic;
 using System.Threading.Tasks;
-using static Dropbox.Api.Sharing.ListFileMembersIndividualResult;
 
 namespace Application.Services.Blog.ReturnBlogPostsData
 {
     public interface IReturnBlogPostsService
     {
-        ResultMessage<ResultReturnBlogPostsDto> Execute(int? LimitCount, int? Category,int? after);
+        Task<ResultMessage<ResultReturnBlogPostsDto>> ExecuteAsync(int? LimitCount, int? Category,int? after);
     }
     public class ResultReturnBlogPostsDto
     {
@@ -17,7 +16,7 @@ namespace Application.Services.Blog.ReturnBlogPostsData
     }
     public class ReturnBlogPostsService : IReturnBlogPostsService
     {
-        ResultMessage<ResultReturnBlogPostsDto> IReturnBlogPostsService.Execute(int? LimitCount, int? Category,int? after)
+        async Task<ResultMessage<ResultReturnBlogPostsDto>> IReturnBlogPostsService.ExecuteAsync(int? LimitCount, int? Category,int? after)
         {
             try
             {
@@ -26,14 +25,14 @@ namespace Application.Services.Blog.ReturnBlogPostsData
                     Url += $"?categories={Category}";
                 if (LimitCount > 10 || LimitCount == null)
                 {
-                    var ResponseList = new List<Task<InternalServiceResponse>>();
+                    var ResponseList = new List<InternalServiceResponse>();
                     int page = 1;
                     Url += Category != null ? $"&&page={page}" : $"?page={page}";
                     while (true)
                     {
                         page += 1;
-                        var Rsp = AppliedMethodes.RequestSender(Url, false);
-                        if (Rsp.Result.StatusCode == (int)System.Net.HttpStatusCode.OK)
+                        var Rsp = await AppliedMethodes.RequestSender(Url, false);
+                        if (Rsp.StatusCode == (int)System.Net.HttpStatusCode.OK)
                             ResponseList.Add(Rsp);
                         else
                             break;
@@ -44,7 +43,7 @@ namespace Application.Services.Blog.ReturnBlogPostsData
                         List<BlogEntities> result = new List<BlogEntities>();
                         foreach (var item in ResponseList)
                         {
-                            dynamic JsonResult = JsonConvert.DeserializeObject(item.Result.ResponseContent);
+                            dynamic JsonResult = JsonConvert.DeserializeObject(item.ResponseContent);
                             //int count = LimitCount != null && LimitCount <= JsonResult.Count ? LimitCount : JsonResult.Count;
                             for (int i = 0; i < JsonResult.Count; i++)
                             {
@@ -104,10 +103,10 @@ namespace Application.Services.Blog.ReturnBlogPostsData
                     }
                 }
 
-                var Response = AppliedMethodes.RequestSender(Url, false);
-                if (Response.Result.StatusCode == (int)System.Net.HttpStatusCode.OK)
+                var Response = await AppliedMethodes.RequestSender(Url, false);
+                if (Response.StatusCode == (int)System.Net.HttpStatusCode.OK)
                 {
-                    dynamic JsonResult = JsonConvert.DeserializeObject(Response.Result.ResponseContent);
+                    dynamic JsonResult = JsonConvert.DeserializeObject(Response.ResponseContent);
 
                     List<BlogEntities> result = new List<BlogEntities>();
 

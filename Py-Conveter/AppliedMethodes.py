@@ -6,7 +6,26 @@ class Methodes():
     def __init__():
         pass
 
-    def CompressFilesToZip(lstFiles,OutFilePath,OutFileName):
+    def CompressFilesToZipWithoutPath(lstFiles,OutFilePath,OutFileName,FilesPath):
+        # Select the compression mode ZIP_DEFLATED for compression
+        compression = zipfile.ZIP_DEFLATED
+
+        # create the zip file 
+        zf = zipfile.ZipFile(f"{OutFilePath}\\{OutFileName}", mode="w")
+        try:
+            for file_name in lstFiles:
+                # Add file to the zip file
+                #file_name = f'{FilesPath}\\{file_name}'
+                zf.write(f'{FilesPath}\\{file_name}',file_name, compress_type=compression)
+            return True
+        except:
+            return False
+        finally:
+            zf.close()
+
+
+
+    def CompressFilesToZip(lstFiles,OutFilePath,OutFileName,):
         # Select the compression mode ZIP_DEFLATED for compression
         compression = zipfile.ZIP_DEFLATED
 

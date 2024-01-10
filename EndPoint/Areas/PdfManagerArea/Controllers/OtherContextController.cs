@@ -46,7 +46,7 @@ namespace EndPoint.Areas.PdfManagerArea.Controllers
             {
                 ViewBag.Data = LayoutData();
                 ViewBag.CommentCount = _FeaturesDetails.ReturnUsersCommnetsService.ReturnUnAcceptedCommentsCountForAdmin();
-                return View(_ViewContextFacad.ReturnHomeContextService.Execute());
+                return View(await _ViewContextFacad.ReturnHomeContextService.ExecuteAsync());
             }
             else
                 return Redirect($"{GetPath.GetDomainHttps()}/PdfManagerArea/Authentication/Login");
@@ -112,7 +112,7 @@ namespace EndPoint.Areas.PdfManagerArea.Controllers
                 ViewBag.Type = Type;
                 ViewBag.Data = LayoutData();
                 ViewBag.CommentCount = _FeaturesDetails.ReturnUsersCommnetsService.ReturnUnAcceptedCommentsCountForAdmin();
-                return View(_ViewContextFacad.ReturnWhyChooseUsService.Execute());
+                return View(await _ViewContextFacad.ReturnWhyChooseUsService.ExecuteAsync());
             }
             else
                 return Redirect($"{GetPath.GetDomainHttps()}/PdfManagerArea/Authentication/Login");
@@ -123,7 +123,7 @@ namespace EndPoint.Areas.PdfManagerArea.Controllers
             {
                 ViewBag.Data = LayoutData();
                 ViewBag.CommentCount = _FeaturesDetails.ReturnUsersCommnetsService.ReturnUnAcceptedCommentsCountForAdmin();
-                return View(_ViewContextFacad.ReturnTreeStepHelpService.ReturnAll(new Application.Services.Query.ViewContext.ReturnTreeStepHelp.RequestReturnTreeStepHelpListDto
+                return View(await _ViewContextFacad.ReturnTreeStepHelpService.ReturnAllAsync(new Application.Services.Query.ViewContext.ReturnTreeStepHelp.RequestReturnTreeStepHelpListDto
                 {
                     Filter = Formating.FixFilterFormat(Filter),
                     PageIndex = PageIndex,
@@ -139,7 +139,7 @@ namespace EndPoint.Areas.PdfManagerArea.Controllers
             {
                 ViewBag.Data = LayoutData();
                 ViewBag.CommentCount = _FeaturesDetails.ReturnUsersCommnetsService.ReturnUnAcceptedCommentsCountForAdmin();
-                var result = _ViewContextFacad.ReturnTreeStepHelpService.Execute(Id);
+                var result = await _ViewContextFacad.ReturnTreeStepHelpService.ExecuteAsync(Id);
                 if (result.Success)
                     return View(result);
                 else
@@ -176,7 +176,7 @@ namespace EndPoint.Areas.PdfManagerArea.Controllers
             {
                 ViewBag.Data = LayoutData();
                 ViewBag.CommentCount = _FeaturesDetails.ReturnUsersCommnetsService.ReturnUnAcceptedCommentsCountForAdmin();
-                var result = _ViewContextFacad.ReturnTreeStepHelpService.Execute(Id);
+                var result = await _ViewContextFacad.ReturnTreeStepHelpService.ExecuteAsync(Id);
                 if (result.Success)
                 {
                     return View(result);
@@ -379,7 +379,7 @@ namespace EndPoint.Areas.PdfManagerArea.Controllers
                 {
                     if (!Formating.FileFormatingValidation(request.File.FileName, Formating.VideosFormat))
                         return Json(new ResultMessage { Success = false, Message = $"Video in {Path.GetExtension(request.File.FileName).ToLower()} format is not acceptable, You can see the list of allowed formats from the upload page" });
-                    var Feature = _ViewContextFacad.ReturnTreeStepHelpService.Execute(request.Id);
+                    var Feature = await _ViewContextFacad.ReturnTreeStepHelpService.ExecuteAsync(request.Id);
                     if (Feature.Success)
                     {
                         string VideoName = $"Help-VID_{Feature.Enything.Service}{Path.GetExtension(request.File.FileName).ToLower()}";

@@ -1,12 +1,14 @@
 ﻿using Application.Interface;
 using Common;
+using Microsoft.EntityFrameworkCore;
 using System.Linq;
+using System.Threading.Tasks;
 
 namespace Application.Services.Query.ViewContext.ReturnHomeContext
 {
     public interface IReturnHomeContextService
     {
-        ResultMessage<ResultReturnHomeContextDto> Execute();
+        Task<ResultMessage<ResultReturnHomeContextDto>> ExecuteAsync();
     }
     public class ResultReturnHomeContextDto
     {
@@ -29,11 +31,11 @@ namespace Application.Services.Query.ViewContext.ReturnHomeContext
 
 
 
-        ResultMessage<ResultReturnHomeContextDto> IReturnHomeContextService.Execute()
+        async Task<ResultMessage<ResultReturnHomeContextDto>> IReturnHomeContextService.ExecuteAsync()
         {
             try
             {
-                var result = _Context.HomePageContexts.FirstOrDefault();
+                var result = await _Context.HomePageContexts.FirstOrDefaultAsync();
                 if (result != null)
                 {
                     return new ResultMessage<ResultReturnHomeContextDto>

@@ -1,6 +1,7 @@
 ﻿using Application.Interface;
 using Application.Interface.FacadPattern;
 using Application.Services.Blog.ReturnBlogPostsData;
+using Application.Services.Command.AddNewBolgPost;
 using Application.Services.Command.ViewContext.AddNewFrequntlyQuestion;
 using Application.Services.Command.ViewContext.AddNewReportBug;
 using Application.Services.Command.ViewContext.ChangeReportState;
@@ -13,6 +14,7 @@ using Application.Services.Command.ViewContext.UpdateSocialNetworks;
 using Application.Services.Command.ViewContext.UpdateTermsOfUse;
 using Application.Services.Command.ViewContext.UpdateTreeStepHelp;
 using Application.Services.Command.ViewContext.UpdateWhyChooseUs;
+using Application.Services.Query.Blog;
 using Application.Services.Query.ReturnServiceImage;
 using Application.Services.Query.ViewContext.ReturnAdditionalHelps;
 using Application.Services.Query.ViewContext.ReturnFrequentlyQuestion;
@@ -218,6 +220,22 @@ namespace Application.Services.FacadPattern
             get
             {
                 return _updateAdditionalHelp = _updateAdditionalHelp ?? new UpdateAdditionalHelpService(_Context);
+            }
+        }
+        private IAddNewBlogPostService _addNewBlogPost;
+        public IAddNewBlogPostService AddNewBlogPostService
+        {
+            get
+            {
+                return _addNewBlogPost = _addNewBlogPost ?? new AddNewBlogPostService(_Context);
+            }
+        }
+        private IReturnBlogPostsFromDbService _returnBlogPostsFromDb;
+        public IReturnBlogPostsFromDbService ReturnBlogPostsFromDbService
+        {
+            get
+            {
+                return _returnBlogPostsFromDb = _returnBlogPostsFromDb ?? new ReturnBlogPostsFromDbService(_Context);
             }
         }
     }

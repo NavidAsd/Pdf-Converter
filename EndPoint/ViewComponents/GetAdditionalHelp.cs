@@ -1,5 +1,6 @@
 ﻿using Application.Interface.FacadPattern;
 using Microsoft.AspNetCore.Mvc;
+using System.Threading.Tasks;
 
 namespace EndPoint.ViewComponents
 {
@@ -10,9 +11,9 @@ namespace EndPoint.ViewComponents
         {
             _ViewFacad = viewFacad;
         }
-        public IViewComponentResult Invoke(int Service)
+        public async Task<IViewComponentResult> InvokeAsync(int Service)
         {
-            return View("GetAdditionalHelp", _ViewFacad.ReturnAdditionalHelpService.ReturnWithServiceType(Service));
+            return View("GetAdditionalHelp", await _ViewFacad.ReturnAdditionalHelpService.ReturnWithServiceTypeAsync(Service));
         }
     }
 }

@@ -33,9 +33,9 @@ namespace EndPoint.Controllers
         [Route("ppt-to-pdf")]
         public async Task<IActionResult> PptToPdf()
         {
-            var FetureDetails = _FeaturesDetails.ReturnFeatureDetailsService.Excute(new RequestReturnFeatureDetailsDto { ServiceType = Domain.Entities.Features.ConverterToPdf.PptToPdf });
+            var FetureDetails = await _FeaturesDetails.ReturnFeatureDetailsService.ExecuteAsync(new RequestReturnFeatureDetailsDto { ServiceType = Domain.Entities.Features.ConverterToPdf.PptToPdf });
             ViewBag.Comments = await _FeaturesDetails.ReturnUsersCommnetsService.ReturnAllTopRatingCommnetsAsync(GetPath.GetCommentCount(), Domain.Entities.Features.ConverterToPdf.PptToPdf);
-            ViewBag.ThreeStepHelp = _ViewFacad.ReturnTreeStepHelpService.FindWithService(Domain.Entities.Features.ConverterToPdf.PptToPdf);
+            ViewBag.ThreeStepHelp = await _ViewFacad.ReturnTreeStepHelpService.FindWithServiceAsync(Domain.Entities.Features.ConverterToPdf.PptToPdf);
             ViewBag.FAQ = await _ViewFacad.ReturnFrequentlyQuestionService.ReturnAllAsync(Domain.Entities.Features.ConverterToPdf.PptToPdf, GetPath.GetFAQCount()); //FAQ
             if (FetureDetails.Success)
                 return View(FetureDetails);
@@ -45,10 +45,10 @@ namespace EndPoint.Controllers
         [Route("word-to-pdf")]
         public async Task<IActionResult> WordToPdf()
         {
-            var FetureDetails = _FeaturesDetails.ReturnFeatureDetailsService.Excute(new RequestReturnFeatureDetailsDto { ServiceType = Domain.Entities.Features.ConverterToPdf.DocToPdf });
+            var FetureDetails = await _FeaturesDetails.ReturnFeatureDetailsService.ExecuteAsync(new RequestReturnFeatureDetailsDto { ServiceType = Domain.Entities.Features.ConverterToPdf.DocToPdf });
             ViewBag.Comments = await _FeaturesDetails.ReturnUsersCommnetsService.ReturnAllTopRatingCommnetsAsync(GetPath.GetCommentCount(), Domain.Entities.Features.ConverterToPdf.DocToPdf);
-            ViewBag.ThreeStepHelp = _ViewFacad.ReturnTreeStepHelpService.FindWithService(Domain.Entities.Features.ConverterToPdf.DocToPdf);
-            ViewBag.FAQ =await _ViewFacad.ReturnFrequentlyQuestionService.ReturnAllAsync(Domain.Entities.Features.ConverterToPdf.DocToPdf, GetPath.GetFAQCount()); //FAQ
+            ViewBag.ThreeStepHelp = await _ViewFacad.ReturnTreeStepHelpService.FindWithServiceAsync(Domain.Entities.Features.ConverterToPdf.DocToPdf);
+            ViewBag.FAQ = await _ViewFacad.ReturnFrequentlyQuestionService.ReturnAllAsync(Domain.Entities.Features.ConverterToPdf.DocToPdf, GetPath.GetFAQCount()); //FAQ
             if (FetureDetails.Success)
                 return View(FetureDetails);
             else
@@ -57,10 +57,10 @@ namespace EndPoint.Controllers
         [Route("excel-to-pdf")]
         public async Task<IActionResult> ExcelToPdf()
         {
-            var FetureDetails = _FeaturesDetails.ReturnFeatureDetailsService.Excute(new RequestReturnFeatureDetailsDto { ServiceType = Domain.Entities.Features.ConverterToPdf.ExcelToPdf });
-            ViewBag.Comments =await _FeaturesDetails.ReturnUsersCommnetsService.ReturnAllTopRatingCommnetsAsync(GetPath.GetCommentCount(), Domain.Entities.Features.ConverterToPdf.ExcelToPdf);
-            ViewBag.ThreeStepHelp = _ViewFacad.ReturnTreeStepHelpService.FindWithService(Domain.Entities.Features.ConverterToPdf.ExcelToPdf);
-            ViewBag.Images = _ViewFacad.ReturnServiceImage.ReturnServiceImage(Domain.Entities.Features.ConverterToPdf.ExcelToPdf);
+            var FetureDetails = await _FeaturesDetails.ReturnFeatureDetailsService.ExecuteAsync(new RequestReturnFeatureDetailsDto { ServiceType = Domain.Entities.Features.ConverterToPdf.ExcelToPdf });
+            ViewBag.Comments = await _FeaturesDetails.ReturnUsersCommnetsService.ReturnAllTopRatingCommnetsAsync(GetPath.GetCommentCount(), Domain.Entities.Features.ConverterToPdf.ExcelToPdf);
+            ViewBag.ThreeStepHelp = await _ViewFacad.ReturnTreeStepHelpService.FindWithServiceAsync(Domain.Entities.Features.ConverterToPdf.ExcelToPdf);
+            ViewBag.Images = await _ViewFacad.ReturnServiceImage.ReturnServiceImageAsync(Domain.Entities.Features.ConverterToPdf.ExcelToPdf);
             ViewBag.FAQ = await _ViewFacad.ReturnFrequentlyQuestionService.ReturnAllAsync(Domain.Entities.Features.ConverterToPdf.ExcelToPdf, GetPath.GetFAQCount()); //FAQ
             if (FetureDetails.Success)
                 return View(FetureDetails);
@@ -70,9 +70,9 @@ namespace EndPoint.Controllers
         [Route("images-to-pdf")]
         public async Task<IActionResult> ImagesToPdf()
         {
-            var FetureDetails = _FeaturesDetails.ReturnFeatureDetailsService.Excute(new RequestReturnFeatureDetailsDto { ServiceType = Domain.Entities.Features.ConverterToPdf.ImagesToPdf });
+            var FetureDetails = await _FeaturesDetails.ReturnFeatureDetailsService.ExecuteAsync(new RequestReturnFeatureDetailsDto { ServiceType = Domain.Entities.Features.ConverterToPdf.ImagesToPdf });
             ViewBag.Comments = await _FeaturesDetails.ReturnUsersCommnetsService.ReturnAllTopRatingCommnetsAsync(GetPath.GetCommentCount(), Domain.Entities.Features.ConverterToPdf.ImagesToPdf);
-            ViewBag.ThreeStepHelp = _ViewFacad.ReturnTreeStepHelpService.FindWithService(Domain.Entities.Features.ConverterToPdf.ImagesToPdf);
+            ViewBag.ThreeStepHelp = await _ViewFacad.ReturnTreeStepHelpService.FindWithServiceAsync(Domain.Entities.Features.ConverterToPdf.ImagesToPdf);
             ViewBag.FAQ = await _ViewFacad.ReturnFrequentlyQuestionService.ReturnAllAsync(Domain.Entities.Features.ConverterToPdf.ImagesToPdf, GetPath.GetFAQCount()); //FAQ
             if (FetureDetails.Success)
                 return View(FetureDetails);
@@ -82,9 +82,9 @@ namespace EndPoint.Controllers
         [Route("html-to-pdf")]
         public async Task<IActionResult> HtmlToPdf()
         {
-            var FetureDetails = _FeaturesDetails.ReturnFeatureDetailsService.Excute(new RequestReturnFeatureDetailsDto { ServiceType = Domain.Entities.Features.ConverterToPdf.HtmlToPdf });
+            var FetureDetails = await _FeaturesDetails.ReturnFeatureDetailsService.ExecuteAsync(new RequestReturnFeatureDetailsDto { ServiceType = Domain.Entities.Features.ConverterToPdf.HtmlToPdf });
             ViewBag.Comments = await _FeaturesDetails.ReturnUsersCommnetsService.ReturnAllTopRatingCommnetsAsync(GetPath.GetCommentCount(), Domain.Entities.Features.ConverterToPdf.HtmlToPdf);
-            ViewBag.ThreeStepHelp = _ViewFacad.ReturnTreeStepHelpService.FindWithService(Domain.Entities.Features.ConverterToPdf.HtmlToPdf);
+            ViewBag.ThreeStepHelp = await _ViewFacad.ReturnTreeStepHelpService.FindWithServiceAsync(Domain.Entities.Features.ConverterToPdf.HtmlToPdf);
             ViewBag.FAQ = await _ViewFacad.ReturnFrequentlyQuestionService.ReturnAllAsync(Domain.Entities.Features.ConverterToPdf.HtmlToPdf, GetPath.GetFAQCount()); //FAQ
             if (FetureDetails.Success)
                 return View(FetureDetails);
@@ -94,9 +94,9 @@ namespace EndPoint.Controllers
         [Route("html-css-to-pdf")]
         public async Task<IActionResult> HtmlCssToPdf()
         {
-            var FetureDetails = _FeaturesDetails.ReturnFeatureDetailsService.Excute(new RequestReturnFeatureDetailsDto { ServiceType = Domain.Entities.Features.ConverterToPdf.HtmlToPdf });
+            var FetureDetails = await _FeaturesDetails.ReturnFeatureDetailsService.ExecuteAsync(new RequestReturnFeatureDetailsDto { ServiceType = Domain.Entities.Features.ConverterToPdf.HtmlToPdf });
             ViewBag.Comments = await _FeaturesDetails.ReturnUsersCommnetsService.ReturnAllTopRatingCommnetsAsync(GetPath.GetCommentCount(), Domain.Entities.Features.ConverterToPdf.HtmlToPdf);
-            ViewBag.ThreeStepHelp = _ViewFacad.ReturnTreeStepHelpService.FindWithService(Domain.Entities.Features.ConverterToPdf.HtmlToPdf);
+            ViewBag.ThreeStepHelp = await _ViewFacad.ReturnTreeStepHelpService.FindWithServiceAsync(Domain.Entities.Features.ConverterToPdf.HtmlToPdf);
             ViewBag.FAQ = await _ViewFacad.ReturnFrequentlyQuestionService.ReturnAllAsync(Domain.Entities.Features.ConverterToPdf.HtmlToPdf, GetPath.GetFAQCount()); //FAQ
             if (FetureDetails.Success)
                 return View(FetureDetails);
@@ -607,7 +607,7 @@ namespace EndPoint.Controllers
             var captcha = await _AncillaryServices.GoogleRecaptchaService.Responsewithstring(request.Recaptcha);
             if (captcha.Success)
             {
-                var service = _FeaturesDetails.ReturnFeatureDetailsService.Excute(new RequestReturnFeatureDetailsDto { ServiceType = request.Service });
+                var service = await _FeaturesDetails.ReturnFeatureDetailsService.ExecuteAsync(new RequestReturnFeatureDetailsDto { ServiceType = request.Service });
                 if (service.Success)
                 {
                     var commnet = _FeaturesDetails.AddNewUserCommentService.ExecuteAsync(new Application.Services.Command.AddNewUserComment.RequestAddNewUserCommentDto

@@ -1,6 +1,7 @@
 ﻿using Application.Interface.FacadPattern;
 using Application.Services.Query.ReturnFeatureDetails;
 using Microsoft.AspNetCore.Mvc;
+using System.Threading.Tasks;
 
 namespace EndPoint.ViewComponents
 {
@@ -11,11 +12,11 @@ namespace EndPoint.ViewComponents
         {
             _ViewFacad = viewFacad;
         }
-        public IViewComponentResult Invoke(Common.ResultMessage<ResultReturnFeatureDetailsDto> Features)
+        public async Task<IViewComponentResult> InvokeAsync(Common.ResultMessage<ResultReturnFeatureDetailsDto> Features)
         {
             ViewBag.FetureDetails = Features;
-            ViewBag.Images = _ViewFacad.ReturnServiceImage.ReturnServiceImage(Features.Enything.Service);
-            return View("GetHelpContext", _ViewFacad.ReturnAdditionalHelpService.ReturnWithServiceType(Features.Enything.Service));
+            ViewBag.Images = await _ViewFacad.ReturnServiceImage.ReturnServiceImageAsync(Features.Enything.Service);
+            return View("GetHelpContext", await _ViewFacad.ReturnAdditionalHelpService.ReturnWithServiceTypeAsync(Features.Enything.Service));
         }
     }
 }

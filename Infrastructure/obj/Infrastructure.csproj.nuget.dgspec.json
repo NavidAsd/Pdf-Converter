@@ -1,23 +1,23 @@
 {
   "format": 1,
   "restore": {
-    "D:\\C#\\Web\\Core\\PdfConverter\\Infrastructure\\Infrastructure.csproj": {}
+    "S:\\navid\\PdfConverter\\Infrastructure\\Infrastructure.csproj": {}
   },
   "projects": {
-    "D:\\C#\\Web\\Core\\PdfConverter\\Application\\Application.csproj": {
+    "S:\\navid\\PdfConverter\\Application\\Application.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\C#\\Web\\Core\\PdfConverter\\Application\\Application.csproj",
+        "projectUniqueName": "S:\\navid\\PdfConverter\\Application\\Application.csproj",
         "projectName": "Application",
-        "projectPath": "D:\\C#\\Web\\Core\\PdfConverter\\Application\\Application.csproj",
-        "packagesPath": "C:\\Users\\Mr.Win\\.nuget\\packages\\",
-        "outputPath": "D:\\C#\\Web\\Core\\PdfConverter\\Application\\obj\\",
+        "projectPath": "S:\\navid\\PdfConverter\\Application\\Application.csproj",
+        "packagesPath": "C:\\Users\\navid\\.nuget\\packages\\",
+        "outputPath": "S:\\navid\\PdfConverter\\Application\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\Mr.Win\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\navid\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
@@ -33,11 +33,11 @@
           "net5.0": {
             "targetAlias": "net5.0",
             "projectReferences": {
-              "D:\\C#\\Web\\Core\\PdfConverter\\Common\\Common.csproj": {
-                "projectPath": "D:\\C#\\Web\\Core\\PdfConverter\\Common\\Common.csproj"
+              "S:\\navid\\PdfConverter\\Common\\Common.csproj": {
+                "projectPath": "S:\\navid\\PdfConverter\\Common\\Common.csproj"
               },
-              "D:\\C#\\Web\\Core\\PdfConverter\\Domain\\Domain.csproj": {
-                "projectPath": "D:\\C#\\Web\\Core\\PdfConverter\\Domain\\Domain.csproj"
+              "S:\\navid\\PdfConverter\\Domain\\Domain.csproj": {
+                "projectPath": "S:\\navid\\PdfConverter\\Domain\\Domain.csproj"
               }
             }
           }
@@ -110,7 +110,7 @@
             },
             "RestSharp": {
               "target": "Package",
-              "version": "[107.3.0, )"
+              "version": "[110.2.0, )"
             },
             "Syncfusion.HtmlToPdfConverter.Blink.Net.Core.Windows": {
               "target": "Package",
@@ -153,24 +153,24 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.203\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.100\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "D:\\C#\\Web\\Core\\PdfConverter\\Common\\Common.csproj": {
+    "S:\\navid\\PdfConverter\\Common\\Common.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\C#\\Web\\Core\\PdfConverter\\Common\\Common.csproj",
+        "projectUniqueName": "S:\\navid\\PdfConverter\\Common\\Common.csproj",
         "projectName": "Common",
-        "projectPath": "D:\\C#\\Web\\Core\\PdfConverter\\Common\\Common.csproj",
-        "packagesPath": "C:\\Users\\Mr.Win\\.nuget\\packages\\",
-        "outputPath": "D:\\C#\\Web\\Core\\PdfConverter\\Common\\obj\\",
+        "projectPath": "S:\\navid\\PdfConverter\\Common\\Common.csproj",
+        "packagesPath": "C:\\Users\\navid\\.nuget\\packages\\",
+        "outputPath": "S:\\navid\\PdfConverter\\Common\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\Mr.Win\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\navid\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
@@ -186,8 +186,8 @@
           "net5.0": {
             "targetAlias": "net5.0",
             "projectReferences": {
-              "D:\\C#\\Web\\Core\\PdfConverter\\Domain\\Domain.csproj": {
-                "projectPath": "D:\\C#\\Web\\Core\\PdfConverter\\Domain\\Domain.csproj"
+              "S:\\navid\\PdfConverter\\Domain\\Domain.csproj": {
+                "projectPath": "S:\\navid\\PdfConverter\\Domain\\Domain.csproj"
               }
             }
           }
@@ -218,6 +218,10 @@
               "target": "Package",
               "version": "[13.0.1, )"
             },
+            "RestSharp": {
+              "target": "Package",
+              "version": "[110.2.0, )"
+            },
             "iTextSharp": {
               "target": "Package",
               "version": "[5.5.13.3, )"
@@ -239,24 +243,24 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.203\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.100\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "D:\\C#\\Web\\Core\\PdfConverter\\Domain\\Domain.csproj": {
+    "S:\\navid\\PdfConverter\\Domain\\Domain.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\C#\\Web\\Core\\PdfConverter\\Domain\\Domain.csproj",
+        "projectUniqueName": "S:\\navid\\PdfConverter\\Domain\\Domain.csproj",
         "projectName": "Domain",
-        "projectPath": "D:\\C#\\Web\\Core\\PdfConverter\\Domain\\Domain.csproj",
-        "packagesPath": "C:\\Users\\Mr.Win\\.nuget\\packages\\",
-        "outputPath": "D:\\C#\\Web\\Core\\PdfConverter\\Domain\\obj\\",
+        "projectPath": "S:\\navid\\PdfConverter\\Domain\\Domain.csproj",
+        "packagesPath": "C:\\Users\\navid\\.nuget\\packages\\",
+        "outputPath": "S:\\navid\\PdfConverter\\Domain\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\Mr.Win\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\navid\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
@@ -287,6 +291,10 @@
             "Newtonsoft.Json": {
               "target": "Package",
               "version": "[13.0.1, )"
+            },
+            "RestSharp": {
+              "target": "Package",
+              "version": "[110.2.0, )"
             }
           },
           "imports": [
@@ -305,24 +313,24 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.203\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.100\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "D:\\C#\\Web\\Core\\PdfConverter\\Infrastructure\\Infrastructure.csproj": {
+    "S:\\navid\\PdfConverter\\Infrastructure\\Infrastructure.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\C#\\Web\\Core\\PdfConverter\\Infrastructure\\Infrastructure.csproj",
+        "projectUniqueName": "S:\\navid\\PdfConverter\\Infrastructure\\Infrastructure.csproj",
         "projectName": "Infrastructure",
-        "projectPath": "D:\\C#\\Web\\Core\\PdfConverter\\Infrastructure\\Infrastructure.csproj",
-        "packagesPath": "C:\\Users\\Mr.Win\\.nuget\\packages\\",
-        "outputPath": "D:\\C#\\Web\\Core\\PdfConverter\\Infrastructure\\obj\\",
+        "projectPath": "S:\\navid\\PdfConverter\\Infrastructure\\Infrastructure.csproj",
+        "packagesPath": "C:\\Users\\navid\\.nuget\\packages\\",
+        "outputPath": "S:\\navid\\PdfConverter\\Infrastructure\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\Mr.Win\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\navid\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
@@ -338,14 +346,14 @@
           "net5.0": {
             "targetAlias": "net5.0",
             "projectReferences": {
-              "D:\\C#\\Web\\Core\\PdfConverter\\Application\\Application.csproj": {
-                "projectPath": "D:\\C#\\Web\\Core\\PdfConverter\\Application\\Application.csproj"
+              "S:\\navid\\PdfConverter\\Application\\Application.csproj": {
+                "projectPath": "S:\\navid\\PdfConverter\\Application\\Application.csproj"
               },
-              "D:\\C#\\Web\\Core\\PdfConverter\\Common\\Common.csproj": {
-                "projectPath": "D:\\C#\\Web\\Core\\PdfConverter\\Common\\Common.csproj"
+              "S:\\navid\\PdfConverter\\Common\\Common.csproj": {
+                "projectPath": "S:\\navid\\PdfConverter\\Common\\Common.csproj"
               },
-              "D:\\C#\\Web\\Core\\PdfConverter\\Domain\\Domain.csproj": {
-                "projectPath": "D:\\C#\\Web\\Core\\PdfConverter\\Domain\\Domain.csproj"
+              "S:\\navid\\PdfConverter\\Domain\\Domain.csproj": {
+                "projectPath": "S:\\navid\\PdfConverter\\Domain\\Domain.csproj"
               }
             }
           }
@@ -359,6 +367,12 @@
       "frameworks": {
         "net5.0": {
           "targetAlias": "net5.0",
+          "dependencies": {
+            "RestSharp": {
+              "target": "Package",
+              "version": "[110.2.0, )"
+            }
+          },
           "imports": [
             "net461",
             "net462",
@@ -375,7 +389,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.203\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.100\\RuntimeIdentifierGraph.json"
         }
       }
     }

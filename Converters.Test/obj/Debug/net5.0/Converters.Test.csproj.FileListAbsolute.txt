@@ -380,3 +380,6 @@ D:\C#\Web\Core\PdfConverter\Converters.Test\obj\Debug\net5.0\Converters.Test.gen
 D:\C#\Web\Core\PdfConverter\Converters.Test\obj\Debug\net5.0\ref\Converters.Test.dll
 D:\C#\Web\Core\PdfConverter\Converters.Test\bin\Debug\net5.0\Namotion.Reflection.dll
 D:\C#\Web\Core\PdfConverter\Converters.Test\bin\Debug\net5.0\NJsonSchema.dll
+D:\C#\Web\Core\PdfConverter\Converters.Test\bin\Debug\net5.0\Microsoft.Bcl.AsyncInterfaces.dll
+D:\C#\Web\Core\PdfConverter\Converters.Test\bin\Debug\net5.0\System.Text.Encodings.Web.dll
+D:\C#\Web\Core\PdfConverter\Converters.Test\bin\Debug\net5.0\System.Text.Json.dll

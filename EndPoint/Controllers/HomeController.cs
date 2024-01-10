@@ -2,14 +2,10 @@
 using Common;
 using EndPoint.Models;
 using EndPoint.Models.Validation;
-using FluentValidation;
 using FluentValidation.Results;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.Data.SqlClient;
-using Microsoft.Extensions.Configuration;
 using System;
-using System.IO;
 using System.Threading.Tasks;
 
 namespace EndPoint.Controllers
@@ -31,13 +27,13 @@ namespace EndPoint.Controllers
         [Route("")]
         public async Task<IActionResult> Index()
         {
-            ViewBag.HomeContext = _ViewFacad.ReturnHomeContextService.Execute();
-            ViewBag.WhyChooseUsContext = _ViewFacad.ReturnWhyChooseUsService.Execute();
-            ViewBag.BlogPosts = _ViewFacad.ReturnBlogPostsService.Execute(GetPath.GetBlogPostCountHome(), null,0);
-            ViewBag.BlogPostsSlide = _ViewFacad.ReturnBlogPostsService.Execute(GetPath.GetBlogPostCountHomeSlide(), null, GetPath.GetBlogPostCountHome());
-            ViewBag.Images = _ViewFacad.ReturnServiceImage.ReturnHomeImages();
+            ViewBag.HomeContext = await _ViewFacad.ReturnHomeContextService.ExecuteAsync();
+            ViewBag.WhyChooseUsContext = await _ViewFacad.ReturnWhyChooseUsService.ExecuteAsync();
+            ViewBag.BlogPosts = await _ViewFacad.ReturnBlogPostsFromDbService.GetPostsAsync(GetPath.GetBlogPostCountHome(), null, true);
+            ViewBag.BlogPostsSlide = await _ViewFacad.ReturnBlogPostsFromDbService.GetPostsAsync(GetPath.GetBlogPostCountHomeSlide(), null, false);
+            ViewBag.Images = await _ViewFacad.ReturnServiceImage.ReturnHomeImagesAsync();
             ViewBag.FAQ = await _ViewFacad.ReturnFrequentlyQuestionService.ReturnAllAsync(null, null);
-            return View( await _Features.ReturnUsersCommnetsService.ReturnAllTopRatingCommnetsAsync(GetPath.GetCommentCount(), null));
+            return View(await _Features.ReturnUsersCommnetsService.ReturnAllTopRatingCommnetsAsync(GetPath.GetCommentCount(), null));
         }
         [Route("report-bug")]
         public async Task<IActionResult> ReportBug()
@@ -130,9 +126,9 @@ namespace EndPoint.Controllers
             }
             return Json(captcha);
 
-    }
+        }
 
-    [HttpPost]
+        [HttpPost]
         public async Task<IActionResult> SaveReportedBug(AddRepoteBugViewModel request)
         {
             #region Validation

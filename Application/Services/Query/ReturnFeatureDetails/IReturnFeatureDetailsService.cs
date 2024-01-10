@@ -3,12 +3,13 @@ using Common;
 using Domain.Entities.Features;
 using Microsoft.EntityFrameworkCore;
 using System.Linq;
+using System.Threading.Tasks;
 
 namespace Application.Services.Query.ReturnFeatureDetails
 {
     public interface IReturnFeatureDetailsService
     {
-        ResultMessage<ResultReturnFeatureDetailsDto> Excute(RequestReturnFeatureDetailsDto request);
+        Task<ResultMessage<ResultReturnFeatureDetailsDto>> ExecuteAsync(RequestReturnFeatureDetailsDto request);
         ResultMessage<ResultReturnFeatureDetailsDto> ReturnForAdmin(RequestReturnFeatureDetailsDto request);
     }
     public class ResultReturnFeatureDetailsDto
@@ -35,9 +36,9 @@ namespace Application.Services.Query.ReturnFeatureDetails
         {
             _Context = context;
         }
-        ResultMessage<ResultReturnFeatureDetailsDto> IReturnFeatureDetailsService.Excute(RequestReturnFeatureDetailsDto request)
+        async Task<ResultMessage<ResultReturnFeatureDetailsDto>> IReturnFeatureDetailsService.ExecuteAsync(RequestReturnFeatureDetailsDto request)
         {
-            var result = _Context.FeaturesDetails.Where(p => p.IsRemoved == false && p.Service == request.ServiceType).FirstOrDefault();
+            var result = await _Context.FeaturesDetails.Where(p => p.IsRemoved == false && p.Service == request.ServiceType).FirstOrDefaultAsync();
             if (result != null)
             {
                 return new ResultMessage<ResultReturnFeatureDetailsDto>

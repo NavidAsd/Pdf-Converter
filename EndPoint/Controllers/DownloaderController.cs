@@ -146,7 +146,7 @@ namespace EndPoint.Controllers
 
         private string ReturnShortLink(string FullUrl, long Id, AllServicesLog LogService)
         {
-            string ShortUrl = AppliedMethodes.LinkShorter(FullUrl).Result;
+            string ShortUrl = AppliedMethodes.LinkShorter(FullUrl).Result.short_url;
             if (ShortUrl != null)
             {
                 UseUpdateShortLink UseService = new UseUpdateShortLink();

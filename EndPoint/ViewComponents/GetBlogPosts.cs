@@ -1,5 +1,6 @@
 ﻿using Application.Interface.FacadPattern;
 using Microsoft.AspNetCore.Mvc;
+using System.Threading.Tasks;
 
 namespace EndPoint.ViewComponents
 {
@@ -10,12 +11,12 @@ namespace EndPoint.ViewComponents
         {
             _ViewFacad = viewFacad;
         }
-        public IViewComponentResult Invoke(int? Category)
+        public async Task<IViewComponentResult> InvokeAsync(int? Category)
         {
             Common.InitialData Data = new Common.InitialData();
             ViewBag.ServiceName = Data.ReturnServiceNameForBlogContent(Category);
             ViewBag.Category = Category;
-            return View("GetBlogPosts", _ViewFacad.ReturnBlogPostsService.Execute(Common.GetPath.GetBlogPostCount(), Category,0));
+            return View("GetBlogPosts", await _ViewFacad.ReturnBlogPostsFromDbService.GetPostsAsync(Common.GetPath.GetBlogPostCount(), Category, true));
         }
     }
 }

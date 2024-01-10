@@ -1,16 +1,15 @@
 ﻿using Application.Interface;
 using Common;
-using System.ComponentModel;
-using System.Drawing.Text;
 using System.IO;
 using System.Linq;
+using System.Threading.Tasks;
 
 namespace Application.Services.Query.ReturnServiceImage
 {
     public interface IReturnServiceImage
     {
-        ResultMessage<ReturnServiceImageDto> ReturnServiceImage(int Service);
-        ResultMessage<ReturnHomeImagesDto> ReturnHomeImages();
+        Task<ResultMessage<ReturnServiceImageDto>> ReturnServiceImageAsync(int Service);
+        Task<ResultMessage<ReturnHomeImagesDto>> ReturnHomeImagesAsync();
     }
 
     public class ReturnServiceImageDto
@@ -33,7 +32,7 @@ namespace Application.Services.Query.ReturnServiceImage
             _Context = context;
         }
 
-        ResultMessage<ReturnServiceImageDto> IReturnServiceImage.ReturnServiceImage(int Service)
+        async Task<ResultMessage<ReturnServiceImageDto>> IReturnServiceImage.ReturnServiceImageAsync(int Service)
         {
             
             try
@@ -76,7 +75,7 @@ namespace Application.Services.Query.ReturnServiceImage
                 };
             }
         }
-        ResultMessage<ReturnHomeImagesDto> IReturnServiceImage.ReturnHomeImages()
+        async Task<ResultMessage<ReturnHomeImagesDto>> IReturnServiceImage.ReturnHomeImagesAsync()
         {
             AppliedMethodes.CreateDirectory(GetPath.GetHomeImages());
             bool image1 = File.Exists($"{GetPath.GetHomeImages()}\\{GetPath.HomeTopImage}");

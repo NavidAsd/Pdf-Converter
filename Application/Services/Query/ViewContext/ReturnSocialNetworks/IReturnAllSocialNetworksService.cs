@@ -1,7 +1,6 @@
 ﻿using Application.Interface;
 using Common;
 using Microsoft.EntityFrameworkCore;
-using System.Linq;
 using System.Threading.Tasks;
 
 namespace Application.Services.Query.ViewContext.ReturnSocialNetworks

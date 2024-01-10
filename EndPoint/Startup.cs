@@ -2,25 +2,20 @@ using Application.Interface;
 using Application.Interface.FacadPattern;
 using Application.Services.FacadPattern;
 using Application.Services.QuartzTasks.EmailSender;
+using Application.Services.QuartzTasks.GetBlogPosts;
 using Application.Services.QuartzTasks.RemoveLogs;
-using Application.Services.Query.ReturnFeatureDetails;
 using Common;
 using EndPoint.Models;
 using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
-using Microsoft.AspNetCore.Localization;
-using Microsoft.AspNetCore.Rewrite;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
-using Microsoft.Extensions.Localization;
 using Persistance.Context;
 using Quartz;
 using System;
-using System.Globalization;
-using System.Reflection;
 
 namespace EndPoint
 {
@@ -94,7 +89,14 @@ namespace EndPoint
                     .ForJob(EmailFileSender)
                     .WithIdentity("EmailFileSender-trigger")
                     .WithCronSchedule("0 */3 * ? * *")); //Every 3 minutes --> 0 */3 * ? * *
-
+                                                         
+                var GetBlogPosts = new JobKey("GetBlogPostsQuartz");
+                q.AddJob<GetBlogPostsQuartz>(opts => opts.WithIdentity(GetBlogPosts));
+                q.AddTrigger(opts => opts
+                    .ForJob(GetBlogPosts)
+                    .WithIdentity("GetBlogPostsQuartz-trigger")
+                    .WithCronSchedule("0 15 10 ? * *")); //10:15am every day --> 0 15 10 ? * *
+               
             });
 
             services.AddQuartzServer(options =>

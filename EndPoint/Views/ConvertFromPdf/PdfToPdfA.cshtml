@@ -175,6 +175,15 @@
                                         <circle class="cricle-class" cx="100" cy="100" r="64" />
 
                                     </svg>
+                                    <div class="progress">
+                                        <div class="progress-done" id="progressBar" data-done="70">
+                                                                                    
+                                         </div>
+                                    </div>
+                                    <br>
+                                    <h3 id="status"></h3><br>
+                                    <p id="uploaded_progress"></p>
+
                                     <p>Processing...</p>
                                     <a onclick="CancelProcess()" class="btn btn-outline-primary mt-4">Cancel</a>
 
@@ -295,7 +304,7 @@
                         <h3>Video tutorial on how to convert PDF to PDF/A</h3>
                         <p>In this video, you will learn how to convert a PDF file to PDF/A in a few minutes</p>
                         string posterName = "how-to-convert-pdf-to-pdfa.jpg";
-                            <video poster="@Common.GetPath.GetHelpVideoPath().Replace("wwwroot", "")/poster/@posterName" alt="Help Video" title="Video tutorial on working with tools" style="width: @Common.GetPath.GetVideoSize(); max-height: @Common.GetPath.GetVideoSize(); position:center; background-color: #000;" controls>
+                            <video poster="@Common.GetPath.GetHelpVideoPath().Replace("wwwroot", "")/poster/@posterName" alt="Help Video" title="Video tutorial on working with tools" style="max-height: @Common.GetPath.GetVideoSize(); position:center; background-color: #000;" controls class="video-help">
                             @foreach (var item in Common.Formating.VideosFormat)
                             {
                                 <source src="@Common.GetPath.GetHelpVideoPath().Replace("wwwroot", "")/@ViewBag.ThreeStepHelp.Enything.VideoName" type="video/@item">
@@ -487,11 +496,8 @@
     }
 
     function OtherRowUpload(State) {
-        if (State == true) {
-            document.getElementById("drop").style.visibility = "visible";
-        }
-        else {
-            document.getElementById("drop").style.visibility = "hidden";
+        if (State == false) {
+            document.getElementById("drop").style.display = "none";
         }
     }
 
@@ -504,58 +510,85 @@
         }
     }
 
-    async function SendData() {
-        var File = document.getElementById("_upload");
-        var Filter = /(\.pdf|\.)$/i;
-        if (!Filter.exec(File.value)) {
-            swal.fire
-                (
+  async function SendData() {
+    var File = document.getElementById("_upload");
+    var Filter = /(\.pdf|\.)$/i;
+    if (!Filter.exec(File.value)) {
+        swal.fire
+            (
+                "warning",
+                "File Format Invalid",
+                "warning"
+            );
+        return;
+    }
+    var formData = new FormData();
+    formData.append("file", File.files[0]);
+    formData.append("Type", document.getElementById("FileFormatService").innerHTML);
+    formData.append("Recaptcha", document.getElementById("cpth").value);
+
+    Loading(true);
+    SelectFile(false);
+    Download(false);
+    OtherRowUpload(false);
+
+    var ajax = new XMLHttpRequest();
+    ajax.upload.addEventListener("progress", progressHandler, false);
+    ajax.addEventListener("load", completeHandler, false);
+    ajax.addEventListener("error", errorHandler, false);
+    ajax.addEventListener("abort", abortHandler, false);
+    ajax.open("POST", "/ConvertFromPdf/PdfTPdfAUpload/");
+    ajax.send(formData);
+        
+}
+
+function progressHandler(event) {
+    var loaded = new Number((event.loaded / 1048576));//Make loaded a "number" and divide bytes to get Megabytes
+    var total = new Number((event.total / 1048576));//Make total file size a "number" and divide bytes to get Megabytes
+    $("#uploaded_progress").innerHTML = "Uploaded <b>" + loaded.toPrecision(5) + "</b> Megabytes of " + total.toPrecision(5);//String output
+    var percent = (event.loaded / event.total) * 100;//Get percentage of upload progress
+    // $("#progressBar").innerHTML = Math.round(percent);//Round value to solid
+    const progress = document.querySelector('.progress-done');
+    progress.setAttribute("data-done" ,  Math.round(percent))
+    progress.style.width = progress.getAttribute('data-done') + '%';
+    $("#status").innerHTML = Math.round(percent) + "% uploaded";//String output
+}
+function completeHandler(event) {
+    Loading(false);
+    SelectFile(true);
+    const obj_upload_serv = JSON.parse(event.target.responseText)
+    const progress = document.querySelector('.progress');
+    if(obj_upload_serv.success){
+        $("#status").innerHTML = "Complate !";
+        progress.style.display = "none"
+        Download(true, obj_upload_serv.enything.outFileName, obj_upload_serv.enything.id);
+                FileName = obj_upload_serv.enything.outFileName;
+                Id = obj_upload_serv.enything.id;
+    } 
+    else if (obj_upload_serv.enything == null) {
+                OtherRowUpload(true);
+                swal.fire(
                     "warning",
-                    "File Format Invalid",
+                    obj_upload_serv.message,
                     "warning"
                 );
-            return;
-        }
-        var formData = new FormData();
-        formData.append("file", File.files[0]);
-        formData.append("Type", document.getElementById("FileFormatService").innerHTML);
-        formData.append("Recaptcha", document.getElementById("cpth").value);
-        Loading(true);
-        SelectFile(false);
-        Download(false);
-        OtherRowUpload(false);
-        await fetch('/ConvertFromPdf/PdfTPdfAUpload/', {
-            method: "POST",
-            body: formData
-        })
-            .then(response => response.json())
-            .then((data) => {
-                Loading(false);
-                SelectFile(true);
-                if (data.success) {
-                    Download(true, data.enything.outFileName, data.enything.id);
-                    FileName = data.enything.outFileName;
-                    Id = data.enything.id;
-                }
-                else if (data.enything == null) {
-                    OtherRowUpload(true);
-                    swal.fire(
-                        "warning",
-                        text.message,
-                        "warning"
-                    );
-                }
-                else {
-                    OtherRowUpload(true);
-                    //TryConvert(true, data.enything.filename, data.enything.userip);
-                    swal.fire(
-                        "warning",
-                        data.message,
-                        "warning"
-                    );
-                }
-            })
+            }
+    else {
+                OtherRowUpload(true);
+                //TryConvert(true, data.enything.filename, data.enything.userip);
+                swal.fire(
+                    "warning",
+                    obj_upload_serv.message,
+                    "warning"
+                );
     }
+}
+function errorHandler(event) {
+    $("#status").innerHTML = "Upload Failed";//Switch status to upload failed
+}
+function abortHandler(event) {
+    $("#status").innerHTML = "Upload Aborted";//Switch status to aborted
+}
 
     async function SubmitEmail() {
         var Data = new FormData();

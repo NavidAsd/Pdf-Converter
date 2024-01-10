@@ -18,8 +18,9 @@
         }
 
         .upload .upload-files footer .importar,
-        .upload .upload-files footer .upload-btn {
+        .upload .upload-files .upload-btn {
             color: #fff !important;
+            margin-top:10px;
             background-color: #5C6BC0 !important;
         }
 
@@ -117,6 +118,7 @@
                                         <div class="other-location-circle drop-box"><a href="#" data-bs-toggle="tooltip" data-bs-placement="top" title="DropBox"></a></div>
                                     </div>
 
+                                        <button onclick="SendData()" id="btnUpload" class="upload-btn active btn" data-bs-toggle="modal">Upload and Convert</button>
                                     <footer>
                                         <div class="divider">
                                             <span><AR>FILES</AR></span>
@@ -125,7 +127,6 @@
                                             <!--   template   -->
                                         </div>
 
-                                        <button onclick="SendData()" id="btnUpload" class="upload-btn active btn" data-bs-toggle="modal">Upload and Convert</button>
 
                                     </footer>
                                 </div>
@@ -169,6 +170,14 @@
                                         <circle class="cricle-class" cx="100" cy="100" r="64" />
 
                                     </svg>
+                                    <div class="progress">
+                                        <div class="progress-done" id="progressBar" data-done="70">
+                                                                                    
+                                         </div>
+                                    </div>
+                                    <br>
+                                    <h3 id="status"></h3><br>
+                                    <p id="uploaded_progress"></p>
                                     <p>Processing...</p>
                                     <a onclick="CancelProcess()" class="btn btn-outline-primary mt-4">Cancel</a>
 
@@ -289,7 +298,7 @@
                         <h3>Video tutorial on how to Merge PDF</h3>
                         <p>In this video, you will learn how to Merge PDF files in a few minutes</p>
                         string posterName = "How-To-Merge-Pdf-files-quickly-and-easily.jpg";
-                                <video poster="@Common.GetPath.GetHelpVideoPath().Replace("wwwroot", "")/poster/@posterName" alt="Help Video" title="Video tutorial on working with tools" style="width: @Common.GetPath.GetVideoSize(); max-height: @Common.GetPath.GetVideoSize(); position:center; background-color: #000;" controls>
+                                <video poster="@Common.GetPath.GetHelpVideoPath().Replace("wwwroot", "")/poster/@posterName" alt="Help Video" title="Video tutorial on working with tools" style="max-height: @Common.GetPath.GetVideoSize(); position:center; background-color: #000;" controls class="video-help">
                             @foreach (var item in Common.Formating.VideosFormat)
                             {
                                 <source src="@Common.GetPath.GetHelpVideoPath().Replace("wwwroot", "")/@ViewBag.ThreeStepHelp.Enything.VideoName" type="video/@item">
@@ -515,11 +524,11 @@
 
     function OtherRowUpload(State) {
         if (State == true) {
-            document.getElementById("drop").style.visibility = "visible";
+            document.getElementById("drop").style.display = "unset";
             document.getElementById("footer").style.display = "unset";
         }
         else {
-            document.getElementById("drop").style.visibility = "hidden";
+            document.getElementById("drop").style.display = "none";
             document.getElementById("footer").style.display = "none";
         }
     }
@@ -554,28 +563,14 @@
             SelectFile(false);
             Download(false);
             OtherRowUpload(false);
-            await fetch('/Organize/MergPdfUpload/', {
-                method: "POST",
-                body: formData
-            })
-                .then(response => response.json())
-                .then((data) => {
-                    Loading(false);
-                    SelectFile(true);
-                    if (data.success) {
-                        Download(true, data.enything.outFileName, data.enything.id);
-                        FileName = data.enything.outFileName;
-                        Id = data.enything.id;
-                    }
-                    else {
-                        OtherRowUpload(true);
-                        swal.fire(
-                            "warning",
-                            data.message,
-                            "warning"
-                        );
-                    }
-                })
+
+            var ajax = new XMLHttpRequest();
+            ajax.upload.addEventListener("progress", progressHandler, false);
+            ajax.addEventListener("load", completeHandler, false);
+            ajax.addEventListener("error", errorHandler, false);
+            ajax.addEventListener("abort", abortHandler, false);
+            ajax.open("POST", "/Organize/MergPdfUpload/");
+            ajax.send(formData);
         } else {
             swal.fire(
                 "warning",
@@ -584,6 +579,58 @@
             );
         }
     }
+function progressHandler(event) {
+    var loaded = new Number((event.loaded / 1048576));//Make loaded a "number" and divide bytes to get Megabytes
+    var total = new Number((event.total / 1048576));//Make total file size a "number" and divide bytes to get Megabytes
+   // $("#uploaded_progress").innerHTML = "Uploaded <b>" + loaded.toPrecision(5) + "</b> Megabytes of " + total.toPrecision(5);//String output
+	document.getElementById("uploaded_progress").innerHTML = "Uploaded <b>" + loaded.toPrecision(5) + "</b> Megabytes of " + total.toPrecision(5);
+    var percent = (event.loaded / event.total) * 100;//Get percentage of upload progress
+    //$("#progressBar").innerHTML = Math.round(percent);//Round value to solid
+    document.getElementById("progressBar").innerHTML =  Math.round(percent);
+    const progress = document.querySelector('.progress-done');
+    progress.setAttribute("data-done" ,  Math.round(percent))
+    progress.style.width = progress.getAttribute('data-done') + '%';
+   // $("#status").innerHTML = Math.round(percent) + "% uploaded";//String output
+   document.getElementById("status").innerHTML =  Math.round(percent) + "% uploaded";
+}
+function completeHandler(event) {
+    Loading(false);
+    SelectFile(true);
+    const obj_upload_serv = JSON.parse(event.target.responseText)
+    const progress = document.querySelector('.progress');
+    if(obj_upload_serv.success){
+        $("#status").innerHTML = "Complate !";
+        progress.style.display = "none"
+        Download(true, obj_upload_serv.enything.outFileName, obj_upload_serv.enything.id);
+                FileName = obj_upload_serv.enything.outFileName;
+                Id = obj_upload_serv.enything.id;
+
+                
+    } 
+    else if (obj_upload_serv.enything == null) {
+                OtherRowUpload(true);
+                swal.fire(
+                    "warning",
+                    obj_upload_serv.message,
+                    "warning"
+                );
+            }
+    else {
+                OtherRowUpload(true);
+                //TryConvert(true, data.enything.filename, data.enything.userip);
+                swal.fire(
+                    "warning",
+                    obj_upload_serv.message,
+                    "warning"
+                );
+    }
+}
+function errorHandler(event) {
+    $("#status").innerHTML = "Upload Failed";//Switch status to upload failed
+}
+function abortHandler(event) {
+    $("#status").innerHTML = "Upload Aborted";//Switch status to aborted
+}
 
     async function SubmitEmail() {
         var Data = new FormData();

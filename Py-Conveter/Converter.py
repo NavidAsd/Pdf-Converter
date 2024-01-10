@@ -9,7 +9,7 @@ from pdf2image import convert_from_path
 from pptx import Presentation
 from io import BytesIO
 import pythoncom
-import fitz
+import localfitz
 from AppliedMethodes import Methodes
 import time
 
@@ -175,37 +175,21 @@ class Program():
             OutputPath = f'{Methodes.FixRequestFormat(OutputPath)}\\{UserIp}'
             InputFilePath = Methodes.FixRequestFormat(InputFilePath)
             Methodes.CreateDirectory(OutputPath)
-
             try:
-                doc = fitz.open(f"{InputFilePath}\\{InputFileName}")
-                count=0
-                files=[]
-                for i in range(len(doc)):
-                    for img in doc.getPageImageList(i):
-                        xref = img[0]
-                        pix = fitz.Pixmap(doc, xref)
-                        if pix.n < 5:       # this is GRAY or RGB
-                            count+=1
-                            file =f"{OutputPath}\\{Methodes.ReturnFileNameWithoutDate('.png',f'ExtractImages-{xref}',count)}"
-                            files.append(file)
-                            pix.writePNG(file)
-                        else:               # CMYK: convert to RGB first
-                            count+=1
-                            pix1 = fitz.Pixmap(fitz.csRGB, pix)
-                            pix1.writePNG("p%s-%s.png" % (i, xref))
-                            pix1 = None
-                        pix = None
-                result = Methodes.CompressFilesToZip(files,OutputPath,outfilename)
-                for i in files:
+                extract = localfitz.Extract(Outpath=OutputPath,Filename=InputFileName,InputPath=InputFilePath)
+                extract.loop()
+                result = Methodes.CompressFilesToZipWithoutPath(extract.imgFnamelist,OutputPath,outfilename,extract.Outpath)
+                for i in extract.imgFnamelist:
                     try:
-                        os.remove(i)
+                        os.remove(f'{extract.Outpath}\\{i}')
                     except:
                         pass
                 if(result):
                     return {'Success':True,'Message':'ConvertSuccessFuly','OutFile':outfilename,'OutPath':Methodes.ReverseRequestFormat(OutputPath)}
                 else:
                     return {'Success':False,'Message':'Error In Extracting Proccess'}
-            except:
+            except Exception as ex:
+                print(ex)
                 return {'Success':False,'Message':'Error In Extracting Proccess'}
         else:
             return {'Success':False,'Message':'Error Input Cannot Be null'}
